@@ -63,7 +63,7 @@ a:hover {
 .btn-theme {
     background: #df006f;
     color: #fff !important;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .theme-red {
@@ -102,6 +102,7 @@ a:hover {
     display: inline-block;
     padding: 0 20px;
     font-weight: 500;
+    font-size: 14px;
 }
 
 /* header css ends here*/
@@ -189,7 +190,6 @@ a:hover {
 /* fotter css ends here */
 .profile-card {
     background: #fff;
-    border-radius: 10px;
     position: relative;
 }
 
