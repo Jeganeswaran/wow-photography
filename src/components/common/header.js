@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from './logo';
 import { Link } from "react-router-dom"
+import {OpenModalBtn} from "../modals/modalbtns"
 
 const Header = () => {
     return (
@@ -15,12 +16,16 @@ const Header = () => {
                     <li>About us</li>
                     <li>Faq</li>
                     <li>Contact us</li>
-                    <li className="font-weight-bold">Sign in</li>
+                    <li>
+                        <OpenModalBtn className="btn-a font-weight-bold f-14" modalName="SIGNIN_MODAL">
+                            Sign in
+                        </OpenModalBtn>
+                    </li>
                     <li className="font-weight-bold">Sign up</li>
                     <li>
                         <button className="btn btn-theme btn-rounded">
                             <i className="fas fa-plus-circle mr-1"></i> Create a post
-                            </button>
+                        </button>
                     </li>
                 </ul>
             </div>

@@ -1,16 +1,22 @@
 import React from 'react'
 import Header from './components/common/header';
 import Footer from './components/common/footer';
+import Modal from './components/modals/modal';
 import Pages from './components/routes/pages';
 import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from 'react-redux';
+import store from "./redux"
 
 const App = () => {
 	return (
-		<Router>
-			<Header />
-			<Pages />
-			<Footer />
-		</Router>
+		<Provider store={store}>
+			<Router>
+				<Header />
+				<Pages />
+				<Footer />
+			</Router>
+			<Modal />
+		</Provider>
 	)
 }
 
