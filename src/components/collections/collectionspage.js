@@ -2,9 +2,6 @@ import React from 'react'
 import PageLayout from '../common/pagelayout';
 import ProfileCard from './profilecard';
 import TabHeader from '../common/tabheader';
-import PublishCard from './publishcard';
-import AddPhotos from './addphotos';
-import GuideLines from './guidelines';
 import CollCount from './collcount';
 import RouteTabs from '../routes/routetabs';
 import PrivateCollection from './privatecollection';
