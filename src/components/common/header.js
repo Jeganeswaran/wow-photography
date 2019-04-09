@@ -13,15 +13,25 @@ const Header = () => {
                     </Link>
                 </div>
                 <ul className="menu-list">
-                    <li>About us</li>
+                    <li>About Us</li>
                     <li>Faq</li>
-                    <li>Contact us</li>
+                    <li>Contact Us</li>
                     <li>
-                        <OpenModalBtn className="btn-a font-weight-bold f-14" modalName="SIGNIN_MODAL">
-                            Sign in
+                        <OpenModalBtn 
+                            className="btn-a font-weight-bold f-14" 
+                            modalName="SIGNIN_MODAL"
+                        >
+                            Sign In
                         </OpenModalBtn>
                     </li>
-                    <li className="font-weight-bold">Sign up</li>
+                    <li className="font-weight-bold">
+                        <OpenModalBtn 
+                            className="btn-a font-weight-bold f-14" 
+                            modalName="SIGNUP_MODAL"
+                        >
+                            Sign Up
+                        </OpenModalBtn>
+                    </li>
                     <li>
                         <button className="btn btn-theme btn-rounded">
                             <i className="fas fa-plus-circle mr-1"></i> Create a post

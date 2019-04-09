@@ -42,6 +42,15 @@ a:hover {
 }
 
 /* text styles ends here */
+.errdiv {
+    background: #e87c03;
+    color: #fff;
+    font-size: 12px;
+}
+
+.err-border {
+    border: 2px solid red;
+}
 
 .flex-between {
     display: flex;
@@ -125,7 +134,7 @@ hr[data-title]:before {
 
 .menu-list li {
     display: inline-block;
-    padding: 0 20px;
+    padding: 0 15px;
     font-weight: 500;
     font-size: 14px;
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/common/header';
 import Footer from './components/common/footer';
 import Modal from './components/modals/modal';
+import Toast from "./components/Toast/toast"
 import Pages from './components/routes/pages';
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from 'react-redux';
@@ -16,6 +17,7 @@ const App = () => {
 				<Footer />
 			</Router>
 			<Modal />
+			<Toast />
 		</Provider>
 	)
 }

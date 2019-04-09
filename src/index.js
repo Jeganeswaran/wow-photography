@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/bootstrap.css';
 import './assets/css/custom.css';
+import './assets/css/toast.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

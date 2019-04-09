@@ -15,3 +15,7 @@ export const _CLEAR = "_CLEAR";
 export const _ADD_DATA = "_ADD_DATA";
 export const _REMOVE_DATA = "_REMOVE_DATA";
 export const _UPDATE_DATA = "_UPDATE_DATA";
+
+
+//urls
+export const login_url = "auth/login/";
