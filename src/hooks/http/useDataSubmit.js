@@ -1,8 +1,9 @@
 import { useEffect, useReducer } from "react"
 import dataFetchReducer from "./dataFetchReducer"
 import apiInstance, { CancelToken, isCancel } from "../../redux/apiIntance";
+import ajaxerrmsg from "../../utils/ajaxerrmsg";
 
-const useDataSubmit = (config, succFunc, errFunc ) => {
+const useDataSubmit = (config, succFunc, errFunc, deps = [] ) => {
 
     const [state, dispatch] = useReducer(dataFetchReducer, {
         isLoading: false,
@@ -21,7 +22,7 @@ const useDataSubmit = (config, succFunc, errFunc ) => {
             dispatch({ type: 'FETCH_INIT' });
             try {
                 const res = await apiInstance({
-                    ...config.conf,
+                    ...config,
                     cancelToken: new CancelToken(c => cancel = c)
                 });
                 dispatch({ type: 'FETCH_SUCCESS', payload: res.data });
@@ -30,11 +31,12 @@ const useDataSubmit = (config, succFunc, errFunc ) => {
                 }
             } catch (err) {
                 if (isCancel(err)) {
-                    dispatch({ type: 'FETCH_FAILURE', err });
+                    dispatch({ type: 'FETCH_FAILURE', error: true });
                 } else {
-                    dispatch({ type: 'FETCH_FAILURE', err });
+                    const errMsg = err.response ? ajaxerrmsg(err.response.data) : "Something went wrong";
+                    dispatch({ type: 'FETCH_FAILURE', error: errMsg });
                     if (errFunc) {
-                        errFunc(err);
+                        errFunc(errMsg);
                     }
                 }
             }
@@ -49,7 +51,7 @@ const useDataSubmit = (config, succFunc, errFunc ) => {
                 cancel("cancelled by user")
             }
         };
-    }, [config.isValid]);
+    }, deps);
 
     return state
 };
