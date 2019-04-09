@@ -1,6 +1,7 @@
 import { compose, applyMiddleware, createStore } from "redux"
 import middlewares from "./middlewares/combined";
 import reducer from "./reducers/combined";
+import initialState from "./initialState";
 
 const composeEnhancers =
     typeof window === 'object' &&
@@ -15,6 +16,6 @@ const enhancer = composeEnhancers(
     // other store enhancers if any
 );
 
-const store = createStore(reducer, enhancer);
+const store = createStore(reducer, initialState, enhancer);
 
 export default store;

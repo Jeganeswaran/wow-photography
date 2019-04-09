@@ -4,7 +4,7 @@ import formReducer from '../../hooks/form/formReducer';
 import dataFetchReducer from '../../hooks/http/dataFetchReducer';
 import useCount from "../../hooks/useCount";
 import { validate, reduceForm } from '../../utils/forms/validation';
-import apiInstance, { CancelToken, isCancel } from "../../redux/apiIntance";
+import apiInstance, { CancelToken, isCancel } from "../../redux/apiInstance";
 import ajaxerrmsg from '../../utils/ajaxerrmsg';
 
 const RenderForm = ({

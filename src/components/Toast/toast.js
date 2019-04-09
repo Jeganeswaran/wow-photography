@@ -5,7 +5,6 @@ import { removeToast } from "../../redux/actions/common"
 import ToastMsg from './toastmsg'
 
 const ToastContainer = ({toast, removeToast}) => {
-    console.log(toast);
     return (
         <Portal>
             <div className="toast-container">

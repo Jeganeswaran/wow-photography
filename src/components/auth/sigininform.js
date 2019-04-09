@@ -4,7 +4,7 @@ import FormGroup from '../form/formgroup';
 import { login_url } from '../../redux/actions/constants';
 import { addToast, closeModal } from '../../redux/actions/common';
 import { connect } from 'react-redux'
-
+import { updateUser } from '../../redux/actions/user';
 
 const client = Math.random() * 100000;
 
@@ -34,7 +34,7 @@ const inputs = [
     }
 ];
 
-const SignInForm = ({ addToast, closeModal }) => {
+const SignInForm = ({ addToast, closeModal, updateUser }) => {
     return (
         <RenderForm
             RenderItem={FormGroup}
@@ -46,6 +46,7 @@ const SignInForm = ({ addToast, closeModal }) => {
             }}
             succFunc={
                 (data) => {
+                    updateUser(data);
                     closeModal();
                 }
             }
@@ -63,7 +64,7 @@ const SignInForm = ({ addToast, closeModal }) => {
 // })
 
 const mapDispatchToProps = {
-    addToast, closeModal
+    addToast, closeModal, updateUser
 }
 
 export default connect(null, mapDispatchToProps)(SignInForm)
