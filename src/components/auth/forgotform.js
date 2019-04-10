@@ -16,7 +16,7 @@ const inputs = [
     },
 ];
 
-const ForgotForm = () => {
+const ForgotForm = ({ addToast, closeModal }) => {
     return (
         <RenderForm
             RenderItem={FormGroup}

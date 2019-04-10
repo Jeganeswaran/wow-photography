@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import { OpenModalBtn } from "../modals/modalbtns"
 
 const ProfileCard = () => {
     return (
@@ -12,9 +13,12 @@ const ProfileCard = () => {
                 <p className="mb-0 f-14 f-600 text-center">Dillip Ashokumar</p>
                 <p className="mb-1 f-14 text-center">dillip@billiontags.com</p>
                 <div className="f-13 text-center">
-                    <Link className="mr-2 theme-red text-underline" to="/my-collection">
+                    <OpenModalBtn 
+                        modalName="CHANGEPWD_MODAL"
+                        className="btn-a mr-2 theme-red text-underline"
+                    >
                         Change password
-                    </Link>
+                    </OpenModalBtn>
                     <Link className="theme-red text-underline" to="/my-collection">
                         Edit profile
                     </Link>

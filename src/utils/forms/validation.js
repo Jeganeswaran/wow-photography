@@ -1,9 +1,16 @@
 //form validation
 export const validate = (list, dispatch) => {
     let isErr = false;
-    list.forEach(({ inputProps, isOptional }) => {
+    list.forEach(({ inputProps, isOptional, customValid }) => {
         if (!isOptional) {
-            const invalid = isValid(inputProps);
+            let invalid = false;
+            invalid = isValid(inputProps, list, customValid);
+            if (customValid) {
+                const customErr = customValid(list, inputProps.value);
+                if(customErr){
+                    invalid = customErr
+                }
+            } 
             if (invalid) {
                 dispatch({ type: "SET_ERROR", err: invalid, name: inputProps.name })
                 isErr = true;
@@ -34,13 +41,19 @@ export const isValid = ({ type, value }) => {
 }
 
 //reduce form to values
-export const reduceForm = (list=[]) => {
-    return list.reduce((acc, cur) => {
+export const reduceForm = (list = []) => {
+    return list.reduce((acc, {reduceTo, inputProps}) => {
+        const val = reduceTo ? reduceTo() : {[inputProps.name]: inputProps.value}
         return {
             ...acc,
-            [cur.inputProps.name]: cur.inputProps.value
+            ...val
         }
     }, {})
+}
+
+//get value by name
+export const getValByName = (list, name) => {
+    return list.filter(x => x.inputProps.name === name)[0].inputProps.value
 }
 
 //check email
