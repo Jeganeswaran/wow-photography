@@ -1,6 +1,7 @@
 import thunk from "redux-thunk";
 import storeUser from "./storeUser"
+import httpreq from "./httpreq";
 
-let middlewares = [thunk, storeUser];
+const middlewares = [thunk, httpreq, storeUser];
 
 export default middlewares

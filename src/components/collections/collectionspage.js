@@ -6,8 +6,14 @@ import CollCount from './collcount';
 import RouteTabs from '../routes/routetabs';
 import PrivateCollection from './privatecollection';
 import PublishCollection from './publishcollection';
+import { connect } from 'react-redux'
+import useHttp from "../../hooks/http/useHttp"
 
-const CollectionsPage = () => {
+
+const CollectionsPage = ({dispatch}) => {
+
+    useHttp(dispatch, "MY_COLLECTION", {url: "photos/", type: "GET"}, 'my_collection');
+
     return (
         <PageLayout>
             <div className="row">
@@ -51,4 +57,4 @@ const CollectionsPage = () => {
     )
 }
 
-export default CollectionsPage
+export default connect(null)(CollectionsPage)

@@ -5,8 +5,8 @@ import PublishCard from './publishcard';
 
 const PrivateCollection = () => {
     return (
-        <div>
-            <div className="row pt-4 pb-3">
+        <div className="pt-4">
+            <div className="row pb-3">
                 <div className="col-md-6">
                     <PublishCard
                         isPrivate
