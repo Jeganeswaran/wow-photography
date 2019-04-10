@@ -21,8 +21,7 @@ const PageLayout = ({ children, isToken }) => {
     if(isToken){
         links.unshift({
             children: "My Collection",
-            to: "/my-collection",
-            exact: true 
+            to: "/my-collection"
         })
     }
 
