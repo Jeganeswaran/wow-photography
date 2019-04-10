@@ -3,9 +3,10 @@ import apiInstance from "./apiInstance"
 
 const user = loadLocalState();
 
-
 //add token to apiInstance
-apiInstance.defaults.headers.common['Authorization'] = `Token ${user.token}`;
+if (user && user.token) {
+    apiInstance.defaults.headers.common['Authorization'] = `Token ${user.token}`;
+}
 
 const initialState = {
     user

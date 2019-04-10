@@ -1,15 +1,17 @@
 import { useEffect, useReducer } from "react"
 import dataFetchReducer from "./dataFetchReducer"
-import apiInstance, { CancelToken, isCancel } from "../../redux/apiIntance";
+import apiInstance, { CancelToken, isCancel } from "../../redux/apiInstance";
 import ajaxerrmsg from "../../utils/ajaxerrmsg";
 
-const useDataSubmit = (config, succFunc, errFunc, deps = [] ) => {
+const useDataSubmit = ({ count = 0 , config = null}, succFunc = null, errFunc = null) => {
 
     const [state, dispatch] = useReducer(dataFetchReducer, {
         isLoading: false,
         isError: false,
         data: {}
     });
+
+    console.log(count);
 
     useEffect(() => {
 
@@ -42,7 +44,7 @@ const useDataSubmit = (config, succFunc, errFunc, deps = [] ) => {
             }
         };
 
-        if(config.isValid){
+        if (count && config) {
             fetchData();
         }
 
@@ -51,7 +53,7 @@ const useDataSubmit = (config, succFunc, errFunc, deps = [] ) => {
                 cancel("cancelled by user")
             }
         };
-    }, deps);
+    }, [count]);
 
     return state
 };

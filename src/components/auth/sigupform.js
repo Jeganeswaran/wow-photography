@@ -1,6 +1,9 @@
 import React from 'react'
 import RenderForm from '../form/renderform';
 import FormGroup from '../form/formgroup';
+import { register_url } from '../../redux/actions/constants';
+import { addToast, closeModal } from '../../redux/actions/common';
+import { connect } from 'react-redux'
 
 const inputs = [
     {
@@ -37,14 +40,37 @@ const inputs = [
     },
 ];
 
-const SignUpForm = () => {
+const SignUpForm = ({ addToast, closeModal }) => {
     return (
         <RenderForm 
             RenderItem={FormGroup}
             inputs={inputs}
             title="signup-form"
+            config={{
+                url: register_url,
+                method: "POST"
+            }}
+            succFunc={
+                (data) => {
+                    addToast("Activation mail has been sent to Email Id")
+                    closeModal();
+                }
+            }
+            errFunc={
+                (data) => {
+                    addToast(data, false);
+                }
+            }
         />
     )
 }
 
-export default SignUpForm
+// const mapStateToProps = (state) => ({
+
+// })
+
+const mapDispatchToProps = {
+    addToast, closeModal
+}
+
+export default connect(null, mapDispatchToProps)(SignUpForm)
