@@ -23,3 +23,4 @@ export const USER = "USER";
 export const login_url = "auth/login/";
 export const register_url = "auth/register/";
 export const forgot_url = "auth/forgot-password/";
+export const logout_url = "auth/logout/";

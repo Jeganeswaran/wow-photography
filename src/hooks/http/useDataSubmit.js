@@ -1,17 +1,18 @@
-import { useEffect, useReducer } from "react"
+import { useEffect, useReducer, useState } from "react"
 import dataFetchReducer from "./dataFetchReducer"
 import apiInstance, { CancelToken, isCancel } from "../../redux/apiInstance";
 import ajaxerrmsg from "../../utils/ajaxerrmsg";
 
-const useDataSubmit = ({ count = 0 , config = null}, succFunc = null, errFunc = null) => {
+const useDataSubmit = (succFunc = null, errFunc = null) => {
+
+    //set req
+    const [{ count, config}, setReq] = useState({ count: 0, config: null })
 
     const [state, dispatch] = useReducer(dataFetchReducer, {
         isLoading: false,
         isError: false,
         data: {}
     });
-
-    console.log(count);
 
     useEffect(() => {
 
@@ -55,7 +56,7 @@ const useDataSubmit = ({ count = 0 , config = null}, succFunc = null, errFunc = 
         };
     }, [count]);
 
-    return state
+    return { setReq, res: state, req: { count, config} }
 };
 
 export default useDataSubmit;

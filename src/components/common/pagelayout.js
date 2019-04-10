@@ -1,27 +1,35 @@
 import React from 'react'
 import TabHeader from './tabheader';
+import { connect } from 'react-redux'
 
-const PageLayout = ({ children }) => {
+
+const PageLayout = ({ children, isToken }) => {
+
+    let links = [
+        {
+            children: "Wow Picks",
+            to: "/",
+            exact: true
+        },
+        {
+            children: "Announcements",
+            to: "/announcements",
+            exact: false
+        }
+    ];
+
+    if(isToken){
+        links.unshift({
+            children: "My Collection",
+            to: "/my-collection",
+            exact: true 
+        })
+    }
+
     return (
         <div>
             <TabHeader
-                tablinks={[
-                    {
-                        children: "My Collections",
-                        to: "/my-collection",
-                        exact: false
-                    },
-                    {
-                        children: "Wow Picks",
-                        to: "/",
-                        exact: true
-                    },
-                    {
-                        children: "Announcements",
-                        to: "/announcements",
-                        exact: false
-                    }
-                ]}
+                tablinks={links}
             />
             <section className="post-section">
                 <div className="container">
@@ -32,4 +40,12 @@ const PageLayout = ({ children }) => {
     )
 }
 
-export default PageLayout
+const mapStateToProps = ({user}) => ({
+    isToken: user && user.token
+})
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PageLayout)

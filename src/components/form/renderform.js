@@ -1,8 +1,9 @@
-import React, { useState, useReducer } from 'react'
+import React, { useReducer } from 'react'
 import List from '../common/list';
 import formReducer from '../../hooks/form/formReducer';
 import { validate, reduceForm } from '../../utils/forms/validation';
 import useDataSubmit from '../../hooks/http/useDataSubmit';
+import LoadingBtn from '../common/loadingbtn';
 
 const RenderForm = ({
     RenderItem, inputs, title,
@@ -12,11 +13,8 @@ const RenderForm = ({
     //form state    
     const [state, dispatch] = useReducer(formReducer, inputs);
 
-    //set req
-    const [req, setReq] = useState({ count: 0, conf: null })
-
     //data fetching effect
-    const submit = useDataSubmit(req, succFunc, errFunc)
+    const { res, setReq } = useDataSubmit(succFunc, errFunc)
 
     //handle submit
     const handleSubmit = () => {
@@ -27,7 +25,7 @@ const RenderForm = ({
         setReq(x => ({
             ...x,
             count: x.count + 1,
-            config: {...config, data: reduceForm(state)}
+            config: { ...config, data: reduceForm(state) }
         }))
     };
 
@@ -46,13 +44,11 @@ const RenderForm = ({
                 title={title}
                 dispatch={dispatch}
             />
-            <button
-                disabled={submit.fetching}
+            <LoadingBtn
+                fetching={res.fetching}
                 type="submit"
                 className={btnCls}
-            >
-                {submit.fetching ? 'Loading...' : 'Submit'}
-            </button>
+            />
         </form>
     )
 }
