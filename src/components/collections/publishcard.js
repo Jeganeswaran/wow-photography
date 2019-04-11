@@ -25,10 +25,18 @@ const PublishCard = ({ is_submitted, thumbnail, photo_id, id, submitted_on, is_a
                     </OpenModalBtn>
                 }
             </div>
-            <div className="flex-between p-1">
-                <span>{is_approved ? "Approved" : is_approved === false ? "Rejected" : "Pending Approval"}</span>
-                <span>{submitted_on ? dateFormat(submitted_on) : ''}</span>
-            </div>
+            { is_submitted && <div className="flex-between p-1">
+                <span>
+                {
+                    is_approved ? 
+                    <span className="text-success">Approved</span> : 
+                        is_approved === false ? 
+                            <span className="text-danger">Rejected</span> : 
+                            <span className="theme-red">Pending Approval</span>
+                }
+                </span>
+                <span>{submitted_on ? dateFormat(submitted_on) : ''}</span> 
+            </div>}
         </div>
     )
 }

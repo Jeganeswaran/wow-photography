@@ -29,5 +29,6 @@ export const register_url = "auth/register/";
 export const forgot_url = "auth/forgot-password/";
 export const logout_url = "auth/logout/";
 export const changepwd_url = "auth/change-password/";
+export const activate_url = "auth/activate-account/";
 export const photos_url = "photos/";
 export const cat_url = "master/categories/";

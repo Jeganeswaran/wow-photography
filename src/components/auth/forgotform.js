@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 const inputs = [
     {
         inputProps: {
-            name: "Email",
+            name: "email",
             type: "email",
             value: '',
             placeholder: "Enter your Email"

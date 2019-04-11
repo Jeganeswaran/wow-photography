@@ -245,6 +245,7 @@ hr[data-title]:before {
     width: 125px;
     z-index: 1;
     border-radius: 50%;
+    background: #fff;
 }
 
 .profile-details {
