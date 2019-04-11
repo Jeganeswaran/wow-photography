@@ -18,6 +18,7 @@ export const _UPDATE_DATA = "_UPDATE_DATA";
 
 //user
 export const USER = "USER";
+export const CATEGORIES = "CATEGORIES";
 
 //photos
 export const MY_COLLECTION = "MY_COLLECTION";
@@ -28,4 +29,5 @@ export const register_url = "auth/register/";
 export const forgot_url = "auth/forgot-password/";
 export const logout_url = "auth/logout/";
 export const changepwd_url = "auth/change-password/";
-export const photos_url = "photos/"
+export const photos_url = "photos/";
+export const cat_url = "master/categories/";

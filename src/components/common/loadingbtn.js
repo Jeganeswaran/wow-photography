@@ -1,9 +1,9 @@
 import React from 'react'
 
-const LoadingBtn = ({ title = "Submit", fetching = false, ...restProps }) => {
+const LoadingBtn = ({ title = "Submit", fetching = false, disabled = false, ...restProps }) => {
     return (
         <button
-            disabled={fetching}
+            disabled={disabled || fetching || false }
             {...restProps}
         >
             {fetching ? `loading...` : title}

@@ -325,3 +325,24 @@ hr[data-title]:before {
     flex: 1 1;
     padding: 10px 0;
 }
+
+.cat-list{
+    padding: 0;
+    margin: 0 0 20px 0;
+    list-style: none;
+}
+
+.cat-list li{
+    display: inline-block;
+    border-radius: 20px;
+    padding: 2px 20px;
+    /* font-size: 14px; */
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.cat-active{
+    background: #df006f;
+    color: #fff;
+}

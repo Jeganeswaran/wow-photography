@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import List from './list';
 import Loader from './loader';
 
-const DynamicList = ({ RenderItem, title , list = [], fetching }) => {
+const DynamicList = ({ RenderItem, title , list = [], fetching, ...restProps }) => {
     return (
         <Fragment>
             {
@@ -11,6 +11,7 @@ const DynamicList = ({ RenderItem, title , list = [], fetching }) => {
                     RenderItem={RenderItem}
                     title={title}
                     list={list}
+                    {...restProps}
                 />
             }
             {

@@ -1,28 +1,33 @@
 import React from 'react'
 import { OpenModalBtn } from "../modals/modalbtns"
-// import Publishbtn from './publishbtn';
+import dateFormat from "../../utils/dateFormat"
 
-const PublishCard = ({ is_submitted, photo, photo_id, id }) => {
+const PublishCard = ({ is_submitted, thumbnail, photo_id, id, submitted_on, is_approved }) => {
     return (
         <div className="post">
             <div className="post-img-holder relative">
                 <img
                     className="post-img"
-                    src={photo}
+                    src={thumbnail}
                     alt={photo_id}
                 />
                 {
                     is_submitted ?
-                    <button className="btn btn-pill btn-publish">
-                        Share
+                        <button className="btn btn-pill btn-publish">
+                            Share
                     </button> :
-                    <OpenModalBtn 
-                        modalName="PUBLISH_MODAL"
-                        className="btn btn-pill btn-publish"
-                    >
-                        Publish
+                        <OpenModalBtn
+                            modalName="PUBLISH_MODAL"
+                            modalProps={{ id }}
+                            className="btn btn-pill btn-publish"
+                        >
+                            Publish
                     </OpenModalBtn>
                 }
+            </div>
+            <div className="flex-between p-1">
+                <span>{is_approved ? "Approved" : is_approved === false ? "Rejected" : "Pending Approval"}</span>
+                <span>{submitted_on ? dateFormat(submitted_on) : ''}</span>
             </div>
         </div>
     )

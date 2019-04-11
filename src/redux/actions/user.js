@@ -1,5 +1,4 @@
 import { USER, _UPDATE_DATA, _CLEAR, MY_COLLECTION, _FULFILLED } from "./constants";
-const isHttp = true;
 
 //update user
 export const updateUser = (payload) => ({
@@ -13,18 +12,16 @@ export const clearUser = (payload) => ({
     payload
 })
 
-//load collections
-export const loadCollections = () => ({
-    isHttp,
-    type:"MY_COLLECTION", 
-    payload: {
-        url: "photos/",
-    }, 
-    objName: 'my_collection'
-})
-
 //add photo success
-export const addPhotoSuccess = (payload) => ({
-    type: MY_COLLECTION + _FULFILLED,
-    payload
-})
+export const addPhotoSuccess = (payload) => {
+    return dispatch => {
+        dispatch({
+            type: MY_COLLECTION + _FULFILLED,
+            payload
+        });
+        dispatch(updateUser({
+            private_photographs: payload.private_collection.length,
+            submitted_photo: payload.submitted.length
+        }));
+    }
+} 
