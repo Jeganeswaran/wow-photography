@@ -9,7 +9,6 @@ import PublishCollection from './publishcollection';
 import { connect } from 'react-redux'
 import useHttp from "../../hooks/http/useHttp"
 
-
 const CollectionsPage = ({dispatch}) => {
 
     useHttp(dispatch, "MY_COLLECTION", {url: "photos/", type: "GET"}, 'my_collection');

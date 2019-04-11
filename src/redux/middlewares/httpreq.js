@@ -29,7 +29,6 @@ const shouldNotFetchData = (state, name) => {
     }
     //get data
     const data = getData(state, name);
-    console.log(data.cached);
     if (!data) {
         return false
     } else if (data.cached) {
@@ -47,7 +46,6 @@ const getData = (state, name) => {
     levels.forEach(x => {
         depth = depth[x];
     })
-    console.log(depth);
     return depth;
 }
 

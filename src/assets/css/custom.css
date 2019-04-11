@@ -145,7 +145,7 @@ hr[data-title]:before {
 .banner {
     min-height: 350px;
     /* will change */
-    background-image: url("https://cdn.pixabay.com/photo/2017/08/07/21/56/people-2608316_960_720.jpg");
+    background-image: url("../img/banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -271,7 +271,9 @@ hr[data-title]:before {
     position: absolute;
     bottom: 25px;
     right: 25px;
-    background: #fff !important;
+    min-width: 122px;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
 }
 
 .btn-pill {

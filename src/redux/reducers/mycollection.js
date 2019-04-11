@@ -2,8 +2,8 @@ import { MY_COLLECTION, _FETCHING, _FULFILLED, _REJECTED } from "../actions/cons
 
 //my collections reducer
 const my_collection = (state = {
-    fetching: false,
-    priv: [], submitted: [],
+    fetching: null,
+    private_collection: [], submitted: [],
     error: false,
     cached: false,
 }, action) => {
@@ -19,8 +19,8 @@ const my_collection = (state = {
             return {
                 ...state,
                 fetching: false,
-                priv: state.priv.concat(action.payload.private),
-                submitted: state.submitted.concat(action.payload.submitted),
+                private_collection: action.payload.private_collection,
+                submitted: action.payload.submitted,
                 cached: true
             }
         case MY_COLLECTION + _REJECTED:

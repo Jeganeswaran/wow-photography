@@ -2,7 +2,6 @@ import React from 'react'
 import Banner from './banner';
 import Post from './post';
 import PageLayout from '../common/pagelayout';
-import Loader from '../common/loader';
 
 const LandingPage = () => {
     return (

@@ -1,22 +1,27 @@
 import React from 'react'
+import { OpenModalBtn } from "../modals/modalbtns"
+// import Publishbtn from './publishbtn';
 
-const PublishCard = ({ title = "", image, isPrivate = false }) => {
+const PublishCard = ({ is_submitted, photo, photo_id, id }) => {
     return (
         <div className="post">
             <div className="post-img-holder relative">
                 <img
                     className="post-img"
-                    src={image}
-                    alt={title}
+                    src={photo}
+                    alt={photo_id}
                 />
                 {
-                    isPrivate ?
-                    <button className="btn btn-pill btn-publish">
-                        Publish
-                    </button> :
+                    is_submitted ?
                     <button className="btn btn-pill btn-publish">
                         Share
-                    </button>
+                    </button> :
+                    <OpenModalBtn 
+                        modalName="PUBLISH_MODAL"
+                        className="btn btn-pill btn-publish"
+                    >
+                        Publish
+                    </OpenModalBtn>
                 }
             </div>
         </div>
