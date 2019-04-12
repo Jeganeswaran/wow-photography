@@ -16,11 +16,12 @@ export const clearUser = (payload) => ({
 //add photo success
 export const addPhotoSuccess = (payload) => {
     return dispatch => {
+        let is_submitted = payload.is_submitted; 
         dispatch(
-            addData( payload.is_submitted ? PUBLISHED_COLLECTION : PRIVATE_COLLECTION, [payload])
+            addData( is_submitted ? PUBLISHED_COLLECTION : PRIVATE_COLLECTION, [payload])
         )
         dispatch(
-            removeData( payload.is_submitted ? PRIVATE_COLLECTION: PUBLISHED_COLLECTION, payload.id)
+            removeData( is_submitted ? PRIVATE_COLLECTION: PUBLISHED_COLLECTION, payload.id)
         )
     }
 } 
