@@ -1,8 +1,8 @@
 import React, { useEffect, Fragment } from 'react'
 import { connect } from 'react-redux';
 import DynamicList from './dynamiclist';
-import { _CLEAR } from "../../redux/actions/constants";
 import LoadMore from './loadmore';
+import { clearData, setCache } from '../../redux/actions/http';
 
 const ScrollPaging = ({
     url,
@@ -31,9 +31,11 @@ const ScrollPaging = ({
         })
 
         return () => {
-            dispatch({
-                type: type + _CLEAR
-            })
+            if(clearList){
+                dispatch(clearData(type))
+            } else {
+                dispatch(setCache(type))
+            }
         }
 
     }, [url]);

@@ -1,4 +1,5 @@
-import { USER, _UPDATE_DATA, _CLEAR } from "./constants";
+import { USER, _UPDATE_DATA, _CLEAR, PUBLISHED_COLLECTION, PRIVATE_COLLECTION } from "./constants";
+import { addData, removeData } from "./http";
 
 //update user
 export const updateUser = (payload) => ({
@@ -14,15 +15,12 @@ export const clearUser = (payload) => ({
 
 //add photo success
 export const addPhotoSuccess = (payload) => {
-    console.log(payload);
-    // return dispatch => {
-    //     dispatch({
-    //         type: MY_COLLECTION + _FULFILLED,
-    //         payload
-    //     });
-    //     dispatch(updateUser({
-    //         private_photographs: payload.private_collection.length,
-    //         submitted_photo: payload.submitted.length
-    //     }));
-    // }
+    return dispatch => {
+        dispatch(
+            addData( payload.is_submitted ? PUBLISHED_COLLECTION : PRIVATE_COLLECTION, [payload])
+        )
+        dispatch(
+            removeData( payload.is_submitted ? PRIVATE_COLLECTION: PUBLISHED_COLLECTION, payload.id)
+        )
+    }
 } 

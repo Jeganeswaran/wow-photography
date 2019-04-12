@@ -30,7 +30,7 @@ const PublishCollection = ({ public_collection }) => {
                             )}
                             type={PUBLISHED_COLLECTION}
                             url={photos_url + "?is_published=true"}
-                            objName="private_collection"
+                            objName="public_collection"
                         />
                 }
             </div>

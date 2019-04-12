@@ -1,4 +1,4 @@
-import { _FETCHING, _FULFILLED, _REJECTED, _CLEAR, _ADD_DATA, _UPDATE_DATA } from "../actions/constants";
+import { _FETCHING, _FULFILLED, _REJECTED, _CLEAR, _ADD_DATA, _REMOVE_DATA, _UPDATE_DATA, _SET_CACHE } from "../actions/constants";
 
 //intial httpObject
 const httpObjectInitial = {
@@ -22,7 +22,8 @@ const resultsIntial = {
     error: false,
     count: null,
     next: null,
-    prev: null
+    prev: null,
+    cached: false
 };
 
 //create http reducer function
@@ -165,7 +166,17 @@ export const httpResultsReducer = (name) => {
             case `${name}${_ADD_DATA}`:
                 return {
                     ...state,
-                    data: [action.payload.data, ...action.payload.results]
+                    data: [...action.payload, ...state.data]
+                }
+            case `${name}${_REMOVE_DATA}`:
+                return {
+                    ...state,
+                    data: state.data.filter( x => x.id !== action.id )
+                }
+            case `${name}${_SET_CACHE}`:
+                return {
+                    ...state,
+                    cached: true
                 }
             case `${name}${_CLEAR}`:
                 return { ...state, ...resultsIntial }

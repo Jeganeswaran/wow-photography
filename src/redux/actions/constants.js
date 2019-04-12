@@ -15,6 +15,7 @@ export const _CLEAR = "_CLEAR";
 export const _ADD_DATA = "_ADD_DATA";
 export const _REMOVE_DATA = "_REMOVE_DATA";
 export const _UPDATE_DATA = "_UPDATE_DATA";
+export const _SET_CACHE = "_SET_CACHE";
 
 //user
 export const USER = "USER";
