@@ -25,7 +25,7 @@ const RenderForm = ({
         setReq(x => ({
             ...x,
             count: x.count + 1,
-            config: { ...config, data: reduceForm(state) }
+            config: { ...config, data: { ...config.data, ...reduceForm(state) } }
         }))
     };
 

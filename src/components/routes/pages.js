@@ -8,6 +8,7 @@ import UserRoute from "./userroute";
 import PrivacyPolicy from "../static/privacy";
 import Terms from "../static/terms";
 import RefundPolicy from "../static/refundpolicy";
+import ResetPwdPage from "../auth/resetpwdpage";
 
 const Pages = () => {
     return (
@@ -16,6 +17,7 @@ const Pages = () => {
                 <Route exact path="/" component={LandingPage} />
                 <UserRoute path="/my-collection" component={CollectionsPage} />
                 <Route path="/activate-account" component={ActivatePage} />
+                <Route path="/reset-password" component={ResetPwdPage} />
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-and-conditions" component={Terms} />
                 <Route path="/refund-policy" component={RefundPolicy} />

@@ -42,6 +42,7 @@ const PubLish = ({ id, addPhotoSuccess, addToast, closeModal }) => {
                 />
             </ul>
             <LoadingBtn
+                title="Publish"
                 fetching={res.fetching}
                 className="btn btn-theme btn-block"
                 disabled={!choosenId}
@@ -58,9 +59,7 @@ const PubLish = ({ id, addPhotoSuccess, addToast, closeModal }) => {
                         }
                     }))
                 }}
-            >
-                Publish
-            </LoadingBtn>
+            />
         </div>
     )
 }

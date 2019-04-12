@@ -218,7 +218,11 @@ hr[data-title]:before {
 .footer {
     background: #272727;
     font-size: 15px;
-    color: #ececec;
+    color: #ececec !important;
+}
+
+.footer a{
+    color: #ececec !important;
 }
 
 /* fotter css ends here */
@@ -346,6 +350,7 @@ hr[data-title]:before {
 .cat-active{
     background: #df006f;
     color: #fff;
+    border: 1px solid #df006f;
 }
 
 .static-content-header{
@@ -374,4 +379,8 @@ hr[data-title]:before {
 
 .static-content p{
     text-align: justify;
+}
+
+.static-content a{
+    color: #df006f;
 }

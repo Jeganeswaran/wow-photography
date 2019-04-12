@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import useDataSubmit from '../../hooks/http/useDataSubmit';
 import { urlParams } from '../../utils/urlParams';
 import Pagelayout from '../common/pagelayout';
@@ -6,8 +6,17 @@ import Submitbtn from '../common/submitbtn';
 import { Redirect } from "react-router-dom"
 import { activate_url } from '../../redux/actions/constants';
 import icon from "../../assets/img/correct.png"
+import { connect } from 'react-redux'
+import { updateUser, clearUser } from '../../redux/actions/user';
 
-const ActivatePage = ({ location }) => {
+const ActivatePage = ({ isToken, location, dispatch }) => {
+
+    useEffect(() => {
+        if (isToken) {
+            dispatch(clearUser());
+        }
+    }, [])
+
     if (!location.search) {
         return <Redirect to="/" />
     }
@@ -39,7 +48,8 @@ const ActivatePage = ({ location }) => {
                                         uid, token, client: Math.random() * 1000
                                     }
                                 }}
-                                success={() => {
+                                success={(data) => {
+                                    dispatch(updateUser(data));
                                     location.replace("/");
                                 }}
                             />
@@ -53,4 +63,9 @@ const ActivatePage = ({ location }) => {
     )
 }
 
-export default ActivatePage
+const mapStateToProps = ({ user }) => ({
+    isToken: user && user.token
+})
+
+
+export default connect(mapStateToProps)(ActivatePage)
