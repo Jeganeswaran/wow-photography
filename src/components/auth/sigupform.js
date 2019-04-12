@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 const inputs = [
     {
         inputProps: {
-            name: "First Name",
+            name: "first_name",
             type: "text",
             value: '',
             placeholder: "Enter your First Name"
@@ -16,7 +16,7 @@ const inputs = [
     },
     {
         inputProps: {
-            name: "Last Name",
+            name: "last_name",
             type: "text",
             value: '',
             placeholder: "Enter your Last Name"

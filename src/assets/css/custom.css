@@ -221,7 +221,7 @@ hr[data-title]:before {
     color: #ececec !important;
 }
 
-.footer a{
+.footer a {
     color: #ececec !important;
 }
 
@@ -278,7 +278,7 @@ hr[data-title]:before {
     right: 25px;
     min-width: 122px;
     background: #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
 }
 
 .btn-pill {
@@ -331,13 +331,13 @@ hr[data-title]:before {
     padding: 10px 0;
 }
 
-.cat-list{
+.cat-list {
     padding: 0;
     margin: 0 0 20px 0;
     list-style: none;
 }
 
-.cat-list li{
+.cat-list li {
     display: inline-block;
     border-radius: 20px;
     padding: 2px 20px;
@@ -347,40 +347,40 @@ hr[data-title]:before {
     cursor: pointer;
 }
 
-.cat-active{
+.cat-active {
     background: #df006f;
     color: #fff;
     border: 1px solid #df006f;
 }
 
-.static-content-header{
+.static-content-header {
     background: #df006f;
-    height: 100px;
+    min-height: 100px;
     color: #fff;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.static-content-header h1{
+.static-content-header h1 {
     font-weight: 700;
 }
 
-.static-content{
+.static-content {
     margin-bottom: 40px;
 }
 
-.static-content h5{
+.static-content h5 {
     font-weight: 700;
 }
 
-.static-content h2{
+.static-content h2 {
     margin-bottom: 20px;
 }
 
-.static-content p{
+.static-content p {
     text-align: justify;
 }
 
-.static-content a{
+.static-content a {
     color: #df006f;
 }
