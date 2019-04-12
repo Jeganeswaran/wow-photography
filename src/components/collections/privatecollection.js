@@ -3,16 +3,17 @@ import AddPhotos from './addphotos';
 import GuideLines from './guidelines';
 import PublishCard from './publishcard';
 import { connect } from 'react-redux'
-import DynamicList from '../common/dynamiclist';
+import ScrollPaging from '../common/scrollpaging';
 import { addPhotoSuccess } from '../../redux/actions/user';
 import { addToast } from '../../redux/actions/common';
+import { PRIVATE_COLLECTION, photos_url } from '../../redux/actions/constants';
 
-const PrivateCollection = ({ my_collection, addPhotoSuccess, addToast }) => {
+const PrivateCollection = ({ private_collection, addPhotoSuccess, addToast }) => {
 
     return (
         <div className="pt-3">
             <div className="row pb-3">
-                <DynamicList
+                <ScrollPaging 
                     RenderItem={(props) => (
                         <div className="col-md-6">
                             <PublishCard
@@ -20,9 +21,9 @@ const PrivateCollection = ({ my_collection, addPhotoSuccess, addToast }) => {
                             />
                         </div>
                     )}
-                    title="private-collection"
-                    list={my_collection.private_collection}
-                    fetching={my_collection.fetching}
+                    type={PRIVATE_COLLECTION}
+                    url={photos_url}
+                    objName="private_collection"
                 />
             </div>
             <AddPhotos
@@ -34,8 +35,8 @@ const PrivateCollection = ({ my_collection, addPhotoSuccess, addToast }) => {
     )
 }
 
-const mapStateToProps = ({ my_collection }) => ({
-    my_collection
+const mapStateToProps = ({ private_collection }) => ({
+    private_collection
 })
 
 const mapDispatchToProps = {

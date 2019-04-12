@@ -21,7 +21,8 @@ export const USER = "USER";
 export const CATEGORIES = "CATEGORIES";
 
 //photos
-export const MY_COLLECTION = "MY_COLLECTION";
+export const PRIVATE_COLLECTION = "PRIVATE_COLLECTION";
+export const PUBLISHED_COLLECTION = "PUBLISHED_COLLECTION";
 
 //urls
 export const login_url = "auth/login/";

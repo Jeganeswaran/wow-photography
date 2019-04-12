@@ -3,34 +3,32 @@ import { _FETCHING, _FULFILLED, _REJECTED, _CLEAR, _ADD_DATA, _UPDATE_DATA } fro
 //intial httpObject
 const httpObjectInitial = {
     fetching: false, data: {}, error: false
-}; 
+};
 
 //intial httpObject
 const httpArrayInitial = {
     fetching: null, data: [], error: false
-}; 
+};
 
 //intial httpObject
 const httpArrayInitialCache = {
     fetching: null, data: [], error: false, cached: false
-}; 
+};
 
 //intial httpResultsReducer
 const resultsIntial = {
-    fetching: false, 
-    data: [], 
-    error: false, 
-    count: null, 
-    next: null, 
-    prev: null,
-    nextFetching: false,
-    nextError: false,
+    fetching: false,
+    data: [],
+    error: false,
+    count: null,
+    next: null,
+    prev: null
 };
 
 //create http reducer function
 export const httpObjectReducer = (name) => {
     return (state = httpObjectInitial, action) => {
-        switch(action.type){
+        switch (action.type) {
             case `${name}${_FETCHING}`:
                 return {
                     ...state,
@@ -50,7 +48,7 @@ export const httpObjectReducer = (name) => {
                     error: action.payload
                 }
             case `${name}${_CLEAR}`:
-                return {...state, ...httpObjectInitial}
+                return { ...state, ...httpObjectInitial }
             default:
                 return state
         }
@@ -60,7 +58,7 @@ export const httpObjectReducer = (name) => {
 //create http reducer function
 export const httpArrayReducer = (name) => {
     return (state = httpArrayInitial, action) => {
-        switch(action.type){
+        switch (action.type) {
             case `${name}${_FETCHING}`:
                 return {
                     ...state,
@@ -83,14 +81,14 @@ export const httpArrayReducer = (name) => {
                 return {
                     ...state,
                     data: state.data.map(x => {
-                        if(x.id === action.id){
-                            return {...x, ...action.payload}
+                        if (x.id === action.id) {
+                            return { ...x, ...action.payload }
                         }
                         return x;
                     })
                 }
             case `${name}${_CLEAR}`:
-                return {...state, ...httpArrayInitial}
+                return { ...state, ...httpArrayInitial }
             default:
                 return state
         }
@@ -100,7 +98,7 @@ export const httpArrayReducer = (name) => {
 //create http reducer function
 export const httpArrayReducerCache = (name) => {
     return (state = httpArrayInitialCache, action) => {
-        switch(action.type){
+        switch (action.type) {
             case `${name}${_FETCHING}`:
                 return {
                     ...state,
@@ -126,14 +124,14 @@ export const httpArrayReducerCache = (name) => {
                 return {
                     ...state,
                     data: state.data.map(x => {
-                        if(x.id === action.id){
-                            return {...x, ...action.payload}
+                        if (x.id === action.id) {
+                            return { ...x, ...action.payload }
                         }
                         return x;
                     })
                 }
             case `${name}${_CLEAR}`:
-                return {...state, ...httpArrayInitialCache}
+                return { ...state, ...httpArrayInitialCache }
             default:
                 return state
         }
@@ -142,7 +140,7 @@ export const httpArrayReducerCache = (name) => {
 
 export const httpResultsReducer = (name) => {
     return (state = resultsIntial, action) => {
-        switch(action.type){
+        switch (action.type) {
             case `${name}${_FETCHING}`:
                 return {
                     ...state,
@@ -156,7 +154,7 @@ export const httpResultsReducer = (name) => {
                     count: action.payload.count,
                     data: state.data.concat(action.payload.results),
                     next: action.payload.next,
-                    prev: action.payload.prev,
+                    prev: action.payload.prev
                 }
             case `${name}${_REJECTED}`:
                 return {
@@ -166,11 +164,11 @@ export const httpResultsReducer = (name) => {
                 }
             case `${name}${_ADD_DATA}`:
                 return {
-                    ...state, 
+                    ...state,
                     data: [action.payload.data, ...action.payload.results]
                 }
             case `${name}${_CLEAR}`:
-                return {...state, ...resultsIntial}
+                return { ...state, ...resultsIntial }
             default:
                 return state
         }

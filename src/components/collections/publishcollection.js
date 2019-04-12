@@ -1,44 +1,45 @@
 import React from 'react'
 import PublishCard from './publishcard';
 import { connect } from 'react-redux'
-import DynamicList from '../common/dynamiclist';
+import ScrollPaging from '../common/scrollpaging';
 import { Link } from "react-router-dom"
+import { PUBLISHED_COLLECTION, photos_url } from '../../redux/actions/constants';
 
-const PublishCollection = ({ my_collection }) => {
+const PublishCollection = ({ public_collection }) => {
     return (
         <div className="pt-3">
             <div className="row pb-3">
                 {
-                    my_collection.fetching !== null && my_collection.submitted.length === 0 ?
-                    <div className="col-md-12">
-                        <div className="flex-center border" style={{height: `130px`}}>
-                            <div>
-                                <Link className="btn btn-theme btn-pill" to="/my-collection/private-photographs">
-                                    Add Photos
+                    public_collection.count !== null && public_collection.data.length === 0 ?
+                        <div className="col-md-12">
+                            <div className="flex-center border" style={{ height: `130px` }}>
+                                <div>
+                                    <Link className="btn btn-theme btn-pill" to="/my-collection/private-photographs">
+                                        Add Photos
                                 </Link>
+                                </div>
                             </div>
-                        </div>
-                    </div> :
-                    <DynamicList
-                        RenderItem={(props) => (
-                            <div className="col-md-6">
-                                <PublishCard
-                                    {...props}
-                                />
-                            </div>
-                        )}
-                        title="private-collection"
-                        list={my_collection.submitted}
-                        fetching={my_collection.fetching}
-                    />
+                        </div> :
+                        <ScrollPaging
+                            RenderItem={(props) => (
+                                <div className="col-md-6">
+                                    <PublishCard
+                                        {...props}
+                                    />
+                                </div>
+                            )}
+                            type={PUBLISHED_COLLECTION}
+                            url={photos_url + "?is_published=true"}
+                            objName="private_collection"
+                        />
                 }
             </div>
         </div>
     )
 }
 
-const mapStateToProps = ({ my_collection }) => ({
-    my_collection
+const mapStateToProps = ({ public_collection }) => ({
+    public_collection
 })
 
 const mapDispatchToProps = {

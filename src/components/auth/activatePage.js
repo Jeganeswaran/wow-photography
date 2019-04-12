@@ -9,7 +9,7 @@ import icon from "../../assets/img/correct.png"
 import { connect } from 'react-redux'
 import { updateUser, clearUser } from '../../redux/actions/user';
 
-const ActivatePage = ({ isToken, location, dispatch }) => {
+const ActivatePage = ({ isToken, location, history, dispatch }) => {
 
     useEffect(() => {
         if (isToken) {
@@ -50,7 +50,7 @@ const ActivatePage = ({ isToken, location, dispatch }) => {
                                 }}
                                 success={(data) => {
                                     dispatch(updateUser(data));
-                                    location.replace("/");
+                                    history.replace("/");
                                 }}
                             />
                         </div>

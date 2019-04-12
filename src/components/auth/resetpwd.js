@@ -40,7 +40,7 @@ const inputs = [
 ];
 
 
-const ResetPwd = ({ isToken, location, updateUser, clearUser, addToast }) => {
+const ResetPwd = ({ isToken, location, history, updateUser, clearUser, addToast }) => {
 
     useEffect(() => {
         if (isToken) {
@@ -84,7 +84,7 @@ const ResetPwd = ({ isToken, location, updateUser, clearUser, addToast }) => {
                                 succFunc={
                                     (data) => {
                                         updateUser(data);
-                                        location.replace("/");
+                                        history.replace("/");
                                     }
                                 }
                                 errFunc={
