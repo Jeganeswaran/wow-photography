@@ -347,3 +347,31 @@ hr[data-title]:before {
     background: #df006f;
     color: #fff;
 }
+
+.static-content-header{
+    background: #df006f;
+    height: 100px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.static-content-header h1{
+    font-weight: 700;
+}
+
+.static-content{
+    margin-bottom: 40px;
+}
+
+.static-content h5{
+    font-weight: 700;
+}
+
+.static-content h2{
+    margin-bottom: 20px;
+}
+
+.static-content p{
+    text-align: justify;
+}
