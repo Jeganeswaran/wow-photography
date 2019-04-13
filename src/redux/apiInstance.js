@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const dev_domain = "192.168.1.7:8000";
+const dev_domain = "wowadmin.clusterbooks.com";
 const prod_domain = "wowadmin.clusterbooks.com";
 
 //rest

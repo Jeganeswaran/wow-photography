@@ -33,9 +33,7 @@ const ScrollPaging = ({
         return () => {
             if(clearList){
                 dispatch(clearData(type))
-            } else {
-                dispatch(setCache(type))
-            }
+            } 
         }
 
     }, [url]);
@@ -53,6 +51,7 @@ const ScrollPaging = ({
                 next && !fetching && !error &&
                 <LoadMore
                     listmore={() => {
+                        dispatch(setCache(type, false));
                         dispatch({
                             isHttp: true,
                             type,
@@ -60,7 +59,7 @@ const ScrollPaging = ({
                                 url: next
                             },
                             objName
-                        })
+                        });
                     }}
                 />
             }

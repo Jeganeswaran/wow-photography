@@ -1,8 +1,9 @@
 import { _SET_CACHE, _CLEAR, _ADD_DATA, _REMOVE_DATA } from "./constants";
 
 //update cache
-export const setCache = (name) => ({
-    type: name + _SET_CACHE
+export const setCache = (name, payload = false) => ({
+    type: name + _SET_CACHE,
+    payload
 })
 
 //clear list

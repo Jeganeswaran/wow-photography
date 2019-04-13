@@ -17,13 +17,13 @@ const httpArrayInitialCache = {
 
 //intial httpResultsReducer
 const resultsIntial = {
-    fetching: false,
+    fetching: null,
     data: [],
     error: false,
     count: null,
     next: null,
     prev: null,
-    cached: false
+    cached: null
 };
 
 //create http reducer function
@@ -152,10 +152,13 @@ export const httpResultsReducer = (name) => {
                 return {
                     ...state,
                     fetching: false,
+                    data: state.cached === null ?
+                        action.payload.results :
+                        state.data.concat(action.payload.results),
                     count: action.payload.count,
-                    data: state.data.concat(action.payload.results),
                     next: action.payload.next,
-                    prev: action.payload.prev
+                    prev: action.payload.prev,
+                    cached: true
                 }
             case `${name}${_REJECTED}`:
                 return {
@@ -171,12 +174,12 @@ export const httpResultsReducer = (name) => {
             case `${name}${_REMOVE_DATA}`:
                 return {
                     ...state,
-                    data: state.data.filter( x => x.id !== action.id )
+                    data: state.data.filter(x => x.id !== action.id)
                 }
             case `${name}${_SET_CACHE}`:
                 return {
                     ...state,
-                    cached: true
+                    cached: action.payload
                 }
             case `${name}${_CLEAR}`:
                 return { ...state, ...resultsIntial }
