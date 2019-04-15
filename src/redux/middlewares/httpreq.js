@@ -3,7 +3,7 @@ import { _FETCHING, _FULFILLED, _REJECTED } from "../actions/constants";
 import ajaxerrmsg from "../../utils/ajaxerrmsg";
 
 //common middleware for http requests
-//with steps to avoid potential race conditions durin network requests
+//with steps to avoid potential race conditions during network requests
 const httpreq = ({ dispatch, getState }) => next => action => {
 
     const { isHttp, payload, type, objName, ...rest } = action;
@@ -12,11 +12,11 @@ const httpreq = ({ dispatch, getState }) => next => action => {
         //objName depth must be specified with space
         //example 'user collections' -> user.collections
         //try to avoid very deep object location
-        //getState() retrun the state
+        //getState() returns the state 
         if (shouldNotFetchData(getState(), objName)) {
             return;
         }
-        //payload === http config
+        //payload === axios config
         fetchData(payload, type, dispatch, rest);
     } else {
         return next(action);

@@ -8,14 +8,14 @@ const storeUser = store => next => action => {
 	if (loginTypes.includes(action.type)) {
 		if (!action.error) {
 			const user = action.payload;
-			console.log(user);
 			saveLocalState(user);
-			// Alter defaults after instance has been created
+			// set default authorization token
 			if (user.token) {
 				apiInstance.defaults.headers.common['Authorization'] = `Token ${user.token}`;
 			}
 		}
 	} else if (action.type === `${USER}${_CLEAR}`) {
+		//remove authorization default from api instance
 		delete apiInstance.defaults.headers.common['Authorization'];
 		localStorage.removeItem('user');
 	}

@@ -21,7 +21,7 @@ export const addPhotoSuccess = (payload) => {
             dispatch(addData(PUBLISHED_COLLECTION, [payload]));
             dispatch(removeData(PRIVATE_COLLECTION, payload.id));
         } else {
-            dispatch(addData(PRIVATE_COLLECTION));
+            dispatch(addData(PRIVATE_COLLECTION, [payload]));
         }
     }
 } 
