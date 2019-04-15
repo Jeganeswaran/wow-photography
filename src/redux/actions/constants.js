@@ -36,3 +36,4 @@ export const resetpwd_url = "auth/reset-password/";
 export const photos_url = "photos/";
 export const cat_url = "master/categories/";
 export const fbauth_url = "auth/facebook-login/";
+export const gglauth_url = "auth/google-login/";
