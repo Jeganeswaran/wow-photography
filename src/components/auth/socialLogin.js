@@ -48,7 +48,7 @@ const SocialLogin = ({ updateUser, closeModal, addToast }) => {
     }
 
     const handleGgLogin = user => {
-        fbAuth.setReq(x => ({
+        ggAuth.setReq(x => ({
             ...x,
             count: x.count + 1,
             config: {
