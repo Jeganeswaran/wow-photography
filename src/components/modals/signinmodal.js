@@ -17,7 +17,7 @@ const SignInModal = () => {
                     </div>
                     <SignInForm />
                     <hr data-title="OR"></hr>
-                    <SocialLogin />
+                    <SocialLogin title={"Sign in"} />
                     <hr></hr>
                     <div className="flex-center flex-column">
                         <button onClick={() => tab.setCount(2)} className="btn btn-link btn-a f-12">

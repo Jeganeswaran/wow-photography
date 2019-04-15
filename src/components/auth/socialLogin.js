@@ -6,7 +6,7 @@ import { addToast, closeModal } from '../../redux/actions/common';
 import { connect } from 'react-redux'
 import { updateUser } from '../../redux/actions/user';
 
-const SocialLogin = ({ updateUser, closeModal, addToast }) => {
+const SocialLogin = ({ title, updateUser, closeModal, addToast }) => {
 
     const [showFb, setShowFb] = useState(true);
 
@@ -41,7 +41,7 @@ const SocialLogin = ({ updateUser, closeModal, addToast }) => {
                 method: "POST",
                 data: {
                     access_token: user._token.accessToken,
-                    client: Math.random() * 1000
+                    client: Math.random() * 10000
                 }
             }
         }))
@@ -56,7 +56,7 @@ const SocialLogin = ({ updateUser, closeModal, addToast }) => {
                 method: "POST",
                 data: {
                     access_token: user._token.idToken,
-                    client: Math.random() * 1000
+                    client: Math.random() * 10000
                 }
             }
         }))
@@ -86,12 +86,12 @@ const SocialLogin = ({ updateUser, closeModal, addToast }) => {
                             provider='facebook'
                             appId='685670868535724'
                             className="btn btn-theme bg--facebook btn-block"
-                            title={`Sign in with Facebook`}
+                            title={`${title} with Facebook`}
                             onLoginSuccess={handleFbLogin}
                             onLoginFailure={handleFbLoginFailure}
                         /> :
                         <button className="btn btn-theme bg--facebook btn-block">
-                            Sign in with Facebook
+                            {title} with Facebook
                         </button>
                 }
             </div>
@@ -103,12 +103,12 @@ const SocialLogin = ({ updateUser, closeModal, addToast }) => {
                         provider='google'
                         appId='440210990589-un9sqv3bipdtb6r618qrnu6heqn7gms1.apps.googleusercontent.com'
                         className="btn btn-theme bg--googleplus btn-block"
-                        title={`Sign in with Google`}
+                        title={`${title} with Google`}
                         onLoginSuccess={handleGgLogin}
                         onLoginFailure={handleGgLoginFailure}
                     /> :
                     <button className="btn btn-theme bg--googleplus btn-block">
-                        Sign in with Google
+                        {title} with Google
                     </button>
                 }
             </div>

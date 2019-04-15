@@ -1,6 +1,7 @@
 import React from 'react'
 import { CloseModalWrapper, ModalCon } from './modalbtns';
 import SignUpForm from '../auth/sigupform';
+import SocialLogin from '../auth/socialLogin';
 
 //modal name SIGNUP_MODAL
 const SignUpModal = () => {
@@ -13,16 +14,7 @@ const SignUpModal = () => {
                     </div>
                     <SignUpForm />
                     <hr data-title="OR"></hr>
-                    <div className="form-group">
-                        <button className="btn btn-theme bg--facebook btn-block">
-                            Sign up with Facebook
-                        </button>
-                    </div>
-                    <div className="form-group">
-                        <button className="btn btn-theme bg--googleplus btn-block">
-                            Sign up with Google
-                        </button>
-                    </div>
+                    <SocialLogin title={"Sign up"} />
                 </div>
             </ModalCon>
         </CloseModalWrapper>
