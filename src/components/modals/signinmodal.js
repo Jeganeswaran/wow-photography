@@ -3,6 +3,7 @@ import { CloseModalWrapper, ModalCon } from './modalbtns';
 import useCount from '../../hooks/useCount';
 import SignInForm from '../auth/sigininform';
 import ForgotForm from '../auth/forgotform';
+import SocialLogin from '../auth/socialLogin';
 
 //modal name SIGNIN_MODAL
 const SignInModal = () => {
@@ -16,16 +17,7 @@ const SignInModal = () => {
                     </div>
                     <SignInForm />
                     <hr data-title="OR"></hr>
-                    <div className="form-group">
-                        <button className="btn btn-theme bg--facebook btn-block">
-                            Sign in with Facebook
-                        </button>
-                    </div>
-                    <div className="form-group">
-                        <button className="btn btn-theme bg--googleplus btn-block">
-                            Sign in with Google
-                        </button>
-                    </div>
+                    <SocialLogin />
                     <hr></hr>
                     <div className="flex-center flex-column">
                         <button onClick={() => tab.setCount(2)} className="btn btn-link btn-a f-12">
