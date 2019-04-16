@@ -6,9 +6,11 @@ import useDataSubmit from '../../hooks/http/useDataSubmit';
 import LoadingBtn from '../common/loadingbtn';
 import FormGroup from '../form/formgroup';
 import { profile_url } from '../../redux/actions/constants';
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
+import { updateUser } from '../../redux/actions/user';
+import { addToast, closeModal } from '../../redux/actions/common';
 
-const Address = ({ inputs }) => {
+const Address = ({ inputs, dispatch }) => {
 
     //form state    
     const [state, formdispatch] = useReducer(formReducer, inputs);
@@ -16,10 +18,11 @@ const Address = ({ inputs }) => {
     //data fetching effect
     const { res, setReq } = useDataSubmit(
         (data) => {
-            console.log(data);
+            dispatch(updateUser(data));
+            dispatch(closeModal());
         }, 
         (data) => {
-            console.log(data);
+            dispatch(addToast(data, false));
         }
     )
 
@@ -68,4 +71,4 @@ const Address = ({ inputs }) => {
     )
 }
 
-export default Address
+export default connect(null)(Address)

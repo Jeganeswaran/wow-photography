@@ -5,12 +5,14 @@ const SelectIp = ({ dispatch, decendOp, decendIp, options, placeholder, value, .
 
     useEffect(() => {
         if(decendOp && decendIp){
-            const op = options.filter(x => x.id.toString() === value)[0];
+            // eslint-disable-next-line
+            const op = options.filter(x => x.id == value);
+            console.log(op);
             dispatch({
                 type: "UPDATE_INPUT",
                 name: decendIp,
                 payload: {
-                    options: op && op.length > 0 ? op[decendOp] : []
+                    options: op && op.length > 0 ? op[0][decendOp] : []
                 }
             })
         }

@@ -42,3 +42,4 @@ export const gglauth_url = "auth/google-login/";
 export const packages_url = "package/";
 export const profile_url = "users/";
 export const master_url = "master/categories/master_value/";
+export const transcation_url = "transaction/";
