@@ -50,6 +50,11 @@ const Header = ({ isToken, closeModal, addToast, clearUser  }) => {
                             </Fragment> :
                             <Fragment>
                                 <li>
+                                    <Link to="/purchase-plan">
+                                        Purchase plan
+                                    </Link>
+                                </li>
+                                <li>
                                     <OpenModalBtn
                                         className="btn-a font-weight-bold f-14"
                                         modalName="LOADING_MODAL"

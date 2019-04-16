@@ -139,6 +139,10 @@ hr[data-title]:before {
     font-size: 14px;
 }
 
+.menu-list li a {
+    text-decoration: none;
+}
+
 /* header css ends here*/
 
 /* landing page css */
@@ -354,7 +358,7 @@ hr[data-title]:before {
 }
 
 .static-content-header {
-    background: #df006f;
+    background: #009bd4;
     min-height: 100px;
     color: #fff;
     margin-bottom: 20px;

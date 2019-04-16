@@ -20,6 +20,7 @@ export const _SET_CACHE = "_SET_CACHE";
 //user
 export const USER = "USER";
 export const CATEGORIES = "CATEGORIES";
+export const PACKAGES = "PACKAGES";
 
 //photos
 export const PRIVATE_COLLECTION = "PRIVATE_COLLECTION";
@@ -37,3 +38,4 @@ export const photos_url = "photos/";
 export const cat_url = "master/categories/";
 export const fbauth_url = "auth/facebook-login/";
 export const gglauth_url = "auth/google-login/";
+export const packages_url = "package/";
