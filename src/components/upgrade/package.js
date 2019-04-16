@@ -1,5 +1,6 @@
 import React from 'react'
 import List from '../common/list';
+import PurchaseBtn from './purchasebtn';
 
 const Package = ({ id, name, photo_count, package_price}) => {
 
@@ -29,9 +30,7 @@ const Package = ({ id, name, photo_count, package_price}) => {
                     <h1 className="font-weight-bold mt-3">₹{package_price[0].price}</h1>
                 </div>
                 <div className="pt-3 pb-4">
-                    <button className="btn btn-theme btn-pill pl-5 pr-5">
-                        Purchase Plan
-                    </button>
+                    <PurchaseBtn id={id} />               
                 </div>
             </div>
         </div>

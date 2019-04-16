@@ -1,5 +1,10 @@
 import { _SET_CACHE, _CLEAR, _ADD_DATA, _REMOVE_DATA } from "./constants";
 
+//load data
+// export const loadData = () => {
+
+// }
+
 //update cache
 export const setCache = (name, payload = false) => ({
     type: name + _SET_CACHE,

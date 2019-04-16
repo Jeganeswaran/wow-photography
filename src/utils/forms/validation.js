@@ -28,9 +28,9 @@ export const isValid = ({ type, value }) => {
     if (type === "password") {
         return pwdValid(value) ? '' : "Password must have atleast 8 characters";
     }
-    if (type === "tel") {
-        return phoneValid(value) ? '' : "Phone number is invalid";
-    }
+    // if (type === "tel") {
+    //     return phoneValid(value) ? '' : "Phone number is invalid";
+    // }
     if (type === "date") {
         return dateValid(value) ? '' : "Date is invalid";
     }

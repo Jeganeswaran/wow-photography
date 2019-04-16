@@ -1,5 +1,6 @@
 import Ip from "./ip";
 import TextArea from "./textArea";
+import SelectIp from "./selectip";
 
 const renderInput = (type) => {
     switch (type) {
@@ -11,6 +12,8 @@ const renderInput = (type) => {
             return Ip
         case "textarea":
             return TextArea
+        case "select":
+            return SelectIp
         default:
             return Ip
     }

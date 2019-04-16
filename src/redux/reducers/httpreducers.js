@@ -2,7 +2,7 @@ import { _FETCHING, _FULFILLED, _REJECTED, _CLEAR, _ADD_DATA, _REMOVE_DATA, _UPD
 
 //intial httpObject
 const httpObjectInitial = {
-    fetching: false, data: {}, error: false
+    fetching: false, data: {}, error: false, cached: false
 };
 
 //intial httpObject
@@ -40,7 +40,8 @@ export const httpObjectReducer = (name) => {
                 return {
                     ...state,
                     fetching: false,
-                    data: action.payload
+                    data: action.payload,
+                    cached: true
                 }
             case `${name}${_REJECTED}`:
                 return {
