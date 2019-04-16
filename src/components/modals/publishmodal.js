@@ -1,20 +1,14 @@
 import React from 'react'
-import { CloseModalWrapper, ModalCon } from './modalbtns';
 import PubLish from '../collections/publish';
+import ModalLayout from './modallayout';
 
 //PUBLISH_MODAL
 const PublishModal = ({ id }) => {
     return (
-        <CloseModalWrapper className="modal-wrapper">
-            <ModalCon className="modal-container signin-modal">
-                <div>
-                    <div className="mb-4">
-                        <h3 className="font-weight-bold">Choose Category</h3>
-                    </div>
-                    <PubLish id={id} />
-                </div>
-            </ModalCon>
-        </CloseModalWrapper>
+        <ModalLayout 
+            title="Choose Category"        
+            children={<PubLish id={id} />}
+        />
     )
 }
 
