@@ -15,13 +15,21 @@ export const clearUser = (payload) => ({
 
 //add photo success
 export const addPhotoSuccess = (payload) => {
-    return dispatch => {
-        let is_submitted = payload.is_submitted;
+    return (dispatch, getState) => {
+        const user = getState().user;
+        const is_submitted = payload.is_submitted;
         if (is_submitted) {
             dispatch(addData(PUBLISHED_COLLECTION, [payload]));
             dispatch(removeData(PRIVATE_COLLECTION, payload.id));
+            dispatch(updateUser({
+                private_photographs: user.private_photographs - 1,
+                submitted_photo: user.submitted_photo + 1
+            }));
         } else {
             dispatch(addData(PRIVATE_COLLECTION, [payload]));
+            dispatch(updateUser({
+                private_photographs: user.private_photographs + 1
+            }));
         }
     }
 } 
