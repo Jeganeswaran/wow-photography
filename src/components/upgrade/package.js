@@ -1,39 +1,22 @@
 import React from 'react'
-import List from '../common/list';
-import PurchaseBtn from './purchasebtn';
 
-const Package = ({ id, name, photo_count, package_price}) => {
+const Package = ({ id, name, photo_count, country_price}) => {
 
     // const [country, setCountry] = useState(0);
 
     return (
-        <div className="col-md-4 border">
-            <div className="text-center flex-center flex-column">
-                <div className="pl-4 pr-4 pt-4">
-                    <h4 className="font-weight-bold mt-2">{name}</h4>
-                    <p className="f-14">
-                        Can upload upto <span className="font-weight-bold">{photo_count}</span> photos
-                    </p>
-                    <div className="form-group mt-3">
-                        <select 
-                            className="form-control f-14"
-                        >
-                            <List 
-                                RenderItem={({country}, index) => (
-                                    <option value="1">{country}</option>
-                                )}
-                                list={package_price}
-                                title={`countries-${id}`}
-                            />
-                        </select>
-                    </div>
-                    <h1 className="font-weight-bold mt-3">₹{package_price[0].price}</h1>
-                </div>
-                <div className="pt-3 pb-4">
-                    <PurchaseBtn id={id} />               
-                </div>
-            </div>
-        </div>
+        <tr>
+            <td>{name}</td>
+            <td>{country_price.symbol}{country_price.price}</td>
+            <td>{photo_count}</td>
+            <td>
+                <input 
+                    className="radio-ip" 
+                    type="radio" 
+                    name="choosen_package"
+                />
+            </td>
+        </tr>
     )
 }
 

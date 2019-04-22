@@ -1,5 +1,4 @@
 import React from 'react'
-import ModalLayout from './modallayout';
 import Address from '../auth/address';
 import { MASTER_VALUES, master_url } from '../../redux/actions/constants';
 import useHttp from '../../hooks/http/useHttp';
@@ -62,8 +61,7 @@ const inputs = (con) => [
     },
 ];
 
-//ADDRESS_MODAL
-const AddressModal = ({ master_values, dispatch }) => {
+const UpdatAddress = ({ master_values, dispatch }) => {
 
     //load master values
     useHttp(dispatch, MASTER_VALUES, { url: master_url }, 'master_values');
@@ -71,24 +69,19 @@ const AddressModal = ({ master_values, dispatch }) => {
     if (!master_values.data.countries) {
         if (master_values.fetching) {
             return (
-                <div className="modal-wrapper">
-                    <div className="flex-center">
-                        <Loader />
-                    </div>
+                <div className="flex-center">
+                    <Loader width="30px" height="30px" />
                 </div>
             )
         }
         return null
     }
     return (
-        <ModalLayout
-            title="Address"
-            children={
-                <Address
-                    inputs={inputs(master_values.data.countries)}
-                />
-            }
-        />
+        <div className="pt-2 pb-3 mb-5">
+            <Address
+                inputs={inputs(master_values.data.countries)}
+            />
+        </div>
     )
 }
 
@@ -96,4 +89,4 @@ const mapStateToProps = ({ master_values }) => ({
     master_values
 })
 
-export default connect(mapStateToProps)(AddressModal)
+export default connect(mapStateToProps)(UpdatAddress)

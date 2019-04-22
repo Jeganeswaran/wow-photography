@@ -3,7 +3,6 @@ import SignUpModal from "./signupmodal";
 import LoadingModal from "./loadingmodal";
 import ChangePwdModal from "./changepwdmodal";
 import PublishModal from "./publishmodal";
-import AddressModal from "./addressmodal";
 import ReqpayModal from "./requestpay"
 
 const selectModal = modalName => {
@@ -18,8 +17,6 @@ const selectModal = modalName => {
             return ChangePwdModal
         case "PUBLISH_MODAL":
             return PublishModal
-        case "ADDRESS_MODAL":
-            return AddressModal
         case "REQPAY_MODAL":
             return ReqpayModal
         default:

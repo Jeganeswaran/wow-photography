@@ -19,7 +19,7 @@ const Pages = () => {
                 <UserRoute path="/my-collection" component={CollectionsPage} />
                 <Route path="/activate-account" component={ActivatePage} />
                 <Route path="/reset-password" component={ResetPwdPage} />
-                <Route path="/purchase-plan" component={UpgradePage} />
+                <Route path="/upgrade" component={UpgradePage} />
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-and-conditions" component={Terms} />
                 <Route path="/refund-policy" component={RefundPolicy} />

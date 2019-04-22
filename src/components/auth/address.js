@@ -65,7 +65,7 @@ const Address = ({ inputs, dispatch }) => {
             <LoadingBtn
                 fetching={res.fetching}
                 type="submit"
-                className="btn btn-theme btn-block"
+                className="btn btn-theme float-right pl-5 pr-5"
             />
         </form>
     )
