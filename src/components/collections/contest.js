@@ -5,9 +5,15 @@ import Loader from '../common/loader';
 import useHttp from '../../hooks/http/useHttp';
 import { connect } from 'react-redux'
 import { CATEGORIES, cat_url } from '../../redux/actions/constants';
+import useDataSubmit from '../../hooks/http/useDataSubmit';
+import { photos_url } from '../../redux/actions/constants';
+import { addToast, openModal } from '../../redux/actions/common';
+import { addPhotoSuccess } from '../../redux/actions/user';
+import LoadingBtn from '../common/loadingbtn';
+import Progress from './progress';
 
 const Contest = ({ fetching, data, dispatch }) => {
-    
+
     //select category
     const [category, setCategory] = useState("");
 
@@ -17,18 +23,56 @@ const Contest = ({ fetching, data, dispatch }) => {
     //handle file
     const [photo, setPhoto] = useState(null);
 
+
     //load categories
     useHttp(dispatch, CATEGORIES, { url: cat_url }, "categories");
 
-    
-    if(fetching){
+    const { setReq, res } = useDataSubmit(
+        (response) => {
+            dispatch(addPhotoSuccess(data));
+            setCategory("");
+            setPhoto(null);
+            setTerms(false);
+            dispatch(addToast("Photo has been submited"));
+            dispatch(openModal("REQPAY_MODAL", { photo: response, cats: data }));
+        },
+        (response) => {
+            dispatch(addToast(response, false));
+        }
+    );
+
+    //handle file input change
+    const handleSubmit = () => {
+        //check if file size less than 20MB
+        if (photo.size > 20971520) {
+            dispatch(addToast("Image size must be less than 20MB", false));
+            return;
+        }
+        let postData = new FormData();
+        postData.append("photo", photo);
+        postData.append("categories_id", category);
+        setReq(x => ({
+            ...x,
+            count: x.count + 1,
+            config: {
+                url: photos_url,
+                method: "POST",
+                data: postData,
+                crossDomain: true,
+                contentType: false,
+                processData: true
+            }
+        }))
+    }
+
+    if (fetching) {
         return (
             <div className="w-100 pt-3 pb-3 flex-grow-1 flex-center">
                 <Loader width="30px" height="30px" />
             </div>
         )
     }
-    if(data && data.length > 0) {
+    if (data && data.length > 0) {
         return (
             <div className="pt-3">
                 <div className="form-group">
@@ -52,7 +96,7 @@ const Contest = ({ fetching, data, dispatch }) => {
                 </div>
                 <div className="pb-2">
                     <div className="row flex-wrap">
-                        <div className="col pr-2">
+                        <div className="col-md-6 pr-md-2">
                             <label
                                 className="image-upload-section flex-center text-center"
                                 htmlFor="addPhoto"
@@ -76,7 +120,7 @@ const Contest = ({ fetching, data, dispatch }) => {
                                 </div>
                             </label>
                         </div>
-                        <div className="col pl-2">
+                        <div className="col-md-6 pr-ml-2">
                             <div className="image-upload-section flex-center text-center">
                                 {
                                     photo ?
@@ -105,13 +149,30 @@ const Contest = ({ fetching, data, dispatch }) => {
                         I agree to all terms and conditions
                     </label>
                 </div>
+                {
+                    photo && res.fetching &&
+                    <div className="border p-2 mb-3">
+                        <p className="f-14 mb-0">{photo.name}</p>
+                        <small className="text-muted">{(photo.size / 1048576).toPrecision(2)}MB</small>
+                        <Progress />
+                    </div>
+                }
+                {
+                    photo && res.data &&
+                    <div className="border p-2 mb-3">
+                        <p className="f-14 mb-0">{photo.name}</p>
+                        <small className="text-muted">{(photo.size / 1048576).toPrecision(2)}MB</small>
+                        <Progress complete />
+                    </div>
+                }
                 <div className="d-flex justify-content-end align-items-end">
-                    <button
-                        disabled={category && photo ? false : true}
+                    <LoadingBtn
+                        disabled={category && photo && terms ? false : true}
                         className="btn btn-theme pl-4 pr-4"
-                    >
-                        Continue
-                    </button>
+                        fetching={res.fetching}
+                        title={"Submit"}
+                        onClick={handleSubmit}
+                    />
                 </div>
             </div>
         )

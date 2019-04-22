@@ -6,12 +6,12 @@ import ajaxerrmsg from "../../utils/ajaxerrmsg";
 const useDataSubmit = (succFunc = null, errFunc = null) => {
 
     //set req
-    const [{ count, config}, setReq] = useState({ count: 0, config: null })
+    const [{ count, config }, setReq] = useState({ count: 0, config: null })
 
     const [state, dispatch] = useReducer(dataFetchReducer, {
         isLoading: false,
         isError: false,
-        data: {}
+        data: null
     });
 
     useEffect(() => {
@@ -31,6 +31,7 @@ const useDataSubmit = (succFunc = null, errFunc = null) => {
                 dispatch({ type: 'FETCH_SUCCESS', payload: res.data });
                 if (succFunc) {
                     succFunc(res.data)
+                    dispatch({ type: 'FETCH_CLEAR' }) 
                 }
             } catch (err) {
                 if (isCancel(err)) {
@@ -40,6 +41,7 @@ const useDataSubmit = (succFunc = null, errFunc = null) => {
                     dispatch({ type: 'FETCH_FAILURE', error: errMsg });
                     if (errFunc) {
                         errFunc(errMsg);
+                        dispatch({ type: 'FETCH_CLEAR' }) 
                     }
                 }
             }
@@ -56,7 +58,11 @@ const useDataSubmit = (succFunc = null, errFunc = null) => {
         };
     }, [count]);
 
-    return { setReq, res: state, req: { count, config} }
+    return { 
+        setReq, 
+        res: state, 
+        req: { count, config }
+    }
 };
 
 export default useDataSubmit;

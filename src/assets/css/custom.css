@@ -399,3 +399,9 @@ hr[data-title]:before {
 .static-content a {
     color: #df006f;
 }
+
+.pay-prev-img{
+    min-height: 200px;
+    margin-bottom: 15px;
+    background: #cecece;
+}

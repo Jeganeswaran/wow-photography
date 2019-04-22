@@ -4,7 +4,8 @@ const dataFetchReducer = (state, action) => {
             return {
                 ...state,
                 fetching: true,
-                error: false
+                error: false,
+                data: null
             };
         case 'FETCH_SUCCESS':
             return {
@@ -18,6 +19,13 @@ const dataFetchReducer = (state, action) => {
                 ...state,
                 fetching: false,
                 error: action.payload,
+            };
+        case 'FETCH_CLEAR':
+            return {
+                ...state,
+                fetching: false,
+                error: false,
+                data: null
             };
         default:
             throw new Error();

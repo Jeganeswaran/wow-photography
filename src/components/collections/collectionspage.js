@@ -18,7 +18,7 @@ const CollectionsPage = () => {
                     <CollCount />
                 </div>
                 <div className="col-md-9">
-                    <div className="flex-between flex-wrap">
+                    <div className="flex-between">
                         <div className="mb-1">
                             <TabHeader
                                 className="profile-tabs"
@@ -38,7 +38,7 @@ const CollectionsPage = () => {
                         </div>
                         <div className="mb-1">
                             <Link 
-                                className="f-15 f-600 theme-red"
+                                className="f-15 f-500 theme-red"
                                 to="/my-collection/enter-to-contest"
                             >
                                 <i className="fa fa-plus f-14 mr-1"></i>
