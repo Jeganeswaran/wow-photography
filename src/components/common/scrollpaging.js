@@ -36,7 +36,7 @@ const ScrollPaging = ({
             } 
         }
 
-    }, [url]);
+    }, []);
 
     return (
         <Fragment>

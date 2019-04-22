@@ -39,19 +39,11 @@ const Header = ({ isToken, closeModal, addToast, clearUser  }) => {
                                         Sign Up
                                     </OpenModalBtn>
                                 </li>
-                                <li>
-                                    <OpenModalBtn
-                                        modalName="SIGNIN_MODAL"
-                                        className="btn btn-theme btn-rounded"
-                                    >
-                                        <i className="fas fa-plus-circle mr-1"></i> Create a post
-                                    </OpenModalBtn>
-                                </li>
                             </Fragment> :
                             <Fragment>
                                 <li>
                                     <Link to="/purchase-plan">
-                                        Purchase plan
+                                        Purchase Plan
                                     </Link>
                                 </li>
                                 <li>
@@ -75,11 +67,6 @@ const Header = ({ isToken, closeModal, addToast, clearUser  }) => {
                                     >
                                         Sign Out
                                     </OpenModalBtn>
-                                </li>
-                                <li>
-                                    <Link className="btn btn-theme btn-rounded" to="/my-collection/private-photographs">
-                                        <i className="fas fa-plus-circle mr-1"></i> Create a post
-                                    </Link>
                                 </li>
                             </Fragment>
                         }
