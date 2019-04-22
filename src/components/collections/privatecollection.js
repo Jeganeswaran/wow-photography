@@ -1,6 +1,4 @@
 import React from 'react'
-import AddPhotos from './addphotos';
-import GuideLines from './guidelines';
 import PublishCard from './publishcard';
 import { connect } from 'react-redux'
 import ScrollPaging from '../common/scrollpaging';
@@ -26,11 +24,6 @@ const PrivateCollection = ({ private_collection, addPhotoSuccess, addToast }) =>
                     objName="private_collection"
                 />
             </div>
-            <AddPhotos
-                addPhotoSuccess={addPhotoSuccess}
-                addToast={addToast}
-            />
-            <GuideLines />
         </div>
     )
 }

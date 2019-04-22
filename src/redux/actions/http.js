@@ -1,9 +1,12 @@
 import { _SET_CACHE, _CLEAR, _ADD_DATA, _REMOVE_DATA } from "./constants";
 
-//load data
-// export const loadData = () => {
-
-// }
+// load data
+export const loadData = (type, payload, objName = "") => ({
+    isHttp: true,
+    type,
+    payload,
+    objName
+})
 
 //update cache
 export const setCache = (name, payload = false) => ({

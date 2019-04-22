@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import Loader from '../common/loader';
 import useDataSubmit from '../../hooks/http/useDataSubmit';
+import CenterLoader from './centerloader';
 
 //modal name LOADING_MODAL
 const LoadingModal = ({ config, succFunc, errFunc }) => {
@@ -13,11 +13,7 @@ const LoadingModal = ({ config, succFunc, errFunc }) => {
     
     return (
         <div className="modal-wrapper">
-            <div className="flex-center">
-                {/* <div style={{ display: res.fetching ? `block` : `none` }}> */}
-                    <Loader />
-                {/* </div> */}
-            </div>
+            <CenterLoader />
         </div>
     )
 }

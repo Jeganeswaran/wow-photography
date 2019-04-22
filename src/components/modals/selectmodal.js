@@ -4,6 +4,7 @@ import LoadingModal from "./loadingmodal";
 import ChangePwdModal from "./changepwdmodal";
 import PublishModal from "./publishmodal";
 import AddressModal from "./addressmodal";
+import ContestModal from "./contestmodal";
 
 const selectModal = modalName => {
     switch (modalName) {
@@ -19,6 +20,8 @@ const selectModal = modalName => {
             return PublishModal
         case "ADDRESS_MODAL":
             return AddressModal
+        case "CONTEST_MODAL":
+            return ContestModal
         default:
             return null;
     }
