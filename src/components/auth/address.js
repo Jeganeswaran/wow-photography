@@ -8,7 +8,7 @@ import FormGroup from '../form/formgroup';
 import { profile_url } from '../../redux/actions/constants';
 import { connect } from 'react-redux'
 import { updateUser } from '../../redux/actions/user';
-import { addToast, closeModal } from '../../redux/actions/common';
+import { addToast } from '../../redux/actions/common';
 
 const Address = ({ inputs, dispatch }) => {
 
@@ -19,7 +19,6 @@ const Address = ({ inputs, dispatch }) => {
     const { res, setReq } = useDataSubmit(
         (data) => {
             dispatch(updateUser(data));
-            dispatch(closeModal());
         }, 
         (data) => {
             dispatch(addToast(data, false));
@@ -65,7 +64,7 @@ const Address = ({ inputs, dispatch }) => {
             <LoadingBtn
                 fetching={res.fetching}
                 type="submit"
-                className="btn btn-theme float-right pl-5 pr-5"
+                className="btn btn-theme float-right"
             />
         </form>
     )

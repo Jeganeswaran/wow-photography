@@ -7,7 +7,7 @@ const PageLayout = ({ children, isToken }) => {
 
     let links = [
         {
-            children: "Wow Pic",
+            children: "WOW Pic",
             to: "/",
             exact: true
         },

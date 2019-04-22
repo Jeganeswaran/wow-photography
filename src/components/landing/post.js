@@ -10,9 +10,9 @@ const Post = ({title="", image}) => {
                     alt={title}  
                 />
             </div>
-            <div className="flex-between p-1">
-                <span>Dillip Ashokkumar</span>
-                <span>4th Apr 2019</span>
+            <div className="p-1">
+                <span>@Dillip Ashokkumar</span>
+                {/* <span>4th Apr 2019</span> */}
             </div>
         </div>
     )

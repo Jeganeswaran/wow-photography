@@ -213,7 +213,11 @@ hr[data-title]:before {
 .post-img-holder {
     background: #ececec;
     padding: 6px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+}
+
+.bg-light{
+    background: #ececec !important;
 }
 
 .post-img {

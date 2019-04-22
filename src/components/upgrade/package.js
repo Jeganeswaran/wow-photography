@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Package = ({ id, name, photo_count, country_price}) => {
+const Package = ({ id, name, photo_count, country_price, setPackage, choosen}) => {
 
     // const [country, setCountry] = useState(0);
 
@@ -13,7 +13,11 @@ const Package = ({ id, name, photo_count, country_price}) => {
                 <input 
                     className="radio-ip" 
                     type="radio" 
+                    checked={id === choosen}
                     name="choosen_package"
+                    onClick={() => {
+                        setPackage(id)
+                    }}
                 />
             </td>
         </tr>

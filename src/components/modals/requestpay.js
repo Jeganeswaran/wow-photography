@@ -8,7 +8,7 @@ const ReqpayModal = props => {
         <CloseModalWrapper className="modal-wrapper">
             <ModalCon className="modal-container signin-modal">
                 <div className="mb-4">
-                    <h3 className="font-weight-bold mb-0">Photo Uploaded</h3>
+                    <h3 className="font-weight-bold mb-0">Enter to contest</h3>
                     <p className="f-14 m-0">Submit your photo to contest now.</p>
                 </div>
                 <RequestModal {...props} />

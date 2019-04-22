@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import List from '../common/list';
 
-const RequestModal = ({ photo, cats }) => {
+const RequestModal = ({ photo, cats = [] }) => {
 
     //select category
     const [category, setCategory] = useState(photo.categories_id || "");
