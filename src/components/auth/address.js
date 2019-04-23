@@ -19,6 +19,7 @@ const Address = ({ inputs, dispatch }) => {
     const { res, setReq } = useDataSubmit(
         (data) => {
             dispatch(updateUser(data));
+            dispatch(addToast("Address Updated"))
         }, 
         (data) => {
             dispatch(addToast(data, false));

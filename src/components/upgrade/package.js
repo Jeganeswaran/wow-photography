@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Package = ({ id, name, photo_count, country_price, setPackage, choosen}) => {
+const Package = props => {
 
+    const { id, name, photo_count, country_price, setPackage, choosen} = props;
     // const [country, setCountry] = useState(0);
 
     return (
@@ -13,10 +14,10 @@ const Package = ({ id, name, photo_count, country_price, setPackage, choosen}) =
                 <input 
                     className="radio-ip" 
                     type="radio" 
-                    checked={id === choosen}
+                    checked={id === choosen.id}
                     name="choosen_package"
                     onClick={() => {
-                        setPackage(id)
+                        setPackage(props)
                     }}
                 />
             </td>

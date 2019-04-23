@@ -5,12 +5,12 @@ import useHttp from '../../hooks/http/useHttp';
 import { connect } from 'react-redux'
 import Loader from '../common/loader';
 
-const inputs = (con) => [
+const inputs = (con, address) => [
     {
         inputProps: {
             name: "address",
             type: "text",
-            value: '',
+            value: address.address || '',
             placeholder: "Enter your address"
         }
     },
@@ -18,7 +18,7 @@ const inputs = (con) => [
         inputProps: {
             name: "country_id",
             type: "select",
-            value: '',
+            value: address.country_id || '',
             placeholder: "Select your country",
             options: con,
             decendOp: "states",
@@ -29,7 +29,7 @@ const inputs = (con) => [
         inputProps: {
             name: "state_id",
             type: "select",
-            value: '',
+            value: address.state_id || '',
             placeholder: "Select your state",
             options: []
         }
@@ -38,7 +38,7 @@ const inputs = (con) => [
         inputProps: {
             name: "city",
             type: "text",
-            value: '',
+            value: address.city || '',
             placeholder: "Enter your city"
         }
     },
@@ -46,7 +46,7 @@ const inputs = (con) => [
         inputProps: {
             name: "pin_code",
             type: "tel",
-            value: '',
+            value: address.pin_code || '',
             placeholder: "Enter your pincode"
         }
     },
@@ -55,13 +55,13 @@ const inputs = (con) => [
         inputProps: {
             name: "landmark",
             type: "text",
-            value: '',
+            value: address.landmark || '',
             placeholder: "Enter a landmark (optional)"
         }
     },
 ];
 
-const UpdatAddress = ({ master_values, dispatch }) => {
+const UpdatAddress = ({ master_values, address, dispatch }) => {
 
     //load master values
     useHttp(dispatch, MASTER_VALUES, { url: master_url }, 'master_values');
@@ -79,14 +79,15 @@ const UpdatAddress = ({ master_values, dispatch }) => {
     return (
         <div className="pt-2 pb-3 mb-5">
             <Address
-                inputs={inputs(master_values.data.countries)}
+                inputs={inputs(master_values.data.countries, address)}
             />
         </div>
     )
 }
 
-const mapStateToProps = ({ master_values }) => ({
-    master_values
+const mapStateToProps = ({ master_values, user }) => ({
+    master_values,
+    address: user.user_address
 })
 
 export default connect(mapStateToProps)(UpdatAddress)

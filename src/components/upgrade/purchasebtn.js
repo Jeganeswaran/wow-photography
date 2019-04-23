@@ -17,8 +17,9 @@ const PurchaseBtn = ({ user, id }) => {
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
                 </head>
                 <body>
+                <h3 style="text-align:center">DO NOT REFRESS THIS PAGE</h3>
                 <form id="nonseamless" method="post" name="redirect"
-                action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction" >
+                action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction" style="display:none;">
                 <input type="text" id="encRequest" name="encRequest" value="${data.encRequest}"><br>
                 <input type="text" name="access_code" id="access_code" value="${data.access_code}"><br>
                 <input type="submit" name="access_code" value="submit">
@@ -40,8 +41,8 @@ const PurchaseBtn = ({ user, id }) => {
         return (
             <LoadingBtn
                 fetching={res.fetching}
-                className="btn btn-theme btn-pill pl-5 pr-5"
-                title="Purchase Plan"
+                className="btn btn-theme float-right"
+                title="Proceed to checkout"
                 onClick={() => {
                     setReq(x => ({
                         ...x,
