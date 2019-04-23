@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from "react-router-dom";
 
 const CollCount = ({ private_photographs, submitted_photo, points }) => {
     return (
@@ -8,9 +9,12 @@ const CollCount = ({ private_photographs, submitted_photo, points }) => {
                 <div className="w-100">
                     <h1>{points}</h1>
                     <p className="f-13">Points</p>
-                    <button className="btn btn-theme f-14 mb-3 pl-md-4 pr-md-4">
+                    <Link
+                        to="/upgrade"
+                        className="btn btn-theme f-14 mb-3 pl-md-4 pr-md-4"
+                    >
                         Upgrade
-                    </button>
+                    </Link>
                 </div>
             </div>
             <div className="d-flex align-items-center border coll-counter text-center mb-3">

@@ -32,7 +32,7 @@ const CollectionsPage = () => {
                                         to: "/my-collection/private-photographs",
                                         exact: true,
                                         children: "Unsubmitted Photographs"
-                                    },
+                                    }
                                 ]}
                             />
                         </div>
