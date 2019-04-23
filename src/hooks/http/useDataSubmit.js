@@ -17,6 +17,7 @@ const useDataSubmit = (succFunc = null, errFunc = null) => {
     useEffect(() => {
 
         let cancel = null;
+        let didCancel = false;
 
         const fetchData = async () => {
             if (cancel) {
@@ -28,20 +29,25 @@ const useDataSubmit = (succFunc = null, errFunc = null) => {
                     ...config,
                     cancelToken: new CancelToken(c => cancel = c)
                 });
-                dispatch({ type: 'FETCH_SUCCESS', payload: res.data });
+                if (!didCancel) {
+                    dispatch({ type: 'FETCH_SUCCESS', payload: res.data });
+                }
                 if (succFunc) {
                     succFunc(res.data)
-                    dispatch({ type: 'FETCH_CLEAR' }) 
+                    if (!didCancel) {
+                        dispatch({ type: 'FETCH_CLEAR' })
+                    }
                 }
             } catch (err) {
                 if (isCancel(err)) {
                     dispatch({ type: 'FETCH_FAILURE', error: true });
                 } else {
                     const errMsg = err.response ? ajaxerrmsg(err.response.data) : "Something went wrong";
-                    dispatch({ type: 'FETCH_FAILURE', error: errMsg });
+                    if (!didCancel) {
+                        dispatch({ type: 'FETCH_FAILURE', error: errMsg });
+                    }
                     if (errFunc) {
                         errFunc(errMsg);
-                        dispatch({ type: 'FETCH_CLEAR' }) 
                     }
                 }
             }
@@ -52,15 +58,16 @@ const useDataSubmit = (succFunc = null, errFunc = null) => {
         }
 
         return () => {
+            didCancel = true;
             if (cancel) {
                 cancel("cancelled by user")
             }
         };
     }, [count]);
 
-    return { 
-        setReq, 
-        res: state, 
+    return {
+        setReq,
+        res: state,
         req: { count, config }
     }
 };
