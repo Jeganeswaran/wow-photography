@@ -26,25 +26,25 @@ const CollectionsPage = () => {
                                     {
                                         to: "/my-collection",
                                         exact: true,
-                                        children: "Published Photographs"
+                                        children: "Submitted Photographs"
                                     },
                                     {
                                         to: "/my-collection/private-photographs",
                                         exact: true,
-                                        children: "Private Photographs"
+                                        children: "Unsubmitted Photographs"
                                     },
                                 ]}
                             />
                         </div>
                         <div className="mb-1">
-                            <Link 
+                            <Link
                                 className="f-15 f-500 theme-red"
                                 to="/my-collection/enter-to-contest"
                             >
                                 <i className="fa fa-plus f-14 mr-1"></i>
                                 Enter to contest
                             </Link>
-                        </div>            
+                        </div>
                     </div>
                     <RouteTabs
                         title="collection-page"
