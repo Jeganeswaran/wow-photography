@@ -1,41 +1,42 @@
 import React from 'react'
-import { OpenModalBtn } from "../modals/modalbtns"
+import { OpenModalBtn, OpenImg } from "../modals/modalbtns"
 import dateFormat from "../../utils/dateFormat"
 
 const PublishCard = props => {
-    const { is_submitted, thumbnail, photo_id, id, submitted_on, is_approved, categories } = props;
+    const { is_submitted, thumbnail, photo_id, photo, submitted_on, is_approved, categories } = props;
     return (
         <div className="post">
             <div className="post-img-holder relative">
-                <img
+                <OpenImg
+                    modalProps={{ image: photo  }}
                     className="post-img"
                     src={thumbnail}
                     alt={photo_id}
                 />
-                {
+                {/* {
                     is_submitted ?
                         <button className="btn btn-pill btn-publish">
                             Share
                     </button> : null
-                    //     <OpenModalBtn
-                    //         modalName="PUBLISH_MODAL"
-                    //         modalProps={{ id }}
-                    //         className="btn btn-pill btn-publish"
-                    //     >
-                    //         Publish
-                    // </OpenModalBtn>
-                }
+                        <OpenModalBtn
+                            modalName="PUBLISH_MODAL"
+                            modalProps={{ id }}
+                            className="btn btn-pill btn-publish"
+                        >
+                            Publish
+                    </OpenModalBtn>
+                } */}
             </div>
             {
                 is_submitted ? 
-                <div className="flex-between p-1">
+                <div className="flex-between bg-light pb-2 pl-2 pr-2">
                     <span>
                         {
                             is_approved ?
-                                <span className="text-success">Approved</span> :
+                                <span className="approv-pill bg-success">Approved</span> :
                                 is_approved === false ?
-                                    <span className="text-danger">Rejected</span> :
-                                    <span className="theme-red">Pending Approval</span>
+                                    <span className="approv-pill bg-danger">Rejected</span> :
+                                    <span className="approv-pill pendibg-bg">Pending Approval</span>
                         }
                     </span>
                     <span>{submitted_on ? dateFormat(submitted_on) : ''}</span>

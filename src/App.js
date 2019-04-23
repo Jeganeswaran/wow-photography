@@ -15,9 +15,9 @@ const App = () => {
 				<Header />
 				<Pages />
 				<Footer />
+				<Modal />
+				<Toast />
 			</Router>
-			<Modal />
-			<Toast />
 		</Provider>
 	)
 }

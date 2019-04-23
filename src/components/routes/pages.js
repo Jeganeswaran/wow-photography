@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "../landing/landingpage";
 import CollectionsPage from "../collections/collectionspage";
-import Scrolltop from "./scrolltop";
+import ScrollToTop from "./scrolltop";
 import ActivatePage from "../auth/activatePage";
 import UserRoute from "./userroute";
 import PrivacyPolicy from "../static/privacy";
@@ -13,7 +13,7 @@ import UpgradePage from "../upgrade/upgradepage";
 
 const Pages = () => {
     return (
-        <Scrolltop>
+        <ScrollToTop>
             <Switch>
                 <Route exact path="/" component={LandingPage} />
                 <UserRoute path="/my-collection" component={CollectionsPage} />
@@ -24,7 +24,7 @@ const Pages = () => {
                 <Route path="/terms-and-conditions" component={Terms} />
                 <Route path="/refund-policy" component={RefundPolicy} />
             </Switch>
-        </Scrolltop>
+        </ScrollToTop>
     )
 }
 

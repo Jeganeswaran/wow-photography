@@ -4,6 +4,7 @@ import LoadingModal from "./loadingmodal";
 import ChangePwdModal from "./changepwdmodal";
 import PublishModal from "./publishmodal";
 import ReqpayModal from "./requestpay"
+import ImageModal from "./imagemodal";
 
 const selectModal = modalName => {
     switch (modalName) {
@@ -19,6 +20,8 @@ const selectModal = modalName => {
             return PublishModal
         case "REQPAY_MODAL":
             return ReqpayModal
+        case "IMAGE_MODAL":
+            return ImageModal
         default:
             return null;
     }

@@ -34,7 +34,7 @@ const Contest = ({ fetching, data, dispatch }) => {
             setPhoto(null);
             setTerms(false);
             dispatch(addToast("Photo has been submited"));
-            dispatch(openModal("REQPAY_MODAL", { photo: response, cats: data }));
+            dispatch(openModal("REQPAY_MODAL", { photo: response, isContest: true }));
         },
         (response) => {
             dispatch(addToast(response, false));

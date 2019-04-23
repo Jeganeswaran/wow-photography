@@ -17,6 +17,17 @@ const OpenModal = ({ children, openModal, modalName, modalProps = {}, ...rest })
     </button>
 );
 
+const OpenImageModal = ({ src, openModal, modalProps={}, alt="", ...restProps }) => (
+    <img 
+        onClick={() => {
+            openModal("IMAGE_MODAL", modalProps);
+        }}
+        src={src}
+        alt={alt}
+        {...restProps}
+    />
+);
+
 const ModalWrapCon = ({ children, closeModal, ...rest }) => {
     // Call hook to lock body scroll
     useLockBodyScroll();
@@ -38,6 +49,7 @@ export const ModalCon = ({ children, ...rest }) => {
 
 //open modal btn
 export const OpenModalBtn = connect(null, { openModal })(OpenModal);
+export const OpenImg = connect(null, { openModal })(OpenImageModal);
 
 //close modal button
 export const CloseModalBtn = connect(null, { closeModal })(CloseModal);

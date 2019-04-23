@@ -1,17 +1,23 @@
-import { withRouter } from "react-router-dom"
-import useScrollToTop from "../../hooks/layout/scrolltotop";
+import {Component} from "react"
+import {withRouter} from "react-router-dom"
+import { connect } from 'react-redux'
+import { closeModal } from "../../redux/actions/common";
 
-const ScrollTop = ({ children, location }) => {
+class ScrollToTopComp extends Component {
+    componentDidUpdate(prevProps) {
+        if (this.props.location !== prevProps.location) {
+            if(this.props.open){
+                this.props.closeModal();
+            }
+            window.scrollTo(0, 0);
+        }
+    }
 
-    //get path name and search to be used as deps
-    const { pathname } = location;
-
-    //scroll the page to top 
-    //change in pathname-> scroll to top 
-    useScrollToTop([pathname])
-
-    return children
-
+    render() {
+        return this.props.children;
+    }
 }
 
-export default withRouter(ScrollTop)
+const ScrollToTop = withRouter(connect((state) => state.modalReducer, {closeModal} )(ScrollToTopComp));
+
+export default ScrollToTop

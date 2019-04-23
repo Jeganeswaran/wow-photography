@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="flex-between flex-wrap pt-4 pb-4 pl-3 pr-3">
-                <ul className="menu-list">
+            <div className="flex-center flex-column pt-4 pb-4 pl-3 pr-3">
+                <ul className="menu-list mb-3">
                     <li>
                         <Link to="/privacy-policy">Privacy Policy</Link>
                     </li>
@@ -16,9 +16,28 @@ const Footer = () => {
                         <Link to="/refund-policy">Refund Policy</Link>
                     </li>
                 </ul>
+                <ul className="menu-list mb-3">
+                    <li>
+                        <a href="https://www.facebook.com/wowphotoawards/">
+                            <i className="fab fa-facebook f-20"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/wowtamilnadu/">
+                            <i className="fab fa-instagram f-20"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com/">
+                            <i className="fab fa-twitter f-20"></i>
+                        </a>
+                    </li>
+                </ul>
                 <ul className="menu-list">
                     <li>Copyrights 2019</li>
-                    <li>Powered by billiontags</li>
+                    <li>
+                        <a href="https://billiontags.com/">Powered by Billiontags</a>
+                    </li>
                 </ul>
             </div>
         </footer>
