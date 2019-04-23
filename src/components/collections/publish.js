@@ -13,9 +13,9 @@ const PubLish = ({ id, addPhotoSuccess, addToast, closeModal }) => {
 
     const { res, setReq } = useDataSubmit(
         (data) => {
-            addPhotoSuccess(data);
+            addPhotoSuccess();
             closeModal();
-            addToast("Photo Published");
+            addToast("Category Updated");
         },
         (data) => {
             addToast(data, false);
@@ -42,7 +42,7 @@ const PubLish = ({ id, addPhotoSuccess, addToast, closeModal }) => {
                 />
             </ul>
             <LoadingBtn
-                title="Publish"
+                title="Change Category"
                 fetching={res.fetching}
                 className="btn btn-theme btn-block"
                 disabled={!choosenId}
@@ -51,7 +51,7 @@ const PubLish = ({ id, addPhotoSuccess, addToast, closeModal }) => {
                         ...x,
                         count: x.count + 1,
                         config: {
-                            url: photos_url + id + "/photo_submit/",
+                            url: photos_url + id + "/change_category/",
                             method: "POST",
                             data: {
                                 category: choosenId

@@ -7,7 +7,7 @@ import { loadData } from '../../redux/actions/http';
 
 const CollectionList = ({ isSubmitted = false, listData, objName, userId, loadData }) => {
 
-    const type = isSubmitted ? PRIVATE_COLLECTION : PUBLISHED_COLLECTION;
+    const type = isSubmitted ? PUBLISHED_COLLECTION : PRIVATE_COLLECTION;
 
     const url = photos_url + (isSubmitted ? `?is_published=${isSubmitted}` : '');
 
@@ -36,8 +36,8 @@ const CollectionList = ({ isSubmitted = false, listData, objName, userId, loadDa
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    listData: state[ownProps.isSubmitted ? "private_collection" : "public_collection"][state.user.id],
-    objName: (ownProps.isSubmitted ? "private_collection" : "public_collection") + " " + state.user.id,
+    listData: state[ownProps.isSubmitted ? "public_collection" : "private_collection"][state.user.id],
+    objName: (ownProps.isSubmitted ? "public_collection" : "private_collection") + " " + state.user.id,
     userId: state.user.id
 })
 

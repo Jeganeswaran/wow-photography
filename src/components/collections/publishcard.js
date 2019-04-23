@@ -3,17 +3,18 @@ import { OpenModalBtn, OpenImg } from "../modals/modalbtns"
 import dateFormat from "../../utils/dateFormat"
 
 const PublishCard = props => {
-    const { is_submitted, thumbnail, photo_id, photo, submitted_on, is_approved, categories } = props;
+    const { is_submitted, thumbnail, photo_id, photo, id, submitted_on, is_approved, categories } = props;
     return (
-        <div className="post">
-            <div className="post-img-holder relative">
-                <OpenImg
-                    modalProps={{ image: photo  }}
-                    className="post-img"
-                    src={thumbnail}
-                    alt={photo_id}
-                />
-                {/* {
+        <div className="bg-light">
+            <div className="post">
+                <div className="post-img-holder relative">
+                    <OpenImg
+                        modalProps={{ image: photo }}
+                        className="post-img"
+                        src={thumbnail}
+                        alt={photo_id}
+                    />
+                    {/* {
                     is_submitted ?
                         <button className="btn btn-pill btn-publish">
                             Share
@@ -26,31 +27,40 @@ const PublishCard = props => {
                             Publish
                     </OpenModalBtn>
                 } */}
-            </div>
-            {
-                is_submitted ? 
-                <div className="flex-between bg-light pb-2 pl-2 pr-2">
-                    <span>
-                        {
-                            is_approved ?
-                                <span className="approv-pill bg-success">Approved</span> :
-                                is_approved === false ?
-                                    <span className="approv-pill bg-danger">Rejected</span> :
-                                    <span className="approv-pill pendibg-bg">Pending Approval</span>
-                        }
-                    </span>
-                    <span>{submitted_on ? dateFormat(submitted_on) : ''}</span>
-                </div> :
-                <div className="flex-between p-1 bg-light align-items-center">
-                    {/* <input type="checkbox" /> */}
-                    <OpenModalBtn modalName="PUBLISH_MODAL" className="btn btn-a f-12">
-                        {categories}
-                    </OpenModalBtn>
-                    <OpenModalBtn modalName="REQPAY_MODAL" modalProps={{photo: props }} className="btn btn-a f-12">
-                        Submit
-                    </OpenModalBtn>
                 </div>
-            }
+                {
+                    is_submitted ?
+                        <div className="flex-between p-2 align-items-center">
+                            <span>
+                                {
+                                    is_approved ?
+                                        <span className="approv-pill bg-success">Approved</span> :
+                                        is_approved === false ?
+                                            <span className="approv-pill bg-danger">Rejected</span> :
+                                            <span className="approv-pill pendibg-bg">Pending Approval</span>
+                                }
+                            </span>
+                            <span>{submitted_on ? dateFormat(submitted_on) : ''}</span>
+                        </div> :
+                        <div className="flex-between p-2 align-items-center">
+                            {/* <input type="checkbox" /> */}
+                            <OpenModalBtn 
+                                modalName="PUBLISH_MODAL" 
+                                modalProps={{ id }} 
+                                className="btn btn-a f-15 f-600"
+                            >
+                                {categories}
+                            </OpenModalBtn>
+                            <OpenModalBtn 
+                                modalName="REQPAY_MODAL" 
+                                modalProps={{ photo: props }} 
+                                className="btn btn-theme"
+                            >
+                                Submit
+                            </OpenModalBtn>
+                        </div>
+                }
+            </div>
         </div>
     )
 }
