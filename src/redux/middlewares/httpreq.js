@@ -27,8 +27,10 @@ const shouldNotFetchData = (state, name) => {
     if (!name) {
         return false
     }
+    console.log(name);
     //get data
     const data = getData(state, name);
+    console.log(data);
     if (!data) {
         return false
     } else if (data.cached) {
