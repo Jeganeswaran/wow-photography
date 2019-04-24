@@ -137,7 +137,7 @@ hr[data-title]:before {
     width: 100%;
     z-index: 2;
     background: #fff;
-    border-bottom: 1px solid #e7e7e7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
 
 .header-height {
@@ -483,4 +483,12 @@ hr[data-title]:before {
 
 .f-20{
     font-size: 20px;
+}
+
+.btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    z-index: 21;
 }
