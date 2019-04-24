@@ -57,7 +57,7 @@ export const multi_select = (state = { ids: [], list: [] }, action) => {
                     return x
                 })
             }
-        case "CLEAR":
+        case MULTISELECT + "_CLEAR":
             return {
                 ids: [],
                 list: []

@@ -36,6 +36,7 @@ export const addPhotoSuccess = () => {
         const { id } = getState().user;
         const rest = { userId: id };
         dispatch(loadUser());
+        dispatch(changeMulti("_CLEAR"))
         dispatch(clearData(PUBLISHED_COLLECTION, rest));
         dispatch(clearData(PRIVATE_COLLECTION, rest));
         dispatch(loadData(PUBLISHED_COLLECTION, { url: photos_url + "?is_published=true" }, `public_collection ${id}`, rest));

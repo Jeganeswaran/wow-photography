@@ -29,7 +29,7 @@ const Contest = ({ fetching, data, dispatch }) => {
 
     const { setReq, res } = useDataSubmit(
         (response) => {
-            dispatch(addPhotoSuccess(data));
+            dispatch(addPhotoSuccess(response));
             setCategory("");
             setPhoto(null);
             setTerms(false);

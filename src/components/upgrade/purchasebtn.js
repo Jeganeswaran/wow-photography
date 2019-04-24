@@ -14,10 +14,9 @@ const PurchaseBtn = ({ user, id }) => {
                 `<html>
                 <head>
                 <title>Sub-merchant checkout page</title>
-                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
                 </head>
                 <body>
-                <h3 style="text-align:center">DO NOT REFRESS THIS PAGE</h3>
+                <h3 style="text-align:center">DO NOT REFRESH THIS PAGE</h3>
                 <form id="nonseamless" method="post" name="redirect"
                 action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction" style="display:none;">
                 <input type="text" id="encRequest" name="encRequest" value="${data.encRequest}"><br>
@@ -26,7 +25,7 @@ const PurchaseBtn = ({ user, id }) => {
                 
                 </form>
                 <script>
-                    $("#nonseamless").submit();
+                    redirect.submit();
                 </script>
                 </body>
                 </html>`
