@@ -498,3 +498,17 @@ hr[data-title]:before {
     border-radius: 50%;
     z-index: 21;
 }
+
+.announcement{
+    min-height: 165px;
+}
+
+.announce-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.h100p{
+    height: 100%;
+}

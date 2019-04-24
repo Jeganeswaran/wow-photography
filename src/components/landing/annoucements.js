@@ -4,6 +4,8 @@ import DynamicList from '../common/dynamiclist';
 import Pagelayout from '../common/pagelayout';
 import useHttp from '../../hooks/http/useHttp';
 import { LANDING, landing_url } from '../../redux/actions/constants';
+import { Link } from "react-router-dom"
+import dateFormat from '../../utils/dateFormat';
 
 const Announcements = ({ dispatch, fetching, announcements }) => {
 
@@ -13,9 +15,27 @@ const Announcements = ({ dispatch, fetching, announcements }) => {
         <Pagelayout>
             <div className="row">
                 <DynamicList
-                    RenderItem={(props) => (
+                    RenderItem={({image, title, descriptions, created_on}) => (
                         <div className="col-md-6">
-
+                            <div className="row border announcement">
+                                {image &&<div className="col-md-4 p-0">
+                                    <img className="announce-img" src={image} alt={title} />
+                                </div> }
+                                <div className={`col-md-${image ? "8" : "4"}`}>
+                                    <div className="d-flex h100p justify-content-between flex-column pt-2 pb-2">
+                                        <div>
+                                            <h5 className="f-600 mb-1">{title}</h5>
+                                            <p>{descriptions}</p>
+                                        </div>
+                                        <div className="flex-between">
+                                            <span>{dateFormat(created_on)}</span>
+                                            <Link className="btn btn-theme">
+                                                Know more
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )}
                     title="wow-picks"
