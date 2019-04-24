@@ -22,6 +22,7 @@ export const USER = "USER";
 export const CATEGORIES = "CATEGORIES";
 export const PACKAGES = "PACKAGES";
 export const MASTER_VALUES = "MASTER_VALUES";
+export const LANDING = "LANDING";
 
 //photos
 export const PRIVATE_COLLECTION = "PRIVATE_COLLECTION";
@@ -43,3 +44,4 @@ export const packages_url = "package/";
 export const profile_url = "users/";
 export const master_url = "master/categories/master_value/";
 export const transcation_url = "transaction/";
+export const landing_url = "master/landing-page/";

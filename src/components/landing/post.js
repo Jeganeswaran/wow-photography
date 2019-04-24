@@ -1,13 +1,15 @@
 import React from 'react'
+import { OpenImg } from "../modals/modalbtns"
 
-const Post = ({title="", image}) => {
+const Post = ({ thumbnail, photo }) => {
     return (
         <div className="post">
             <div className="post-img-holder">
-                <img 
-                    className="post-img" 
-                    src={image} 
-                    alt={title}  
+                <OpenImg
+                    modalProps={{ image: photo }}
+                    className="post-img"
+                    src={thumbnail}
+                    alt={""}
                 />
             </div>
             <div className="p-1">

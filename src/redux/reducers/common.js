@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL, ADD_TOAST, REMOVE_TOAST, CLEAR_TOAST, CATEGORIES, PACKAGES, MASTER_VALUES } from "../actions/constants";
+import { OPEN_MODAL, CLOSE_MODAL, ADD_TOAST, REMOVE_TOAST, CLEAR_TOAST, CATEGORIES, PACKAGES, MASTER_VALUES, LANDING } from "../actions/constants";
 import { httpArrayReducerCache, httpObjectReducer } from "./httpreducers";
 
 //sigle modal reducer
@@ -36,3 +36,6 @@ export const packages = httpArrayReducerCache(PACKAGES);
 
 //master values
 export const master_values = httpObjectReducer(MASTER_VALUES);
+
+//landing page
+export const landing_page = httpObjectReducer(LANDING);

@@ -9,7 +9,7 @@ const prodUrl = `https://${prod_domain}/`;
 
 export const baseURL = process.env.NODE_ENV === "development" ? devUrl : prodUrl;
 
-const {CancelToken, create, isCancel} = axios;
+const { CancelToken, create, isCancel } = axios;
 
 const apiInstance = create({ baseURL });
 
