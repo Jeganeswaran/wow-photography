@@ -559,10 +559,31 @@ hr[data-title]:before {
 .multi-select-img{
     height: 120px;
     background: #cecece;
+    position: relative;
+}
+
+.multi-select-img div{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.multi-select-img:hover div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .multi-select-img img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.color-white{
+    color: #fff !important;
 }

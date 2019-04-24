@@ -60,6 +60,16 @@ const MultiSubmit = ({ list, categories, changeMulti, addPhotoSuccess, addToast,
 											src={thumbnail}
 											alt={""}
 										/>
+										<div className="flex-center">
+											<button 
+												className="btn btn-a"
+												onClick={() => {
+													changeMulti("_REMOVE", photo_data)
+												}}
+											>
+												<i className="fas fa-trash color-white" />
+											</button>
+										</div>
 									</div>
 									<div className="form-group m-0">
 										<select
