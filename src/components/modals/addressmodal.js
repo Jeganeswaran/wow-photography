@@ -87,7 +87,7 @@ const UpdatAddress = ({ master_values, address, dispatch }) => {
 
 const mapStateToProps = ({ master_values, user }) => ({
     master_values,
-    address: user.user_address
+    address: user.user_address || {}
 })
 
 export default connect(mapStateToProps)(UpdatAddress)
