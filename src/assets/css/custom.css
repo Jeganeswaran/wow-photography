@@ -235,10 +235,14 @@ hr[data-title]:before {
 }
 
 .post-img {
-    width: 100%;
-    height: 250px;
+    height: 250px;    
     background: #ececec;
+}
+
+.post-img img {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 /* footer css */
@@ -475,7 +479,8 @@ hr[data-title]:before {
 }
 
 .modalprev-img {
-    max-height: 80vh;
+    max-height: 85vh;
+    max-width: 100vw;
 }
 
 .mb-70{

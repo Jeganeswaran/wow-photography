@@ -1,6 +1,5 @@
 import React from 'react'
 import Banner from './banner';
-import Post from './post';
 import PageLayout from '../common/pagelayout';
 import goldMedal from "../../assets/img/gold-medal.png";
 import silverMedal from "../../assets/img/silver-medal.png";
@@ -8,10 +7,9 @@ import bronzeMedal from "../../assets/img/bronze-medal.png";
 import { connect } from 'react-redux'
 import useHttp from '../../hooks/http/useHttp';
 import { LANDING, landing_url } from '../../redux/actions/constants';
-import DynamicList from '../common/dynamiclist';
+import WowPics from './WowPics';
 
-
-const LandingPage = ({ dispatch, fetching, wow_pick }) => {
+const LandingPage = ({ dispatch }) => {
 
     useHttp(dispatch, LANDING, { url: landing_url }, "landing_page");
 
@@ -19,18 +17,7 @@ const LandingPage = ({ dispatch, fetching, wow_pick }) => {
         <div>
             <Banner />
             <PageLayout>
-                <div className="row">
-                    <DynamicList 
-                        RenderItem={(props) => (
-                            <div className="col-md-4">
-                                <Post {...props} />
-                            </div>
-                        )}
-                        title="wow-picks"
-                        list={wow_pick}
-                        fetching={fetching}
-                    />
-                </div>
+                <WowPics />
             </PageLayout>
             <section className="mb-70">
                 <div className="container">

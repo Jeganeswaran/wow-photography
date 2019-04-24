@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route, withRouter, NavLink } from "react-router-dom";
 
-const Tabs = ({tabs = [], title, match}) => (
+const Tabs = ({tabs = [], title="", match}) => (
     <Switch>
         {
             tabs.map(({path, ...rest}, index) =>

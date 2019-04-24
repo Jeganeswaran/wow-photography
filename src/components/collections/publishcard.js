@@ -8,12 +8,13 @@ const PublishCard = props => {
         <div className="bg-light">
             <div className="post">
                 <div className="post-img-holder relative">
-                    <OpenImg
-                        modalProps={{ image: photo }}
-                        className="post-img"
-                        src={thumbnail}
-                        alt={photo_id}
-                    />
+                    <div className="post-img">
+                        <OpenImg
+                            modalProps={{ image: photo }}
+                            src={thumbnail}
+                            alt={photo_id}
+                        />
+                    </div>
                     {/* {
                     is_submitted ?
                         <button className="btn btn-pill btn-publish">

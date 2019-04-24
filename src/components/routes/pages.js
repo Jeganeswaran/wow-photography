@@ -12,6 +12,7 @@ import RefundPolicy from "../static/refundpolicy";
 import ResetPwdPage from "../auth/resetpwdpage";
 import UpgradePage from "../upgrade/upgradepage";
 import FailurePage from "../auth/errorpage";
+import Annoucements from "../landing/annoucements";
 
 const Pages = () => {
     return (
@@ -19,6 +20,7 @@ const Pages = () => {
             <Switch>
                 <Route exact path="/" component={LandingPage} />
                 <UserRoute path="/my-collection" component={CollectionsPage} />
+                <Route path="/announcements" component={Annoucements} />
                 <Route path="/activate-account" component={ActivatePage} />
                 <Route path="/reset-password" component={ResetPwdPage} />
                 <Route path="/upgrade" component={UpgradePage} />
