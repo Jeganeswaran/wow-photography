@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import { updateUser } from '../../redux/actions/user';
 import { addToast } from '../../redux/actions/common';
 
-const Address = ({ inputs, dispatch }) => {
+const Address = ({ inputs, dispatch, setTab }) => {
 
     //form state    
     const [state, formdispatch] = useReducer(formReducer, inputs);
@@ -20,6 +20,9 @@ const Address = ({ inputs, dispatch }) => {
         (data) => {
             dispatch(updateUser(data));
             dispatch(addToast("Address Updated"))
+            if(typeof setTab === "function"){
+                setTab(2);
+            }
         }, 
         (data) => {
             dispatch(addToast(data, false));

@@ -6,7 +6,7 @@ import useHttp from '../../hooks/http/useHttp';
 import { connect } from 'react-redux'
 import Loader from '../common/loader';
 
-const PackagesList = ({ packages, dispatch, setPackage, choosen }) => {
+const PackagesList = ({ packages, dispatch, setPackage, choosen, setTab }) => {
 
     useHttp(dispatch, PACKAGES, { url: packages_url }, "packages")
 
@@ -35,6 +35,7 @@ const PackagesList = ({ packages, dispatch, setPackage, choosen }) => {
                         list={packages.data}
                         setPackage={setPackage}
                         choosen={choosen}
+                        setTab={setTab}
                     />
                 </tbody>
             </table>

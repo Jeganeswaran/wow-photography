@@ -61,7 +61,7 @@ const inputs = (con, address) => [
     },
 ];
 
-const UpdatAddress = ({ master_values, address, dispatch }) => {
+const UpdatAddress = ({ master_values, address, dispatch, setTab }) => {
 
     //load master values
     useHttp(dispatch, MASTER_VALUES, { url: master_url }, 'master_values');
@@ -79,6 +79,7 @@ const UpdatAddress = ({ master_values, address, dispatch }) => {
     return (
         <div className="pt-2 pb-3 mb-5">
             <Address
+                setTab={setTab}
                 inputs={inputs(master_values.data.countries, address)}
             />
         </div>

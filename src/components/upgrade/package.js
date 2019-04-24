@@ -2,7 +2,7 @@ import React from 'react'
 
 const Package = props => {
 
-    const { id, name, photo_count, country_price, setPackage, choosen} = props;
+    const { id, name, photo_count, country_price, setPackage, choosen, setTab} = props;
     // const [country, setCountry] = useState(0);
 
     return (
@@ -18,6 +18,7 @@ const Package = props => {
                     name="choosen_package"
                     onClick={() => {
                         setPackage(props)
+                        setTab(3)
                     }}
                 />
             </td>
