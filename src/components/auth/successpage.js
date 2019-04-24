@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Pagelayout from '../common/pagelayout';
 import icon from "../../assets/img/correct.png";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux'
+import { loadUser } from '../../redux/actions/user';
 
-const SuccessPage = () => {
+const SuccessPage = ({ dispatch }) => {
+
+    useEffect(() => {
+        dispatch(loadUser());
+    }, [])
+
     return (
         <Pagelayout>
             <div className="container-fluid">
@@ -31,4 +38,4 @@ const SuccessPage = () => {
     )
 }
 
-export default SuccessPage
+export default connect(null)(SuccessPage)

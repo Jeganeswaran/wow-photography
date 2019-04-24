@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PageLayout from '../common/pagelayout';
 import ProfileCard from './profilecard';
 import TabHeader from '../common/tabheader';
@@ -8,8 +8,15 @@ import PrivateCollection from './privatecollection';
 import PublishCollection from './publishcollection';
 import { Link } from "react-router-dom"
 import Contest from './contest';
+import { connect } from 'react-redux'
+import { loadUser } from '../../redux/actions/user';
 
-const CollectionsPage = () => {
+const CollectionsPage = ({ dispatch }) => {
+
+    useEffect(() => {
+        dispatch(loadUser());
+    }, [])
+
     return (
         <PageLayout>
             <div className="row">
@@ -70,4 +77,4 @@ const CollectionsPage = () => {
     )
 }
 
-export default CollectionsPage
+export default connect(null)(CollectionsPage)

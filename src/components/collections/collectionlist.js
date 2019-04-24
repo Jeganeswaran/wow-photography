@@ -18,24 +18,27 @@ const CollectionList = ({ isSubmitted = false, changeMulti, ids, listData, objNa
         }
     }, [userId, type])
 
-    return (
-        <ScrollList
-            RenderItem={(props) => (
-                <div className="col-md-6">
-                    <PublishCard
-                        isSubmitted
-                        multiDispatch={changeMulti}
-                        ids={ids}
-                        {...props}
-                    />
-                </div>
-            )}
-            type={type}
-            listData={listData}
-            objName={objName}
-            rest={{userId}}
-        />
-    )
+    if(listData) {
+        return (
+            <ScrollList
+                RenderItem={(props) => (
+                    <div className="col-md-6">
+                        <PublishCard
+                            isSubmitted
+                            multiDispatch={changeMulti}
+                            ids={ids}
+                            {...props}
+                        />
+                    </div>
+                )}
+                type={type}
+                listData={listData}
+                objName={objName}
+                rest={{userId}}
+            />
+        )
+    }
+    return null;
 }
 
 const mapStateToProps = (state, ownProps) => ({

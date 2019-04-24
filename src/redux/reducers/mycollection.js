@@ -51,8 +51,8 @@ export const multi_select = (state = { ids: [], list: [] }, action) => {
             return {
                 ...state,
                 list: state.list.map(x => {
-                    if (x.id === action.id) {
-                        return { ...x, ...action.payload }
+                    if (x.id === action.payload.id) {
+                        return { ...x, ...action.payload.data }
                     }
                     return x
                 })
