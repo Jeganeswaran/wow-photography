@@ -1,14 +1,29 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import CollectionList from './collectionlist';
+import Portal from '../common/portal';
+import { OpenModalBtn } from '../modals/modalbtns';
 
-const PrivateCollection = () => {
+const PrivateCollection = ({ ids }) => {
     return (
         <div className="pt-3">
             <div className="row pb-3">
                 <CollectionList />
             </div>
+            {ids.length !== 0 && <Portal>
+                <OpenModalBtn
+                    modalName="MULTI_MODAL"
+                    className="btn btn-theme btn-selected"
+                >
+                    Selected ({ids.length})
+                </OpenModalBtn>
+            </Portal>}
         </div>
     )
 }
 
-export default PrivateCollection
+const mapStateToProps = (state) => ({
+    ids: state.multi_select.ids
+})
+
+export default connect(mapStateToProps)(PrivateCollection)

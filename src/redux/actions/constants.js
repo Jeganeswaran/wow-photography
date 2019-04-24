@@ -23,6 +23,7 @@ export const CATEGORIES = "CATEGORIES";
 export const PACKAGES = "PACKAGES";
 export const MASTER_VALUES = "MASTER_VALUES";
 export const LANDING = "LANDING";
+export const MULTISELECT = "MULTISELECT";
 
 //photos
 export const PRIVATE_COLLECTION = "PRIVATE_COLLECTION";

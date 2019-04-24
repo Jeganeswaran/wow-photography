@@ -512,3 +512,54 @@ hr[data-title]:before {
 .h100p{
     height: 100%;
 }
+
+.select-round{
+    background: #ececec;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1;
+    padding: 0;
+    border: 1px solid #ececec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-round-active{
+    background: #df006f;
+    border: 1px solid #df006f;
+}
+
+.select-round-active span{
+    background: #fff;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.btn-selected{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.multi-select-div{
+    flex: 0 0 180px;
+    margin: 5px 10px;
+}
+
+.multi-select-img{
+    height: 120px;
+    background: #cecece;
+}
+
+.multi-select-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

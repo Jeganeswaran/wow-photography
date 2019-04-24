@@ -29,7 +29,7 @@ const Announcements = ({ dispatch, fetching, announcements }) => {
                                         </div>
                                         <div className="flex-between">
                                             <span>{dateFormat(created_on)}</span>
-                                            <Link className="btn btn-theme">
+                                            <Link to="/announcements" className="btn btn-theme">
                                                 Know more
                                             </Link>
                                         </div>

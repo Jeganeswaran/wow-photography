@@ -4,8 +4,9 @@ import PublishCard from './publishcard';
 import { PUBLISHED_COLLECTION, photos_url, PRIVATE_COLLECTION } from '../../redux/actions/constants';
 import { connect } from 'react-redux'
 import { loadData } from '../../redux/actions/http';
+import { changeMulti } from '../../redux/actions/user';
 
-const CollectionList = ({ isSubmitted = false, listData, objName, userId, loadData }) => {
+const CollectionList = ({ isSubmitted = false, changeMulti, ids, listData, objName, userId, loadData }) => {
 
     const type = isSubmitted ? PUBLISHED_COLLECTION : PRIVATE_COLLECTION;
 
@@ -23,6 +24,8 @@ const CollectionList = ({ isSubmitted = false, listData, objName, userId, loadDa
                 <div className="col-md-6">
                     <PublishCard
                         isSubmitted
+                        multiDispatch={changeMulti}
+                        ids={ids}
                         {...props}
                     />
                 </div>
@@ -38,11 +41,12 @@ const CollectionList = ({ isSubmitted = false, listData, objName, userId, loadDa
 const mapStateToProps = (state, ownProps) => ({
     listData: state[ownProps.isSubmitted ? "public_collection" : "private_collection"][state.user.id],
     objName: (ownProps.isSubmitted ? "public_collection" : "private_collection") + " " + state.user.id,
-    userId: state.user.id
+    userId: state.user.id,
+    ids: state.multi_select.ids
 })
 
 const mapDispatchToProps = {
-    loadData
+    loadData, changeMulti
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CollectionList)

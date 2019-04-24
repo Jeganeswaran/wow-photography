@@ -1,4 +1,4 @@
-import { USER, _UPDATE_DATA, _CLEAR, PUBLISHED_COLLECTION, PRIVATE_COLLECTION, photos_url, profile_url } from "./constants";
+import { USER, _UPDATE_DATA, _CLEAR, PUBLISHED_COLLECTION, PRIVATE_COLLECTION, photos_url, profile_url, MULTISELECT } from "./constants";
 import { loadData, clearData } from "./http";
 import apiInstance from "../apiInstance";
 
@@ -24,6 +24,11 @@ export const loadUser = () => {
         })
     }
 }
+
+export const changeMulti = (type, payload) => ({
+    type: MULTISELECT +  type,
+    payload
+})
 
 //add photo success
 export const addPhotoSuccess = () => {
