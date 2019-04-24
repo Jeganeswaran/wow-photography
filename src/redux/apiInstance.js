@@ -5,7 +5,7 @@ const prod_domain = "wowadmin.clusterbooks.com";
 
 //rest
 const devUrl = `http://${dev_domain}/`;
-const prodUrl = `http://${prod_domain}/`;
+const prodUrl = `https://${prod_domain}/`;
 
 export const baseURL = process.env.NODE_ENV === "development" ? devUrl : prodUrl;
 

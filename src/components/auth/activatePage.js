@@ -36,7 +36,7 @@ const ActivatePage = ({ isToken, location, history, dispatch }) => {
                             <h4>Account Activation</h4>
                             <p>
                                 You have landed on the Activation Page.<br></br>
-                                Please click th below button to activate account.
+                                Please click the below button to activate account.
                             </p>
                             <Submitbtn
                                 className="btn btn-theme"

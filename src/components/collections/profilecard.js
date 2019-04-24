@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 import { OpenModalBtn } from "../modals/modalbtns"
 import { connect } from 'react-redux'
 import avatar from "../../assets/img/user.png"

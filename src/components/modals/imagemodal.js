@@ -1,5 +1,5 @@
 import React from 'react'
-import { CloseModalWrapper, ModalCon, OpenImg } from './modalbtns'
+import { CloseModalWrapper, ModalCon } from './modalbtns'
 
 const ImageModal = ({ image }) => {
     return (

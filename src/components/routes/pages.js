@@ -4,12 +4,14 @@ import LandingPage from "../landing/landingpage";
 import CollectionsPage from "../collections/collectionspage";
 import ScrollToTop from "./scrolltop";
 import ActivatePage from "../auth/activatePage";
+import SuccessPage from "../auth/successpage";
 import UserRoute from "./userroute";
 import PrivacyPolicy from "../static/privacy";
 import Terms from "../static/terms";
 import RefundPolicy from "../static/refundpolicy";
 import ResetPwdPage from "../auth/resetpwdpage";
 import UpgradePage from "../upgrade/upgradepage";
+import FailurePage from "../auth/errorpage";
 
 const Pages = () => {
     return (
@@ -23,6 +25,8 @@ const Pages = () => {
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-and-conditions" component={Terms} />
                 <Route path="/refund-policy" component={RefundPolicy} />
+                <Route path="/payment-success" component={SuccessPage} />
+                <Route path="/payment-failure" component={FailurePage} />
             </Switch>
         </ScrollToTop>
     )
