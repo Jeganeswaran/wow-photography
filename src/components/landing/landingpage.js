@@ -87,7 +87,6 @@ const LandingPage = ({ dispatch }) => {
                                 <div className="col-md-6">
                                     <h5 className="f-600 text-center text-md-left">100 BEST PHOTO AWARDS</h5>
                                     <ul className="m-0 p-0 list-unstyled text-center text-md-left">
-                                        <li className="mb-1">Six Winners for Final Photo Challange</li>
                                         <li className="mb-1">Certificates</li>
                                         <li className="mb-1">Photo Exhibition for World Tourism Day</li>
                                     </ul>

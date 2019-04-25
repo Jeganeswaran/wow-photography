@@ -10,10 +10,14 @@ const ScrollList = ({
     objName,
     listData,
     loadMore,
+    NoData,
     rest = {},
     ...restProps
 }) => {
     if (listData) {
+        if(listData.count === 0){
+            return <NoData />
+        }
         return (
             <Fragment>
                 <DynamicList

@@ -32,7 +32,6 @@ const MultiSubmit = ({ list, categories, changeMulti, addPhotoSuccess, addToast,
 			return [...acc, { photo: cur.id, categories: cur.categories_id }]
 		}, []);
 
-		console.log(postData);
 
 		setReq(x => ({
 			...x,
@@ -103,6 +102,7 @@ const MultiSubmit = ({ list, categories, changeMulti, addPhotoSuccess, addToast,
 				</div>
 			</div>
 			<LoadingBtn
+				disabled={list.length === 0}
 				fetching={res.fetching}
 				className="btn btn-theme float-right pr-4 pl-4"
 				onClick={handleSubmit}

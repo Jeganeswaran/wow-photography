@@ -208,6 +208,7 @@ hr[data-title]:before {
     vertical-align: middle;
     display: inline-flex;
     align-items: center;
+    word-wrap: break-word;
 }
 
 .tab-header .active,

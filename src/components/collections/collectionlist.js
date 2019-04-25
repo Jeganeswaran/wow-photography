@@ -5,6 +5,17 @@ import { PUBLISHED_COLLECTION, photos_url, PRIVATE_COLLECTION } from '../../redu
 import { connect } from 'react-redux'
 import { loadData } from '../../redux/actions/http';
 import { changeMulti } from '../../redux/actions/user';
+import { Link } from 'react-router-dom'
+
+const NoData = () => (
+    <div className="col-md-12">
+        <div className="p-5 flex-center flex-column border">
+            <Link to="/my-collection/enter-to-contest" className="btn btn-theme">
+                Enter to Contest
+            </Link>
+        </div>
+    </div>
+)
 
 const CollectionList = ({ isSubmitted = false, changeMulti, ids, listData, objName, userId, loadData }) => {
 
@@ -34,6 +45,7 @@ const CollectionList = ({ isSubmitted = false, changeMulti, ids, listData, objNa
                 type={type}
                 listData={listData}
                 objName={objName}
+                NoData={NoData}
                 rest={{userId}}
             />
         )
