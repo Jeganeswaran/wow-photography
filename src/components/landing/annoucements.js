@@ -15,7 +15,7 @@ const Announcements = ({ dispatch, fetching, announcements }) => {
         <Pagelayout>
             <div className="row">
                 <DynamicList
-                    RenderItem={({image, title, descriptions, created_on}) => (
+                    RenderItem={({image, title, short_descriptions, created_on}) => (
                         <div className="col-md-6">
                             <div className="row border announcement">
                                 {image &&<div className="col-md-4 p-0">
@@ -25,10 +25,10 @@ const Announcements = ({ dispatch, fetching, announcements }) => {
                                     <div className="d-flex h100p justify-content-between flex-column pt-2 pb-2">
                                         <div>
                                             <h5 className="f-600 mb-1">{title}</h5>
-                                            <p>{descriptions}</p>
+                                            <p>{short_descriptions}</p>
                                         </div>
                                         <div className="flex-between">
-                                            <span>{dateFormat(created_on)}</span>
+                                            <span className="f-14">{dateFormat(created_on)}</span>
                                             <Link to="/announcements" className="btn btn-theme">
                                                 Know more
                                             </Link>

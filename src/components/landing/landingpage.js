@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 import useHttp from '../../hooks/http/useHttp';
 import { LANDING, landing_url } from '../../redux/actions/constants';
 import WowPics from './WowPics';
+import Sponsors from './sponsors';
 
 const LandingPage = ({ dispatch }) => {
 
@@ -99,7 +100,15 @@ const LandingPage = ({ dispatch }) => {
                     </div>
                 </div>
             </section>
-            <section>
+            <section className="post-section">
+                <div className="container">
+                    <div className="text-center">
+                        <h2 className="montserrat f-600 mb-4 theme-red">OUR SPONSORS</h2>
+                    </div>
+                    <Sponsors />
+                </div>
+            </section>
+            <section className="bg-light-grey">
                 <div className="container pt-5 pb-5">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab voluptate eligendi nobis voluptates harum vero facilis omnis repellat. Expedita officiis voluptatibus id numquam culpa illo provident aliquid ab inventore?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam corrupti deleniti voluptatibus corporis! Velit quo consectetur ad ratione architecto? Veniam ut exercitationem quod unde sint dicta, dolorem sunt reprehenderit officiis!
                 </div>
