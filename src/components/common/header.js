@@ -5,9 +5,9 @@ import { OpenModalBtn } from "../modals/modalbtns"
 import { connect } from 'react-redux'
 import { logout_url } from '../../redux/actions/constants';
 import { closeModal, addToast } from '../../redux/actions/common';
-import { clearUser } from '../../redux/actions/user';
+import { logOutUser } from '../../redux/actions/user';
 
-const Header = ({ isToken, closeModal, addToast, clearUser  }) => {
+const Header = ({ isToken, closeModal, addToast, logOutUser }) => {
     return (
         <header className="header">
             <div className="flex-between header-height">
@@ -51,12 +51,12 @@ const Header = ({ isToken, closeModal, addToast, clearUser  }) => {
                                                 method: "DELETE"
                                             },
                                             succFunc(data){
-                                                closeModal()
-                                                clearUser()
+                                                logOutUser();
+                                                closeModal();
                                             },
                                             errFunc(data){
-                                                addToast(data, false)
-                                                closeModal()
+                                                addToast(data, false);
+                                                closeModal();
                                             }
                                         }}
                                     >
@@ -77,7 +77,7 @@ const mapStateToProps = ({ user }) => ({
 })
 
 const mapDispatchToProps = {
-    addToast, closeModal, clearUser
+    addToast, closeModal, logOutUser
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

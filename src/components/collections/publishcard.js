@@ -29,7 +29,7 @@ const PublishCard = ({ids, multiDispatch, ...props}) => {
                                         )
                                     }
                                 >
-                                    {isSelected && <span></span> }
+                                    {isSelected && <span><i className="fas fa-check"></i></span> }
                                 </button>
                                 : null
                     }
@@ -37,7 +37,7 @@ const PublishCard = ({ids, multiDispatch, ...props}) => {
                 {
                     is_submitted ?
                         <div className="flex-between p-2 align-items-center">
-                            <span>
+                            <div>
                                 {
                                     is_approved ?
                                         <span className="approv-pill bg-success">Approved</span> :
@@ -45,8 +45,11 @@ const PublishCard = ({ids, multiDispatch, ...props}) => {
                                             <span className="approv-pill bg-danger">Rejected</span> :
                                             <span className="approv-pill pendibg-bg">Pending Approval</span>
                                 }
-                            </span>
-                            <span>{submitted_on ? dateFormat(submitted_on) : ''}</span>
+                            </div>
+                            <div className="text-right f-12">
+                                <div className="f-600">{ categories }</div>
+                                <div style={{color: `#737373`}}>{submitted_on ? dateFormat(submitted_on) : ''}</div>
+                            </div>
                         </div> :
                         <div className="flex-between p-2 align-items-center">
                             {/* <input type="checkbox" /> */}
@@ -55,7 +58,7 @@ const PublishCard = ({ids, multiDispatch, ...props}) => {
                                 modalProps={{ id }}
                                 className="btn btn-a f-15 f-600"
                             >
-                                {categories}
+                                {categories} <i className="fas f-14 fa-angle-down"></i>
                             </OpenModalBtn>
                             <OpenModalBtn
                                 modalName="REQPAY_MODAL"

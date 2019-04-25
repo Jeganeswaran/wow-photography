@@ -70,7 +70,7 @@ const MultiSubmit = ({ list, categories, changeMulti, addPhotoSuccess, addToast,
 											</button>
 										</div>
 									</div>
-									<div className="form-group m-0">
+									<div className="form-group">
 										<select
 											value={categories_id}
 											className="form-control f-14"

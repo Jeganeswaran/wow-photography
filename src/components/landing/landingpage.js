@@ -22,7 +22,10 @@ const LandingPage = ({ dispatch }) => {
             </PageLayout>
             <section className="bg-light-grey post-section">
                 <div className="container">
-                    <h2 className="text-center f-600 mb-2 theme-red">PRIZES</h2>
+                    <div className="text-center">
+                        <h2 className="montserrat f-600 mb-2 theme-red">WIN EXICITING PRIZES</h2>
+                        <p className="poppins">Win upto US $2000 in four different award categories</p>
+                    </div>
                     <div className="row">
                         <div className="col-md-6 mb-4">
                             <div className="row flex-center">
@@ -32,8 +35,8 @@ const LandingPage = ({ dispatch }) => {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <h5 className="f-600 text-center text-md-left">PHOTO OF THE YEAR 2019</h5>
-                                    <ul className="m-0 p-0 list-unstyled text-center text-md-left">
+                                    <h5 className="montserrat f-600 text-center text-md-left">PHOTO OF THE YEAR 2019</h5>
+                                    <ul className="m-0 p-0 list-unstyled text-center text-md-left poppins">
                                         <li className="mb-1">One Grand Winner</li>
                                         <li className="mb-1">US $2000</li>
                                         <li className="mb-1">All Paid International Trip</li>
@@ -50,8 +53,8 @@ const LandingPage = ({ dispatch }) => {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <h5 className="f-600">CREATIVE EYE AWARD 2019</h5>
-                                    <ul className="m-0 p-0 list-unstyled text-center text-md-left">
+                                    <h5 className="montserrat f-600">CREATIVE EYE AWARD 2019</h5>
+                                    <ul className="m-0 p-0 list-unstyled text-center text-md-left poppins">
                                         <li className="mb-1">One Creative Eye Winner</li>
                                         <li className="mb-1">US $1000</li>
                                         <li className="mb-1">All Paid International Trip</li>
@@ -68,8 +71,8 @@ const LandingPage = ({ dispatch }) => {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <h5 className="f-600 text-center text-md-left">EXPLORER AWARD 2019</h5>
-                                    <ul className="m-0 p-0 list-unstyled text-center text-md-left">
+                                    <h5 className="montserrat f-600 text-center text-md-left">EXPLORER AWARD 2019</h5>
+                                    <ul className="poppins m-0 p-0 list-unstyled text-center text-md-left">
                                         <li className="mb-1">Six Winners for Final Photo Challange</li>
                                         <li className="mb-1">All Paid International Trip</li>
                                         <li className="mb-1">Trophy & Certificate</li>
@@ -85,8 +88,8 @@ const LandingPage = ({ dispatch }) => {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <h5 className="f-600 text-center text-md-left">100 BEST PHOTO AWARDS</h5>
-                                    <ul className="m-0 p-0 list-unstyled text-center text-md-left">
+                                    <h5 className="montserrat f-600 text-center text-md-left">100 BEST PHOTO AWARDS</h5>
+                                    <ul className="poppins m-0 p-0 list-unstyled text-center text-md-left">
                                         <li className="mb-1">Certificates</li>
                                         <li className="mb-1">Photo Exhibition for World Tourism Day</li>
                                     </ul>

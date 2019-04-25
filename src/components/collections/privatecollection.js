@@ -15,7 +15,7 @@ const PrivateCollection = ({ ids }) => {
                     modalName="MULTI_MODAL"
                     className="btn btn-theme btn-selected"
                 >
-                    Selected ({ids.length})
+                    Selected ({ids.length}) <i className="fas f-14 ml-2 fa-angle-up"></i>
                 </OpenModalBtn>
             </Portal>}
         </div>

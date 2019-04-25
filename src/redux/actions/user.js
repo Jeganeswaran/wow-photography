@@ -8,10 +8,21 @@ export const updateUser = (payload) => ({
     payload
 })
 
+// logout user
+export const logOutUser = () => {
+    return (dispatch, getState) => {
+        const { id } = getState().user;
+        const rest = { userId: id };
+        dispatch(clearUser());
+        dispatch(changeMulti("_CLEAR"));
+        dispatch(clearData(PUBLISHED_COLLECTION, rest));
+        dispatch(clearData(PRIVATE_COLLECTION, rest));
+    }
+}
+
 //Clear user
-export const clearUser = (payload) => ({
-    type: `${USER}${_CLEAR}`,
-    payload
+export const clearUser = () => ({
+    type: `${USER}${_CLEAR}`
 })
 
 //load user details
