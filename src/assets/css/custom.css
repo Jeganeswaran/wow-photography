@@ -97,6 +97,7 @@ a:hover {
     font-size: 14px;
 }
 
+
 .theme-red {
     color: #df006f !important;
 }
@@ -598,4 +599,14 @@ hr[data-title]:before {
 
 .color-white{
     color: #fff !important;
+}
+
+.sponsor-img {
+    height: 150px;
+}
+
+.sponsor-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }

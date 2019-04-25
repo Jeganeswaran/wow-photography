@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useAnimate(start = true, duration) {
+export default function useAnimate(duration) {
 
     const [anim, setAnim] = useState(0);
 

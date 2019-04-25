@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 const Banner = () => {
     return (
@@ -10,6 +11,9 @@ const Banner = () => {
                         PHOTOGRAPHY CONTEST
                     </h1>
                     <p>Nulla minus expedita soluta facere ex molestias sed, tempora nam repellendus, odit corporis enim libero? Architecto!</p>
+                    <Link to="my-collection/enter-to-contest" className="btn btn-outline-light mt-3">
+                        Enter to Contest
+                    </Link>
                 </div>
             </div>
         </div>

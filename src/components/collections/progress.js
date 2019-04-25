@@ -3,7 +3,7 @@ import useAnimate from '../../hooks/useAnimate';
 
 const Progress = ({ complete, duration = 3000 }) => {
 
-    const width = useAnimate(!complete, duration);
+    const width = useAnimate(duration);
 
     return (
         <div className="progress mt-2">
