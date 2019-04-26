@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import { connect } from 'react-redux'
+import { OpenModalBtn } from "../modals/modalbtns"
 
-const Banner = () => {
+const Banner = ({ isToken }) => {
     return (
         <div className="banner">
             <div className="banner-tint flex-center">
@@ -11,13 +13,27 @@ const Banner = () => {
                         PHOTOGRAPHY CONTEST
                     </h1>
                     <p>Nulla minus expedita soluta facere ex molestias sed, tempora nam repellendus, odit corporis enim libero? Architecto!</p>
-                    <Link to="my-collection/enter-to-contest" className="btn btn-outline-light mt-3">
-                        Enter to Contest
-                    </Link>
+                    {
+                        isToken ?
+                        <Link to="/my-collection/enter-to-contest" className="btn btn-outline-light mt-3">
+                            Enter to Contest
+                        </Link> :
+                        <OpenModalBtn 
+                            modalName="SIGNIN_MODAL"
+                            className="btn btn-outline-light mt-3"
+                        >
+                            Enter to Contest
+                        </OpenModalBtn>
+                    }
                 </div>
             </div>
         </div>
     )
 }
 
-export default Banner
+
+const mapStateToProps = ({ user }) => ({
+    isToken: user && user.token
+})
+
+export default connect(mapStateToProps)(Banner)
