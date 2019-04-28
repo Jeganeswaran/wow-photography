@@ -63,6 +63,11 @@ a:hover {
     color: #212529;
 }
 
+.header-list li a, .header-list li button{
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.7);
+}
+
 /* text styles ends here */
 .errdiv {
     background: #e87c03;
@@ -178,7 +183,7 @@ hr[data-title]:before {
 .banner {
     height: calc(100vh - 60px);
     /* will change */
-    background-image: url("../img/01.jpg");
+    /* background-image: url("../img/01.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

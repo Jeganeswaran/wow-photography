@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Logo from './logo';
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { OpenModalBtn } from "../modals/modalbtns"
 import { connect } from 'react-redux'
 import { logout_url } from '../../redux/actions/constants';
@@ -12,49 +12,70 @@ const Header = ({ isToken, closeModal, addToast, logOutUser }) => {
         <header className="header">
             <div className="flex-between header-height">
                 <div className="logo-holder">
-                    <Link to="/" className="d-block">
+                    <NavLink to="/" className="d-block">
                         <Logo className="logo" />
-                    </Link>
+                    </NavLink>
                 </div>
                 <div className="d-flex align-items-center">
-                    <ul className="menu-list">
-                        <li>About Us</li>
-                        <li>Faq</li>
-                        <li>Contact Us</li>
+                    <ul className="menu-list header-list">
                         {!isToken ?
-                            <Fragment>
+                            <>
                                 <li>
                                     <OpenModalBtn
-                                        className="btn-a font-weight-bold f-14"
+                                        className="btn-a f-14"
                                         modalName="SIGNIN_MODAL"
                                     >
                                         Sign In
-                                </OpenModalBtn>
+                                    </OpenModalBtn>
                                 </li>
-                                <li className="font-weight-bold">
+                                <li>
                                     <OpenModalBtn
-                                        className="btn-a font-weight-bold f-14"
+                                        className="btn-a f-14"
                                         modalName="SIGNUP_MODAL"
                                     >
                                         Sign Up
                                     </OpenModalBtn>
                                 </li>
-                            </Fragment> :
-                            <Fragment>
+                            </> :
+                            <>
+                                <li>
+                                    <NavLink activeClassName="theme-red" to="/my-collection">
+                                        Profile
+                                    </NavLink>
+                                </li>
+                            </>
+                        }
+                        <li>
+                            <NavLink activeClassName="theme-red" to="/announcements">
+                                Announcements
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink activeClassName="theme-red" to="/faq">
+                                Faq
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink activeClassName="theme-red" to="/contact-us">
+                                Contact Us
+                            </NavLink>
+                        </li>
+                        {
+                            <>
                                 <li>
                                     <OpenModalBtn
-                                        className="btn-a font-weight-bold f-14"
+                                        className="btn-a f-14"
                                         modalName="LOADING_MODAL"
                                         modalProps={{
                                             config: {
                                                 url: logout_url,
                                                 method: "DELETE"
                                             },
-                                            succFunc(data){
+                                            succFunc(data) {
                                                 logOutUser();
                                                 closeModal();
                                             },
-                                            errFunc(data){
+                                            errFunc(data) {
                                                 addToast(data, false);
                                                 closeModal();
                                             }
@@ -63,7 +84,7 @@ const Header = ({ isToken, closeModal, addToast, logOutUser }) => {
                                         Sign Out
                                     </OpenModalBtn>
                                 </li>
-                            </Fragment>
+                            </>
                         }
                     </ul>
                 </div>
