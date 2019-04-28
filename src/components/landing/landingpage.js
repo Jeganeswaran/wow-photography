@@ -4,7 +4,7 @@ import Banner from './banner';
 import { connect } from 'react-redux'
 import useHttp from '../../hooks/http/useHttp';
 import { LANDING, landing_url } from '../../redux/actions/constants';
-// import WowPics from './WowPics';
+import WowPics from './WowPics';
 import PrizeSection from './prizesection';
 // import Sponsors from './sponsors';
 
@@ -19,7 +19,8 @@ const LandingPage = ({ dispatch }) => {
             {/* <PageLayout>
                 <WowPics />
             </PageLayout> */}
-            <section className="">
+            <WowPics />
+            <section className="bg-light-grey">
                 <div className="container pt-5 pb-5">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab voluptate eligendi nobis voluptates harum vero facilis omnis repellat. Expedita officiis voluptatibus id numquam culpa illo provident aliquid ab inventore?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam corrupti deleniti voluptatibus corporis! Velit quo consectetur ad ratione architecto? Veniam ut exercitationem quod unde sint dicta, dolorem sunt reprehenderit officiis!
                 </div>

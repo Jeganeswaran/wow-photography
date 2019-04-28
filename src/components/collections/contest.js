@@ -75,25 +75,6 @@ const Contest = ({ fetching, data, dispatch }) => {
     if (data && data.length > 0) {
         return (
             <div className="pt-3">
-                <div className="form-group">
-                    <select
-                        value={category}
-                        onChange={({ target }) =>
-                            setCategory(target.value)
-                        }
-                        className="form-control f-14"
-                    >
-                        <List
-                            RenderItem={({ name, id }) => (
-                                <option value={id}>
-                                    {name}
-                                </option>
-                            )}
-                            title="cats"
-                            list={[{ id: "", name: "Choose Category" }, ...data]}
-                        />
-                    </select>
-                </div>
                 <div className="pb-2">
                     <div className="row flex-wrap">
                         <div className="col-md-6 pr-md-2">
@@ -116,7 +97,7 @@ const Contest = ({ fetching, data, dispatch }) => {
                                         accept="image/*"
                                     />
                                     <i className="fa fa-plus"></i>
-                                    <p>Add new photograph</p>
+                                    <p>{photo ? "Change" : "Add new"} photograph</p>
                                 </div>
                             </label>
                         </div>
@@ -130,6 +111,28 @@ const Contest = ({ fetching, data, dispatch }) => {
                                             <p>Image Preview</p>
                                         </div>
                                 }
+                            </div>
+                        </div>
+                        <div className="col-md-12 mt-3">
+                            <div className="form-group">
+                                <select
+                                    disabled={!photo}
+                                    value={category}
+                                    onChange={({ target }) =>
+                                        setCategory(target.value)
+                                    }
+                                    className="form-control f-14"
+                                >
+                                    <List
+                                        RenderItem={({ name, id }) => (
+                                            <option value={id}>
+                                                {name}
+                                            </option>
+                                        )}
+                                        title="cats"
+                                        list={[{ id: "", name: "Choose Category" }, ...data]}
+                                    />
+                                </select>
                             </div>
                         </div>
                     </div>

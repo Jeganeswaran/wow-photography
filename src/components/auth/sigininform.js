@@ -5,6 +5,7 @@ import { login_url } from '../../redux/actions/constants';
 import { addToast, closeModal } from '../../redux/actions/common';
 import { connect } from 'react-redux'
 import { updateUser } from '../../redux/actions/user';
+import { withRouter } from "react-router-dom"
 
 const client = Math.random() * 100000;
 
@@ -34,7 +35,7 @@ const inputs = [
     }
 ];
 
-const SignInForm = ({ addToast, closeModal, updateUser }) => {
+const SignInForm = ({ addToast, closeModal, updateUser, history }) => {
     return (
         <RenderForm
             RenderItem={FormGroup}
@@ -47,7 +48,7 @@ const SignInForm = ({ addToast, closeModal, updateUser }) => {
             succFunc={
                 (data) => {
                     updateUser(data);
-                    closeModal();
+                    history.push("/my-profile");
                 }
             }
             errFunc={
@@ -67,4 +68,4 @@ const mapDispatchToProps = {
     addToast, closeModal, updateUser
 }
 
-export default connect(null, mapDispatchToProps)(SignInForm)
+export default withRouter(connect(null, mapDispatchToProps)(SignInForm))

@@ -15,7 +15,7 @@ const Banner = ({ isToken }) => {
                     <h3>FOCUSING WORLD TOURISM</h3>
                     {
                         isToken ?
-                        <Link to="/my-collection/enter-to-contest" className="btn pl-4 pr-4 btn-outline-light mt-4">
+                        <Link to="/my-profile/enter-to-contest" className="btn pl-4 pr-4 btn-outline-light mt-4">
                             Enter Now
                         </Link> :
                         <OpenModalBtn 

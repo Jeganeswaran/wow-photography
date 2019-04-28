@@ -25,7 +25,7 @@ const ProfileCard = ({ user }) => {
                     >
                         Change password
                     </OpenModalBtn>
-                    {/* <Link className="theme-red text-underline" to="/my-collection">
+                    {/* <Link className="theme-red text-underline" to="/my-profile">
                         Edit profile
                     </Link> */}
                 </div>

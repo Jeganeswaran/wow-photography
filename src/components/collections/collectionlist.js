@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 const NoData = () => (
     <div className="col-md-12">
         <div className="p-5 flex-center flex-column border">
-            <Link to="/my-collection/enter-to-contest" className="btn btn-theme">
+            <Link to="/my-profile/enter-to-contest" className="btn btn-theme">
                 Enter to Contest
             </Link>
         </div>

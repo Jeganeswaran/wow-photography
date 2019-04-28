@@ -84,7 +84,7 @@ const ResetPwd = ({ isToken, location, history, updateUser, clearUser, addToast 
                                 succFunc={
                                     (data) => {
                                         updateUser(data);
-                                        history.replace("/");
+                                        history.replace("/my-profile");
                                     }
                                 }
                                 errFunc={

@@ -39,7 +39,7 @@ const Header = ({ isToken, closeModal, addToast, logOutUser }) => {
                             </> :
                             <>
                                 <li>
-                                    <NavLink activeClassName="theme-red" to="/my-collection">
+                                    <NavLink activeClassName="theme-red" to="/my-profile">
                                         Profile
                                     </NavLink>
                                 </li>

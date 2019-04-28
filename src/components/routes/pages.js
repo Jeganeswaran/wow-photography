@@ -19,7 +19,7 @@ const Pages = () => {
         <ScrollToTop>
             <Switch>
                 <Route exact path="/" component={LandingPage} />
-                <UserRoute path="/my-collection" component={CollectionsPage} />
+                <UserRoute path="/my-profile" component={CollectionsPage} />
                 <Route path="/announcements" component={Annoucements} />
                 <Route path="/activate-account" component={ActivatePage} />
                 <Route path="/reset-password" component={ResetPwdPage} />

@@ -5,18 +5,26 @@ import DynamicList from '../common/dynamiclist';
 
 const WowPics = ({ fetching, wow_pick }) => {
     return (
-        <div className="row">
-            <DynamicList 
-                RenderItem={(props) => (
-                    <div className="col-md-4">
-                        <Post {...props} />
-                    </div>
-                )}
-                title="wow-picks"
-                list={wow_pick}
-                fetching={fetching}
-            />
+        <div className="post-section">
+            <div className="container">
+                <div className="text-center mb-4">
+                    <h3 className="montserrat f-700">PREVIOUS PRIZE WINNERS</h3>
+                </div>
+                <div className="row">
+                    <DynamicList
+                        RenderItem={(props) => (
+                            <div className="col-md-4">
+                                <Post {...props} />
+                            </div>
+                        )}
+                        title="wow-picks"
+                        list={wow_pick}
+                        fetching={fetching}
+                    />
+                </div>
+            </div>
         </div>
+
     )
 }
 

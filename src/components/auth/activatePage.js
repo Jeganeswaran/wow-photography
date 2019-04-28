@@ -50,7 +50,7 @@ const ActivatePage = ({ isToken, location, history, dispatch }) => {
                                 }}
                                 success={(data) => {
                                     dispatch(updateUser(data));
-                                    history.replace("/");
+                                    history.replace("/my-profile");
                                 }}
                             />
                         </div>

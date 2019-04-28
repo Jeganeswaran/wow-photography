@@ -31,12 +31,12 @@ const CollectionsPage = ({ dispatch }) => {
                                 className="profile-tabs"
                                 tablinks={[
                                     {
-                                        to: "/my-collection",
+                                        to: "/my-profile",
                                         exact: true,
                                         children: "Submitted Photographs"
                                     },
                                     {
-                                        to: "/my-collection/private-photographs",
+                                        to: "/my-profile/private-photographs",
                                         exact: true,
                                         children: "Unsubmitted Photographs"
                                     }
@@ -46,7 +46,7 @@ const CollectionsPage = ({ dispatch }) => {
                         <div className="mb-1">
                             <Link
                                 className="f-15 f-500 theme-red"
-                                to="/my-collection/enter-to-contest"
+                                to="/my-profile/enter-to-contest"
                             >
                                 <i className="fa fa-plus f-14 mr-1"></i>
                                 Enter to contest

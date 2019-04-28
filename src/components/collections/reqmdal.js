@@ -74,7 +74,7 @@ const RequestModal = ({ photo, categories, isContest, user, addPhotoSuccess, add
                 }            
             </div>
             {isContest && <div className="form-group">
-                <Link to="/my-collection/enter-to-contest" className="btn f-14 btn-primary btn-block">
+                <Link to="/my-profile/enter-to-contest" className="btn f-14 btn-primary btn-block">
                     Add more photos
                 </Link>
             </div>}
