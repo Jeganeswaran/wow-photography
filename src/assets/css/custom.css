@@ -68,6 +68,10 @@ a:hover {
     color: rgba(0, 0, 0, 0.7);
 }
 
+.header-list li a:hover, .header-list li button:hover{
+    color: #df006f;
+}
+
 /* text styles ends here */
 .errdiv {
     background: #e87c03;
