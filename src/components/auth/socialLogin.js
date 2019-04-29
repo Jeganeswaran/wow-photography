@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import SocialButton from './socialbutton';
 import useDataSubmit from '../../hooks/http/useDataSubmit';
 import { fbauth_url, gglauth_url } from '../../redux/actions/constants';
-import { addToast, closeModal } from '../../redux/actions/common';
+import { addToast } from '../../redux/actions/common';
 import { connect } from 'react-redux'
 import { updateUser } from '../../redux/actions/user';
+import { withRouter } from "react-router-dom"
 
-const SocialLogin = ({ title, updateUser, closeModal, addToast }) => {
+const SocialLogin = ({ title, updateUser, addToast, history }) => {
 
     const [showFb, setShowFb] = useState(true);
 
@@ -15,7 +16,7 @@ const SocialLogin = ({ title, updateUser, closeModal, addToast }) => {
     const fbAuth = useDataSubmit(
         (data) => {
             updateUser(data);
-            closeModal();
+            history.push("/my-profile");
         },
         (data) => {
             addToast(data, false);
@@ -25,7 +26,7 @@ const SocialLogin = ({ title, updateUser, closeModal, addToast }) => {
     const ggAuth = useDataSubmit(
         (data) => {
             updateUser(data);
-            closeModal();
+            history.push("/my-profile");
         },
         (data) => {
             addToast(data, false);
@@ -117,7 +118,7 @@ const SocialLogin = ({ title, updateUser, closeModal, addToast }) => {
 }
 
 const mapDispatchToProps = {
-    addToast, closeModal, updateUser
+    addToast, updateUser
 }
 
-export default connect(null, mapDispatchToProps)(SocialLogin)
+export default withRouter(connect(null, mapDispatchToProps)(SocialLogin))

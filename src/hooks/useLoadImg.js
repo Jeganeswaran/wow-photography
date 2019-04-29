@@ -4,7 +4,6 @@ const useLoadImg = (src) => {
 
     const [loading, setLoading] = useState(true);
 
-
     useLayoutEffect(() => {
         let img = new Image();
         img.src = src;

@@ -15,14 +15,17 @@ const SponsorSlide = ({ sponsors }) => {
 		>
 		{
 			sponsors.map(({logo, name, website, id}) => (
-				<div className="sponsor" key={id}>
-					<div className="sponsor-img">
+				<a 
+					rel="noopener noreferrer" 
+					target="_blank" 
+					href={website} 
+					className="d-block sponsor" 
+					key={id}
+				>
+					<div className="sponsor-img mb-2">
 						<img src={logo} alt={name} />
 					</div>
-					<div className="text-center">
-						<a rel="noopener noreferrer" target="_blank" className="f-18 f-600" href={website}>{name}</a>
-					</div>
-				</div>
+				</a>
 			))
 		}
 		</Carousel>
