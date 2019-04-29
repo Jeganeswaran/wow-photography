@@ -79,9 +79,9 @@ const RequestModal = ({ photo, categories, isContest, user, addPhotoSuccess, add
                 </Link>
             </div>}
             {isContest && <div className="form-group">
-                <button onClick={() => closeModal()} className="btn f-14 btn-danger btn-block">
-                    Pay later
-                </button>
+                <Link to="/my-profile/private-photographs" className="btn f-14 btn-primary btn-block">
+                    Pay Later
+                </Link>
             </div>}
         </div>
     )

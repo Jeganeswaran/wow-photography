@@ -24,7 +24,7 @@ const MultiSubmit = ({ list, categories, changeMulti, addPhotoSuccess, addToast,
 	const handleSubmit = () => {
 		//check if file size less than 20MB
 		if (points < list.length) {
-			addToast(`You have ${points} points. Please upgrade your package`, false);
+			addToast(`You have ${points} credits. Please upgrade your package`, false);
 			return;
 		}
 
