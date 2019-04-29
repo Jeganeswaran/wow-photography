@@ -11,6 +11,7 @@ import { addToast, openModal } from '../../redux/actions/common';
 import { addPhotoSuccess } from '../../redux/actions/user';
 import LoadingBtn from '../common/loadingbtn';
 import Progress from './progress';
+import { Link } from "react-router-dom"
 
 const Contest = ({ fetching, data, dispatch }) => {
 
@@ -138,19 +139,19 @@ const Contest = ({ fetching, data, dispatch }) => {
                     </div>
                 </div>
                 <GuideLines />
-                <div className="form-group">
-                    <label className="f-14 d-flex align-items-center theme-red" htmlFor="termsIp">
-                        <input
-                            type="checkbox"
-                            id="termsIp"
-                            checked={terms}
-                            className="mr-2"
-                            onChange={() => {
-                                setTerms(term => !term)
-                            }}
-                        />
-                        I agree to all terms and conditions
-                    </label>
+                <div className="d-flex align-items-center form-group mb-2">
+                    <input
+                        type="checkbox"
+                        id="termsIp"
+                        checked={terms}
+                        className="mr-2"
+                        onChange={() => {
+                            setTerms(term => !term)
+                        }}
+                    />
+                    <span className="f-14 d-flex align-items-center">
+                        I agree to all  <Link className="theme-red ml-1" to="/terms-and-conditions"> Terms & Conditions </Link>
+                    </span>
                 </div>
                 {
                     photo && res.fetching &&

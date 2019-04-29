@@ -1,5 +1,5 @@
 import React from 'react'
-// import Pagelayout from '../common/pagelayout';
+import SponsorLayout from '../common/sponsorlayout';
 
 const RefundPolicy = () => {
     return (
@@ -9,7 +9,7 @@ const RefundPolicy = () => {
                     <h1>Returns and Refunds Policy</h1>
                 </div>
             </div>
-            <div className="container static-content">
+            <SponsorLayout>
                 <p>Thank you for participating at WOW PHOTO AWARDS 2019 International Photo Contes focusing World Tourism.<br></br> Please read this policy carefully. <br></br>This is the Return and Refund Policy of WOW PHOTO AWARDS .</p>
                 <h5>Digital products</h5>
                 <p>We do not issue refunds for digital services once the order is confirmed and the Photo is submitted.<br></br>We recommend contacting us for assistance if you experience any issues receiving or uploading during the submission.</p>
@@ -20,7 +20,7 @@ const RefundPolicy = () => {
                     <br></br>
                     By visiting this page on our website:<a href="http://wowphotoawards.com/contact"> wowphotoawards.com/contact</a>
                 </p>
-            </div>
+            </SponsorLayout>
         </div>
     )
 }

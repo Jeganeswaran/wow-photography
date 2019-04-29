@@ -2,9 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Loader from '../common/loader';
 import SponsorSlide from './sponsorslide';
-// import DynamicList from '../common/dynamiclist';
+import { LANDING, landing_url } from '../../redux/actions/constants';
+import useHttp from '../../hooks/http/useHttp';
 
-const Sponsors = ({ fetching, sponsors }) => {
+const Sponsors = ({ dispatch, fetching, sponsors }) => {
+
+    useHttp(dispatch, LANDING, { url: landing_url }, "landing_page");
+
     if (fetching) {
         return (
             <div className="flex-center">

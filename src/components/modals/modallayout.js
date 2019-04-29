@@ -6,7 +6,7 @@ const ModalLayout = ({ title, children }) => {
         <CloseModalWrapper className="modal-wrapper">
             <ModalCon className="modal-container signin-modal">
                 <div className="mb-4">
-                    <h3 className="font-weight-bold">{title}</h3>
+                    <h4 className="font-weight-bold">{title}</h4>
                 </div>
                 {children}
             </ModalCon>

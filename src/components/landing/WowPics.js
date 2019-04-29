@@ -8,7 +8,7 @@ const WowPics = ({ fetching, wow_pick }) => {
         <div className="post-section">
             <div className="container">
                 <div className="text-center mb-4">
-                    <h3 className="montserrat f-700">PAST PRIZE WINNERS</h3>
+                    <h3 className="montserrat f-700">PAST WINNERS</h3>
                 </div>
                 <div className="row">
                     <DynamicList

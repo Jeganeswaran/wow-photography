@@ -200,7 +200,7 @@ hr[data-title]:before {
 
 .banner-tint {
     position: absolute;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.4);
     color: #fff;
     text-align: center;
     width: 100%;
@@ -615,7 +615,9 @@ hr[data-title]:before {
 }
 
 .sponsor-img {
-    height: 80px;
+    height: 60px;
+    padding: 0 5px;
+    margin-bottom: 10px;
 }
 
 .sponsor-img img {
@@ -695,4 +697,9 @@ hr[data-title]:before {
 
 .accordion:focus{
     outline: none;
+}
+
+.prize-img{
+    max-height: 200px;
+    object-fit: contain;
 }

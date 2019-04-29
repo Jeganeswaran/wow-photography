@@ -1,5 +1,5 @@
 import React from 'react'
-// import Pagelayout from '../common/pagelayout';
+import SponsorLayout from '../common/sponsorlayout';
 
 const Terms = () => {
     return (
@@ -9,7 +9,7 @@ const Terms = () => {
                     <h1>Terms and Conditions</h1>
                 </div>
             </div>
-            <div className="container static-content">
+            <SponsorLayout>
                 <p>“WOW PHOTO AWARDS ” Brand name and the event Initiated, owned, Operated &amp; Organized by Global Media Box Innovations Pvt Ltd (referred as “Organizer”). On participating the contest each entrant/contestant accepts the Terms and Conditions Laid by organizer and the associated Sponsors for WOW PHOTO AWARDS .</p>
                 <p>Anyone can enter, including professional photographers. However, minors under the age of 18 must receive permission from a parent or guardian.There are no restrictions whatsoever on photographic equipment used to shoot photos to be entered.Any photographic device from a DSLR to smartphone may be used.</p>
                 <h5>What images CANNOT participate in WOW PHOTO AWARDS?</h5>
@@ -47,7 +47,7 @@ const Terms = () => {
                 <p>Each entry including title and descriptions should not contain personally identifiable information about you or any other persons.</p>
                 <p>Entrants will be regarded as having consented to the published terms and conditions when entering.Photo entries are limited to those that have never been publicly displayed. Any photo available as stock photography is considered to be publicly displayed. Also, photos which have been awarded a prize in another contest or those which are currently entered in another contest are not eligible. However, photos which an entrant has posted on his or her own website, blog, or social media for non-commercial purposes or those which have been submitted to community sites are eligible.</p>
                 <p>Photos are limited only, in its entirety, to a single work of original material taken by the contest entrant and to which he or she retains all copyrights. Any conflicts or dispute that result from featuring subjects for which the rights do not belong to the entrant must be settled by the entrant and “Organiser” will incur no liability whatsoever. If a violation of copyrights is identified, that entry will be disqualified. If a violation of copyrights is identified after winners are announced, the win may be revoked and the entrant will lose the right to claim a prize. Depending on the country in which a winner resides, the prize may have to be changed in case the prize does not meet local standards and regulations. If the subject of a photo is a person, permission must be received from that person (parent or guardian in the case of a minor) before the photo can be entered in the contest.</p>
-            </div>
+            </SponsorLayout>
         </div>
     )
 }

@@ -7,6 +7,9 @@ import { photos_url } from '../../redux/actions/constants';
 
 const RequestModal = ({ photo, categories, isContest, user, addPhotoSuccess, addToast, closeModal }) => {
 
+    //terms
+    const [terms, setTerms] = useState(false);
+
     //select category
     const [category, setCategory] = useState(photo.categories_id || "");
 
@@ -45,11 +48,28 @@ const RequestModal = ({ photo, categories, isContest, user, addPhotoSuccess, add
                     />
                 </select>
             </div>
+            <div>
+                <div className="d-flex align-items-center form-group mb-2">
+                    <input
+                        type="checkbox"
+                        id="termsIp"
+                        checked={terms}
+                        className="mr-2"
+                        onChange={() => {
+                            setTerms(term => !term)
+                        }}
+                    />
+                    <span className="f-14 d-flex align-items-center">
+                        I agree to all  <Link className="theme-red ml-1" to="/terms-and-conditions"> Terms & Conditions </Link>
+                    </span>
+                </div>
+                <p className="f-10 theme-red">Note: Categories and photos cannot be changed after submission</p>
+            </div>
             <div className="form-group">
                 {
                     user.userprofile && user.userprofile.points ?
                     <LoadingBtn 
-                        disabled={category ? false : true}
+                        disabled={category && terms ? false : true}
                         fetching={res.fetching}
                         className="btn btn-theme btn-block"
                         title="Pay and Submit"

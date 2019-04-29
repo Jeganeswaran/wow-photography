@@ -4,15 +4,15 @@ import { Link } from "react-router-dom"
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="flex-center flex-column pt-4 pb-4 pl-3 pr-3">
-                <ul className="menu-list mb-3">
-                    <li>
+            <div className="flex-center text-center flex-column pt-4 pb-4 pl-3 pr-3">
+                <ul className="menu-list">
+                    <li className="mb-3">
                         <Link to="/privacy-policy">Privacy Policy</Link>
                     </li>
-                    <li>
+                    <li className="mb-3">
                         <Link to="/terms-and-conditions">Terms & conditions</Link>
                     </li>
-                    <li>
+                    <li className="mb-3">
                         <Link to="/refund-policy">Refund Policy</Link>
                     </li>
                 </ul>

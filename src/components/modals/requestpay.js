@@ -27,7 +27,7 @@ const ReqpayModal = props => {
     if(props.categories.data.length > 0){
         return (
             <ModalLayout 
-                title="Want to submit photo"    
+                title={"Confirm Category & Photo"}    
                 children={<RequestModal {...props} />}
             />
         )

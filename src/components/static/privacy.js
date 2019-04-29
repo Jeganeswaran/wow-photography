@@ -1,4 +1,5 @@
 import React from 'react'
+import SponsorLayout from '../common/sponsorlayout';
 
 const PrivacyPolicy = () => {
     return (
@@ -8,7 +9,7 @@ const PrivacyPolicy = () => {
                     <h1>Privacy Policy</h1>
                 </div>
             </div>
-            <div className="container static-content">
+            <SponsorLayout>
                 <p>GLOBAL MEDIA BOX INNOVATIONS PVT LTD operates the wowphotoawards.com
 website, which provides the SERVICEs of International Photo Contest focusing World
 Tourism .</p>
@@ -71,7 +72,7 @@ on this page.</p>
                 <h5>Contact Us</h5>
                 <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:cocerns@wowphotoawards.com">cocerns@wowphotoawards.com</a></p>
                 <p>This Privacy Policy page was created at <a href="http://wowphotography.billioncart.com/">wowphotography.billioncart.com</a></p>
-            </div>
+            </SponsorLayout>
         </div>
     )
 }

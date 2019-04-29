@@ -9,7 +9,7 @@ const PrizeSection = () => {
         <section className="post-section bg-light-grey">
             <div className="container">
                 <div className="text-center mb-4">
-                    <h2 className="montserrat f-700 theme-red">WIN EXICITING PRIZES</h2>
+                    <h2 className="montserrat f-700 theme-red">WOW PHOTO AWARDS 2019 PRIZES</h2>
                     <p className="poppins">Win upto US $2000 in four different award categories</p>
                 </div>
                 <div className="row">
@@ -58,7 +58,7 @@ const Prize = ({ src = null, title = "", desc =[] }) => (
         <div className="row flex-center">
             <div className="col-md-4">
                 <div>
-                    <img src={src} className="w-100" alt={title} />
+                    <img src={src} className="w-100 prize-img" alt={title} />
                 </div>
             </div>
             <div className="col-md-8">

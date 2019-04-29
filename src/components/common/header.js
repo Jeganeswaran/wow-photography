@@ -39,8 +39,13 @@ const Header = ({ isToken, closeModal, addToast, logOutUser }) => {
                             </> :
                             <>
                                 <li>
+                                    <NavLink exact activeClassName="theme-red" to="/">
+                                        Home
+                                    </NavLink>
+                                </li>
+                                <li>
                                     <NavLink activeClassName="theme-red" to="/my-profile">
-                                        Profile
+                                        My Profile
                                     </NavLink>
                                 </li>
                             </>

@@ -5,22 +5,6 @@ import { Link } from "react-router-dom";
 const CollCount = ({ private_photographs, submitted_photo, points, approved_photo, rejected_photo }) => {
     return (
         <div>
-            <div className="d-flex align-items-center border coll-counter text-center mb-3">
-                <div className="w-100">
-                    { points !== 0 && 
-                        <div>
-                            <h2>{points}</h2>
-                            <p className="f-13">Points</p> 
-                        </div>
-                    }
-                    <Link
-                        to="/upgrade"
-                        className={`btn btn-theme f-14 mb-3 ${points === 0 ? "mt-3" : ""} pl-md-4 pr-md-4`}
-                    >
-                        Upgrade
-                    </Link>
-                </div>
-            </div>
             <div className="d-flex flex-wrap align-items-center border coll-counter text-center mb-3">
                 <div className="coll-counter-item coll-border">
                     <h1>{private_photographs}</h1>
@@ -37,6 +21,22 @@ const CollCount = ({ private_photographs, submitted_photo, points, approved_phot
                 <div className="coll-counter-item">
                     <h3>{rejected_photo}</h3>
                     <p className="f-13">Rejected <br></br> Photographs</p>
+                </div>
+            </div>
+            <div className="d-flex align-items-center border coll-counter text-center mb-3">
+                <div className="w-100">
+                    {points !== 0 &&
+                        <div>
+                            <h2>{points}</h2>
+                            <p className="f-13">Points</p>
+                        </div>
+                    }
+                    <Link
+                        to="/upgrade"
+                        className={`btn btn-theme f-14 mb-3 ${points === 0 ? "mt-3" : ""} pl-md-4 pr-md-4`}
+                    >
+                        Upgrade
+                    </Link>
                 </div>
             </div>
         </div>

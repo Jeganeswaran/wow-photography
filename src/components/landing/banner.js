@@ -10,7 +10,7 @@ const Banner = () => {
                         THE ULTIMATE <br></br>
                         PHOTOGRAPHY CONTEST
                     </h1>
-                    <h3>FOCUSING WORLD TOURISM</h3>
+                    <h4>FOCUSING WORLD TOURISM</h4>
                     {/* <EnterBtn /> */}
                 </div>
             </div>
