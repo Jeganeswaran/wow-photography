@@ -46,6 +46,11 @@ const Header = ({ isToken, closeModal, addToast, logOutUser }) => {
                             </>
                         }
                         <li>
+                            <NavLink activeClassName="theme-red" to="/about-us">
+                                About Us
+                            </NavLink>
+                        </li>
+                        <li>
                             <NavLink activeClassName="theme-red" to="/announcements">
                                 Announcements
                             </NavLink>
@@ -61,6 +66,7 @@ const Header = ({ isToken, closeModal, addToast, logOutUser }) => {
                             </NavLink>
                         </li>
                         {
+                            isToken &&
                             <>
                                 <li>
                                     <OpenModalBtn

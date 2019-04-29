@@ -1,5 +1,4 @@
 import React from 'react'
-// import Pagelayout from '../common/pagelayout';
 
 const PrivacyPolicy = () => {
     return (

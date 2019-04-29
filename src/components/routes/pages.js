@@ -13,6 +13,7 @@ import ResetPwdPage from "../auth/resetpwdpage";
 import UpgradePage from "../upgrade/upgradepage";
 import FailurePage from "../auth/errorpage";
 import Annoucements from "../landing/annoucements";
+import Faq from "../static/faq";
 
 const Pages = () => {
     return (
@@ -29,6 +30,7 @@ const Pages = () => {
                 <Route path="/refund-policy" component={RefundPolicy} />
                 <Route path="/payment-success" component={SuccessPage} />
                 <Route path="/payment-failure" component={FailurePage} />
+                <Route path="/faq" component={Faq} />
             </Switch>
         </ScrollToTop>
     )
