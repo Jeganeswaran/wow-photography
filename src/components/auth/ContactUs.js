@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 
 const inputs = [
     {
+        label: "Full Name",
         inputProps: {
             name: "name",
             type: "text",
@@ -15,6 +16,7 @@ const inputs = [
         }
     },
     {
+        label: "Email",
         inputProps: {
             name: "email",
             type: "email",
@@ -23,6 +25,7 @@ const inputs = [
         }
     },
     {
+        label: "Message",
         inputProps: {
             name: "message",
             type: "textarea",

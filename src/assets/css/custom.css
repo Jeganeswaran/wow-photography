@@ -310,6 +310,21 @@ hr[data-title]:before {
     z-index: 1;
     border-radius: 50%;
     background: #fff;
+    position: relative;
+}
+
+.profile-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-img-edit{
+    position: absolute !important;
+    top: 0 !important;
+    right: 20px  !important;
+    cursor: pointer;
 }
 
 .profile-details {
@@ -436,7 +451,7 @@ hr[data-title]:before {
 }
 
 .static-content-header {
-    min-height: 40vh;
+    min-height: 428px;
     color: #fff;
     margin-bottom: 35px;
     text-align: center;
@@ -577,9 +592,13 @@ hr[data-title]:before {
     text-align: center;
 }
 
+.sourcesans{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 .btn-selected {
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     right: 10px;
     padding: 10px 25px;
     font-size: 16px;
@@ -714,6 +733,12 @@ hr[data-title]:before {
 .prize-img {
     max-height: 200px;
     object-fit: contain;
+}
+
+.collage-bg{
+    background-image: url("../img/WOW\ Phot\ Awards-\ About\ Collage-min.jpg");
+    /* height: 220px; */
+    background-size: 100% auto;
 }
 
 .btn-light-grey {

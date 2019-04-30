@@ -4,7 +4,7 @@ import SponsorSection from '../landing/sponsorsection';
 const SponsorLayout = ({title, children}) => {
     return (
         <div>
-            {title && <div className="static-content-header banner-bg">
+            {title && <div className="static-content-header collage-bg">
                 <div className="flex-center banner-tint">
                     <h1>{title}</h1>
                 </div>

@@ -16,23 +16,7 @@ const Footer = () => {
                         <Link to="/refund-policy">Refund Policy</Link>
                     </li>
                 </ul>
-                <ul className="menu-list mb-3">
-                    <li>
-                        <a href="https://www.facebook.com/wowphotoawards/">
-                            <i className="fab fa-facebook f-20"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/wowtamilnadu/">
-                            <i className="fab fa-instagram f-20"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.twitter.com/">
-                            <i className="fab fa-twitter f-20"></i>
-                        </a>
-                    </li>
-                </ul>
+                <SocialLinks />
                 <ul className="menu-list">
                     <li>Copyrights 2019</li>
                     <li>
@@ -43,5 +27,25 @@ const Footer = () => {
         </footer>
     )
 }
+
+export const SocialLinks = ({className = "menu-list mb-3"}) => (
+    <ul className={className}>
+        <li>
+            <a href="https://www.facebook.com/wowphotoawards/">
+                <i className="fab fa-facebook f-20"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/wowphotoawards/">
+                <i className="fab fa-instagram f-20"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.twitter.com/wowtamilnadu/">
+                <i className="fab fa-twitter f-20"></i>
+            </a>
+        </li>
+    </ul>
+)
 
 export default Footer
