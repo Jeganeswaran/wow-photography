@@ -8,7 +8,7 @@ const FormGroup = ({dispatch, err="", label, inputProps}) => {
     const RenderItem = renderInput(inputProps.type);
     return (
         <div className="form-group relative">
-            {label && <label className="f-14" for="exampleInputEmail1">{label}</label>}
+            {label && <label className="f-14">{label}</label>}
             <RenderItem 
                 className="form-control" 
                 dispatch={dispatch} 

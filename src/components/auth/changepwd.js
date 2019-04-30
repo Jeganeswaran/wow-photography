@@ -10,14 +10,6 @@ import { getValByName } from '../../utils/forms/validation';
 const inputs = [
     {
         inputProps: {
-            name: "current_password",
-            type: "password",
-            value: '',
-            placeholder: "Enter your old password"
-        }
-    },
-    {
-        inputProps: {
             name: "password",
             type: "password",
             value: '',
@@ -42,11 +34,22 @@ const inputs = [
     },
 ];
 
-const ChangePwd = ({ addToast, closeModal }) => {
+
+const ChangePwd = ({ addToast, closeModal, isUpdated }) => {
     return (
         <RenderForm
             RenderItem={FormGroup}
-            inputs={inputs}
+            inputs={isUpdated ? [
+                {
+                    inputProps: {
+                        name: "current_password",
+                        type: "password",
+                        value: '',
+                        placeholder: "Enter your old password"
+                    }
+                },
+                ...inputs
+            ] : inputs}
             title="change-form"
             config={{
                 url: changepwd_url,
@@ -67,8 +70,12 @@ const ChangePwd = ({ addToast, closeModal }) => {
     )
 }
 
+const mapStateToProps = ({ user }) => ({
+    isUpdated: user.userprofile && user.userprofile.is_update
+})
+
 const mapDispatchToProps = {
     addToast, closeModal, updateUser
 }
 
-export default connect(null, mapDispatchToProps)(ChangePwd)
+export default connect(mapStateToProps, mapDispatchToProps)(ChangePwd)
