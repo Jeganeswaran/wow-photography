@@ -703,3 +703,8 @@ hr[data-title]:before {
     max-height: 200px;
     object-fit: contain;
 }
+
+.btn-light-grey {
+    background-color: #e2e6ea;
+    border-color: #e2e6ea;
+}

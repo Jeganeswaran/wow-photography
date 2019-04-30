@@ -1,8 +1,8 @@
 import React from 'react'
 import { OpenModalBtn, OpenImg } from "../modals/modalbtns"
 import dateFormat from "../../utils/dateFormat"
-import { photos_url } from '../../redux/actions/constants';
-import DeleteBtn from './deletebtn';
+// import { photos_url } from '../../redux/actions/constants';
+// import DeleteBtn from './deletebtn';
 
 const PublishCard = ({ ids, multiDispatch, ...props }) => {
     const { is_submitted, thumbnail, photo_id, photo, id, submitted_on, is_approved, categories } = props;
@@ -54,7 +54,13 @@ const PublishCard = ({ ids, multiDispatch, ...props }) => {
                             </div>
                         </div> :
                         <div className="flex-between p-2 align-items-center">
-                            <DeleteBtn id={id} />
+                            <OpenModalBtn
+                                modalName="DELETE_MODAL"
+                                modalProps={{ id }}
+                                className="btn f-14 btn-light theme-red btn-danger"
+                            >
+                                Delete
+                            </OpenModalBtn>
                             <OpenModalBtn
                                 modalName="PUBLISH_MODAL"
                                 modalProps={{ id }}

@@ -8,7 +8,7 @@ import { addPhotoSuccess } from '../../redux/actions/user';
 const DeleteBtn = ({ id, addPhotoSuccess, closeModal }) => {
     return (
         <OpenModalBtn
-            className="btn f-14 btn-light theme-red btn-danger"
+            className="btn f-14 btn-theme"
             modalName="LOADING_MODAL"
             modalProps={{
                 config: {

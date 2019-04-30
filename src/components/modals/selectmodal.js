@@ -6,6 +6,7 @@ import PublishModal from "./publishmodal";
 import ReqpayModal from "./requestpay"
 import ImageModal from "./imagemodal";
 import Multiselectmodal from "./multiselectmodal";
+import DeleteModal from "./deletemodal";
 
 const selectModal = modalName => {
     switch (modalName) {
@@ -25,6 +26,8 @@ const selectModal = modalName => {
             return ImageModal
         case "MULTI_MODAL":
             return Multiselectmodal
+        case "DELETE_MODAL":
+            return DeleteModal
         default:
             return null;
     }
