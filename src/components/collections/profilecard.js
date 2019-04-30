@@ -20,6 +20,12 @@ const ProfileCard = ({ user }) => {
                 <p className="mb-1 f-14 text-center">{email}</p>
                 <div className="f-13 text-center">
                     <OpenModalBtn
+                        modalName="UPDATE_PROFILE"
+                        className="btn-a mr-2 theme-red text-underline"
+                    >
+                        Update Profile
+                    </OpenModalBtn>
+                    <OpenModalBtn
                         modalName="CHANGEPWD_MODAL"
                         className="btn-a mr-2 theme-red text-underline"
                     >

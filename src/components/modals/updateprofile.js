@@ -3,17 +3,43 @@ import Address from '../auth/address';
 import { MASTER_VALUES, master_url } from '../../redux/actions/constants';
 import useHttp from '../../hooks/http/useHttp';
 import { connect } from 'react-redux'
-import Loader from '../common/loader';
+import CenterLoader from './centerloader';
+import ModalLayout from './modallayout';
 
-const inputs = (con, address, email) => [
+const inputs = (con, address, user) => [
+    {
+        inputProps: {
+            name: "first_name",
+            type: "text",
+            value: user.first_name || '',
+            placeholder: "Enter your first name"
+        }
+    },
+    {
+        inputProps: {
+            name: "last_name",
+            type: "text",
+            value: user.last_name || '',
+            placeholder: "Enter your last name"
+        }
+    },
     {
         inputProps: {
             name: "email",
             type: "email",
-            value: email || '',
+            value: user.email || '',
             placeholder: "Enter your email"
         }
     },
+    // {
+    //     isOptional: true,
+    //     inputProps: {
+    //         name: "username",
+    //         type: "email",
+    //         value: user.username || '',
+    //         placeholder: "Enter your phone number (optional)"
+    //     }
+    // },
     {
         inputProps: {
             name: "country_id",
@@ -69,7 +95,8 @@ const inputs = (con, address, email) => [
     },
 ];
 
-const UpdatAddress = ({ master_values, address, dispatch, setTab, email }) => {
+//modal name: UPDATE_PROFILE
+const UpdateProfile = ({ master_values, address, dispatch, user_detail }) => {
 
     //load master values
     useHttp(dispatch, MASTER_VALUES, { url: master_url }, 'master_values');
@@ -77,27 +104,30 @@ const UpdatAddress = ({ master_values, address, dispatch, setTab, email }) => {
     if (!master_values.data.countries) {
         if (master_values.fetching) {
             return (
-                <div className="flex-center">
-                    <Loader width="30px" height="30px" />
+                <div className="modal-wrapper">
+                    <CenterLoader />
                 </div>
             )
         }
         return null
     }
     return (
-        <div className="pt-2 pb-3 mb-5">
-            <Address
-                setTab={setTab}
-                inputs={inputs(master_values.data.countries, address, email)}
-            />
-        </div>
+        <ModalLayout
+            maxWidth={550}
+            title="Update Profile"
+            children={
+                <Address
+                    inputs={inputs(master_values.data.countries, address, user_detail)}
+                />
+            }
+        />
     )
 }
 
 const mapStateToProps = ({ master_values, user }) => ({
     master_values,
     address: user.user_address || {},
-    email: user.email || '',
+    user_detail: user || {},
 })
 
-export default connect(mapStateToProps)(UpdatAddress)
+export default connect(mapStateToProps)(UpdateProfile)

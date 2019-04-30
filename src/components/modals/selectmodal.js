@@ -7,6 +7,7 @@ import ReqpayModal from "./requestpay"
 import ImageModal from "./imagemodal";
 import Multiselectmodal from "./multiselectmodal";
 import DeleteModal from "./deletemodal";
+import Updateprofile from "./updateprofile";
 
 const selectModal = modalName => {
     switch (modalName) {
@@ -28,6 +29,8 @@ const selectModal = modalName => {
             return Multiselectmodal
         case "DELETE_MODAL":
             return DeleteModal
+        case "UPDATE_PROFILE":
+            return Updateprofile
         default:
             return null;
     }

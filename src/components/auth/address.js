@@ -8,7 +8,7 @@ import FormGroup from '../form/formgroup';
 import { profile_url } from '../../redux/actions/constants';
 import { connect } from 'react-redux'
 import { updateUser } from '../../redux/actions/user';
-import { addToast } from '../../redux/actions/common';
+import { addToast, closeModal } from '../../redux/actions/common';
 
 const Address = ({ inputs, dispatch, setTab = null }) => {
 
@@ -22,6 +22,8 @@ const Address = ({ inputs, dispatch, setTab = null }) => {
             dispatch(addToast("Address Updated"))
             if (typeof setTab === "function") {
                 setTab(2);
+            } else {
+                dispatch(closeModal());
             }
         },
         (data) => {
@@ -59,6 +61,7 @@ const Address = ({ inputs, dispatch, setTab = null }) => {
 
     return (
         <form
+            className="w-100"
             noValidate
             onSubmit={(e) => {
                 e.preventDefault();
