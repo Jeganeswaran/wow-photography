@@ -8,6 +8,7 @@ import ModalLayout from './modallayout';
 
 const inputs = (con, address, user) => [
     {
+        label: "First Name",
         inputProps: {
             name: "first_name",
             type: "text",
@@ -16,6 +17,7 @@ const inputs = (con, address, user) => [
         }
     },
     {
+        label: "Last Name",
         inputProps: {
             name: "last_name",
             type: "text",
@@ -24,6 +26,7 @@ const inputs = (con, address, user) => [
         }
     },
     {
+        label: "Email",
         inputProps: {
             name: "email",
             type: "email",
@@ -41,6 +44,7 @@ const inputs = (con, address, user) => [
     //     }
     // },
     {
+        label: "Country",
         inputProps: {
             name: "country_id",
             type: "select",
@@ -52,6 +56,7 @@ const inputs = (con, address, user) => [
         }
     },
     {
+        label: "State",
         inputProps: {
             name: "state_id",
             type: "select",
@@ -61,14 +66,7 @@ const inputs = (con, address, user) => [
         }
     },
     {
-        inputProps: {
-            name: "address",
-            type: "text",
-            value: address.address || '',
-            placeholder: "Enter your address"
-        }
-    },
-    {
+        label: "City",
         inputProps: {
             name: "city",
             type: "text",
@@ -77,6 +75,16 @@ const inputs = (con, address, user) => [
         }
     },
     {
+        label: "Address",
+        inputProps: {
+            name: "address",
+            type: "text",
+            value: address.address || '',
+            placeholder: "Enter your address"
+        }
+    },
+    {
+        label: "Pincode",
         inputProps: {
             name: "pin_code",
             type: "tel",
@@ -86,6 +94,7 @@ const inputs = (con, address, user) => [
     },
     {
         isOptional: true,
+        label: "Landmark",
         inputProps: {
             name: "landmark",
             type: "text",
@@ -116,9 +125,11 @@ const UpdateProfile = ({ master_values, address, dispatch, user_detail }) => {
             maxWidth={550}
             title="Update Profile"
             children={
-                <Address
-                    inputs={inputs(master_values.data.countries, address, user_detail)}
-                />
+                <div className="update-form">
+                    <Address
+                        inputs={inputs(master_values.data.countries, address, user_detail)}
+                    />
+                </div>
             }
         />
     )

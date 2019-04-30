@@ -116,8 +116,10 @@ const Contest = ({ fetching, data, dispatch }) => {
                         </div>
                         <div className="col-md-12 mt-3">
                             <div className="form-group">
+                                <label className="f-14" htmlFor="chooseCategory">Choose a Category</label>
                                 <select
                                     disabled={!photo}
+                                    id="chooseCategory"
                                     value={category}
                                     onChange={({ target }) =>
                                         setCategory(target.value)
@@ -131,7 +133,7 @@ const Contest = ({ fetching, data, dispatch }) => {
                                             </option>
                                         )}
                                         title="cats"
-                                        list={[{ id: "", name: "Choose Category" }, ...data]}
+                                        list={[{ id: "", name: "Choose a Category" }, ...data]}
                                     />
                                 </select>
                             </div>

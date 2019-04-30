@@ -4,12 +4,7 @@ import SponsorLayout from '../common/sponsorlayout';
 const RefundPolicy = () => {
     return (
         <div>
-            <div className="static-content-header flex-center">
-                <div className="container">
-                    <h1>Returns and Refunds Policy</h1>
-                </div>
-            </div>
-            <SponsorLayout>
+            <SponsorLayout title="Returns and Refunds Policy">
                 <p>Thank you for participating at WOW PHOTO AWARDS 2019 International Photo Contes focusing World Tourism.<br></br> Please read this policy carefully. <br></br>This is the Return and Refund Policy of WOW PHOTO AWARDS .</p>
                 <h5>Digital products</h5>
                 <p>We do not issue refunds for digital services once the order is confirmed and the Photo is submitted.<br></br>We recommend contacting us for assistance if you experience any issues receiving or uploading during the submission.</p>

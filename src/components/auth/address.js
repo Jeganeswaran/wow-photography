@@ -19,7 +19,7 @@ const Address = ({ inputs, dispatch, setTab = null }) => {
     const { res, setReq } = useDataSubmit(
         (data) => {
             dispatch(updateUser(data));
-            dispatch(addToast("Address Updated"))
+            dispatch(addToast("Profile Updated"))
             if (typeof setTab === "function") {
                 setTab(2);
             } else {
@@ -74,11 +74,13 @@ const Address = ({ inputs, dispatch, setTab = null }) => {
                 title={"add-address"}
                 dispatch={formdispatch}
             />
-            <LoadingBtn
-                fetching={res.fetching}
-                type="submit"
-                className="btn btn-theme float-right"
-            />
+            <div>
+                <LoadingBtn
+                    fetching={res.fetching}
+                    type="submit"
+                    className="btn btn-theme float-right"
+                />
+            </div>
         </form>
     )
 }

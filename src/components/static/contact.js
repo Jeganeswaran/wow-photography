@@ -6,12 +6,7 @@ import Logo from '../common/logo';
 const Contact = () => {
     return (
         <div>
-            <div className="static-content-header flex-center">
-                <div className="container">
-                    <h1>Contact Us</h1>
-                </div>
-            </div>
-            <SponsorLayout>
+            <SponsorLayout  title="Contact Us">
                 <div className="row mt-5">
                     <div className="col-md-4">
                         <Logo className="w-100 mb-4" />

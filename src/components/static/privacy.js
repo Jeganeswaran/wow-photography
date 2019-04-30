@@ -4,12 +4,7 @@ import SponsorLayout from '../common/sponsorlayout';
 const PrivacyPolicy = () => {
     return (
         <div>
-            <div className="static-content-header flex-center">
-                <div className="container">
-                    <h1>Privacy Policy</h1>
-                </div>
-            </div>
-            <SponsorLayout>
+            <SponsorLayout title="Privacy Policy">
                 <p>GLOBAL MEDIA BOX INNOVATIONS PVT LTD operates the wowphotoawards.com
 website, which provides the SERVICEs of International Photo Contest focusing World
 Tourism .</p>

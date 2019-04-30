@@ -14,7 +14,7 @@ const UpgradePage = ({ isAddr }) => {
 		<Pagelayout>
 			<div className="row" style={{minHeight: `400px`}}>
 				<div className="col-md-3">
-					<ul className="list-group upgradeUl">
+					<ul className="list-group upgradeUl mb-4">
 						<li
 							className="list-group-item f-600 f-18"
 						>
@@ -54,14 +54,14 @@ const UpgradePage = ({ isAddr }) => {
 					{
 						tab === 1 &&
 						<div>
-							<h5 className="font-weight-bold mb-3">Update Profile</h5>
+							<h4 className="font-weight-bold mb-2">Update Profile</h4>
 							<UpdateAdress setTab={setTab} />
 						</div>
 					}
 					{
 						tab === 2 &&
 						<div>
-							<h5 className="font-weight-bold mb-3">Choose Package</h5>
+							<h4 className="font-weight-bold mb-2">Choose Package</h4>
 							<PackagesList setTab={setTab} choosen={packageId} setPackage={setPackage} />
 						</div>
 					}

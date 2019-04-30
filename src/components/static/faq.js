@@ -5,12 +5,7 @@ import SponsorLayout from '../common/sponsorlayout';
 const Faq = () => {
     return (
         <div>
-            <div className="static-content-header flex-center">
-                <div className="container">
-                    <h1>FAQ</h1>
-                </div>
-            </div>
-            <SponsorLayout>
+            <SponsorLayout title="FAQ">
                 <div className="row">
                     <div className="col-md-2">
 

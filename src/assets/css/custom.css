@@ -212,6 +212,10 @@ hr[data-title]:before {
     max-width: 800px;
 }
 
+.banner-text h1 {
+    font-size: 3.2rem;
+}
+
 .tab-header {
     height: 55px;
     display: flex;
@@ -432,16 +436,20 @@ hr[data-title]:before {
 }
 
 .static-content-header {
-    background: #df006f;
-    min-height: 100px;
+    min-height: 50vh;
     color: #fff;
     margin-bottom: 35px;
     text-align: center;
+    position: relative;
+}
+
+.zindex-2{
+    z-index: 2;
 }
 
 .static-content-header h1 {
     font-weight: 700;
-    font-size: 34px;
+    font-size: 54px;
 }
 
 .static-content {
@@ -708,4 +716,42 @@ hr[data-title]:before {
 .btn-light-grey {
     background-color: #e2e6ea;
     border-color: #e2e6ea;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+    color: rgba(33, 37, 41, 0.7);
+}
+
+.err-msg{
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+}
+
+.update-form .form-group{
+    width: 50%;
+    float: left;
+}
+
+.update-form .form-group:nth-child(odd){
+    padding-right: 5px;
+}
+
+.update-form .form-group:nth-child(even){
+    padding-left: 5px;
+}
+
+.update-form .form-group:nth-child(7){
+    width: 100% !important;
+}
+
+.update-form .form-group:nth-child(8){
+    padding-right: 5px;
+}
+
+.update-form .form-group:nth-child(9){
+    padding-left: 5px;
 }

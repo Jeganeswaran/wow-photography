@@ -4,12 +4,7 @@ import SponsorLayout from '../common/sponsorlayout';
 const Terms = () => {
     return (
         <div>
-            <div className="static-content-header flex-center">
-                <div className="container">
-                    <h1>Terms and Conditions</h1>
-                </div>
-            </div>
-            <SponsorLayout>
+            <SponsorLayout title="Terms and Conditions">
                 <p>“WOW PHOTO AWARDS ” Brand name and the event Initiated, owned, Operated &amp; Organized by Global Media Box Innovations Pvt Ltd (referred as “Organizer”). On participating the contest each entrant/contestant accepts the Terms and Conditions Laid by organizer and the associated Sponsors for WOW PHOTO AWARDS .</p>
                 <p>Anyone can enter, including professional photographers. However, minors under the age of 18 must receive permission from a parent or guardian.There are no restrictions whatsoever on photographic equipment used to shoot photos to be entered.Any photographic device from a DSLR to smartphone may be used.</p>
                 <h5>What images CANNOT participate in WOW PHOTO AWARDS?</h5>

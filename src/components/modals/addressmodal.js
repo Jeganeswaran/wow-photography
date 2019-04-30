@@ -7,6 +7,7 @@ import Loader from '../common/loader';
 
 const inputs = (con, address, email) => [
     {
+        label: "Email",
         inputProps: {
             name: "email",
             type: "email",
@@ -15,6 +16,7 @@ const inputs = (con, address, email) => [
         }
     },
     {
+        label: "Country",
         inputProps: {
             name: "country_id",
             type: "select",
@@ -26,6 +28,7 @@ const inputs = (con, address, email) => [
         }
     },
     {
+        label: "State",
         inputProps: {
             name: "state_id",
             type: "select",
@@ -35,14 +38,7 @@ const inputs = (con, address, email) => [
         }
     },
     {
-        inputProps: {
-            name: "address",
-            type: "text",
-            value: address.address || '',
-            placeholder: "Enter your address"
-        }
-    },
-    {
+        label: "City",
         inputProps: {
             name: "city",
             type: "text",
@@ -51,6 +47,16 @@ const inputs = (con, address, email) => [
         }
     },
     {
+        label: "Address",
+        inputProps: {
+            name: "address",
+            type: "text",
+            value: address.address || '',
+            placeholder: "Enter your address"
+        }
+    },
+    {
+        label: "Pincode",
         inputProps: {
             name: "pin_code",
             type: "tel",
@@ -60,6 +66,7 @@ const inputs = (con, address, email) => [
     },
     {
         isOptional: true,
+        label: "Landmark",
         inputProps: {
             name: "landmark",
             type: "text",

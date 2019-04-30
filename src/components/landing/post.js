@@ -1,7 +1,7 @@
 import React from 'react'
 import { OpenImg } from "../modals/modalbtns"
 
-const Post = ({ thumbnail, photo, user }) => {
+const Post = ({ thumbnail, photo, title }) => {
     return (
         <div className="post">
             <div className="post-img-holder">
@@ -14,7 +14,7 @@ const Post = ({ thumbnail, photo, user }) => {
                 </div>
             </div>
             <div className="p-1">
-                {user && <span>@{user.first_name} {user.last_name}</span>}
+                {title && <span>© {title}</span>}
                 {/* <span>4th Apr 2019</span> */}
             </div>
         </div>
