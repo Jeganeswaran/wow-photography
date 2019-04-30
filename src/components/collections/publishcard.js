@@ -1,8 +1,10 @@
 import React from 'react'
 import { OpenModalBtn, OpenImg } from "../modals/modalbtns"
 import dateFormat from "../../utils/dateFormat"
+import { photos_url } from '../../redux/actions/constants';
+import DeleteBtn from './deletebtn';
 
-const PublishCard = ({ids, multiDispatch, ...props}) => {
+const PublishCard = ({ ids, multiDispatch, ...props }) => {
     const { is_submitted, thumbnail, photo_id, photo, id, submitted_on, is_approved, categories } = props;
     const isSelected = ids.includes(id);
     return (
@@ -20,16 +22,16 @@ const PublishCard = ({ids, multiDispatch, ...props}) => {
                         is_submitted ?
                             null :
                             multiDispatch ?
-                                <button 
+                                <button
                                     className={`btn select-round ${isSelected ? `select-round-active` : ``}`}
-                                    onClick={() => 
+                                    onClick={() =>
                                         multiDispatch(
                                             (isSelected ? "_REMOVE" : "_ADD"),
                                             props
                                         )
                                     }
                                 >
-                                    {isSelected && <span><i className="fas fa-check"></i></span> }
+                                    {isSelected && <span><i className="fas fa-check"></i></span>}
                                 </button>
                                 : null
                     }
@@ -47,12 +49,12 @@ const PublishCard = ({ids, multiDispatch, ...props}) => {
                                 }
                             </div>
                             <div className="text-right f-12">
-                                <div className="f-600">{ categories }</div>
-                                <div style={{color: `#737373`}}>{submitted_on ? dateFormat(submitted_on) : ''}</div>
+                                <div className="f-600">{categories}</div>
+                                <div style={{ color: `#737373` }}>{submitted_on ? dateFormat(submitted_on) : ''}</div>
                             </div>
                         </div> :
                         <div className="flex-between p-2 align-items-center">
-                            {/* <input type="checkbox" /> */}
+                            <DeleteBtn id={id} />
                             <OpenModalBtn
                                 modalName="PUBLISH_MODAL"
                                 modalProps={{ id }}
