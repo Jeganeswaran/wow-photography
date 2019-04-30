@@ -3,12 +3,15 @@ import SponsorSection from '../landing/sponsorsection';
 
 const SponsorLayout = ({children}) => {
     return (
-        <div className="container static-content">
-            {children}
+        <div>
+            <div className="container static-content">
+                {children}
+            </div>
             <div className="pt-5">
                 <SponsorSection />
             </div>
         </div>
+        
     )
 }
 

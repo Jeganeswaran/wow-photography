@@ -15,6 +15,7 @@ import FailurePage from "../auth/errorpage";
 import Annoucements from "../landing/annoucements";
 import Faq from "../static/faq";
 import About from "../static/about";
+import Contact from "../static/contact";
 
 const Pages = () => {
     return (
@@ -33,6 +34,7 @@ const Pages = () => {
                 <Route path="/payment-failure" component={FailurePage} />
                 <Route path="/faq" component={Faq} />
                 <Route path="/about-us" component={About} />
+                <Route path="/contact-us" component={Contact} />
             </Switch>
         </ScrollToTop>
     )

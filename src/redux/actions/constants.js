@@ -46,3 +46,4 @@ export const profile_url = "users/";
 export const master_url = "master/categories/master_value/";
 export const transcation_url = "transaction/";
 export const landing_url = "master/landing-page/";
+export const contact_url = "master/contact-us/";

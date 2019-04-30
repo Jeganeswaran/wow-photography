@@ -441,6 +441,7 @@ hr[data-title]:before {
 
 .static-content-header h1 {
     font-weight: 700;
+    font-size: 34px;
 }
 
 .static-content {
