@@ -8,6 +8,7 @@ import ImageModal from "./imagemodal";
 import Multiselectmodal from "./multiselectmodal";
 import DeleteModal from "./deletemodal";
 import Updateprofile from "./updateprofile";
+import SideModal from "./sidemodal";
 
 const selectModal = modalName => {
     switch (modalName) {
@@ -31,6 +32,8 @@ const selectModal = modalName => {
             return DeleteModal
         case "UPDATE_PROFILE":
             return Updateprofile
+        case "SIDE_MODAL":
+            return SideModal
         default:
             return null;
     }

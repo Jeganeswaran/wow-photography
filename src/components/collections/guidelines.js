@@ -5,10 +5,10 @@ const GuideLines = () => {
         <div className="pb-2">
             <p className="theme-red mb-2 f-14">Guide lines to upload photographs</p>
             <ol className="guidelines pl-4">
-                <li>Photo size must be maximum 25mb in size</li>
-                <li>Photo should not be edited extensively, however color corrections, and other basic corections can be done</li>
-                <li>Photo size must be maximum 25mb in size</li>
-                <li>Photo should not be edited extensively, however color corrections, and other basic corections can be done</li>
+                <li>The submissions must be in the original size or not smaller than 1000 pixels in either height or width.</li>
+                <li>Image Size must not exceed more than 20MB.</li>
+                <li>File Format , recommended file format is JPEG.</li>
+                <li>Submissions will be moderated if disapproved notification will be sent to your registered email.</li>
             </ol>
         </div>
     )

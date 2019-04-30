@@ -29,7 +29,7 @@ const MultiModal = props => {
             <CloseModalWrapper className="modal-wrapper">
                 <ModalCon className="modal-container contest-modal">
                     <div className="mb-4">
-                        <h4 className="font-weight-bold">Confirm Categories & Photos</h4>
+                        <h4 className="font-weight-bold"> Confirm Categories before submission</h4>
                     </div>
                     <MultiSubmit {...props} />
                 </ModalCon>

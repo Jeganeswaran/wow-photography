@@ -9,10 +9,10 @@ import UserRoute from "./userroute";
 import PrivacyPolicy from "../static/privacy";
 import Terms from "../static/terms";
 import RefundPolicy from "../static/refundpolicy";
+import Announcements from "../static/announcements";
 import ResetPwdPage from "../auth/resetpwdpage";
 import UpgradePage from "../upgrade/upgradepage";
 import FailurePage from "../auth/errorpage";
-import Annoucements from "../landing/annoucements";
 import Faq from "../static/faq";
 import About from "../static/about";
 import Contact from "../static/contact";
@@ -23,7 +23,7 @@ const Pages = () => {
             <Switch>
                 <Route exact path="/" component={LandingPage} />
                 <UserRoute path="/my-profile" component={CollectionsPage} />
-                <Route path="/announcements" component={Annoucements} />
+                <Route path="/announcements" component={Announcements} />
                 <Route path="/activate-account" component={ActivatePage} />
                 <Route path="/reset-password" component={ResetPwdPage} />
                 <Route path="/upgrade" component={UpgradePage} />

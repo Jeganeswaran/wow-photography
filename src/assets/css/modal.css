@@ -58,6 +58,8 @@
     background: #fff;
     overflow: auto;
     pointer-events: all;
+    width: 275px;
+    max-height: 100vh;
 }
 
 @keyframes slideInLeft {
@@ -83,4 +85,19 @@
     align-items: flex-start;
     color: #fff;
     padding: 10px;
+    background: #df006f;
 }
+
+.side-modal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-modal-list li {
+    padding: 10px 15px;
+}
+
+.side-modal-list li a, .side-modal-list li button{
+    font-size: 18px !important;
+} 
