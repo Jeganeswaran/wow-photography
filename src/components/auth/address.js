@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import { updateUser } from '../../redux/actions/user';
 import { addToast } from '../../redux/actions/common';
 
-const Address = ({ inputs, dispatch, setTab }) => {
+const Address = ({ inputs, dispatch, setTab = null }) => {
 
     //form state    
     const [state, formdispatch] = useReducer(formReducer, inputs);
@@ -20,10 +20,10 @@ const Address = ({ inputs, dispatch, setTab }) => {
         (data) => {
             dispatch(updateUser(data));
             dispatch(addToast("Address Updated"))
-            if(typeof setTab === "function"){
+            if (typeof setTab === "function") {
                 setTab(2);
             }
-        }, 
+        },
         (data) => {
             dispatch(addToast(data, false));
         }
@@ -36,11 +36,17 @@ const Address = ({ inputs, dispatch, setTab }) => {
             return;
         }
         const data = new FormData();
-        data.append("useraddress", JSON.stringify(reduceForm(state)));
+        const { country_id, state_id, address, city, pin_code, landmark, ...restUser } = reduceForm(state);
+        for (let key in restUser) {
+            data.append(key, restUser[key]);
+        }
+        data.append("useraddress", JSON.stringify(
+            { country_id, state_id, address, city, pin_code, landmark }
+        ));
         setReq(x => ({
             ...x,
             count: x.count + 1,
-            config: { 
+            config: {
                 url: profile_url,
                 method: "POST",
                 data,

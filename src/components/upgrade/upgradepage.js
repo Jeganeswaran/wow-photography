@@ -14,7 +14,7 @@ const UpgradePage = ({ isAddr }) => {
 		<Pagelayout>
 			<div className="row" style={{minHeight: `400px`}}>
 				<div className="col-md-3">
-					<ul class="list-group upgradeUl">
+					<ul className="list-group upgradeUl">
 						<li
 							className="list-group-item f-600 f-18"
 						>
@@ -78,7 +78,7 @@ const UpgradePage = ({ isAddr }) => {
 }
 
 const mapStateToProps = ({ user }) => ({
-    isAddr: user && user.user_address
+    isAddr: user && user.user_address && user.email
 })
 
 export default connect(mapStateToProps)(UpgradePage)

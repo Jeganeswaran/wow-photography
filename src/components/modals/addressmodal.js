@@ -5,13 +5,13 @@ import useHttp from '../../hooks/http/useHttp';
 import { connect } from 'react-redux'
 import Loader from '../common/loader';
 
-const inputs = (con, address) => [
+const inputs = (con, address, email) => [
     {
         inputProps: {
-            name: "address",
-            type: "text",
-            value: address.address || '',
-            placeholder: "Enter your address"
+            name: "email",
+            type: "email",
+            value: email || '',
+            placeholder: "Select your country"
         }
     },
     {
@@ -32,6 +32,14 @@ const inputs = (con, address) => [
             value: address.state_id || '',
             placeholder: "Select your state",
             options: []
+        }
+    },
+    {
+        inputProps: {
+            name: "address",
+            type: "text",
+            value: address.address || '',
+            placeholder: "Enter your address"
         }
     },
     {
@@ -61,7 +69,7 @@ const inputs = (con, address) => [
     },
 ];
 
-const UpdatAddress = ({ master_values, address, dispatch, setTab }) => {
+const UpdatAddress = ({ master_values, address, dispatch, setTab, email }) => {
 
     //load master values
     useHttp(dispatch, MASTER_VALUES, { url: master_url }, 'master_values');
@@ -80,7 +88,7 @@ const UpdatAddress = ({ master_values, address, dispatch, setTab }) => {
         <div className="pt-2 pb-3 mb-5">
             <Address
                 setTab={setTab}
-                inputs={inputs(master_values.data.countries, address)}
+                inputs={inputs(master_values.data.countries, address, email)}
             />
         </div>
     )
@@ -88,7 +96,8 @@ const UpdatAddress = ({ master_values, address, dispatch, setTab }) => {
 
 const mapStateToProps = ({ master_values, user }) => ({
     master_values,
-    address: user.user_address || {}
+    address: user.user_address || {},
+    email: user.email || '',
 })
 
 export default connect(mapStateToProps)(UpdatAddress)

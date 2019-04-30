@@ -13,10 +13,11 @@ const Package = props => {
             <td>
                 <input 
                     className="radio-ip" 
-                    type="radio" 
+                    type="radio"
+                    value={id} 
                     checked={id === choosen.id}
                     name="choosen_package"
-                    onClick={() => {
+                    onChange={() => {
                         setPackage(props)
                         setTab(3)
                     }}
