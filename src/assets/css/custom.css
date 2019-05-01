@@ -738,7 +738,8 @@ hr[data-title]:before {
 .collage-bg{
     background-image: url("../img/WOW\ Phot\ Awards-\ About\ Collage-min.jpg");
     /* height: 220px; */
-    background-size: 100% auto;
+    background-size: cover;
+    background-position: center;
 }
 
 .btn-light-grey {

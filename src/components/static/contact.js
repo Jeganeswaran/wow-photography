@@ -7,7 +7,7 @@ import { SocialLinks } from '../common/footer';
 const Contact = () => {
     return (
         <div>
-            <SponsorLayout  title="Contact Us">
+            <SponsorLayout  title="Contact">
                 <div className="row mt-5">
                     <div className="col-md-6 flex-center flex-column mb-3">
                         <Logo className="prize-img" />

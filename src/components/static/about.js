@@ -6,7 +6,7 @@ import SponsorLayout from '../common/sponsorlayout';
 const About = () => {
     return (
         <div>
-            <SponsorLayout title="About Us">
+            <SponsorLayout title="About">
                 <p>LIFE is a JOURNEY, a Journey filled with memories and the memory layers are mere images. All our experiences are stored as 'visuals' in our memory layers. Time to showcase your memory of Joy, Love, Celebration, Excitement, Surprise and more through 'Photography' .</p>
                 <p>Encouraging your best moments of life 'frozen as pictures' focusing World Tourism.  WoW Photos Awards started its first edition in 2018, having the national level entrants curated the best Indian clicks that was widely appreciated during the World Tourism Day supported by the Department of Tourism Tamilnadu, India. Now in 2019:second edition, we are stepping forward internationally to encourage your creative visual skills of Global Tourism.</p>
                 <p>WOW PHOTO AWARDS is crafted to encourage the world’s most outstanding and talented souls in the field of photography focusing Travel and Tourism. "WOW PHOTO AWARDS" is an open contest to all Professionals and Amateur Photographers across the world.</p>

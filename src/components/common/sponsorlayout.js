@@ -4,11 +4,15 @@ import SponsorSection from '../landing/sponsorsection';
 const SponsorLayout = ({title, children}) => {
     return (
         <div>
-            {title && <div className="static-content-header collage-bg">
-                <div className="flex-center banner-tint">
+            {
+                title && 
+                <>
+                <div className="static-content-header collage-bg" />
+                <div className="text-center mb-4">
                     <h1>{title}</h1>
                 </div>
-            </div> }
+                </>
+            }
             <div className="container static-content">
                 {children}
             </div>

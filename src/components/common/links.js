@@ -7,6 +7,11 @@ import Logout from './logout';
 const Links = ({ isToken }) => {
     return (
         <>
+            <li>
+                <NavLink exact activeClassName="theme-red" to="/">
+                    Home
+                </NavLink>
+            </li>
             {!isToken ?
                 <>
                     <li>
@@ -28,11 +33,6 @@ const Links = ({ isToken }) => {
                 </> :
                 <>
                     <li>
-                        <NavLink exact activeClassName="theme-red" to="/">
-                            Home
-                        </NavLink>
-                    </li>
-                    <li>
                         <NavLink activeClassName="theme-red" to="/my-profile">
                             My Profile
                         </NavLink>
@@ -41,7 +41,7 @@ const Links = ({ isToken }) => {
             }
             <li>
                 <NavLink activeClassName="theme-red" to="/about-us">
-                    About Us
+                    About
                 </NavLink>
             </li>
             <li>
@@ -56,7 +56,7 @@ const Links = ({ isToken }) => {
             </li>
             <li>
                 <NavLink activeClassName="theme-red" to="/contact-us">
-                    Contact Us
+                    Contact
                 </NavLink>
             </li>
             {
