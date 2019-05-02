@@ -63,6 +63,7 @@ const RequestModal = ({ photo, categories, isContest, user, addPhotoSuccess, add
                         I agree to all  <Link className="theme-red ml-1" to="/terms-and-conditions"> Terms & Conditions </Link>
                     </span>
                 </div>
+                <p className="f-12 mb-1">You have {user.userprofile.points} points left.</p>
                 <p className="f-10 theme-red">Note: Categories and photos cannot be changed after submission</p>
             </div>
             <div className="form-group">
@@ -72,7 +73,7 @@ const RequestModal = ({ photo, categories, isContest, user, addPhotoSuccess, add
                         disabled={category && terms ? false : true}
                         fetching={res.fetching}
                         className="btn btn-theme btn-block"
-                        title="Pay and Submit"
+                        title="Submit"
                         onClick={() => {
                             setReq(x => ({
                                 ...x,

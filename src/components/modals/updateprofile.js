@@ -94,12 +94,12 @@ const inputs = (con, address, user) => [
     },
     {
         isOptional: true,
-        label: "Landmark",
+        label: "Instagram public url (optional)",
         inputProps: {
-            name: "landmark",
+            name: "instagram",
             type: "text",
-            value: address.landmark || '',
-            placeholder: "Enter a landmark (optional)"
+            value: address.instagram || '',
+            placeholder: "Enter your instagram public url"
         }
     },
 ];

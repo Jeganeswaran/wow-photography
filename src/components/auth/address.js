@@ -38,12 +38,12 @@ const Address = ({ inputs, dispatch, setTab = null }) => {
             return;
         }
         const data = new FormData();
-        const { country_id, state_id, address, city, pin_code, landmark, ...restUser } = reduceForm(state);
+        const { country_id, state_id, address, city, pin_code, landmark, instagram, ...restUser } = reduceForm(state);
         for (let key in restUser) {
             data.append(key, restUser[key]);
         }
         data.append("useraddress", JSON.stringify(
-            { country_id, state_id, address, city, pin_code, landmark }
+            { country_id, state_id, address, city, pin_code, landmark, instagram }
         ));
         setReq(x => ({
             ...x,
