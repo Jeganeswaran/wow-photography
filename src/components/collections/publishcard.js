@@ -1,19 +1,21 @@
 import React from 'react'
 import { OpenModalBtn, OpenImg } from "../modals/modalbtns"
 import dateFormat from "../../utils/dateFormat"
-// import { photos_url } from '../../redux/actions/constants';
-// import DeleteBtn from './deletebtn';
 
 const PublishCard = ({ ids, multiDispatch, ...props }) => {
-    const { is_submitted, thumbnail, photo_id, photo, id, submitted_on, is_approved, categories } = props;
+    const { is_submitted, thumbnail, photo_id, photo, id, submitted_on, is_approved, categories, location, camera_used, caption } = props;
     const isSelected = ids.includes(id);
     return (
         <div className="bg-light">
             <div className="post">
                 <div className="post-img-holder relative">
+                    <div className="post-info">
+                        {camera_used && <span>{camera_used}</span>}
+                        {location && <span>{location}</span>}
+                    </div>
                     <div className="post-img">
                         <OpenImg
-                            modalProps={{ image: photo }}
+                            modalProps={{ image: photo, caption }}
                             src={thumbnail}
                             alt={photo_id}
                         />
@@ -42,10 +44,17 @@ const PublishCard = ({ ids, multiDispatch, ...props }) => {
                             <div>
                                 {
                                     is_approved ?
-                                        <span className="approv-pill bg-success">Approved</span> :
+                                        <span className="approv-pill bg-success">
+                                            Approved
+                                        </span> :
                                         is_approved === false ?
-                                            <span className="approv-pill bg-danger">Rejected</span> :
-                                            <span className="approv-pill pendibg-bg">Pending Approval</span>
+                                            <button className="btn-a approv-pill bg-danger">
+                                                Rejected 
+                                                <i className="f-12 fa-info-circle fas ml-2"></i>
+                                            </button> :
+                                            <span className="approv-pill pendibg-bg">
+                                                Pending Approval
+                                            </span>
                                 }
                             </div>
                             <div className="text-right f-12">

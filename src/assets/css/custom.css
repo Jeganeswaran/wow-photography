@@ -272,6 +272,31 @@ hr[data-title]:before {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    cursor: zoom-in;
+}
+
+
+.post-info{
+    position: absolute;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    max-width: 50%;
+    flex-wrap: wrap;
+}
+
+/* .post-img-holder:hover .post-info{
+    display: flex;
+} */
+
+.post-info span {
+    padding: 0px 8px;
+    /* border-radius: 20px; */
+    background: rgba(0, 0, 0, 0.3);
+    margin-right: 6px;
 }
 
 /* footer css */
