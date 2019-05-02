@@ -56,7 +56,7 @@ const Faq = () => {
                         />
                         <Accordion
                             question="Can I submit an entry that I have submitted to another contest as well?"
-                            answer="Photographs that have been submitted to other contests currently underway, including similar works already won prizes in other contests are not eligible."
+                            answer="All Photographes are allowed . Each contest themes and objectives are different so it’s up participants decision to submit any Photographs that have been submitted to other contests currently underway, including similar works already won prizes in other contests are eligible . Future claim is participants responsibility."
                         />
                         <Accordion
                             question="Is there a limit to the number of entries I can submit?"
@@ -70,11 +70,11 @@ const Faq = () => {
                             question="Can I submit retouched Images? And how much can I retouch the entry?"
                             answer="Images that have been retouched will be accepted but limited to Colour Correction, Brightness, Contrast and Cropping. Both colour and monochrome images will be accepted."
                         />
-                        <h5 className="mt-3 mb-3">OTHER MATTERS</h5>
                         <Accordion
-                            question="Can I enter one photo into multiple categories?"
-                            answer="If no category specified, we may assign a category that fits better for the submitted photo."
+                            question="Can I enter my images in other competitions?"
+                            answer="Yes. You may enter into other photography competitions, we have no exclusivity rights to your images."
                         />
+                        <h5 className="mt-3 mb-3">OTHER MATTERS</h5>
                         <Accordion
                             question="Photographs that I submit have to be my own original work?"
                             answer="Yes. The contest rules require that any photograph that you submit for this contest must be your own original work and otherwise free from third-party copyright restrictions. Photographs that do not meet this requirement are not eligible for this contest."

@@ -1,6 +1,5 @@
 import React from 'react'
 import Banner from './banner';
-// import PageLayout from '../common/pagelayout';
 import { connect } from 'react-redux'
 import useHttp from '../../hooks/http/useHttp';
 import { LANDING, landing_url } from '../../redux/actions/constants';
@@ -8,7 +7,7 @@ import WowPics from './WowPics';
 import PrizeSection from './prizesection';
 import SponsorSection from './sponsorsection';
 import EnterBtn from './EnterBtn';
-// import Sponsors from './sponsors';
+// import actionImg from '../../assets/img/action.jpeg';
 
 const LandingPage = ({ dispatch }) => {
 
@@ -33,6 +32,7 @@ const LandingPage = ({ dispatch }) => {
                     </div>
                 </div>
             </section>
+            {/* <img className="w-100" src={actionImg} alt="" /> */}
             <PrizeSection />
             <WowPics />
             <SponsorSection />

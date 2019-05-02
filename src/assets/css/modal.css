@@ -36,6 +36,11 @@
     max-width: 650px;
 }
 
+.btn-close{
+    position: absolute;
+    top: 8px;
+    right: 12px;
+}
 
 /* side modal */
 .side-modal-wrapper {

@@ -82,9 +82,9 @@ export const SignInOut = connect(mapStateToProps)(({ isToken }) => {
     return (
         <OpenModalBtn
             className="btn-a f-14 float-right"
-            modalName="SIGNIN_MODAL"
+            modalName="SIGNUP_MODAL"
         >
-            Sign In
+            Sign Up
         </OpenModalBtn>
     )
 })
