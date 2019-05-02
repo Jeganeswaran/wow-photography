@@ -58,7 +58,7 @@ const fetchData = async (config, type, dispatch, rest) => {
     } catch (err) {
         const errMsg = err.response ? ajaxerrmsg(err.response.data) : 'Something went wrong';
         dispatch({ type: type + _REJECTED, payload: errMsg, ...rest });
-        if(err.status === 401){
+        if(err.response && err.response.status === 401){
             dispatch(logOutUser());
         }
     }

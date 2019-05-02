@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const dev_domain = "wowphotolive.billioncart.com";
+const dev_domain = "192.168.1.7:8000";
 const prod_domain = "wowphotolive.billioncart.com";
 
 //rest

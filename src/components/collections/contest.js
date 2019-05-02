@@ -18,6 +18,15 @@ const Contest = ({ fetching, data, dispatch }) => {
     //select category
     const [category, setCategory] = useState("");
 
+    //location
+    const [location, setLocation] = useState("");
+
+    //caption
+    const [caption, setCaption] = useState("");
+
+    //camera_used
+    const [camera_used, setCamera_used] = useState("");
+
     //terms
     const [terms, setTerms] = useState(false);
 
@@ -52,6 +61,13 @@ const Contest = ({ fetching, data, dispatch }) => {
         let postData = new FormData();
         postData.append("photo", photo);
         postData.append("categories_id", category);
+        postData.append("camera_used", camera_used);
+        if(location){
+            postData.append("location", location);
+        }
+        if(caption){
+            postData.append("caption", caption);
+        }
         setReq(x => ({
             ...x,
             count: x.count + 1,
@@ -116,10 +132,9 @@ const Contest = ({ fetching, data, dispatch }) => {
                         </div>
                         <div className="col-md-12 mt-3">
                             <div className="form-group">
-                                <label className="f-14" htmlFor="chooseCategory">Choose a Category</label>
+                                <label className="f-14">Choose a Category</label>
                                 <select
-                                    disabled={!photo}
-                                    id="chooseCategory"
+                                    // disabled={!photo}
                                     value={category}
                                     onChange={({ target }) =>
                                         setCategory(target.value)
@@ -136,6 +151,27 @@ const Contest = ({ fetching, data, dispatch }) => {
                                         list={[{ id: "", name: "Choose a Category" }, ...data]}
                                     />
                                 </select>
+                            </div>
+                            <LabelIp
+                                label="Camera Used"
+                                value={camera_used}
+                                onChange={(val) => setCamera_used(val)}
+                            />
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <LabelIp
+                                        label="Location (optional)"
+                                        value={location}
+                                        onChange={(val) => setLocation(val)}
+                                    />
+                                </div>
+                                <div className="col-md-6">
+                                    <LabelIp
+                                        label="Caption (optional)"
+                                        value={caption}
+                                        onChange={(val) => setCaption(val)}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -173,7 +209,7 @@ const Contest = ({ fetching, data, dispatch }) => {
                 }
                 <div className="d-flex justify-content-end align-items-end">
                     <LoadingBtn
-                        disabled={category && photo && terms ? false : true}
+                        disabled={category && photo && terms && camera_used ? false : true}
                         className="btn btn-theme pl-4 pr-4"
                         fetching={res.fetching}
                         title={"Submit"}
@@ -185,6 +221,22 @@ const Contest = ({ fetching, data, dispatch }) => {
     }
     return null
 }
+
+export const LabelIp = ({ label, type = "text", value, onChange, disabled = false }) => (
+    <div className="form-group">
+        <label className="f-14">{label}</label>
+        <input
+            placeholder={`Enter ${label.replace("(optional)", "").toLowerCase()}`}
+            className="form-control f-14"
+            type={type}
+            value={value}
+            onChange={({ target }) => {
+                onChange(target.value)
+            }}
+            disabled={disabled}
+        />
+    </div>
+)
 
 const mapStateToProps = ({ categories }) => ({
     ...categories

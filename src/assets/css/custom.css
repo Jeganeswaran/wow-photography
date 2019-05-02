@@ -489,9 +489,15 @@ hr[data-title]:before {
 }
 
 .pay-prev-img {
-    min-height: 200px;
+    height: 200px;
     margin-bottom: 15px;
     background: #cecece;
+}
+
+.pay-prev-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .pointer {
@@ -830,4 +836,9 @@ label {
     .multi-select-img {
         height: 200px;
     }
+}
+
+.w-50p{
+    width: 50%;
+    float: left;
 }

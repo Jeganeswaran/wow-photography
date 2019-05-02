@@ -27,6 +27,7 @@ const ReqpayModal = props => {
     if(props.categories.data.length > 0){
         return (
             <ModalLayout 
+                maxWidth={550}
                 title={"Confirm Category & Photo"}    
                 children={<RequestModal {...props} />}
             />

@@ -2,7 +2,7 @@
 export const validate = (list, dispatch) => {
     let isErr = false;
     list.forEach(({ inputProps, isOptional, customValid }) => {
-        if (!isOptional) {
+        if (!isOptional || inputProps.value) {
             let invalid = false;
             invalid = isValid(inputProps, list, customValid);
             if (customValid) {
