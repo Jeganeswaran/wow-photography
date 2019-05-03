@@ -9,6 +9,7 @@ import Multiselectmodal from "./multiselectmodal";
 import DeleteModal from "./deletemodal";
 import Updateprofile from "./updateprofile";
 import SideModal from "./sidemodal";
+import RejectInfoModal from "./rejectinfo";
 
 const selectModal = modalName => {
     switch (modalName) {
@@ -34,6 +35,8 @@ const selectModal = modalName => {
             return Updateprofile
         case "SIDE_MODAL":
             return SideModal
+        case "REJECTINFO_MODAL":
+            return RejectInfoModal
         default:
             return null;
     }

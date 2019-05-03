@@ -48,10 +48,10 @@ const PublishCard = ({ ids, multiDispatch, ...props }) => {
                                             Approved
                                         </span> :
                                         is_approved === false ?
-                                            <button className="btn-a approv-pill bg-danger">
+                                            <OpenModalBtn modalName="REJECTINFO_MODAL" className="btn-a approv-pill bg-danger">
                                                 Rejected 
                                                 <i className="f-12 fa-info-circle fas ml-2"></i>
-                                            </button> :
+                                            </OpenModalBtn> :
                                             <span className="approv-pill pendibg-bg">
                                                 Pending Approval
                                             </span>

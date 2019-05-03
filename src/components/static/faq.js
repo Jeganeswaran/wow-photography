@@ -26,17 +26,19 @@ const Faq = () => {
                                 <>
                                     <p className="mb-2">12 unique categories to enter such as,</p>
                                     <ul>
-                                        <li>World of Smiles</li>
-                                        <li>Bird's Eye View</li>
-                                        <li>Creative Focus</li>
-                                        <li>Action-n-Motion</li>
-                                        <li>Celebrations</li>
                                         <li>Wanderlust</li>
-                                        <li>Food & Beverages</li>
-                                        <li>Living Structures</li>
-                                        <li>Wild in Focus</li>
+                                        <li>Animal Kingdom</li>
+                                        <li>Architecture</li>
+                                        <li>Architecture</li>
+                                        <li>World of Smiles</li>
+                                        <li>Happy Street</li>
+                                        <li>Nature’s Miracle</li>
                                         <li>Life Style</li>
-                                        <li>Street Photography</li>
+                                        <li>Action-n-Motion</li>
+                                        <li>Joy of Celebration</li>
+                                        <li>Bird&#39;s Eye View</li>
+                                        <li>Taste buds</li>
+                                        <li>Creative in Focus</li>
                                     </ul>
                                 </>
                             )}
@@ -64,7 +66,9 @@ const Faq = () => {
                         />
                         <Accordion
                             question="Which photos are eligible?"
-                            answer="Photographs taken with any Camera and Mobile phones are eligible. You can make use of any camera/equipment for the contest."
+                            answer="Photographs taken with any Camera and Mobile phones are eligible. You can make use of
+                            any camera/equipment for the contest. The pictures taken using mobile phones should be
+                            with higher resolution version."
                         />
                         <Accordion
                             question="Can I submit retouched Images? And how much can I retouch the entry?"
@@ -72,7 +76,8 @@ const Faq = () => {
                         />
                         <Accordion
                             question="Can I enter my images in other competitions?"
-                            answer="Yes. You may enter into other photography competitions, we have no exclusivity rights to your images."
+                            answer="Yes. You may enter into other photography competitions; we have no exclusivity rights to
+                            your images."
                         />
                         <h5 className="mt-3 mb-3">OTHER MATTERS</h5>
                         <Accordion
@@ -89,7 +94,23 @@ const Faq = () => {
                         />
                         <Accordion
                             question="Will you accept photos with watermarks?"
-                            answer="We will display a credit alongside your photo as it appears on the site. We do not accept photos with watermarks."
+                            answer="No. All images must be clear of any copyright information so that the photographer’s identity
+                            is not revealed by the image.  In the interest of fairness, the judges are not allowed to see
+                            the names of the photographers when judging. Any images that do contain photographer’s
+                            names on the image or any other watermark/copyright information will be disqualified from
+                            being presented to the judges."
+                        />
+                        <Accordion
+                            question="Can I able to change the category after submission?"
+                            answer="No, category cannot be changed once the photograph is submitted and approved by the
+                            admin."
+                        />
+                        <Accordion
+                            question="Do the sponsors have rights to use my image? Will my images be used in any other
+                            way?"
+                            answer="All entrants understand that any image submitted to the competition may be used by WOW
+                            Photo Awards, for the sole purpose of promoting the competition and the photographers
+                            themselves."
                         />
                         <h5 className="mt-3 mb-3">ABOUT JUDGING</h5>
                         <Accordion

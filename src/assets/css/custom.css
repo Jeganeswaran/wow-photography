@@ -283,20 +283,21 @@ hr[data-title]:before {
     font-size: 14px;
     top: 12px;
     left: 12px;
-    display: flex;
+    display: none;
     max-width: 50%;
     flex-wrap: wrap;
 }
 
-/* .post-img-holder:hover .post-info{
+.post-img-holder:hover .post-info{
     display: flex;
-} */
+}
 
 .post-info span {
     padding: 0px 8px;
     /* border-radius: 20px; */
     background: rgba(0, 0, 0, 0.3);
     margin-right: 6px;
+    margin-bottom: 4px;
 }
 
 /* footer css */
