@@ -276,7 +276,7 @@ hr[data-title]:before {
 }
 
 
-.post-info{
+.post-info {
     position: absolute;
     color: #fff;
     font-family: 'Source Sans Pro', sans-serif;
@@ -288,7 +288,7 @@ hr[data-title]:before {
     flex-wrap: wrap;
 }
 
-.post-img-holder:hover .post-info{
+.post-img-holder:hover .post-info {
     display: flex;
 }
 
@@ -339,17 +339,17 @@ hr[data-title]:before {
     position: relative;
 }
 
-.profile-image img{
+.profile-image img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.profile-img-edit{
+.profile-img-edit {
     position: absolute !important;
     top: 0 !important;
-    right: 20px  !important;
+    right: 20px !important;
     cursor: pointer;
 }
 
@@ -520,7 +520,7 @@ hr[data-title]:before {
     background: #cecece;
 }
 
-.pay-prev-img img{
+.pay-prev-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -624,7 +624,7 @@ hr[data-title]:before {
     text-align: center;
 }
 
-.sourcesans{
+.sourcesans {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -767,7 +767,7 @@ hr[data-title]:before {
     object-fit: contain;
 }
 
-.collage-bg{
+.collage-bg {
     background-image: url("../img/WOW\ Phot\ Awards-\ About\ Collage-min.jpg");
     /* height: 220px; */
     background-size: cover;
@@ -864,7 +864,39 @@ label {
     }
 }
 
-.w-50p{
+.w-50p {
     width: 50%;
     float: left;
+}
+
+.category-img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 420px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.category-title{
+    margin-top: 215px;
+}
+
+.category-head {
+    color: #089cda;
+    font-weight: 700;
+}
+
+.category-content{
+    max-width: 350px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.category-btn{
+    background: rgba(4, 168, 232, 0.7) !important;
+    border-color: rgba(4, 168, 232, 0.3)!important;
+    color: #fff !important;
 }

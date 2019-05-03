@@ -54,14 +54,14 @@ const UpgradePage = ({ isAddr }) => {
 					{
 						tab === 1 &&
 						<div>
-							<h4 className="font-weight-bold mb-2">Update Profile</h4>
+							<h4 className="font-weight-bold mb-3">Update Profile</h4>
 							<UpdateAdress setTab={setTab} />
 						</div>
 					}
 					{
 						tab === 2 &&
 						<div>
-							<h4 className="font-weight-bold mb-2">Choose Package</h4>
+							<h4 className="font-weight-bold mb-3">Choose Package</h4>
 							<PackagesList setTab={setTab} choosen={packageId} setPackage={setPackage} />
 						</div>
 					}
