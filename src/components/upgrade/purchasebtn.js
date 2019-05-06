@@ -43,7 +43,7 @@ const PurchaseBtn = ({ user, id }) => {
         return (
             <LoadingBtn
                 fetching={res.fetching}
-                className="btn btn-theme float-right"
+                className="btn btn-theme btn-block"
                 title="Proceed to checkout"
                 onClick={() => {
                     setReq(x => ({

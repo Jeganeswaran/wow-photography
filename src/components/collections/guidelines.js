@@ -9,6 +9,7 @@ const GuideLines = () => {
                 <li>Image Size must not exceed more than 20MB.</li>
                 <li>File Format , recommended file format is JPEG.</li>
                 <li>Submissions will be moderated if disapproved notification will be sent to your registered email.</li>
+                <li>Credits / Watermarks are not allowed on the photograph.</li>
             </ol>
         </div>
     )
