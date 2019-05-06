@@ -99,4 +99,10 @@ const Categories = () => cats.map((cat,index) => (
     </div>
 ))
 
+export const CatTop = () => cats.map((cat,index) => ( 
+    <span className="btn btn-theme mb-3 mr-3" key={index}>
+        {cat.title.toUpperCase()}
+    </span>
+))
+
 export default Categories

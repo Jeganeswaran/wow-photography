@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import Flags from './flags';
 
 const Footer = () => {
     return (
@@ -17,6 +18,7 @@ const Footer = () => {
                     </li>
                 </ul>
                 <SocialLinks />
+                <Flags />
                 <ul className="menu-list">
                     <li>Copyrights 2019</li>
                     <li>
