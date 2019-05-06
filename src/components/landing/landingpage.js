@@ -6,7 +6,7 @@ import { LANDING, landing_url } from '../../redux/actions/constants';
 import WowPics from './WowPics';
 import PrizeSection from './prizesection';
 import SponsorSection from './sponsorsection';
-// import EnterBtn from './EnterBtn';
+import EnterBtn from './EnterBtn';
 import Categories from './categories';
 
 const LandingPage = ({ dispatch }) => {
@@ -25,14 +25,19 @@ const LandingPage = ({ dispatch }) => {
                         <div className="col-md-1" />
                         <div className="col-md-10">
                             <p className="sourcesans f-15 text-justify" style={{ color: `rgba(0, 0, 0, 0.4)`, lineHeight: 1.8 }}>WOW PHOTO AWARDS is crafted to encourage the world’s most outstanding and talented souls in the field of photography focusing Travel and Tourism. "WOW PHOTO AWARDS" is an open contest to all Professionals and Amateur Photographers across the world. WOW PHOTO AWARDS 2019 submissions starts from 1st May 2019 under 12 categories. Top 6 Winners to get International Photo Challenge Trip , 2 Grand Winners and 100 Best Photo Appreciation Awards and more.</p>
-                            {/* <div className="flex-center pt-5">
+                            <div className="flex-center pt-5">
                                 <EnterBtn className="btn pl-5 pr-5 btn-outline-info" />
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <Categories />
+            <section className="post-section">
+                <div className="text-center mb-5">
+                    <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)`}}>CATEGORIES FOR 2019</h1>
+                </div>
+                <Categories />
+            </section>
             <PrizeSection />
             <WowPics />
             <SponsorSection />
