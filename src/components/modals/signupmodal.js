@@ -1,6 +1,6 @@
 import React from 'react'
 import SignUpForm from '../auth/sigupform';
-import SocialLogin from '../auth/socialLogin';
+// import SocialLogin from '../auth/socialLogin';
 import ModalLayout from './modallayout';
 import { OpenModalBtn } from './modalbtns';
 
@@ -10,8 +10,8 @@ const SignUpModal = () => {
         <ModalLayout title="Sign Up">
             <div>
                 <SignUpForm />
-                <hr data-title="OR"></hr>
-                <SocialLogin title={"Sign up"} />
+                {/* <hr data-title="OR"></hr>
+                <SocialLogin title={"Sign up"} /> */}
                 <hr></hr>
                 <div className="flex-center flex-column">
                     <OpenModalBtn modalName="SIGNIN_MODAL" className="btn btn-link mb-1 btn-a f-12">

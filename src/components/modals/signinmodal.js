@@ -2,7 +2,7 @@ import React from 'react'
 import useCount from '../../hooks/useCount';
 import SignInForm from '../auth/sigininform';
 import ForgotForm from '../auth/forgotform';
-import SocialLogin from '../auth/socialLogin';
+// import SocialLogin from '../auth/socialLogin';
 import ModalLayout from './modallayout';
 import { OpenModalBtn } from './modalbtns';
 
@@ -15,8 +15,8 @@ const SignInModal = () => {
             tab.count === 1 ?
             <div>
                 <SignInForm />
-                <hr data-title="OR"></hr>
-                <SocialLogin title={"Sign in"} />
+                {/* <hr data-title="OR"></hr> */}
+                {/* <SocialLogin title={"Sign in"} /> */}
                 <hr></hr>
                 <div className="flex-center flex-column">
                     <OpenModalBtn modalName="SIGNUP_MODAL" className="btn btn-link mb-1 btn-a f-12">
