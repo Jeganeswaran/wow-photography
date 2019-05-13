@@ -29,7 +29,6 @@ const Faq = () => {
                                         <li>Wanderlust</li>
                                         <li>Animal Kingdom</li>
                                         <li>Architecture</li>
-                                        <li>Architecture</li>
                                         <li>World of Smiles</li>
                                         <li>Happy Street</li>
                                         <li>Nature’s Miracle</li>

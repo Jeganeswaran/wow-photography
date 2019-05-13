@@ -630,7 +630,7 @@ hr[data-title]:before {
 
 .btn-selected {
     position: fixed;
-    bottom: 10px;
+    bottom: 5px;
     right: 10px;
     padding: 10px 25px;
     font-size: 16px;
@@ -899,4 +899,20 @@ label {
     background: rgba(4, 168, 232, 0.7) !important;
     border-color: rgba(4, 168, 232, 0.3)!important;
     color: #fff !important;
+}
+
+.float-whatsapp{
+    display: block;
+    position: fixed;
+    bottom: 65px;
+    right: 25px;
+    box-shadow: 0 3px 6px rgba(0,255,0,0.16), 0 3px 6px rgba(0,255,0,0.23);
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+}
+
+.float-whatsapp img{
+    height: 100%;
+    width: 100%;
 }

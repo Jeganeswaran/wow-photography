@@ -1,10 +1,30 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
+import { AutoPopModal } from '../modals/modalbtns';
 
 const CollCount = ({ private_photographs, submitted_photo, points, approved_photo, rejected_photo }) => {
     return (
         <div>
+            {
+                !points && !submitted_photo && private_photographs &&
+                <AutoPopModal
+                    modalName="REJECTINFO_MODAL"
+                    modalProps={{
+                        content: (
+                            <>
+                                <p>Please Upgrade your package to submit your Unsubmitted Photographs.</p>
+                                <Link
+                                    to="/upgrade"
+                                    className={`btn btn-theme f-14 mb-3 pl-md-4 pr-md-4`}
+                                >
+                                    Upgrade
+                                </Link>
+                            </>
+                        )
+                    }}
+                />
+            }
             <div className="d-flex flex-wrap align-items-center border coll-counter text-center mb-3">
                 <div className="coll-counter-item coll-border">
                     <h1>{private_photographs}</h1>

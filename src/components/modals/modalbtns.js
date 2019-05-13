@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { connect } from 'react-redux';
 import { closeModal, openModal } from "../../redux/actions/common"
 import useLockBodyScroll from "../../hooks/layout/useLockBodyScroll"
@@ -47,9 +47,21 @@ export const ModalCon = ({ children, ...rest }) => {
     )
 }
 
+const open = connect(null, { openModal });
+
+//auto pop modal
+export const AutoPopModal = open(({ openModal, modalName, modalProps }) => {
+
+    useEffect(() => {
+        openModal(modalName, modalProps)
+    }, [modalName, modalProps])
+
+    return null
+})
+
 //open modal btn
-export const OpenModalBtn = connect(null, { openModal })(OpenModal);
-export const OpenImg = connect(null, { openModal })(OpenImageModal);
+export const OpenModalBtn = open(OpenModal);
+export const OpenImg = open(OpenImageModal);
 
 //close modal button
 export const CloseModalBtn = connect(null, { closeModal })(CloseModal);

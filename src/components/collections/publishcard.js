@@ -48,10 +48,7 @@ const PublishCard = ({ ids, multiDispatch, ...props }) => {
                                             Approved
                                         </span> :
                                         is_approved === false ?
-                                            <OpenModalBtn modalName="REJECTINFO_MODAL" className="btn-a approv-pill bg-danger">
-                                                Rejected 
-                                                <i className="f-12 fa-info-circle fas ml-2"></i>
-                                            </OpenModalBtn> :
+                                            <RejectInfo /> :
                                             <span className="approv-pill pendibg-bg">
                                                 Pending Approval
                                             </span>
@@ -90,5 +87,20 @@ const PublishCard = ({ ids, multiDispatch, ...props }) => {
         </div>
     )
 }
+
+const RejectInfo = () => (
+    <OpenModalBtn 
+        modalName="REJECTINFO_MODAL" 
+        className="btn-a approv-pill bg-danger"
+        modalProps={{
+            content: (
+                <p>Your photograph is rejected. Please upload another photograph to replace it.</p>
+            )
+        }}
+    >
+        Rejected
+        <i className="f-12 fa-info-circle fas ml-2"></i>
+    </OpenModalBtn>
+)
 
 export default PublishCard

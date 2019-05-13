@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import EnterBtn from './EnterBtn';
 import WorldofSmiles from "../../assets/img/categories/WorldofSmiles.jpg";
 import BirdsEyeView from "../../assets/img/categories/BirdsEyeView.jpg";
@@ -12,7 +12,7 @@ import Architecture from "../../assets/img/categories/Architecture.jpg";
 import AnimalKingdom from "../../assets/img/categories/AnimalKingdom.jpg";
 import LifeStyle from "../../assets/img/categories/LifeStyle.jpg";
 import HappyStreet from "../../assets/img/categories/HappyStreet.jpg";
-
+import Carousel from 'nuka-carousel';
 
 const cats = [
     {
@@ -48,12 +48,12 @@ const cats = [
     {
         title: "Wanderlust",
         image: Wanderlust,
-        tags:  ["Road", "rail", "water", "air", "travel & travellers related."]
+        tags: ["Road", "rail", "water", "air", "travel & travellers related."]
     },
     {
         title: "Taste buds",
         image: Tastebuds,
-        tags:  ["Food styles", "art of food preparation", "street foods", "taste of culture."]
+        tags: ["Food styles", "art of food preparation", "street foods", "taste of culture."]
     },
     {
         title: "Architecture",
@@ -77,32 +77,59 @@ const cats = [
     },
 ];
 
-const Categories = () => cats.map((cat,index) => (
-    <div 
-        style={{ backgroundImage: `url(${cat.image})` }}
-        className="category-img" 
-        key={"cats" + index}
-    >
-        <div className="category-title">
-            <h2 className="category-head text-center">{cat.title.toUpperCase()}</h2>
-            <div className="category-content sourcesans text-center">
-                {
-                    cat.tags.map((x, index) => (
-                        <span key={index}> {x} {cat.tags.length !== index + 1 && " | "}</span>
-                    ))  
-                }
-            </div>
-            <EnterBtn 
-                className="btn category-btn f-14 mt-4 f-600 montserrat pl-4 pr-4"
-            />
-        </div>
-    </div>
-))
+const Categories = () => {
 
-export const CatTop = () => cats.map((cat,index) => ( 
-    <span className="btn btn-theme mb-3 mr-3" key={index}>
+    const [slide, setSlideIndex] = useState(0);
+
+    return (
+        <section className="post-section">
+            <div className="text-center mb-4">
+                <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>CATEGORIES FOR 2019</h1>
+            </div>
+            <div className="container d-flex justify-content-md-center flex-wrap mb-2">
+                <CatTop 
+                    setSlideIndex={setSlideIndex}
+                />
+            </div>
+            <Carousel
+                autoplay
+                wrapAround
+                slideIndex={slide}
+                afterSlide={slideIndex => setSlideIndex(slideIndex)}
+                withoutControls
+            >
+                {
+                    cats.map((cat, index) => (
+                        <div
+                            style={{ backgroundImage: `url(${cat.image})` }}
+                            className="category-img"
+                            key={"cats" + index}
+                        >
+                            <div className="category-title">
+                                <h2 className="category-head text-center">{cat.title.toUpperCase()}</h2>
+                                <div className="category-content sourcesans text-center">
+                                    {
+                                        cat.tags.map((x, index) => (
+                                            <span key={index}> {x} {cat.tags.length !== index + 1 && " | "}</span>
+                                        ))
+                                    }
+                                </div>
+                                <EnterBtn
+                                    className="btn category-btn f-14 mt-4 f-600 montserrat pl-4 pr-4"
+                                />
+                            </div>
+                        </div>
+                    ))
+                }
+            </Carousel>
+        </section>
+    )
+}
+
+export const CatTop = ({setSlideIndex}) => cats.map((cat, index) => (
+    <button onClick={() => setSlideIndex(index)} className="btn btn-theme mb-3 mr-3" key={index}>
         {cat.title.toUpperCase()}
-    </span>
+    </button>
 ))
 
 export default Categories

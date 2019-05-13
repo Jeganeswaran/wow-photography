@@ -89,8 +89,9 @@ const Flags = () => {
     return (
         <div className="d-flex justify-content-center pb-1 flex-wrap">
             {
-                languages.map(l => (
+                languages.map((l, index) => (
                     <span
+                        key={index}
                         onClick={() => setLa(l.lan)}
                         title={l.title}
                         className={`flag flag-${l.flag} mr-2 mb-2`}

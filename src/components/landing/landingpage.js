@@ -7,7 +7,7 @@ import WowPics from './WowPics';
 import PrizeSection from './prizesection';
 import SponsorSection from './sponsorsection';
 import EnterBtn from './EnterBtn';
-import Categories, { CatTop } from './categories';
+import Categories from './categories';
 
 const LandingPage = ({ dispatch }) => {
 
@@ -33,15 +33,7 @@ const LandingPage = ({ dispatch }) => {
                 </div>
             </section>
             <PrizeSection />
-            <section className="post-section">
-                <div className="text-center mb-4">
-                    <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)`}}>CATEGORIES FOR 2019</h1>
-                </div>
-                <div className="container d-flex justify-content-md-center flex-wrap mb-3">
-                    <CatTop />
-                </div>
-                <Categories />
-            </section>
+            <Categories />
             <WowPics />
             <SponsorSection />
         </div>

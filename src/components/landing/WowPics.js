@@ -5,10 +5,10 @@ import DynamicList from '../common/dynamiclist';
 
 const WowPics = ({ fetching, wow_pick }) => {
     return (
-        <div className="post-section pt-0">
+        <div className="post-section bg-light-grey">
             <div className="container">
                 <div className="text-center mb-4">
-                    <h2 style={{color: `rgba(0,0,0,0.6)`}} className="montserrat f-700">PAST WINNERS</h2>
+                    <h2 className="montserrat theme-red f-700">PAST WINNERS</h2>
                 </div>
                 <div className="row">
                     <DynamicList
