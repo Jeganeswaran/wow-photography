@@ -23,7 +23,7 @@ const PrivateCollection = ({ ids }) => {
 }
 
 const mapStateToProps = (state) => ({
-    ids: state.multi_select.ids
+    ids: state.multi_select.ids || []
 })
 
 export default connect(mapStateToProps)(PrivateCollection)

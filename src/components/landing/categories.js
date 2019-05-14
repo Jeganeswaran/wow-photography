@@ -86,7 +86,7 @@ const Categories = () => {
             <div className="text-center mb-4">
                 <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>CATEGORIES FOR 2019</h1>
             </div>
-            <div className="container d-flex justify-content-md-center flex-wrap mb-2">
+            <div className="container d-flex justify-content-md-center justify-content-center flex-wrap mb-2">
                 <CatTop 
                     setSlideIndex={setSlideIndex}
                 />
@@ -127,7 +127,7 @@ const Categories = () => {
 }
 
 export const CatTop = ({setSlideIndex}) => cats.map((cat, index) => (
-    <button onClick={() => setSlideIndex(index)} className="btn btn-theme mb-3 mr-3" key={index}>
+    <button onClick={() => setSlideIndex(index)} className="btn btn-theme btn-category mb-3 mr-3" key={index}>
         {cat.title.toUpperCase()}
     </button>
 ))

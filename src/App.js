@@ -7,7 +7,7 @@ import Pages from './components/routes/pages';
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from 'react-redux';
 import store from "./redux"
-import WhatsApp from './components/common/whatsapp';
+// import WhatsApp from './components/common/whatsapp';
 
 const App = () => {
 	return (
@@ -18,7 +18,7 @@ const App = () => {
 				<Footer />
 				<Modal />
 				<Toast />
-				<WhatsApp />
+				{/* <WhatsApp /> */}
 			</Router>
 		</Provider>
 	)
