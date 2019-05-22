@@ -13,7 +13,7 @@ import { addToast, closeModal } from '../../redux/actions/common';
 const Address = ({ inputs, dispatch, setTab = null }) => {
 
     //form state    
-    const [state, formdispatch] = useReducer(formReducer, inputs);
+    const [formstate, formdispatch] = useReducer(formReducer, inputs);
 
     //data fetching effect
     const { res, setReq } = useDataSubmit(
@@ -33,17 +33,17 @@ const Address = ({ inputs, dispatch, setTab = null }) => {
 
     //handle submit
     const handleSubmit = () => {
-        const isErr = validate(state, formdispatch);
+        const isErr = validate(formstate, formdispatch);
         if (isErr) {
             return;
         }
         const data = new FormData();
-        const { country_id, state_id, address, city, pin_code, landmark, instagram, ...restUser } = reduceForm(state);
+        const { country_id, state, address, city, pin_code, landmark, instagram, ...restUser } = reduceForm(formstate);
         for (let key in restUser) {
             data.append(key, restUser[key]);
         }
         data.append("useraddress", JSON.stringify(
-            { country_id, state_id, address, city, pin_code, landmark, instagram }
+            { country_id, state, address, city, pin_code, landmark, instagram }
         ));
         setReq(x => ({
             ...x,
@@ -70,7 +70,7 @@ const Address = ({ inputs, dispatch, setTab = null }) => {
         >
             <List
                 RenderItem={FormGroup}
-                list={state}
+                list={formstate}
                 title={"add-address"}
                 dispatch={formdispatch}
             />

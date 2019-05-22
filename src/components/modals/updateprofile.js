@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Address from '../auth/address';
-import { MASTER_VALUES, master_url } from '../../redux/actions/constants';
+import { MASTER_VALUES, master_url, profile_url } from '../../redux/actions/constants';
 import useHttp from '../../hooks/http/useHttp';
 import { connect } from 'react-redux'
 import CenterLoader from './centerloader';
 import ModalLayout from './modallayout';
+import { updateUser } from '../../redux/actions/user';
+import apiInstance from '../../redux/apiInstance';
 
 const inputs = (con, address, user) => [
     {
@@ -50,19 +52,16 @@ const inputs = (con, address, user) => [
             type: "select",
             value: address.country_id || '',
             placeholder: "Select your country",
-            options: con,
-            decendOp: "states",
-            decendIp: "state_id"
+            options: con
         }
     },
     {
         label: "State",
         inputProps: {
-            name: "state_id",
-            type: "select",
-            value: address.state_id || '',
-            placeholder: "Select your state",
-            options: []
+            name: "state",
+            type: "text",
+            value: address.state || '',
+            placeholder: "Enter your state"
         }
     },
     {
@@ -107,32 +106,47 @@ const inputs = (con, address, user) => [
 //modal name: UPDATE_PROFILE
 const UpdateProfile = ({ master_values, address, dispatch, user_detail }) => {
 
+    
+    const [userLoad, setUserLoad] = useState(false);
+
+    //load user
+    useEffect(() => {
+        if(!userLoad) {
+            apiInstance({
+                url: profile_url
+            }).then((res) => {
+                dispatch(updateUser(res.data));
+                setUserLoad(true);
+            })
+        }
+    }, [])
+
     //load master values
     useHttp(dispatch, MASTER_VALUES, { url: master_url }, 'master_values');
 
-    if (!master_values.data.countries) {
-        if (master_values.fetching) {
-            return (
-                <div className="modal-wrapper">
-                    <CenterLoader />
-                </div>
-            )
-        }
-        return null
+    if(!userLoad || master_values.fetching) {
+        return (
+            <div className="modal-wrapper">
+                <CenterLoader />
+            </div>
+        )
     }
-    return (
-        <ModalLayout
-            maxWidth={550}
-            title="Update Profile"
-            children={
-                <div className="update-form">
-                    <Address
-                        inputs={inputs(master_values.data.countries, address, user_detail)}
-                    />
-                </div>
-            }
-        />
-    )
+    if(Array.isArray(master_values.data.countries)) { 
+        return (
+            <ModalLayout
+                maxWidth={550}
+                title="Update Profile"
+                children={
+                    <div className="update-form">
+                        <Address
+                            inputs={inputs(master_values.data.countries, address, user_detail)}
+                        />
+                    </div>
+                }
+            />
+        )
+    }
+    return null
 }
 
 const mapStateToProps = ({ master_values, user }) => ({

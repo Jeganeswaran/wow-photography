@@ -26,7 +26,7 @@ const Pages = () => {
                 <Route path="/announcements" component={Announcements} />
                 <Route path="/activate-account" component={ActivatePage} />
                 <Route path="/reset-password" component={ResetPwdPage} />
-                <Route path="/upgrade" component={UpgradePage} />
+                <UserRoute path="/upgrade" component={UpgradePage} />
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-and-conditions" component={Terms} />
                 <Route path="/refund-policy" component={RefundPolicy} />
