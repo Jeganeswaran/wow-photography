@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../../assets/css/flags.min.css';
+import { withRouter, Link } from "react-router-dom";
+import { urlParams } from "../../utils/urlParams";
 
 const languages = [
     {
@@ -64,15 +66,14 @@ const languages = [
     }
 ];
 
-const Flags = () => {
-
-    const [la, setLa] = useState("");
+const Flags = withRouter(({ match, location }) => {
 
     useEffect(() => {
-        if (la) {
+        if (location.search) {
+            const { hl } = urlParams(location.search);
             const ggtr = document.querySelector("#google_translate_element .goog-te-combo");
-            if (ggtr) {
-                ggtr.value = la;
+            if (hl && ggtr) {
+                ggtr.value = hl;
                 // taken from
                 // https://stackoverflow.com/questions/2856513/how-can-i-trigger-an-onchange-event-manually
                 if ("createEvent" in document) {
@@ -84,23 +85,23 @@ const Flags = () => {
                 }
             }
         }
-    }, [la]);
+    }, [location.search]);
 
     return (
         <div className="d-flex justify-content-center pb-1 flex-wrap">
             {
                 languages.map((l, index) => (
-                    <span
-                        key={index}
-                        onClick={() => setLa(l.lan)}
+                    <Link
+                        to={`/?hl=${l.lan}`}
+                        key={index + l.lan}
                         title={l.title}
                         className={`flag flag-${l.flag} mr-2 mb-2`}
                     >
-                    </span>
+                    </Link>
                 ))
             }
         </div>
     )
-}
+})
 
 export default Flags
