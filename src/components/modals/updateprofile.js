@@ -106,32 +106,40 @@ const inputs = (con, address, user) => [
 //modal name: UPDATE_PROFILE
 const UpdateProfile = ({ master_values, address, dispatch, user_detail }) => {
 
-    
+
     const [userLoad, setUserLoad] = useState(false);
 
     //load user
     useEffect(() => {
-        if(!userLoad) {
+        let didCancel = false;
+        if (!userLoad) {
             apiInstance({
                 url: profile_url
             }).then((res) => {
                 dispatch(updateUser(res.data));
-                setUserLoad(true);
+                if (!didCancel) {
+                    setUserLoad(true);
+                }
             })
         }
+
+        return () => {
+            didCancel = true;
+        }
+
     }, [])
 
     //load master values
     useHttp(dispatch, MASTER_VALUES, { url: master_url }, 'master_values');
 
-    if(!userLoad || master_values.fetching) {
+    if (!userLoad || master_values.fetching) {
         return (
             <div className="modal-wrapper">
                 <CenterLoader />
             </div>
         )
     }
-    if(Array.isArray(master_values.data.countries)) { 
+    if (Array.isArray(master_values.data.countries)) {
         return (
             <ModalLayout
                 maxWidth={550}

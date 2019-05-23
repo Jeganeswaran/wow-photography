@@ -81,14 +81,22 @@ const UpdatAddress = ({ master_values, address, dispatch, setTab, email }) => {
 
     //load user
     useEffect(() => {
+        let didCancel = false;
         if(!userLoad) {
             apiInstance({
                 url: profile_url
             }).then((res) => {
                 dispatch(updateUser(res.data));
-                setUserLoad(true);
+                if(!didCancel) {
+                    setUserLoad(true);
+                }
             })
         }
+
+        return () => {
+            didCancel = true;
+        }
+
     }, [])
 
     //load master values
