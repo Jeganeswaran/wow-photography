@@ -1,7 +1,6 @@
 import apiInstance from "../apiInstance";
-import { _FETCHING, _FULFILLED, _REJECTED } from "../actions/constants";
+import { _FETCHING, _FULFILLED, _REJECTED, USER, _CLEAR } from "../actions/constants";
 import ajaxerrmsg from "../../utils/ajaxerrmsg";
-import { logOutUser } from "../actions/user";
 
 //common middleware for http requests
 //with steps to avoid potential race conditions during network requests
@@ -59,7 +58,7 @@ const fetchData = async (config, type, dispatch, rest) => {
         const errMsg = err.response ? ajaxerrmsg(err.response.data) : 'Something went wrong';
         dispatch({ type: type + _REJECTED, payload: errMsg, ...rest });
         if(err.response && err.response.status === 401){
-            dispatch(logOutUser());
+            dispatch(USER + _CLEAR);
         }
     }
 }

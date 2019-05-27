@@ -8,6 +8,7 @@ import PrizeSection from './prizesection';
 import SponsorSection from './sponsorsection';
 import EnterBtn from './EnterBtn';
 import Categories from './categories';
+import Countries from './countries';
 
 const LandingPage = ({ dispatch }) => {
 
@@ -32,6 +33,7 @@ const LandingPage = ({ dispatch }) => {
                     </div>
                 </div>
             </section>
+            <Countries />
             <PrizeSection />
             <Categories />
             <WowPics />

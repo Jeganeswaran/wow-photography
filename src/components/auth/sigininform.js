@@ -48,7 +48,9 @@ const SignInForm = ({ addToast, closeModal, updateUser, history }) => {
             succFunc={
                 (data) => {
                     updateUser(data);
-                    history.push("/my-profile");
+                    const isUp = data.userprofile.points === 0 && data.submitted_photo === 0 && data.private_photographs !== 0;
+                    console.log(data, isUp); 
+                    history.push(`/my-profile${isUp ? `/?action=Upgrade` : ''}`);
                 }
             }
             errFunc={
