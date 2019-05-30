@@ -16,13 +16,13 @@ const Countries = ({ fetching, countries }) => {
             <div className="post-section border-top">
                 <div className="container">
                     <div className="text-center mb-5">
-                        <h2 className="montserrat f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>Available Countries</h2>
+                        <h2 className="montserrat f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>Participation Growing Worldwide</h2>
                     </div>
                     <div className="row">
                         <Carousel
-                            slidesToShow={4}
+                            slidesToShow={3}
                             autoplay
-                            // wrapAround
+                            wrapAround
                             renderCenterLeftControls={null}
                             renderCenterRightControls={null}
                             renderBottomCenterControls={null}
@@ -31,7 +31,7 @@ const Countries = ({ fetching, countries }) => {
                                 countries.map(({ id, thumbnail, title }) => (
                                     <div className="flex-center flex-column mb-2" key={id}>
                                         <img height='80' src={thumbnail} alt={title} />
-                                        <h5 className="text-center mt-2">{title}</h5>
+                                        <h6 className="text-center mt-2">{title}</h6>
                                     </div>
                                 ))
                             }
