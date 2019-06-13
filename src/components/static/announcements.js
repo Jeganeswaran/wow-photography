@@ -14,6 +14,7 @@ const About = () => {
                 <div className="row">
                     <div className="col-sm-8 mb-3">
                         <ul className="f-16 f-600 annoucelist">
+                            <li>Submission Deadline 31 Aug 2019</li>
                             <li>100 Best WOW Photo 2019 will be Announced on 15th September 2019</li>
                             <li>Public Display of Best 100 WOW Photos 2019 - Photo Gallery on 27th -29th September for World Tourism Day</li>
                             <li>6 Winners of WOW Explore Awards 2019 (International Trip on Photo Challenge) will be announced on 28th Sept 2019</li>
