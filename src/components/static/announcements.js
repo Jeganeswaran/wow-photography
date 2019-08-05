@@ -1,29 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import SponsorLayout from '../common/sponsorlayout';
-import useScript from '../../hooks/useScript';
-
-window.fbAsyncInit = function () {
-    window.FB.init({
-        appId: '685670868535724',
-        autoLogAppEvents: true,
-        xfbml: true,
-        version: 'v3.3'
-    });
-};
-
+import FbPage from './FbPage';
 
 const About = () => {
-
-    const [fbloaded] = useScript(
-        'https://connect.facebook.net/en_IN/sdk.js'
-    );
-
-    useEffect(() => {
-        if (fbloaded) {
-            window.fbAsyncInit();
-        }
-    }, [fbloaded])
-
     return (
         <div>
             <SponsorLayout title="Announcements">
@@ -40,14 +19,9 @@ const About = () => {
                         </ul>
                     </div>
                     <div className="col-sm-4 mb-3">
-                        {
-                            fbloaded &&
-                            <div className="fb-page" data-href="https://www.facebook.com/wowphotoawards/" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
-                                <blockquote cite="https://www.facebook.com/wowphotoawards/" className="fb-xfbml-parse-ignore">
-                                    <a href="https://www.facebook.com/wowphotoawards/">WOW PHOTO Awards</a>
-                                </blockquote>
-                            </div>
-                        }
+                        <FbPage>
+                            <a href="https://www.facebook.com/wowphotoawards/">WOW PHOTO Awards</a>
+                        </FbPage>
                     </div>
                 </div>
             </SponsorLayout>

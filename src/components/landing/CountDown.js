@@ -43,8 +43,7 @@ const CountDown = () => {
     const [sec, min, hrs, days] = time;
     return (
         <div className="pt-5 pb-5">
-            <h4>Submission Deadline</h4>
-            <div className="flex-center f-18">
+            <div className="flex-center f-18 mb-3">
                 <div>
                     <div className="countdown">{twoString(days)}</div>
                     <div>day</div>
@@ -65,6 +64,7 @@ const CountDown = () => {
                     <div>sec</div>
                 </div>
             </div>
+            <h5>Submission Deadline</h5>
         </div>
     )
 }

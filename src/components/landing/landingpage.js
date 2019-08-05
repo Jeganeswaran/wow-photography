@@ -9,6 +9,8 @@ import SponsorSection from './sponsorsection';
 import EnterBtn from './EnterBtn';
 import Categories from './categories';
 import Countries from './countries';
+import FbPage from '../static/FbPage';
+import Loader from '../common/loader';
 
 const LandingPage = ({ dispatch }) => {
 
@@ -35,6 +37,21 @@ const LandingPage = ({ dispatch }) => {
             </section>
             <Countries />
             <PrizeSection />
+            <section className="post-section border-bottom">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-3" />
+                        <div className="col-md-6">
+                            <FbPage width="500">
+                                <div className="p-3">
+                                    <Loader width="50px" height="50px" />
+                                </div>
+                            </FbPage>
+                        </div>
+                        <div className="col-md-3" />
+                    </div>
+                </div>
+            </section>
             <Categories />
             <WowPics />
             <SponsorSection />
