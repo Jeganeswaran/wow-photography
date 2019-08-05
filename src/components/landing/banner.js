@@ -1,4 +1,5 @@
 import React from 'react'
+import CountDown from './CountDown';
 // import EnterBtn from './EnterBtn';
 
 const Banner = () => {
@@ -11,7 +12,7 @@ const Banner = () => {
                         PHOTOGRAPHY CONTEST
                     </h1>
                     <h4>FOCUSING WORLD TOURISM</h4>
-                    {/* <EnterBtn /> */}
+                    <CountDown />
                 </div>
             </div>
         </div>

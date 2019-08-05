@@ -928,3 +928,19 @@ label {
 ._show_1e.wrap_mW, .label_39 {
     z-index: 9 !important;
 }
+
+.countdown {
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.countdown + div {
+    font-size: 14px;
+}
+
+.countdown-divider {
+    font-size: 2.2rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 22px;
+}
