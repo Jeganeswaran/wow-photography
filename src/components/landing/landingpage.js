@@ -43,7 +43,7 @@ const LandingPage = ({ dispatch }) => {
                         <div className="col-md-3" />
                         <div className="col-md-6">
                             <FbPage width="500">
-                                <div className="p-3">
+                                <div className="flex-center p-3">
                                     <Loader width="50px" height="50px" />
                                 </div>
                             </FbPage>
