@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SponsorLayout from '../common/sponsorlayout';
 import useScript from '../../hooks/useScript';
+
+window.fbAsyncInit = function () {
+    window.FB.init({
+        appId: '685670868535724',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v3.3'
+    });
+};
+
 
 const About = () => {
 
     const [fbloaded] = useScript(
-        'https://connect.facebook.net/en_IN/sdk.js#xfbml=1&version=v3.3&appId=685670868535724&autoLogAppEvents=1'
+        'https://connect.facebook.net/en_IN/sdk.js'
     );
+
+    useEffect(() => {
+        if (fbloaded) {
+            window.fbAsyncInit();
+        }
+    }, [fbloaded])
 
     return (
         <div>
