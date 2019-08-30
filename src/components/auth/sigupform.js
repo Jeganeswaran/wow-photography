@@ -2,8 +2,11 @@ import React from 'react'
 import RenderForm from '../form/renderform';
 import FormGroup from '../form/formgroup';
 import { register_url } from '../../redux/actions/constants';
-import { addToast, closeModal } from '../../redux/actions/common';
+import { addToast } from '../../redux/actions/common';
+import { updateUser } from '../../redux/actions/user';
 import { connect } from 'react-redux'
+import { withRouter } from "react-router-dom"
+
 
 const inputs = [
     {
@@ -40,7 +43,7 @@ const inputs = [
     },
 ];
 
-const SignUpForm = ({ addToast, closeModal }) => {
+const SignUpForm = ({ addToast, updateUser, history }) => {
     return (
         <RenderForm 
             RenderItem={FormGroup}
@@ -52,8 +55,9 @@ const SignUpForm = ({ addToast, closeModal }) => {
             }}
             succFunc={
                 (data) => {
-                    addToast("Activation mail has been sent to Email Id")
-                    closeModal();
+                    updateUser(data);
+                    const isUp = data.userprofile.points === 0 && data.submitted_photo === 0 && data.private_photographs !== 0;
+                    history.push(`/my-profile${isUp ? `/?action=Upgrade` : ''}`);
                 }
             }
             errFunc={
@@ -70,7 +74,7 @@ const SignUpForm = ({ addToast, closeModal }) => {
 // })
 
 const mapDispatchToProps = {
-    addToast, closeModal
+    addToast, updateUser
 }
 
-export default connect(null, mapDispatchToProps)(SignUpForm)
+export default withRouter(connect(null, mapDispatchToProps)(SignUpForm))
