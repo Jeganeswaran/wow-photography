@@ -38,17 +38,13 @@ const LandingPage = ({ dispatch }) => {
             <Countries />
             <PrizeSection />
             <section className="post-section border-bottom">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-3" />
-                        <div className="col-md-6">
-                            <FbPage width="500">
-                                <div className="flex-center p-3">
-                                    <Loader width="50px" height="50px" />
-                                </div>
-                            </FbPage>
-                        </div>
-                        <div className="col-md-3" />
+                <div className="container flex-center">
+                    <div>
+                        <FbPage>
+                            <div className="flex-center p-3">
+                                <Loader width="50px" height="50px" />
+                            </div>
+                        </FbPage>
                     </div>
                 </div>
             </section>

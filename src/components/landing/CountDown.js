@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const endDate = new Date('31 Aug 2019');
+const endDate = new Date('1 Sep 2019');
 
 const calDiff = dt => {
 
