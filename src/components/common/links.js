@@ -12,7 +12,7 @@ const Links = ({ isToken }) => {
                     Home
                 </NavLink>
             </li>
-            {!isToken ?
+            {/* {!isToken ?
                 <>
                     <li>
                         <OpenModalBtn
@@ -38,7 +38,7 @@ const Links = ({ isToken }) => {
                         </NavLink>
                     </li>
                 </>
-            }
+            } */}
             <li>
                 <NavLink activeClassName="theme-red" to="/about-us">
                     About
@@ -59,14 +59,14 @@ const Links = ({ isToken }) => {
                     Contact
                 </NavLink>
             </li>
-            {
+            {/* {
                 isToken &&
                 <>
                     <li>
                         <Logout />
                     </li>
                 </>
-            }
+            } */}
         </>
     )
 }

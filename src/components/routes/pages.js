@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "../landing/landingpage";
-import CollectionsPage from "../collections/collectionspage";
+// import CollectionsPage from "../collections/collectionspage";
 import ScrollToTop from "./scrolltop";
 import ActivatePage from "../auth/activatePage";
 import SuccessPage from "../auth/successpage";
@@ -11,7 +11,7 @@ import Terms from "../static/terms";
 import RefundPolicy from "../static/refundpolicy";
 import Announcements from "../static/announcements";
 import ResetPwdPage from "../auth/resetpwdpage";
-import UpgradePage from "../upgrade/upgradepage";
+// import UpgradePage from "../upgrade/upgradepage";
 import FailurePage from "../auth/errorpage";
 import Faq from "../static/faq";
 import About from "../static/about";
@@ -22,11 +22,11 @@ const Pages = () => {
         <ScrollToTop>
             <Switch>
                 <Route exact path="/" component={LandingPage} />
-                <UserRoute path="/my-profile" component={CollectionsPage} />
+                <UserRoute path="/my-profile" />
                 <Route path="/announcements" component={Announcements} />
                 <Route path="/activate-account" component={ActivatePage} />
                 <Route path="/reset-password" component={ResetPwdPage} />
-                <UserRoute path="/upgrade" component={UpgradePage} />
+                <UserRoute path="/upgrade"  />
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-and-conditions" component={Terms} />
                 <Route path="/refund-policy" component={RefundPolicy} />

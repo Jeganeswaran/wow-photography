@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from './logo';
 import { NavLink } from "react-router-dom"
-import Links, { SignInOut, HamBtn } from './links';
+import Links, { HamBtn } from './links';
 
 const Header = () => {
     return (
@@ -21,7 +21,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="show-header">
-                    <SignInOut />
+                    {/* <SignInOut /> */}
                 </div>
             </div>
         </header>

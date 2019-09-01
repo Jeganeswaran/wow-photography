@@ -1,14 +1,14 @@
 import React from 'react'
-import { Redirect, Route } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux'
 
 const UserRoute = ({isToken, ...restProps}) => {
-    if(!isToken){
+    // if(!isToken){
         return <Redirect to="/" />
-    }
-    return (
-        <Route {...restProps} />
-    )
+    // }
+    // return (
+    //     <Route {...restProps} />
+    // )
 }
 
 const mapStateToProps = ({ user }) => ({

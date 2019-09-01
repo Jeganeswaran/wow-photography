@@ -37,8 +37,13 @@ const CountDown = () => {
         }
     }, [timeLength])
 
-    if(timeLength === 0) {
-        return null
+    if(timeLength !== 0) {
+        return (
+            <div className="pt-5 pb-5">
+                <h2 className="f-700">CONTEST CLOSED</h2>
+                <h4>Results on world tourism day 27 September 2019</h4>
+            </div>
+        )
     }
     const [sec, min, hrs, days] = time;
     return (
