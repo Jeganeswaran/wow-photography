@@ -12,6 +12,8 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-social-login": "^3.4.4",
+    "react-virtualized": "^9.21.1",
+    "react-virtualized-image-measurer": "^0.4.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
