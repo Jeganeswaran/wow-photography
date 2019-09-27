@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './components/common/header';
-import Footer from './components/common/footer';
+// import Header from './components/common/header';
+// import Footer from './components/common/footer';
 import Modal from './components/modals/modal';
 import Toast from "./components/Toast/toast"
 import Pages from './components/routes/pages';
@@ -13,9 +13,9 @@ const App = () => {
 	return (
 		<Provider store={store}>
 			<Router>
-				<Header />
+				{/* <Header /> */}
 				<Pages />
-				<Footer />
+				{/* <Footer /> */}
 				<Modal />
 				<Toast />
 				{/* <WhatsApp /> */}

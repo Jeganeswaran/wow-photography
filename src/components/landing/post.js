@@ -1,24 +1,25 @@
-import React from 'react'
-import { OpenImg } from "../modals/modalbtns"
+import React from "react";
+import { OpenImg } from "../modals/modalbtns";
 
-const Post = ({ thumbnail, photo, title }) => {
+const Post = ({ thumbnail, photo, title, share = false }) => {
     return (
         <div className="post">
             <div className="post-img-holder">
                 <div className="post-img">
                     <OpenImg
-                        modalProps={{ image: photo }}
+                        modalProps={{ image: photo, share }}
                         src={thumbnail}
                         alt={""}
                     />
                 </div>
             </div>
-            <div className="p-1">
-                {title && <span>© {title}</span>}
-                {/* <span>4th Apr 2019</span> */}
-            </div>
+            {title && (
+                <div className="p-1">
+                    {title && <span>© {title}</span>}
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
-export default Post
+export default Post;

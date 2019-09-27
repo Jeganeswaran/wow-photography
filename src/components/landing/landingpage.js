@@ -3,14 +3,15 @@ import Banner from './banner';
 import { connect } from 'react-redux'
 import useHttp from '../../hooks/http/useHttp';
 import { LANDING, landing_url } from '../../redux/actions/constants';
-import WowPics from './WowPics';
-import PrizeSection from './prizesection';
+// import WowPics from './WowPics';
+// import PrizeSection from './prizesection';
 import SponsorSection from './sponsorsection';
-import EnterBtn from './EnterBtn';
-import Categories from './categories';
-import Countries from './countries';
-import FbPage from '../static/FbPage';
-import Loader from '../common/loader';
+// import EnterBtn from './EnterBtn';
+// import Categories from './categories';
+// import Countries from './countries';
+// import FbPage from '../static/FbPage';
+// import Loader from '../common/loader';
+import Shorltlisted from './Shorltlisted';
 
 const LandingPage = ({ dispatch }) => {
 
@@ -19,7 +20,8 @@ const LandingPage = ({ dispatch }) => {
     return (
         <div>
             <Banner />
-            <section className="post-section">
+            <Shorltlisted />
+            {/* <section className="post-section">
                 <div className="container">
                     <div className="text-center mb-5">
                         <h3 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)`, fontSize: `52px` }}>TIME TO BE SEEN BY THE WORLD</h3>
@@ -34,8 +36,8 @@ const LandingPage = ({ dispatch }) => {
                         </div>
                     </div>
                 </div>
-            </section>
-            <Countries />
+            </section> */}
+            {/* <Countries />
             <PrizeSection />
             <section className="post-section border-bottom">
                 <div className="container flex-center">
@@ -49,7 +51,7 @@ const LandingPage = ({ dispatch }) => {
                 </div>
             </section>
             <Categories />
-            <WowPics />
+            <WowPics /> */}
             <SponsorSection />
         </div>
     )

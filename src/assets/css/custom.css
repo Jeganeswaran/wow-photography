@@ -189,13 +189,14 @@ hr[data-title]:before {
 
 /* landing page css */
 .banner {
-    height: calc(100vh - 60px);
+    /* height: calc(100vh - 60px); */
     /* will change */
     /* background-image: url("../img/01.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    height: 250px;
 }
 
 .banner-tint {
@@ -275,6 +276,9 @@ hr[data-title]:before {
     cursor: zoom-in;
 }
 
+.cursor-zoom-in {
+    cursor: zoom-in;
+}
 
 .post-info {
     position: absolute;
@@ -943,4 +947,42 @@ label {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 22px;
+}
+
+
+.masonry {
+    column-count: 3;
+    column-gap: 1.5em;
+}
+
+@media only screen and (min-width: 400px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
 }
