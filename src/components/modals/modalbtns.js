@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { closeModal, openModal } from "../../redux/actions/common";
 import useLockBodyScroll from "../../hooks/layout/useLockBodyScroll";
-import useLazyLoad from "../../hooks/useLazyLoad";
 
 const CloseModal = ({ closeModal, children, ...button }) => {
     return (
@@ -31,17 +30,13 @@ const OpenImageModal = ({
     alt = "",
     ...restProps
 }) => {
-    const img = useRef();
-    const loaded = useLazyLoad(img);
-
     return (
         <img
             onClick={() => {
                 openModal("IMAGE_MODAL", modalProps);
             }}
-            src={loaded ? src : null}
+            src={src}
             alt={alt}
-            ref={img}
             {...restProps}
         />
     );
