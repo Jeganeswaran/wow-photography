@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { closeModal, openModal } from "../../redux/actions/common";
 import useLockBodyScroll from "../../hooks/layout/useLockBodyScroll";
