@@ -418,5 +418,75 @@ export default [
             "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000831.jpg",
         photo:
             "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000831-A.jpg"
+    },
+    {
+        id: 61,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000471.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000471-A.jpg"
+    },
+    {
+        id: 62,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000662.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000662-A.jpg"
+    },
+    {
+        id: 63,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000692.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000692-A.jpg"
+    },
+    {
+        id: 64,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000697.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000697-A.jpg"
+    },
+    {
+        id: 65,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000698.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000698-A.jpg"
+    },
+    {
+        id: 66,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000846.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000846-A.jpg"
+    },
+    {
+        id: 67,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000909.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000909-A.jpg"
+    },
+    {
+        id: 68,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000942.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000942-A.jpg"
+    },
+    {
+        id: 69,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000975.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW000975-A.jpg"
+    },
+    {
+        id: 70,
+        thumbnail:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW001141.jpg",
+        photo:
+            "https://wow-photography.s3.ap-south-1.amazonaws.com/static/SHORTLISTED/19WOW001141-A.jpg"
     }
 ];
