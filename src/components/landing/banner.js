@@ -7,10 +7,7 @@ const Banner = () => {
     <div className="banner banner-bg">
       <div className="banner-tint flex-center">
         <div className="banner-text p-4">
-          <h1 className="f-700">
-            An Focused Extravaganza <br></br>
-            PHOTOGRAPHY &amp; VIDEO CONTEST
-          </h1>
+          <h1 className="f-700">Ultimate Photography &amp; Video Contest</h1>
           <h4>FOCUSING TOURISM OF TAMIL NADU</h4>
           <CountDown />
         </div>

@@ -31,17 +31,17 @@ const Footer = () => {
 export const SocialLinks = ({ className = 'menu-list mb-3' }) => (
   <ul className={className}>
     <li>
-      <a href="https://www.facebook.com/wowphotoawards/">
+      <a href="https://www.facebook.com/wowtamilnadu">
         <i className="fab fa-facebook f-20"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.instagram.com/wowphotoawards/">
+      <a href="https://www.instagram.com/wowtamilnadu">
         <i className="fab fa-instagram f-20"></i>
       </a>
     </li>
     <li>
-      <a href="https://www.twitter.com/wowphotoawards/">
+      <a href="https://www.twitter.com/wowtamilnadu">
         <i className="fab fa-twitter f-20"></i>
       </a>
     </li>
