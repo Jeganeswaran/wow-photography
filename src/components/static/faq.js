@@ -1,11 +1,12 @@
 import React from 'react'
 import Accordion from './accordion'
 import SponsorLayout from '../common/sponsorlayout'
+import HeaderImg from '../../assets/img/WOW-TN-Banner02.jpg'
 
 const Faq = () => {
   return (
     <div>
-      <SponsorLayout title="FAQ">
+      <SponsorLayout image={HeaderImg} title="FAQ">
         <div className="row">
           <div className="col-md-2"></div>
           <div className="col-md-8">

@@ -2,11 +2,12 @@ import React from 'react'
 import SponsorLayout from '../common/sponsorlayout'
 import FbPage from './FbPage'
 import Loader from "../common/loader";
+import HeaderImg from '../../assets/img/WOW-TN-Banner01.jpg'
 
 const About = () => {
     return (
         <div>
-            <SponsorLayout title="Announcements">
+            <SponsorLayout image={HeaderImg} title="Announcements">
                 <div className="row">
                     <div className="col-sm-8 mb-3">
                         <ul className="f-16 f-600 annoucelist">

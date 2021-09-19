@@ -11,60 +11,61 @@ import FITographyImg from '../../assets/img/categories/photo/2021-FITography.jpg
 import WanderlustImg from '../../assets/img/categories/photo/2021-Wanderlust.jpg'
 import undiscoveredImg from '../../assets/img/categories/photo/2021-undiscovered.jpg'
 import SMILESImg from '../../assets/img/categories/photo/2021-SMILES.jpg'
+import VideoImg from '../../assets/img/categories/video/2021--VIDEO.jpg'
 import Carousel from 'nuka-carousel'
+import EnterBtn from "./EnterBtn";
 
-const cats = [
-    {
-        title: 'Places of Worship',
-        image: PlacesWORSHIPImg,
-    },
-    {
-        title: 'Arts & Culture',
-        image: CultureImg,
-    },
-    {
-        title: 'Heritage Tourism',
-        image: HERITAGEImg,
-    },
-    {
-        title: 'Joy of Celebrations',
-        image: JoyofCelebrationsImg,
-    },
-    {
-        title: 'Tastes of Tamil Nadu',
-        image: TastebudsImg,
-    },
-    {
-        title: 'Nature’s Miracle',
-        image: NaturesMiracleImg,
-    },
-    {
-        title: 'pH2Otos',
-        image: PH2OTOSImg,
-    },
-    {
-        title: 'Wildlife',
-        image: AnimalKingdom,
-    },
-    {
-        title: 'FITography',
-        image: FITographyImg,
-    },
-    {
-        title: 'Wanderlust',
-        image: WanderlustImg,
-    },
-    {
-        title: 'Undiscovered TN',
-        image: undiscoveredImg,
-    },
-    {
-        title: 'Smiles of Tamil Nadu',
-        image: SMILESImg
-    },
-]
-
-const Categories = () => {
+export const PhotoCategories = () => {
+    const cats = [
+        {
+            title: 'Places of Worship',
+            image: PlacesWORSHIPImg,
+        },
+        {
+            title: 'Arts & Culture',
+            image: CultureImg,
+        },
+        {
+            title: 'Heritage Tourism',
+            image: HERITAGEImg,
+        },
+        {
+            title: 'Joy of Celebrations',
+            image: JoyofCelebrationsImg,
+        },
+        {
+            title: 'Tastes of Tamil Nadu',
+            image: TastebudsImg,
+        },
+        {
+            title: 'Nature’s Miracle',
+            image: NaturesMiracleImg,
+        },
+        {
+            title: 'pH2Otos',
+            image: PH2OTOSImg,
+        },
+        {
+            title: 'Wildlife',
+            image: AnimalKingdom,
+        },
+        {
+            title: 'FITography',
+            image: FITographyImg,
+        },
+        {
+            title: 'Wanderlust',
+            image: WanderlustImg,
+        },
+        {
+            title: 'Undiscovered TN',
+            image: undiscoveredImg,
+        },
+        {
+            title: 'Smiles of Tamil Nadu',
+            image: SMILESImg
+        },
+    ]
     const [slide, setSlideIndex] = useState(0)
 
     return (
@@ -75,7 +76,7 @@ const Categories = () => {
                 </h1>
             </div>
             <div className="container d-flex justify-content-md-center justify-content-center flex-wrap mb-2">
-                <CatTop setSlideIndex={setSlideIndex}/>
+                <CatTop cats={cats} setSlideIndex={setSlideIndex}/>
             </div>
             <Carousel
                 autoplay
@@ -92,11 +93,33 @@ const Categories = () => {
                     />
                 ))}
             </Carousel>
+            <div className="flex-center pt-5">
+                <EnterBtn className="btn pl-5 pr-5 btn-outline-info"/>
+            </div>
         </section>
     )
 }
 
-export const CatTop = ({setSlideIndex}) =>
+export const VideoCategories = () => {
+    return (
+        <section className="post-section">
+            <div className="text-center mb-4">
+                <h1 className="f-700" style={{color: `rgba(0, 0, 0, 0.6)`}}>
+                    Videography Categories for WOW TAMILNADU 2021
+                </h1>
+            </div>
+            <div
+                style={{backgroundImage: `url(${VideoImg})`}}
+                className="category-img"
+            />
+            <div className="flex-center pt-5">
+                <EnterBtn className="btn pl-5 pr-5 btn-outline-info"/>
+            </div>
+        </section>
+    )
+}
+
+export const CatTop = ({cats, setSlideIndex}) =>
     cats.map((cat, index) => (
         <button
             onClick={() => setSlideIndex(index)}
@@ -106,5 +129,3 @@ export const CatTop = ({setSlideIndex}) =>
             {cat.title.toUpperCase()}
         </button>
     ))
-
-export default Categories
