@@ -1,8 +1,8 @@
 import React from 'react'
-import photoOfYear from '../../assets/img/prize/Photo-of-the-year.png'
-import besthun from '../../assets/img/prize/100-best.png'
-import explorer from '../../assets/img/prize/EXPLORER-AWARDS.png'
-import createye from '../../assets/img/prize/Creative-eye-award.png'
+import GrandWinnerImg from '../../assets/img/prize/2021-WOW-Grand-Winner-Logo.png'
+import CreativeEyeImg from '../../assets/img/prize/2021-WOW-Creative-Eye-Logo.png'
+import ExplorerImg from '../../assets/img/prize/2021-WOW-Explorer-Logo.png'
+import Best100Img from '../../assets/img/prize/2021-WOW-100-Logo.png'
 
 const PrizeSection = () => {
   return (
@@ -18,12 +18,12 @@ const PrizeSection = () => {
         </div>
         <div className="row">
           <Prize
-            src={photoOfYear}
+            src={GrandWinnerImg}
             title="WOW TAMILNADU 2021 - Grand Winner"
             desc={['Car - One Grand Winner', 'Trophy + Certificate']}
           />
           <Prize
-            src={createye}
+            src={CreativeEyeImg}
             title="CREATIVE EYE AWARD 2021"
             desc={[
               'Two Winners ( 1 Photo 1 Video)',
@@ -32,7 +32,7 @@ const PrizeSection = () => {
             ]}
           />
           <Prize
-            src={explorer}
+            src={ExplorerImg}
             title="WOW TAMILNADU EXPLORER AWARD 2021"
             desc={[
               '12 Winners in Photo Categories',
@@ -41,7 +41,7 @@ const PrizeSection = () => {
             ]}
           />
           <Prize
-            src={besthun}
+            src={Best100Img}
             title="100 WOW PHOTO 2021"
             desc={['Mementos + Certificates']}
           />

@@ -1,6 +1,5 @@
 import React from 'react'
 import CountDown from './CountDown'
-// import EnterBtn from './EnterBtn';
 
 const Banner = () => {
   return (
