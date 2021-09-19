@@ -45,6 +45,11 @@ export const SocialLinks = ({ className = 'menu-list mb-3' }) => (
         <i className="fab fa-twitter f-20"></i>
       </a>
     </li>
+    <li>
+      <a href="https://www.youtube.com/c/WOWTamilNadu">
+        <i className="fab fa-youtube f-20"></i>
+      </a>
+    </li>
   </ul>
 )
 

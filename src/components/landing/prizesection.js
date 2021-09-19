@@ -10,7 +10,7 @@ const PrizeSection = () => {
       <div className="container">
         <div className="text-center mb-4">
           <h2 className="montserrat f-700 theme-red">
-            WOW PHOTO AWARDS 2021 PRIZES
+            WOW TAMIL NADU AWARDS 2021 PRIZES
           </h2>
           <p className="poppins">
             Win upto US $2000 in four different award categories
@@ -19,40 +19,31 @@ const PrizeSection = () => {
         <div className="row">
           <Prize
             src={photoOfYear}
-            title="PHOTO OF THE YEAR 2021"
-            desc={[
-              'One Grand Winner',
-              'US $2000',
-              <>
-                All Paid International Trip <br></br>Trophy & Certificate
-              </>,
-            ]}
+            title="WOW TAMILNADU 2021 - Grand Winner"
+            desc={['Car - One Grand Winner', 'Trophy + Certificate']}
           />
           <Prize
             src={createye}
             title="CREATIVE EYE AWARD 2021"
             desc={[
-              'One Grand Winner',
-              'US $1000',
-              <>
-                All Paid International Trip <br></br>Trophy & Certificate
-              </>,
+              'Two Winners ( 1 Photo 1 Video)',
+              'Electric Scooter each',
+              'Trophy + Certificate',
             ]}
           />
           <Prize
             src={explorer}
-            title="EXPLORER AWARD 2021"
+            title="WOW TAMILNADU EXPLORER AWARD 2021"
             desc={[
-              'Six Winners for Final Photo Challange',
-              <>
-                All Paid International Trip <br></br>Trophy & Certificate
-              </>,
+              '12 Winners in Photo Categories',
+              '2 Winners in Video Categories',
+              'Smart Phone + Trophy & Certificate',
             ]}
           />
           <Prize
             src={besthun}
-            title="100 BEST PHOTO AWARDS"
-            desc={['Certificates', 'Photo Exhibition for World Tourism Day']}
+            title="100 WOW PHOTO 2021"
+            desc={['Mementos + Certificates']}
           />
         </div>
       </div>

@@ -37,7 +37,7 @@ const About = () => {
           </div>
           <div className="col-sm-4 mb-3">
             <FbPage>
-              <a href="https://www.facebook.com/wowphotoawards/">
+              <a href="https://www.facebook.com/wowtamilnadu/">
                 WOW PHOTO Awards
               </a>
             </FbPage>

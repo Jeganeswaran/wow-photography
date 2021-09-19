@@ -685,7 +685,7 @@ hr[data-title]:before {
 .sponsor-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: scale-down;
 }
 
 .slides {
@@ -775,7 +775,7 @@ hr[data-title]:before {
 }
 
 .collage-bg {
-  background-image: url('../img/WOW\ Phot\ Awards-\ About\ Collage-min.jpg');
+  background-image: url('../img/wow-tn-about.jpg');
   /* height: 220px; */
   background-size: cover;
   background-position: center;

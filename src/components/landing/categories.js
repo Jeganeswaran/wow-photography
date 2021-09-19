@@ -1,41 +1,40 @@
 import React, { useState } from 'react'
-import EnterBtn from './EnterBtn'
-import WorldofSmiles from '../../assets/img/categories/WorldofSmiles.jpg'
-import BirdsEyeView from '../../assets/img/categories/BirdsEyeView.jpg'
-import creativeImg from '../../assets/img/categories/CreativeinFocus.jpg'
-import actionImg from '../../assets/img/categories/Actionnmotion.jpg'
-import JoyofCelebration from '../../assets/img/categories/JoyofCelebration.jpg'
-import NaturesMiracle from '../../assets/img/categories/NaturesMiracle.jpg'
-import Wanderlust from '../../assets/img/categories/Wanderlust.jpg'
+import NaturesMiracleImg from '../../assets/img/categories/photo/2021-Natures-Miracle.jpg'
+import JoyofCelebrationsImg from '../../assets/img/categories/photo/2021-Joy-of-Celebration.jpg'
+import FITographyImg from '../../assets/img/categories/photo/2021-FITography.jpg'
+import PH2OTOSImg from '../../assets/img/categories/photo/2021-PH2OTOS.jpg'
+import TastebudsImg from '../../assets/img/categories/photo/2021-Taste-buds.jpg'
+import PlacesWORSHIPImg from '../../assets/img/categories/photo/2021-Places-WORSHIP.jpg'
+import WanderlustImg from '../../assets/img/categories/photo/2021-Wanderlust.jpg'
 import Tastebuds from '../../assets/img/categories/Tastebuds.jpg'
-import AnimalKingdom from '../../assets/img/categories/AnimalKingdom.jpg'
+import AnimalKingdom from '../../assets/img/categories/photo/2021-Animal-Kingdom.jpg'
 import LifeStyle from '../../assets/img/categories/LifeStyle.jpg'
 import Carousel from 'nuka-carousel'
 
 const cats = [
   {
     title: 'Nature’s Miracle',
-    image: WorldofSmiles,
+    image: NaturesMiracleImg,
     tags: ['Scenery', 'Mountains', 'Rain', 'Sunrise', 'Sunset'],
   },
   {
     title: 'Joy of Celebrations',
-    image: BirdsEyeView,
+    image: JoyofCelebrationsImg,
     tags: ['Festivals', 'Fairs', 'Celebrations', 'Events'],
   },
   {
     title: 'FITography',
-    image: creativeImg,
+    image: FITographyImg,
     tags: ['Wellness', 'Yoga', 'Cycling', 'Sports etc.,'],
   },
   {
     title: 'pH2Otos',
-    image: actionImg,
+    image: PH2OTOSImg,
     tags: ['Beaches', 'Lake', 'River', 'Ponds', 'Water Falls'],
   },
   {
     title: 'Taste Buds',
-    image: JoyofCelebration,
+    image: TastebudsImg,
     tags: [
       'Food of Tamil Nadu',
       'Traditional Food',
@@ -45,12 +44,12 @@ const cats = [
   },
   {
     title: 'Places of Worship',
-    image: NaturesMiracle,
+    image: PlacesWORSHIPImg,
     tags: ['Temples', 'Mosque', 'Churches', 'Shrines'],
   },
   {
     title: 'Wanderlust',
-    image: Wanderlust,
+    image: WanderlustImg,
     tags: ['Travel', 'Air', 'Water', 'Land Adventures'],
   },
   {
@@ -95,22 +94,7 @@ const Categories = () => {
             style={{ backgroundImage: `url(${cat.image})` }}
             className="category-img"
             key={'cats' + index}
-          >
-            <div className="category-title">
-              <h2 className="category-head text-center">
-                {cat.title.toUpperCase()}
-              </h2>
-              <div className="category-content sourcesans text-center">
-                {cat.tags.map((x, index) => (
-                  <span key={index}>
-                    {' '}
-                    {x} {cat.tags.length !== index + 1 && ' | '}
-                  </span>
-                ))}
-              </div>
-              <EnterBtn className="btn category-btn f-14 mt-4 f-600 montserrat pl-4 pr-4" />
-            </div>
-          </div>
+          ></div>
         ))}
       </Carousel>
     </section>
