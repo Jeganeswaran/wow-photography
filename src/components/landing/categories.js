@@ -13,59 +13,48 @@ import Carousel from 'nuka-carousel'
 
 const cats = [
   {
-    title: 'Nature’s Miracle',
-    image: NaturesMiracleImg,
-    tags: ['Scenery', 'Mountains', 'Rain', 'Sunrise', 'Sunset'],
+    title: 'Places of Worship',
+    image: PlacesWORSHIPImg,
+  },
+  {
+    title: 'Arts & Culture',
+  },
+  {
+    title: 'Heritage Tourism',
   },
   {
     title: 'Joy of Celebrations',
     image: JoyofCelebrationsImg,
-    tags: ['Festivals', 'Fairs', 'Celebrations', 'Events'],
   },
   {
-    title: 'FITography',
-    image: FITographyImg,
-    tags: ['Wellness', 'Yoga', 'Cycling', 'Sports etc.,'],
+    title: 'Tastes of Tamil Nadu',
+    image: TastebudsImg,
+  },
+  {
+    title: 'Nature’s Miracle',
+    image: NaturesMiracleImg,
   },
   {
     title: 'pH2Otos',
     image: PH2OTOSImg,
-    tags: ['Beaches', 'Lake', 'River', 'Ponds', 'Water Falls'],
   },
   {
-    title: 'Taste Buds',
-    image: TastebudsImg,
-    tags: [
-      'Food of Tamil Nadu',
-      'Traditional Food',
-      'Village Food',
-      'Street Food',
-    ],
+    title: 'Wildlife',
+    image: AnimalKingdom,
   },
   {
-    title: 'Places of Worship',
-    image: PlacesWORSHIPImg,
-    tags: ['Temples', 'Mosque', 'Churches', 'Shrines'],
+    title: 'FITography',
+    image: FITographyImg,
   },
   {
     title: 'Wanderlust',
     image: WanderlustImg,
-    tags: ['Travel', 'Air', 'Water', 'Land Adventures'],
   },
   {
-    title: 'Heritage',
-    image: Tastebuds,
-    tags: ['Art', 'Culture', 'Heritage'],
-  },
-  {
-    title: 'Animal kingdom',
-    image: AnimalKingdom,
-    tags: ['Wildlife', 'Birds'],
+    title: 'Undiscovered TN',
   },
   {
     title: 'Smiles of Tamil Nadu',
-    image: LifeStyle,
-    tags: [],
   },
 ]
 
