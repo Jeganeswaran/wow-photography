@@ -47,7 +47,7 @@ const PrizeSection = () => {
                     />
                 </div>
             </div>
-            <div className="flex-center pt-5">
+            <div className="flex-center pt-3">
                 <EnterBtn className="btn pl-5 pr-5 btn-info"/>
             </div>
         </section>

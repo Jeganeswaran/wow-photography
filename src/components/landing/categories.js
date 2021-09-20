@@ -86,14 +86,12 @@ export const PhotoCategories = () => {
                 withoutControls
             >
                 {cats.map((cat, index) => (
-                    <div
-                        style={{backgroundImage: `url(${cat.image})`}}
-                        className="category-img"
-                        key={'cats' + index}
+                    <img key={'cats' + index} className="category-img"
+                         alt={cat.title} src={cat.image}
                     />
                 ))}
             </Carousel>
-            <div className="flex-center pt-5">
+            <div className="flex-center pt-3">
                 <EnterBtn className="btn pl-5 pr-5 btn-info"/>
             </div>
         </section>
@@ -108,11 +106,8 @@ export const VideoCategories = () => {
                     Videography Categories for WOW TAMILNADU 2021
                 </h1>
             </div>
-            <div
-                style={{backgroundImage: `url(${VideoImg})`}}
-                className="category-img"
-            />
-            <div className="flex-center pt-5">
+            <img className="category-img" alt='Videography' src={VideoImg}/>
+            <div className="flex-center pt-3">
                 <EnterBtn className="btn pl-5 pr-5 btn-info"/>
             </div>
         </section>

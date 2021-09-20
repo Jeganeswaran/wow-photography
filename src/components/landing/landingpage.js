@@ -52,7 +52,7 @@ const LandingPage = ({dispatch}) => {
                                 Amateur who can participate in this splendid search festival
                                 from September 27th 2021 till December 31st 2021.
                             </p>
-                            <div className="flex-center pt-5">
+                            <div className="flex-center pt-3">
                                 <EnterBtn className="btn pl-5 pr-5 btn-info"/>
                             </div>
                         </div>
