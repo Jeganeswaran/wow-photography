@@ -25,6 +25,7 @@ const PackagesList = ({ packages, dispatch, setPackage, choosen, setTab }) => {
                         <th>Name</th>
                         <th>Price</th>
                         <th>Photo upload count</th>
+                        <th>Video upload count</th>
                         <th>Select Plan</th>
                     </tr>
                 </thead>

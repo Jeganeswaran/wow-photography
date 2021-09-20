@@ -18,7 +18,7 @@ const UpgradePage = ({ isAddr }) => {
 						<li
 							className="list-group-item f-600 f-18"
 						>
-							Steps to Upgrade
+							Steps to Participate
 						</li>
 						<li
 							onClick={() => setTab(1)}

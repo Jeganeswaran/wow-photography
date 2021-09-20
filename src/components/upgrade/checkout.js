@@ -3,13 +3,13 @@ import Purchasebtn from './purchasebtn';
 
 const CheckOut = ({packageId}) => {
 
-    const { id, name, photo_count, country_price} = packageId;
+    const { id, name, photo_count, video_count, country_price} = packageId;
 
     return (
         <div>
             {id && <div>
                 <h5 className="font-weight-bold mb-3">
-                    {name} ({photo_count} photo{photo_count > 1 ? 's' : ''})
+                    {name} ({photo_count} photo{photo_count > 1 ? 's' : ''} & {video_count} video{video_count > 1 ? 's' : ''})
                 </h5>
                 <div className="border mb-3">
                     <div className="flex-between bg-light-grey p-2">

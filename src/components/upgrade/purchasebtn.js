@@ -1,38 +1,77 @@
-import React from 'react'
-import { OpenModalBtn } from '../modals/modalbtns';
-import { connect } from 'react-redux'
+import React, {useEffect} from 'react'
+import {OpenModalBtn} from '../modals/modalbtns';
+import {connect} from 'react-redux'
 import useDataSubmit from '../../hooks/http/useDataSubmit';
 import LoadingBtn from '../common/loadingbtn';
-import { transcation_url } from '../../redux/actions/constants';
-import { addToast } from '../../redux/actions/common';
+import {payment_success_url, transcation_url} from '../../redux/actions/constants';
+import {addToast} from '../../redux/actions/common';
+import {withRouter} from "react-router";
 
-const PurchaseBtn = ({ user, id }) => {
+const PurchaseBtn = ({history, user, id}) => {
 
-    const { setReq, res } = useDataSubmit(
+    const loadScript = (src) => {
+        return new Promise((resolve) => {
+            const script = document.createElement("script");
+            script.src = src;
+            script.onload = () => {
+                resolve(true);
+            };
+            script.onerror = () => {
+                resolve(false);
+            };
+            document.body.appendChild(script);
+        });
+    };
+
+    useEffect(() => {
+        loadScript("https://checkout.razorpay.com/v1/checkout.js");
+    });
+
+    const {setReq, res} = useDataSubmit(
         (data) => {
-            if (data.approval_url) {
-                window.location.replace(data.approval_url);
-            } else {
-                document.write(
-                    `<html>
-                    <head>
-                    <title>Sub-merchant checkout page</title>
-                    </head>
-                    <body>
-                    <h3 style="text-align:center">DO NOT REFRESH THIS PAGE</h3>
-                    <form id="nonseamless" method="post" name="redirect"
-                    action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction" style="display:none;">
-                    <input type="text" id="encRequest" name="encRequest" value="${data.encRequest}"><br>
-                    <input type="text" name="access_code" id="access_code" value="${data.access_code}"><br>
-                    <input type="submit" name="access_code" value="submit">
-                    </form>
-                    <script>
-                        redirect.submit();
-                    </script>
-                    </body>
-                    </html>`
-                );
-            }
+            const options = {
+                "key": data.razorpay_api_key,
+                "amount": data.amount_in_paisa,
+                "description": data.package,
+                "order_id": data.order_id,
+                "handler": function (response) {
+                    const {razorpay_payment_id, razorpay_order_id, razorpay_signature} = response
+                    paymentSuccess.setReq(x => ({
+                        ...x,
+                        count: x.count + 1,
+                        config: {
+                            url: payment_success_url,
+                            method: "POST",
+                            data: {
+                                razorpay_payment_id,
+                                razorpay_order_id,
+                                razorpay_signature
+                            },
+                        }
+                    }))
+                },
+                "prefill": {
+                    "name": `${user.first_name} ${user.last_name}`,
+                    "email": user.email
+                },
+                "theme": {
+                    "color": "#df006f"
+                }
+            };
+            const paymentObject = new window.Razorpay(options);
+            paymentObject.on('payment.failed', function (response) {
+                addToast(response.error.description, false)
+            });
+            paymentObject.open();
+        },
+        (data) => {
+            addToast(data, false)
+        }
+    );
+
+    const paymentSuccess = useDataSubmit(
+        () => {
+            history.push("/my-profile");
         },
         (data) => {
             addToast(data, false)
@@ -42,7 +81,7 @@ const PurchaseBtn = ({ user, id }) => {
     if (user.user_address) {
         return (
             <LoadingBtn
-                fetching={res.fetching}
+                fetching={res.fetching || paymentSuccess.res.fetching}
                 className="btn btn-theme btn-block"
                 title="Proceed to checkout"
                 onClick={() => {
@@ -53,7 +92,7 @@ const PurchaseBtn = ({ user, id }) => {
                             url: transcation_url,
                             method: "POST",
                             data: {
-                                package: id
+                                package_id: id
                             },
                         }
                     }))
@@ -64,7 +103,7 @@ const PurchaseBtn = ({ user, id }) => {
     return (
         <OpenModalBtn
             modalName="ADDRESS_MODAL"
-            modalProps={{ package: id }}
+            modalProps={{package: id}}
             className="btn btn-theme btn-pill pl-5 pr-5"
         >
             Purchase Plan
@@ -72,7 +111,7 @@ const PurchaseBtn = ({ user, id }) => {
     )
 }
 
-const mapStateToProps = ({ user }) => ({
+const mapStateToProps = ({user}) => ({
     user
 })
 
@@ -80,4 +119,4 @@ const mapDispatchToProps = {
     addToast
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PurchaseBtn)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PurchaseBtn))
