@@ -94,7 +94,7 @@ export const PhotoCategories = () => {
                 ))}
             </Carousel>
             <div className="flex-center pt-5">
-                <EnterBtn className="btn pl-5 pr-5 btn-outline-info"/>
+                <EnterBtn className="btn pl-5 pr-5 btn-info"/>
             </div>
         </section>
     )
@@ -113,7 +113,7 @@ export const VideoCategories = () => {
                 className="category-img"
             />
             <div className="flex-center pt-5">
-                <EnterBtn className="btn pl-5 pr-5 btn-outline-info"/>
+                <EnterBtn className="btn pl-5 pr-5 btn-info"/>
             </div>
         </section>
     )

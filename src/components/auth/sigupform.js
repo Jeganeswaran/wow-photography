@@ -56,8 +56,9 @@ const SignUpForm = ({ addToast, updateUser, history }) => {
             succFunc={
                 (data) => {
                     updateUser(data);
-                    const isUp = data.userprofile.points === 0 && data.submitted_photo === 0 && data.private_photographs !== 0;
-                    history.push(`/my-profile${isUp ? `/?action=Upgrade` : ''}`);
+                    // const isUp = data.userprofile.points === 0 && data.submitted_photo === 0 && data.private_photographs !== 0;
+                    // history.push(`/my-profile${isUp ? `/?action=Upgrade` : ''}`);
+                    history.push(`/my-profile`);
                 }
             }
             errFunc={

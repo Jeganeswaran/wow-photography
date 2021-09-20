@@ -15,7 +15,7 @@ const EnterBtn = ({
     )
   }
   return (
-    <OpenModalBtn modalName="SIGNIN_MODAL" className={className}>
+    <OpenModalBtn modalName="SIGNUP_MODAL" className={className}>
       Participate Now
     </OpenModalBtn>
   )

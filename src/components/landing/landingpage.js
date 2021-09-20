@@ -53,7 +53,7 @@ const LandingPage = ({dispatch}) => {
                                 from September 27th 2021 till December 31st 2021.
                             </p>
                             <div className="flex-center pt-5">
-                                <EnterBtn className="btn pl-5 pr-5 btn-outline-info"/>
+                                <EnterBtn className="btn pl-5 pr-5 btn-info"/>
                             </div>
                         </div>
                     </div>
