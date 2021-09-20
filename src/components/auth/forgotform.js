@@ -27,8 +27,8 @@ const ForgotForm = ({ addToast, closeModal }) => {
                 method: "POST"
             }}
             succFunc={
-                (data) => {
-                    addToast("Activation mail has been sent to Email Id")
+                () => {
+                    addToast("Reset password instructions has been sent to your Email Id")
                     closeModal();
                 }
             }

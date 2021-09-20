@@ -809,11 +809,10 @@ hr[data-title]:before {
     object-fit: contain;
 }
 
-.collage-bg {
-    background-image: url('../img/wow-tn-about.jpg');
-    /* height: 220px; */
-    background-size: cover;
-    background-position: center;
+.header-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 36px;
 }
 
 .btn-light-grey {

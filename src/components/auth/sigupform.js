@@ -1,11 +1,11 @@
 import React from 'react'
 import RenderForm from '../form/renderform';
 import FormGroup from '../form/formgroup';
-import { register_url } from '../../redux/actions/constants';
-import { addToast } from '../../redux/actions/common';
-import { updateUser } from '../../redux/actions/user';
-import { connect } from 'react-redux'
-import { withRouter } from "react-router-dom"
+import {register_url} from '../../redux/actions/constants';
+import {addToast, closeModal} from '../../redux/actions/common';
+import {updateUser} from '../../redux/actions/user';
+import {connect} from 'react-redux'
+import {withRouter} from "react-router-dom"
 
 
 const inputs = [
@@ -43,9 +43,9 @@ const inputs = [
     },
 ];
 
-const SignUpForm = ({ addToast, updateUser, history }) => {
+const SignUpForm = ({addToast, closeModal}) => {
     return (
-        <RenderForm 
+        <RenderForm
             RenderItem={FormGroup}
             inputs={inputs}
             title="signup-form"
@@ -54,11 +54,9 @@ const SignUpForm = ({ addToast, updateUser, history }) => {
                 method: "POST"
             }}
             succFunc={
-                (data) => {
-                    updateUser(data);
-                    // const isUp = data.userprofile.points === 0 && data.submitted_photo === 0 && data.private_photographs !== 0;
-                    // history.push(`/my-profile${isUp ? `/?action=Upgrade` : ''}`);
-                    history.push(`/my-profile`);
+                () => {
+                    addToast("Activation mail has been sent to your Email Id")
+                    closeModal();
                 }
             }
             errFunc={
@@ -75,7 +73,7 @@ const SignUpForm = ({ addToast, updateUser, history }) => {
 // })
 
 const mapDispatchToProps = {
-    addToast, updateUser
+    addToast, closeModal, updateUser
 }
 
 export default withRouter(connect(null, mapDispatchToProps)(SignUpForm))

@@ -66,7 +66,7 @@ const CollCount = ({ location, openModal, private_photographs, submitted_photo, 
                         to="/upgrade"
                         className={`btn btn-theme f-14 mb-3 ${points === 0 ? "mt-3" : ""} pl-md-4 pr-md-4`}
                     >
-                        Upgrade
+                        Participate Now
                     </Link>
                 </div>
             </div>

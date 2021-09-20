@@ -1,4 +1,5 @@
 import React from 'react'
+import HeaderImg from '../../assets/img/wow-tn-about.jpg'
 import SponsorSection from '../landing/sponsorsection';
 
 const SponsorLayout = ({image, title, children}) => {
@@ -7,8 +8,7 @@ const SponsorLayout = ({image, title, children}) => {
             {
                 title &&
                 <>
-                    <div className="static-content-header collage-bg"
-                         style={{backgroundImage: image ? `url(${image})` : undefined}}/>
+                    <img className="header-img" alt={title} src={image ? image : HeaderImg}/>
                     <div className="text-center mb-4">
                         <h1>{title}</h1>
                     </div>
