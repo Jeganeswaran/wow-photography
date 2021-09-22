@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import Address from '../auth/address';
-import { MASTER_VALUES, master_url, profile_url } from '../../redux/actions/constants';
+import {MASTER_VALUES, master_url, profile_url} from '../../redux/actions/constants';
 import useHttp from '../../hooks/http/useHttp';
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import Loader from '../common/loader';
 import apiInstance from '../../redux/apiInstance';
-import { updateUser } from '../../redux/actions/user';
+import {updateUser} from '../../redux/actions/user';
 
-const inputs = (con, address, email) => [
+const inputs = (con, address, email, phone_number) => [
     {
         label: "Email",
         inputProps: {
@@ -15,6 +15,16 @@ const inputs = (con, address, email) => [
             type: "email",
             value: email || '',
             placeholder: "Enter your email"
+        }
+    },
+    {
+        label: 'Phone Number',
+        inputProps: {
+            name: "phone_number",
+            type: "tel",
+            value: phone_number || '',
+            placeholder: "Enter your phone number",
+            maxLength: 10,
         }
     },
     {
@@ -58,9 +68,10 @@ const inputs = (con, address, email) => [
         label: "Pincode",
         inputProps: {
             name: "pin_code",
-            type: "tel",
+            type: "text",
             value: address.pin_code || '',
-            placeholder: "Enter your pincode"
+            placeholder: "Enter your pincode",
+            maxLength: 6,
         }
     },
     {
@@ -75,19 +86,19 @@ const inputs = (con, address, email) => [
     },
 ];
 
-const UpdatAddress = ({ master_values, address, dispatch, setTab, email }) => {
+const UpdatAddress = ({master_values, address, dispatch, setTab, email, phone_number}) => {
 
     const [userLoad, setUserLoad] = useState(false);
 
     //load user
     useEffect(() => {
         let didCancel = false;
-        if(!userLoad) {
+        if (!userLoad) {
             apiInstance({
                 url: profile_url
             }).then((res) => {
                 dispatch(updateUser(res.data));
-                if(!didCancel) {
+                if (!didCancel) {
                     setUserLoad(true);
                 }
             })
@@ -100,34 +111,35 @@ const UpdatAddress = ({ master_values, address, dispatch, setTab, email }) => {
     }, [])
 
     //load master values
-    useHttp(dispatch, MASTER_VALUES, { url: master_url }, 'master_values');
+    useHttp(dispatch, MASTER_VALUES, {url: master_url}, 'master_values');
 
-    if(!userLoad || master_values.fetching) {
+    if (!userLoad || master_values.fetching) {
         return (
             <div className="flex-center">
-                <Loader width="30px" height="30px" />
+                <Loader width="30px" height="30px"/>
             </div>
         )
     }
-    if(Array.isArray(master_values.data.countries)) {
+    if (Array.isArray(master_values.data.countries)) {
         return (
             <div className="pt-2 pb-3 mb-5">
                 <Address
                     setTab={setTab}
-                    inputs={inputs(master_values.data.countries, address, email)}
+                    inputs={inputs(master_values.data.countries, address, email, phone_number)}
                 />
             </div>
         )
     }
 
     return null
-    
+
 }
 
-const mapStateToProps = ({ master_values, user }) => ({
+const mapStateToProps = ({master_values, user}) => ({
     master_values,
     address: user.user_address || {},
     email: user.email || '',
+    phone_number: user.userprofile ? user.userprofile.phone_number : '',
 })
 
 export default connect(mapStateToProps)(UpdatAddress)

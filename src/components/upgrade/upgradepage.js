@@ -35,7 +35,7 @@ const UpgradePage = ({ isAddr }) => {
 							}} 
 							className={`list-group-item ${!isAddr ? 'disabled' : ''} ${tab === 2 ? 'list-active' : ''} pointer`}
 						>
-							2. Choose Package
+							2. Registration
 							{packageId.id && <i className="fa fa-check-circle float-right color-green"></i>}
 						</li>
 						<li 
@@ -61,7 +61,7 @@ const UpgradePage = ({ isAddr }) => {
 					{
 						tab === 2 &&
 						<div>
-							<h4 className="font-weight-bold mb-3">Choose Package</h4>
+							<h4 className="font-weight-bold mb-3">Registration</h4>
 							<PackagesList setTab={setTab} choosen={packageId} setPackage={setPackage} />
 						</div>
 					}

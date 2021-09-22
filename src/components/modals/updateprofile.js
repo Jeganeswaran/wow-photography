@@ -36,15 +36,16 @@ const inputs = (con, address, user) => [
             placeholder: "Enter your email"
         }
     },
-    // {
-    //     isOptional: true,
-    //     inputProps: {
-    //         name: "username",
-    //         type: "email",
-    //         value: user.username || '',
-    //         placeholder: "Enter your phone number (optional)"
-    //     }
-    // },
+    {
+        label: 'Phone Number',
+        inputProps: {
+            name: "phone_number",
+            type: "tel",
+            value: user.userprofile ? (user.userprofile.phone_number || '') : '',
+            placeholder: "Enter your phone number",
+            maxLength: 10,
+        }
+    },
     {
         label: "Country",
         inputProps: {
@@ -86,9 +87,10 @@ const inputs = (con, address, user) => [
         label: "Pincode",
         inputProps: {
             name: "pin_code",
-            type: "tel",
+            type: "text",
             value: address.pin_code || '',
-            placeholder: "Enter your pincode"
+            placeholder: "Enter your pincode",
+            maxLength: 6,
         }
     },
     {

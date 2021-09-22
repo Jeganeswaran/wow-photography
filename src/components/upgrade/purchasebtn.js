@@ -52,7 +52,8 @@ const PurchaseBtn = ({history, user, id}) => {
                 },
                 "prefill": {
                     "name": `${user.first_name} ${user.last_name}`,
-                    "email": user.email
+                    "email": user.email,
+                    "contact": user.userprofile ? (user.userprofile.phone_number || '') : '',
                 },
                 "theme": {
                     "color": "#df006f"

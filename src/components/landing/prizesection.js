@@ -14,21 +14,21 @@ const PrizeSection = () => {
                         WOW TAMILNADU 2021 Rewards & Prizes
                     </h2>
                     <p className="poppins">
-                        Win upto 6 Lac worth of prizes in four different award categories
+                        Win upto 6 lakhs worth of prizes in four different award categories
                     </p>
                 </div>
                 <div className="row">
                     <Prize
                         src={GrandWinnerImg}
                         title={<><span>WOW TAMILNADU 2021</span><br/><span>Grand Winner</span></>}
-                        desc={['WoW Gift worth 2 Lac - (One Grand Winner) +Trophy + Certificate']}
+                        desc={['WoW Gift worth 2 lakhs - (One Grand Winner) +Trophy + Certificate']}
                     />
                     <Prize
                         src={CreativeEyeImg}
                         title="CREATIVE EYE AWARD 2021"
                         desc={[
                             'Two Winners ( 1 Photo 1 Video)',
-                            'WoW Gift worth 1 Lac each + Trophy + Certificate',
+                            'WoW Gift worth 1 lakh each + Trophy + Certificate',
                         ]}
                     />
                     <Prize
