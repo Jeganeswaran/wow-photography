@@ -6,11 +6,12 @@ import CollCount from './collcount'
 import RouteTabs from '../routes/routetabs'
 import PrivateCollection from './privatecollection'
 import PublishCollection from './publishcollection'
-import { Link } from 'react-router-dom'
 import Contest from './contest'
+import ContestVideo from './contestvideo'
 import { connect } from 'react-redux'
 import { loadUser } from '../../redux/actions/user'
 import PublishCollectionVideo from './publishcollectionvideo'
+import PrivateCollectionVideo from './privatecollectionvideo'
 
 const CollectionsPage = ({ dispatch }) => {
   useEffect(() => {
@@ -40,16 +41,16 @@ const CollectionsPage = ({ dispatch }) => {
                     exact: true,
                     children: 'Unsubmitted Photographs',
                   },
-                  // {
-                  //   to: '/my-profile/videos',
-                  //   exact: true,
-                  //   children: 'Submitted Videos',
-                  // },
-                  // {
-                  //   to: '/my-profile/private-videos',
-                  //   exact: true,
-                  //   children: 'Unsubmitted Videos',
-                  // },
+                  {
+                    to: '/my-profile/videos',
+                    exact: true,
+                    children: 'Submitted Videos',
+                  },
+                  {
+                    to: '/my-profile/private-videos',
+                    exact: true,
+                    children: 'Unsubmitted Videos',
+                  },
                 ]}
               />
             </div>
@@ -71,11 +72,15 @@ const CollectionsPage = ({ dispatch }) => {
                 component: PublishCollectionVideo,
               },
               {
-                path: '/enter-to-contest',
-                component: Contest,
+                path: '/private-videos',
+                component: PrivateCollectionVideo,
               },
               {
                 path: '/enter-to-contest/video',
+                component: ContestVideo,
+              },
+              {
+                path: '/enter-to-contest',
                 component: Contest,
               },
             ]}

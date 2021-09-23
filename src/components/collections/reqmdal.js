@@ -111,31 +111,33 @@ const RequestModal = ({
         <div className="col-md-12 p-md-0">
           <div>
             {user.userprofile && user.userprofile.points ? (
-              <LoadingBtn
-                disabled={category && terms && camera_used ? false : true}
-                fetching={res.fetching}
-                className="btn btn-theme btn-block"
-                title="Submit"
-                onClick={() => {
-                  setReq((x) => ({
-                    ...x,
-                    count: x.count + 1,
-                    config: {
-                      url: photos_url + 'photo_submit/',
-                      method: 'POST',
-                      data: [
-                        {
-                          categories: category,
-                          location,
-                          photo: photo.id,
-                          camera_used,
-                          caption,
-                        },
-                      ],
-                    },
-                  }))
-                }}
-              />
+              <div className="form-group">
+                <LoadingBtn
+                  disabled={category && terms && camera_used ? false : true}
+                  fetching={res.fetching}
+                  className="btn btn-theme btn-block"
+                  title="Submit"
+                  onClick={() => {
+                    setReq((x) => ({
+                      ...x,
+                      count: x.count + 1,
+                      config: {
+                        url: photos_url + 'photo_submit/',
+                        method: 'POST',
+                        data: [
+                          {
+                            categories: category,
+                            location,
+                            photo: photo.id,
+                            camera_used,
+                            caption,
+                          },
+                        ],
+                      },
+                    }))
+                  }}
+                />
+              </div>
             ) : (
               <div className="form-group">
                 <Link to="/upgrade" className="btn btn-theme btn-block">
@@ -160,7 +162,7 @@ const RequestModal = ({
                 to="/my-profile/private-photographs"
                 className="btn f-14 btn-danger btn-block"
               >
-                Pay Later
+                Submit Later
               </Link>
             </div>
           )}

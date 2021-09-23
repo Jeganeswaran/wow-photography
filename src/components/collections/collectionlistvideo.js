@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import ScrollList from '../common/scrollList'
-import PublishCard from './publishcard'
+import PublishCardVideo from './publishcardvideo'
 import {
-  PUBLISHED_COLLECTION,
-  photos_url,
-  PRIVATE_COLLECTION,
+  videos_url,
+  PUBLISHED_VIDEO_COLLECTION,
+  PRIVATE_VIDEO_COLLECTION,
 } from '../../redux/actions/constants'
 import { connect } from 'react-redux'
 import { loadData } from '../../redux/actions/http'
-import { changeMulti } from '../../redux/actions/user'
+import { changeMultiVideo } from '../../redux/actions/user'
 import { Link } from 'react-router-dom'
 
 const NoData = () => (
@@ -23,16 +23,18 @@ const NoData = () => (
 
 const CollectionListVideo = ({
   isSubmitted = false,
-  changeMulti,
+  changeMultiVideo,
   ids,
   listData,
   objName,
   userId,
   loadData,
 }) => {
-  const type = isSubmitted ? PUBLISHED_COLLECTION : PRIVATE_COLLECTION
+  const type = isSubmitted
+    ? PUBLISHED_VIDEO_COLLECTION
+    : PRIVATE_VIDEO_COLLECTION
 
-  const url = photos_url + (isSubmitted ? `?is_published=${isSubmitted}` : '')
+  const url = videos_url + (isSubmitted ? `?is_published=${isSubmitted}` : '')
 
   useEffect(() => {
     if (userId) {
@@ -57,9 +59,9 @@ const CollectionListVideo = ({
         <ScrollList
           RenderItem={(props) => (
             <div className="col-md-6">
-              <PublishCard
+              <PublishCardVideo
                 isSubmitted
-                multiDispatch={changeMulti}
+                multiDispatch={changeMultiVideo}
                 ids={ids}
                 {...props}
               />
@@ -79,20 +81,24 @@ const CollectionListVideo = ({
 
 const mapStateToProps = (state, ownProps) => ({
   listData:
-    state[ownProps.isSubmitted ? 'public_collection' : 'private_collection'][
-      state.user.id
-    ],
+    state[
+      ownProps.isSubmitted
+        ? 'public_video_collection'
+        : 'private_video_collection'
+    ][state.user.id],
   objName:
-    (ownProps.isSubmitted ? 'public_collection' : 'private_collection') +
+    (ownProps.isSubmitted
+      ? 'public_video_collection'
+      : 'private_video_collection') +
     ' ' +
     state.user.id,
   userId: state.user.id,
-  ids: state.multi_select.ids,
+  ids: state.multi_select_video.ids,
 })
 
 const mapDispatchToProps = {
   loadData,
-  changeMulti,
+  changeMultiVideo,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CollectionListVideo)

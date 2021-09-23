@@ -1,28 +1,28 @@
 import React, { useState } from 'react'
 import List from '../common/list'
 import { connect } from 'react-redux'
-import { changeMulti, addPhotoSuccess } from '../../redux/actions/user'
+import { changeMultiVideo, addVideoSuccess } from '../../redux/actions/user'
 import useDataSubmit from '../../hooks/http/useDataSubmit'
 import { addToast, closeModal } from '../../redux/actions/common'
 import LoadingBtn from '../common/loadingbtn'
-import { photos_url } from '../../redux/actions/constants'
+import { videos_url } from '../../redux/actions/constants'
 import { Link } from 'react-router-dom'
 
-const MultiSubmit = ({
+const MultiVideoSubmit = ({
   list,
-  categories,
-  changeMulti,
-  addPhotoSuccess,
+  master_values,
+  changeMultiVideo,
+  addVideoSuccess,
   addToast,
   closeModal,
-  points,
+  video_points,
 }) => {
   //terms
   const [terms, setTerms] = useState(false)
 
   const { setReq, res } = useDataSubmit(
     (response) => {
-      addPhotoSuccess(response)
+      addVideoSuccess(response)
       closeModal()
     },
     (response) => {
@@ -33,20 +33,20 @@ const MultiSubmit = ({
   //handle file input change
   const handleSubmit = () => {
     //check if file size less than 20MB
-    if (points < list.length) {
-      addToast(`You have only ${points} credits`, false)
+    if (video_points < list.length) {
+      addToast(`You have only ${video_points} credits`, false)
       return
     }
 
     let postData = list.reduce((acc, cur) => {
-      return [...acc, { ...cur, photo: cur.id, categories: cur.categories_id }]
+      return [...acc, { ...cur, video: cur.id, categories: cur.categories_id }]
     }, [])
 
     setReq((x) => ({
       ...x,
       count: x.count + 1,
       config: {
-        url: photos_url + 'photo_submit/',
+        url: videos_url + 'video_submit/',
         method: 'POST',
         data: postData,
       },
@@ -59,17 +59,22 @@ const MultiSubmit = ({
         <div className="row mb-3" style={{ height: `60vh`, overflow: `auto` }}>
           <List
             list={list}
-            RenderItem={(photo_data) => {
-              const { id, thumbnail, categories_id } = photo_data
+            RenderItem={(video_data) => {
+              const { id, categories_id, camera_used, video } = video_data
               return (
-                <div className="col-md-4">
+                <div className="col-md-6">
                   <div className="multi-select-img mb-1">
-                    <img src={thumbnail} alt={''} />
+                    {camera_used && <h5 className="f-600">{camera_used}</h5>}
+                    {video && (
+                      <p>
+                        <a href={video}>{video}</a>
+                      </p>
+                    )}
                     <div className="flex-center">
                       <button
                         className="btn btn-a"
                         onClick={() => {
-                          changeMulti('_REMOVE', photo_data)
+                          changeMultiVideo('_REMOVE', video_data)
                         }}
                       >
                         <i className="fas fa-trash color-white" />
@@ -81,7 +86,7 @@ const MultiSubmit = ({
                       value={categories_id}
                       className="form-control f-14"
                       onChange={({ target }) => {
-                        changeMulti('_UPDATE', {
+                        changeMultiVideo('_UPDATE', {
                           id,
                           data: {
                             categories_id: parseInt(target.value, 10),
@@ -94,7 +99,7 @@ const MultiSubmit = ({
                           <option value={id}>{name}</option>
                         )}
                         title="cats-multi"
-                        list={[...categories.data]}
+                        list={[...master_values.data.video_category]}
                       />
                     </select>
                   </div>
@@ -125,7 +130,7 @@ const MultiSubmit = ({
           </span>
         </div>
         <p className="f-10 theme-red">
-          Note: Categories and photos cannot be changed after submission
+          Note: Video type and link cannot be changed after submission
         </p>
       </div>
       <LoadingBtn
@@ -140,15 +145,15 @@ const MultiSubmit = ({
 }
 
 const mapStateToProps = (state) => ({
-  list: state.multi_select.list,
-  points: state.user.userprofile.points || 0,
+  list: state.multi_select_video.list,
+  video_points: state.user.userprofile.video_points || 0,
 })
 
 const mapDispatchToProps = {
-  changeMulti,
-  addPhotoSuccess,
+  changeMultiVideo,
+  addVideoSuccess,
   addToast,
   closeModal,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MultiSubmit)
+export default connect(mapStateToProps, mapDispatchToProps)(MultiVideoSubmit)

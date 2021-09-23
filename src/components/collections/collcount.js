@@ -51,6 +51,30 @@ const CollCount = ({
 
   return (
     <div>
+      <div className="d-flex align-items-center border coll-counter text-center mb-3">
+        <div className="w-100">
+          {is_registered && (
+            <div className="row">
+              <div className="col-6">
+                <h2>{points}</h2>
+                <p className="f-13">Photos</p>
+              </div>
+              <div className="col-6">
+                <h2>{video_points}</h2>
+                <p className="f-13">Videos</p>
+              </div>
+            </div>
+          )}
+          {!is_registered && (
+            <Link
+              to="/upgrade"
+              className="btn btn-theme f-14 mb-3 mt-3 pl-md-4 pr-md-4"
+            >
+              Participate Now
+            </Link>
+          )}
+        </div>
+      </div>
       <div className="d-flex flex-wrap align-items-center border coll-counter text-center mb-3">
         <div className="coll-counter-item coll-border">
           <h1>{private_photographs}</h1>
@@ -101,30 +125,6 @@ const CollCount = ({
           <p className="f-13">
             Rejected <br></br> Videos
           </p>
-        </div>
-      </div>
-      <div className="d-flex align-items-center border coll-counter text-center mb-3">
-        <div className="w-100">
-          {is_registered && (
-            <div className="row">
-              <div className="col-6">
-                <h2>{points}</h2>
-                <p className="f-13">Photos</p>
-              </div>
-              <div className="col-6">
-                <h2>{video_points}</h2>
-                <p className="f-13">Videos</p>
-              </div>
-            </div>
-          )}
-          {!is_registered && (
-            <Link
-              to="/upgrade"
-              className="btn btn-theme f-14 mb-3 mt-3 pl-md-4 pr-md-4"
-            >
-              Participate Now
-            </Link>
-          )}
         </div>
       </div>
     </div>
