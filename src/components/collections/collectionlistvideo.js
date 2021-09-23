@@ -14,14 +14,14 @@ import { Link } from 'react-router-dom'
 const NoData = () => (
   <div className="col-md-12">
     <div className="p-5 flex-center flex-column border">
-      <Link to="/my-profile/enter-to-contest" className="btn btn-theme">
+      <Link to="/my-profile/enter-to-contest/video" className="btn btn-theme">
         Enter to Contest
       </Link>
     </div>
   </div>
 )
 
-const CollectionList = ({
+const CollectionListVideo = ({
   isSubmitted = false,
   changeMulti,
   ids,
@@ -47,7 +47,7 @@ const CollectionList = ({
           <div className="text-right mb-2">
             <Link
               className="f-15 f-500 theme-red"
-              to="/my-profile/enter-to-contest"
+              to="/my-profile/enter-to-contest/video"
             >
               <i className="fa fa-plus f-14 mr-1"></i>
               Enter to contest
@@ -95,4 +95,4 @@ const mapDispatchToProps = {
   changeMulti,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CollectionList)
+export default connect(mapStateToProps, mapDispatchToProps)(CollectionListVideo)

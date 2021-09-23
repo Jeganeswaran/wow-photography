@@ -120,9 +120,7 @@ const CollCount = ({
           {!is_registered && (
             <Link
               to="/upgrade"
-              className={`btn btn-theme f-14 mb-3 ${
-                points === 0 ? 'mt-3' : ''
-              } pl-md-4 pr-md-4`}
+              className="btn btn-theme f-14 mb-3 mt-3 pl-md-4 pr-md-4"
             >
               Participate Now
             </Link>

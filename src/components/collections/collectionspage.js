@@ -1,80 +1,89 @@
 import React, { useEffect } from 'react'
-import PageLayout from '../common/pagelayout';
-import ProfileCard from './profilecard';
-import TabHeader from '../common/tabheader';
-import CollCount from './collcount';
-import RouteTabs from '../routes/routetabs';
-import PrivateCollection from './privatecollection';
-import PublishCollection from './publishcollection';
-import { Link } from "react-router-dom"
-import Contest from './contest';
+import PageLayout from '../common/pagelayout'
+import ProfileCard from './profilecard'
+import TabHeader from '../common/tabheader'
+import CollCount from './collcount'
+import RouteTabs from '../routes/routetabs'
+import PrivateCollection from './privatecollection'
+import PublishCollection from './publishcollection'
+import { Link } from 'react-router-dom'
+import Contest from './contest'
 import { connect } from 'react-redux'
-import { loadUser } from '../../redux/actions/user';
+import { loadUser } from '../../redux/actions/user'
+import PublishCollectionVideo from './publishcollectionvideo'
 
 const CollectionsPage = ({ dispatch }) => {
+  useEffect(() => {
+    dispatch(loadUser())
+  }, [])
 
-    useEffect(() => {
-        dispatch(loadUser());
-    }, [])
-
-    return (
-        <PageLayout>
-            <div className="row">
-                <div className="col-md-3 mb-3">
-                    <ProfileCard />
-                    <CollCount />
-                </div>
-                <div className="col-md-9">
-                    <div className="flex-between">
-                        <div className="mb-1">
-                            <TabHeader
-                                className="profile-tabs"
-                                tablinks={[
-                                    {
-                                        to: "/my-profile",
-                                        exact: true,
-                                        children: "Submitted Photographs"
-                                    },
-                                    {
-                                        to: "/my-profile/private-photographs",
-                                        exact: true,
-                                        children: "Unsubmitted Photographs"
-                                    }
-                                ]}
-                            />
-                        </div>
-                        <div className="mb-1">
-                            <Link
-                                className="f-15 f-500 theme-red"
-                                to="/my-profile/enter-to-contest"
-                            >
-                                <i className="fa fa-plus f-14 mr-1"></i>
-                                Enter to contest
-                            </Link>
-                        </div>
-                    </div>
-                    <RouteTabs
-                        title="collection-page"
-                        tabs={[
-                            {
-                                path: "/",
-                                exact: true,
-                                component: PublishCollection
-                            },
-                            {
-                                path: "/private-photographs",
-                                component: PrivateCollection
-                            },
-                            {
-                                path: "/enter-to-contest",
-                                component: Contest
-                            }
-                        ]}
-                    />
-                </div>
+  return (
+    <PageLayout>
+      <div className="row">
+        <div className="col-md-3 mb-3">
+          <ProfileCard />
+          <CollCount />
+        </div>
+        <div className="col-md-9">
+          <div className="flex-between">
+            <div className="mb-1">
+              <TabHeader
+                className="profile-tabs"
+                tablinks={[
+                  {
+                    to: '/my-profile',
+                    exact: true,
+                    children: 'Submitted Photographs',
+                  },
+                  {
+                    to: '/my-profile/private-photographs',
+                    exact: true,
+                    children: 'Unsubmitted Photographs',
+                  },
+                  // {
+                  //   to: '/my-profile/videos',
+                  //   exact: true,
+                  //   children: 'Submitted Videos',
+                  // },
+                  // {
+                  //   to: '/my-profile/private-videos',
+                  //   exact: true,
+                  //   children: 'Unsubmitted Videos',
+                  // },
+                ]}
+              />
             </div>
-        </PageLayout>
-    )
+          </div>
+          <RouteTabs
+            title="collection-page"
+            tabs={[
+              {
+                path: '/',
+                exact: true,
+                component: PublishCollection,
+              },
+              {
+                path: '/private-photographs',
+                component: PrivateCollection,
+              },
+              {
+                path: '/videos',
+                component: PublishCollectionVideo,
+              },
+              {
+                path: '/enter-to-contest',
+                component: Contest,
+              },
+              {
+                path: '/enter-to-contest/video',
+                component: Contest,
+              },
+            ]}
+          />
+        </div>
+      </div>
+    </PageLayout>
+  )
 }
 
 export default connect(null)(CollectionsPage)
