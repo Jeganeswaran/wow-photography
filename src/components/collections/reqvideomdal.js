@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import useDataSubmit from '../../hooks/http/useDataSubmit'
 import LoadingBtn from '../common/loadingbtn'
 import { videos_url } from '../../redux/actions/constants'
-import { LabelIp } from './contest'
+import { LabelIp, TextAreaIp } from './contest'
 
 const RequestVideoModal = ({
   video: submittedVideo,
@@ -73,11 +73,12 @@ const RequestVideoModal = ({
         value={video}
         onChange={(val) => setVideo(val)}
       />
-      <LabelIp
-        label="Video Description (optional)"
+      <TextAreaIp
+        label="Video Description (about, location, credits etc)"
         placeholder="Tell about your video like location, shooting rigs used etc.,"
         value={caption}
         onChange={(val) => setCaption(val)}
+        maxLength="500"
       />
       <div className="d-flex align-items-center form-group mb-2">
         <input

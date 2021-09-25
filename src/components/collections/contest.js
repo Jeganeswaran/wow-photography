@@ -253,6 +253,31 @@ export const LabelIp = ({
   </div>
 )
 
+export const TextAreaIp = ({
+  label,
+  type = 'text',
+  value,
+  onChange,
+  disabled = false,
+  maxLength,
+}) => (
+  <div className="form-group">
+    <label className="f-14">{label}</label>
+    <textarea
+      placeholder={`Enter ${label.replace('(optional)', '').toLowerCase()}`}
+      className="form-control f-14"
+      type={type}
+      value={value}
+      onChange={({ target }) => {
+        onChange(target.value)
+      }}
+      disabled={disabled}
+      row={4}
+      maxLength={maxLength}
+    ></textarea>
+  </div>
+)
+
 const mapStateToProps = ({ categories }) => ({
   ...categories,
 })

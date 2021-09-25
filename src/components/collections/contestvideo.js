@@ -113,11 +113,12 @@ const ContestVideo = ({ fetching, data, dispatch }) => {
                 value={video}
                 onChange={(val) => setVideo(val)}
               />
-              <LabelIp
-                label="Video Description (optional)"
+              <TextAreaIp
+                label="Video Description (about, location, credits etc)"
                 placeholder="Tell about your video like location, shooting rigs used etc.,"
                 value={caption}
                 onChange={(val) => setCaption(val)}
+                maxLength="500"
               />
             </div>
           </div>
@@ -219,6 +220,36 @@ export const LabelIp = ({
       }}
       disabled={disabled}
     />
+  </div>
+)
+
+export const TextAreaIp = ({
+  label,
+  placeholder,
+  type = 'text',
+  value,
+  onChange,
+  disabled = false,
+  maxLength,
+}) => (
+  <div className="form-group">
+    <label className="f-14">{label}</label>
+    <textarea
+      placeholder={
+        placeholder
+          ? placeholder
+          : `Enter ${label.replace('(optional)', '').toLowerCase()}`
+      }
+      className="form-control f-14"
+      type={type}
+      value={value}
+      onChange={({ target }) => {
+        onChange(target.value)
+      }}
+      rows={4}
+      disabled={disabled}
+      maxLength={maxLength}
+    ></textarea>
   </div>
 )
 
