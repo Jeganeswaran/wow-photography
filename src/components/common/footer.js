@@ -21,7 +21,7 @@ const Footer = () => {
         <Flags />
         <ul className="menu-list">
           <li>Copyrights 2021</li>
-          <li>Powered by WOW</li>
+          <li>Powered by Global Media Box</li>
         </ul>
       </div>
     </footer>

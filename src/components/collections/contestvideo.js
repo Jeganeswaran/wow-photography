@@ -169,7 +169,12 @@ const ContestVideo = ({ fetching, data, dispatch }) => {
           />
           <span className="f-14 d-flex align-items-center">
             I agree to all{' '}
-            <Link className="theme-red ml-1" to="/terms-and-conditions">
+            <Link
+              className="theme-red ml-1"
+              to="/terms-and-conditions"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {' '}
               Terms & Conditions{' '}
             </Link>
