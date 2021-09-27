@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from '../../assets/img/logo.jpg'
+import logo from '../../assets/img/logo.png'
 
-const Logo = (props) => <img {...props} src={logo} alt="wow photography logo" />
+const Logo = (props) => <img {...props} src={logo} alt="wow tamil nadu logo" />
 
 export default Logo

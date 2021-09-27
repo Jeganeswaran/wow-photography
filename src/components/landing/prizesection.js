@@ -23,7 +23,7 @@ const PrizeSection = () => {
             title="WOW TAMILNADU 2021"
             desc={[
               'A brand new CAR for one winner',
-              'WoW Gift worth  lakhs - (One Grand Winner) +Trophy + Certificate',
+              'A brand new CAR for one winner (One Grand Winner) + Trophy + Certificate',
             ]}
           />
           <Prize
