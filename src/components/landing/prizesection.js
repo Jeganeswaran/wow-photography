@@ -38,9 +38,10 @@ const PrizeSection = () => {
             src={ExplorerImg}
             title="WOW TAMILNADU EXPLORER AWARD 2021"
             desc={[
-              '12 Winners (one per category) under Photography',
-              '2 Winners (one each per category) under Video',
-              'Luxury Cruise Trip ( Ocean View ) + Trophy and certificate',
+              '12 Winners (one per category for Photography)',
+              'Smartphone + Trophy and certificate',
+              '12 Winners (one each per category for Video)',
+              'Luxury Cruise Trip in Ocean View Cabin + Trophy and certificate',
             ]}
           />
           <Prize
