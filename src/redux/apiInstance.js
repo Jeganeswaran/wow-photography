@@ -1,11 +1,11 @@
 import axios from 'axios'
 
-const dev_domain = 'wowadmin.billiontags.com'
-const prod_domain = 'wowadmin.billiontags.com'
+const dev_domain = 'admin.wowtamilnadu.com'
+const prod_domain = 'admin.wowtamilnadu.com'
 
 //rest
-const devUrl = `http://${dev_domain}/`
-const prodUrl = `http://${prod_domain}/`
+const devUrl = `https://${dev_domain}/`
+const prodUrl = `https://${prod_domain}/`
 
 export const baseURL = process.env.NODE_ENV === 'development' ? devUrl : prodUrl
 
