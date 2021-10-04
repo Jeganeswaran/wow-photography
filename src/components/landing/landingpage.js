@@ -7,7 +7,7 @@ import WowPics from './WowPics'
 import PrizeSection from './prizesection'
 import SponsorSection from './sponsorsection'
 import EnterBtn from './EnterBtn'
-import { PhotoCategories, VideoCategories } from './categories'
+import { PhotoCategories } from './categories'
 
 const LandingPage = ({ dispatch }) => {
   useHttp(dispatch, LANDING, { url: landing_url }, 'landing_page')
@@ -61,8 +61,6 @@ const LandingPage = ({ dispatch }) => {
       </section>
       <PrizeSection />
       <PhotoCategories />
-      <hr />
-      <VideoCategories />
       <WowPics />
       <SponsorSection />
     </div>
