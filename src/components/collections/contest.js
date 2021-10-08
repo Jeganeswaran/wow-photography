@@ -218,7 +218,11 @@ const Contest = ({ fetching, data, dispatch }) => {
         )}
         <div className="d-flex justify-content-end align-items-end">
           <LoadingBtn
-            disabled={category && photo && terms && camera_used && location}
+            disabled={
+              category && photo && terms && camera_used && location
+                ? false
+                : true
+            }
             className="btn btn-theme pl-4 pr-4"
             fetching={res.fetching}
             title={'Submit'}

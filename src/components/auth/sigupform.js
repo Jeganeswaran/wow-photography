@@ -6,6 +6,7 @@ import { addToast, closeModal } from '../../redux/actions/common'
 import { updateUser } from '../../redux/actions/user'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import { getValByName } from '../../utils/forms/validation'
 
 const inputs = [
   {
@@ -33,11 +34,43 @@ const inputs = [
     },
   },
   {
+    customValid: (list, value) => {
+      const pwd = getValByName(list, 'email')
+      if (pwd === value) {
+        return ''
+      }
+      return 'Emails do not match'
+    },
+    reduceTo: () => ({}),
+    inputProps: {
+      name: 're-email',
+      type: 'email',
+      value: '',
+      placeholder: 'Re-enter your Email',
+    },
+  },
+  {
     inputProps: {
       name: 'password',
       type: 'password',
       value: '',
       placeholder: 'Enter your Password',
+    },
+  },
+  {
+    customValid: (list, value) => {
+      const pwd = getValByName(list, 'password')
+      if (pwd === value) {
+        return ''
+      }
+      return 'Passwords do not match'
+    },
+    reduceTo: () => ({}),
+    inputProps: {
+      name: 're-password',
+      type: 'password',
+      value: '',
+      placeholder: 'Re-enter your Password',
     },
   },
 ]
