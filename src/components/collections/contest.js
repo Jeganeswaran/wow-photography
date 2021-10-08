@@ -158,7 +158,7 @@ const Contest = ({ fetching, data, dispatch }) => {
               <div className="row">
                 <div className="col-md-6">
                   <LabelIp
-                    label="Location (optional)"
+                    label="Location"
                     value={location}
                     onChange={(val) => setLocation(val)}
                   />
@@ -218,7 +218,7 @@ const Contest = ({ fetching, data, dispatch }) => {
         )}
         <div className="d-flex justify-content-end align-items-end">
           <LoadingBtn
-            disabled={category && photo && terms && camera_used ? false : true}
+            disabled={category && photo && terms && camera_used && location}
             className="btn btn-theme pl-4 pr-4"
             fetching={res.fetching}
             title={'Submit'}
