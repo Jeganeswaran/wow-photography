@@ -50,10 +50,13 @@ const LandingPage = ({ dispatch }) => {
                 If you want to rise up to the top of your game and raise your
                 flag of victory, all you need to do is to be a Professional or
                 Amateur who can participate in this splendid search festival
-                from September 27th 2021 till December 31st 2021.
+                from September 27th 2021 till January 16th 2022.
               </p>
               <div className="flex-center pt-3">
                 <EnterBtn className="btn pl-5 pr-5 btn-info" />
+              </div>
+              <div className="sourcesans f-15 pt-1 theme-red text-center">
+                *Deadline is on Jan 16th, 2022
               </div>
             </div>
           </div>

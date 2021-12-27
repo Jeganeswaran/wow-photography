@@ -212,7 +212,7 @@ const Faq = () => {
             />
             <Accordion
               question="When is the deadline for submissions for the 2021 Wow Tamil Nadu photo and video awards?"
-              answer="The deadline for the Wow Tamil Nadu photo and video awards is December 31, 2021 by midnight."
+              answer="The deadline for the Wow Tamil Nadu photo and video awards is January 16, 2022 by midnight."
             />
             <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
             <Accordion

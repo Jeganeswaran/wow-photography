@@ -24,7 +24,7 @@ const About = () => {
           If you want to rise up to the top of your game and raise your flag of
           victory, all you need to do is to be a Professional or Amateur who can
           participate in this splendid search festival from September 27th 2021
-          till December 31st 2021.
+          till January 16th 2022.
         </p>
         <div className="flex-center pt-3 pb-3">
           <EnterBtn className="btn pl-5 pr-5 btn-theme" />
