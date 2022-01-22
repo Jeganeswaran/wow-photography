@@ -56,7 +56,7 @@ const LandingPage = ({ dispatch }) => {
                 <EnterBtn className="btn pl-5 pr-5 btn-info" />
               </div>
               <div className="sourcesans f-15 pt-1 theme-red text-center">
-                *Deadline is on Jan 16th, 2022
+                *Registration closed
               </div>
             </div>
           </div>

@@ -66,12 +66,18 @@ const CollCount = ({
             </div>
           )}
           {!is_registered && (
-            <Link
-              to="/upgrade"
+            <span
               className="btn btn-theme f-14 mb-3 mt-3 pl-md-4 pr-md-4"
+              style={{ backgroundColor: '#aeaeae', borderColor: '#aeaeae' }}
             >
               Participate Now
-            </Link>
+            </span>
+            // <Link
+            //   to="/upgrade"
+            //   className="btn btn-theme f-14 mb-3 mt-3 pl-md-4 pr-md-4"
+            // >
+            //   Participate Now
+            // </Link>
           )}
         </div>
       </div>

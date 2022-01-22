@@ -1,24 +1,27 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { OpenModalBtn } from '../modals/modalbtns'
 
-const EnterBtn = ({
-  isToken,
-  className = 'btn pl-4 pr-4 btn-outline-light mt-4',
-}) => {
-  if (isToken) {
-    return (
-      <Link to="/my-profile/enter-to-contest" className={className}>
-        Participate Now
-      </Link>
-    )
-  }
+const EnterBtn = ({ className = 'btn pl-4 pr-4 mt-4' }) => {
   return (
-    <OpenModalBtn modalName="SIGNUP_MODAL" className={className}>
+    <span
+      className={className}
+      style={{ backgroundColor: '#aeaeae', borderColor: '#aeaeae' }}
+    >
       Participate Now
-    </OpenModalBtn>
+    </span>
   )
+  // if (isToken) {
+  //   return (
+  //     <Link to="/my-profile/enter-to-contest" className={className}>
+  //       Participate Now
+  //     </Link>
+  //   )
+  // }
+  // return (
+  //   <OpenModalBtn modalName="SIGNUP_MODAL" className={className}>
+  //     Participate Now
+  //   </OpenModalBtn>
+  // )
 }
 
 const mapStateToProps = ({ user }) => ({
