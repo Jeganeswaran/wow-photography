@@ -11,49 +11,54 @@ const PrizeSection = () => {
       <div className="container">
         <div className="text-center mb-4">
           <h2 className="montserrat f-700 theme-red">
-            WOW TAMILNADU 2021 Rewards & Prizes
+            More Prizes to Encourage Participants
           </h2>
           <p className="poppins">
-            Win upto 10 lakhs worth of prizes in four different award categories
+            JURY SELECTION IS FINAL
           </p>
         </div>
         <div className="row">
           <Prize
             src={GrandWinnerImg}
-            title="WOW TAMILNADU 2021"
+            title="WOW TAMILNADU 2021 Grand Winner"
             desc={[
-              'A brand new CAR for one winner',
-              'A brand new CAR for one winner (One Grand Winner) + Trophy + Certificate',
+              'A Brand new CAR (or) 3 Lakhs Cash Prize ONE winner (One Grand Winner) + Trophy + Certificate',
             ]}
           />
           <Prize
             src={CreativeEyeImg}
-            title="CREATIVE EYE AWARD 2021"
+            title="WOW Creative EYE Awards (2 Winners)"
             desc={[
-              'Two winners shall get an electric bike each under photography category and video category',
-              '+ Trophy + Certificate',
+              'Rs 50,000 Cash Prize (OR) Equivalent Electric bike ( One for Photography & One for Video) + Trophy + Certificate',
             ]}
           />
           <Prize
             src={ExplorerImg}
-            title="WOW TAMILNADU EXPLORER AWARD 2021"
+            title="Explorer Awards (12+1 Categories)"
             desc={[
-              '12 Winners (one per category for Photography)',
-              'Smartphone + Trophy and certificate',
-              '12 Winners (one each per category for Video)',
-              'Luxury Cruise Trip in Ocean View Cabin + Trophy and certificate',
+              '13 Winners (one per category for Photography)',
+              'One Person paid trip in Luxury Cruise Trip  Shared Cabin Valued at Rs.25,000 + Trophy and certificate',
+              '13 Special Mention Prize (one per category for Photography)',
+              'Rs.5,000 worth of Gifts each and certificate',
+              '⠀',
+              '5 Winners (BEST 5 Video Entries)',
+              'One Person paid trip in Luxury Cruise Trip  Shared Cabin Valued at Rs.25,000 + Trophy and certificate'
             ]}
           />
           <Prize
             src={Best100Img}
-            title="100 WOW 2021"
-            desc={['50 WoW Photos 50 WoW Videos', 'Mementos + Certificates']}
+            title="100 BEST WoW Photos 50 WoW Videos"
+            desc={['Mementos + Certificates']}
           />
         </div>
+        <div className='flex-center pt-3'>
+          Note: TDS, Taxes , Road Taxes, Insurance  etc will be deducted / Applicable and borne by the participants as per the govt taxation rules.
+          Gifts and Vouchers offered by Sponsors and partners will not be exchanged with Cash.
+        </div>
       </div>
-      <div className="flex-center pt-3">
-        <EnterBtn className="btn pl-5 pr-5 btn-info" />
-      </div>
+      {/*<div className="flex-center pt-3">*/}
+      {/*  <EnterBtn className="btn pl-5 pr-5 btn-info" />*/}
+      {/*</div>*/}
     </section>
   )
 }

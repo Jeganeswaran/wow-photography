@@ -22,19 +22,19 @@ const Pages = () => {
         <ScrollToTop>
             <Switch>
                 <Route exact path="/" component={LandingPage} />
-                <UserRoute path="/my-profile" component={CollectionsPage} />
-                <Route path="/announcements" component={Announcements} />
-                <Route path="/activate-account" component={ActivatePage} />
-                <Route path="/reset-password" component={ResetPwdPage} />
-                <UserRoute path="/upgrade" component={UpgradePage} />
+                {/*<UserRoute path="/my-profile" component={CollectionsPage} />*/}
+                {/*<Route path="/announcements" component={Announcements} />*/}
+                {/*<Route path="/activate-account" component={ActivatePage} />*/}
+                {/*<Route path="/reset-password" component={ResetPwdPage} />*/}
+                {/*<UserRoute path="/upgrade" component={UpgradePage} />*/}
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-and-conditions" component={Terms} />
                 <Route path="/refund-policy" component={RefundPolicy} />
-                <Route path="/payment-success" component={SuccessPage} />
-                <Route path="/payment-failure" component={FailurePage} />
-                <Route path="/faq" component={Faq} />
-                <Route path="/about-us" component={About} />
-                <Route path="/contact-us" component={Contact} />
+                {/*<Route path="/payment-success" component={SuccessPage} />*/}
+                {/*<Route path="/payment-failure" component={FailurePage} />*/}
+                {/*<Route path="/faq" component={Faq} />*/}
+                {/*<Route path="/about-us" component={About} />*/}
+                {/*<Route path="/contact-us" component={Contact} />*/}
             </Switch>
         </ScrollToTop>
     )
