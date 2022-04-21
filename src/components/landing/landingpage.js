@@ -8,7 +8,7 @@ import PrizeSection from './prizesection'
 import SponsorSection from './sponsorsection'
 import {PhotoCategories} from './categories'
 import AboutEvent from '../../assets/img/about.jpg'
-import Shortlist from '../../assets/img/shortlist.jpg'
+import Shortlisted from "./shortlisted";
 
 const LandingPage = ({dispatch}) => {
   useHttp(dispatch, LANDING, {url: landing_url}, 'landing_page')
@@ -58,10 +58,11 @@ const LandingPage = ({dispatch}) => {
       <section className='post-section'>
         <img className='img-fluid' src={AboutEvent} alt='About Event' style={{width: '100%'}}/>
       </section>
+      <Shortlisted/>
       <PrizeSection/>
-      <section className='post-section'>
-        <img className='img-fluid' src={Shortlist} alt='Shortlist' style={{width: '100%'}}/>
-      </section>
+      {/*<section className='post-section'>*/}
+      {/*  <img className='img-fluid' src={Shortlist} alt='Shortlist' style={{width: '100%'}}/>*/}
+      {/*</section>*/}
       <PhotoCategories/>
       <WowPics/>
       <SponsorSection/>
