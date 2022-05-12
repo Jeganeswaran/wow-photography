@@ -43,7 +43,7 @@ const PrizeSection = () => {
             desc={[
               '<strong>Photography 13 Categories (13x3)</strong>',
               '<ol type="I">' +
-              '<li>First Prize : Cordelia cruises Trip Worth 25,000+ Trophy + Certificate</li>' +
+              '<li>First Prize : Cordelia cruises Trip (Worth 25,000) + Trophy + Certificate</li>' +
               '<li>Second Prize : 5000 Cash Prize + Trophy + Certificate</li>' +
               '<li>Third Prize : 3000 Cash Prize</li>' +
               '</ol>',

@@ -4,14 +4,10 @@ import {connect} from 'react-redux'
 import useHttp from '../../hooks/http/useHttp'
 import {LANDING, landing_url} from '../../redux/actions/constants'
 import WowPics from './WowPics'
-import PrizeSection from './prizesection'
 import SponsorSection from './sponsorsection'
-import {PhotoCategories} from './categories'
-import AboutEvent from '../../assets/img/about.jpg'
-import Shortlisted from "./shortlisted";
+import Winners from "./winners";
 
-const photoEntries = ["Abhilash Viswa - Ponnani,  Malappuram(dist)", "Abinaya Ramamurthi - Thanjavur", "Abinesh Sekar - Pudukkottai", "Abishek Allan - Madurai", "Abishek Vaidyanathan - Valparai", "Ajay S - Kanyakumari", "Ajitkumar S - Vellore/nandhiyalam", "Alaghu Prasanth A - Tirupur", "AMAR RAMESH - Chennai", "ANAND S - TIRUCHIRAPPALLI", "Ar Rez - Dindigul", "Aravind A J - Madurai", "Aravindhan Kamaraj - tiruvarur", "Arjun Venkatesh - Chennai", "Arul Prakash - Trichy", "Arun pandi - Usilampatti", "Arunkumar Varadharajan - Tiruchengode,Namakkal", "Arunprasath V M - Chennai", "Aswin Vijay - Coimbatore", "Babu D - Tiruchirappalli", "Babu Logesh - Chennai", "Badrinarayanan Kannan - Chennai", "BALASANKAR ALIAS AJITH - Tuticorin", "Beema Das - Chennai", "Bharath M - Bangalore", "Bharath mari - Chennai", "Bothees Bothees - Trichy", "Chakkaravarthi Sudhersan - Kumbakonam", "CHIDAMBARAM SIVATHANU - TIRUCHIRAPPALLI", "DHANASEKAR R - CHENNAI", "Dhenesh Annamalai - Salem", "Dinesh P - Perambalur", "Gautam Sekar - Madurai", "Gayathri Sekar - Tambaram", "Gopi Shyam - Madurai", "Gunasekaran Ramadoss - Chennai", "Haarihaaran Madeswaran - Gobichettipalayam", "HARIKRISHNA NARLA - KARIMNAGAR", "Jagadeesh Babu Gnanasekaran - Vellore", "Jenith M - Tirunelveli", "Karthi Karthick - Chennai", "Karthik Sriraman - Chennai", "Karthikeyan Radha - Cuddalore", "Lakshminarayanan L - Chennai", "Madhan sundhar - Tirunelveli", "Madhusudanan Parthasarathy - Chennai", "Manivannan R - Thanjavur", "MANOHARAN GOVINDARAJAN - CHENNAI", "manu vm - Malappuram", "Mohamed Siddique Jahir Hussain - Eravancheri", "Mohan Kumar Mariyappan - Virudhunagar", "Mouhamed Moustapha - Pondicherry", "Moulidharan M - Erode", "murugaraj lakshmanan - chennai", "NAVA BHARAT SELVA BALRAJ - Madurai", "Naveen Kumar P - chennai", "Naveen Raj - Salem", "PARIVEL VEERASAMY - VEDARNYAM", "Partheepan D - Namakal", "PAVITHRA KANNAN - MADURAI", "PRABU DEVAN - TRICHY", "PRABU MOHAN - Tirunelveli", "Prakash Chellamuthu - Trichy", "Prashanth Swaminathan - Chennai", "Pratap J - Bangalore", "Prathap Arumugam - Puducherry", "Praveen Kumar - Pattukkottai", "Praveen M - salem", "Preeti Tamilarasan - Chennai", "R DINESH KUMAR - CHENNAI", "Raghavprasanna L - Chennai", "RajKumar R - Cuddalore", "Ravikanth Kurma - Tatipaka", "RISHINANDHAN M C - Namakkal", "S.Lenin shunmugam - Madurai", "Sachin Solomon Raj - Chennai", "Sai Prasath - Madurai", "Saleem Basha - Namakkal", "Santhosh Kumar - Chennai", "Santhosh Pandurangan - Thiruthani", "Saran Dashnamoorthy - Tiruvannamalai", "Saran Saravana - Theni", "SARATH KUMAR T - BODI", "Saravana Kumar - Thoothukudi", "Sasi Kumar - Vellore", "SASIKUMAR V - COIMBATORE", "Sathiyaseelan .S - Chennai", "Sesha Raja Sankaran A - Chennai", "Shafiur Rahman - Gudalur-Ooty", "Sharan Ragesh - Chennai", "Siva Chandru - Chennai", "Siva Prasad B - NAGERCOIL", "Smita Joshi - Chennai", "SOWNDARYA CHIDAMBARAM - TIRUCHIRAPPALLI", "Srijith J - Chennai", "Sudharshan Kuselan - Chennai", "Sugan Murali - Chennai", "sugu maran N - trichy", "Sundaram Perumal - Theni", "Sundararajaperumal Anandakrishnan - Chennai", "Suresh Kannan - Chennai", "Suresh Kumar Chinnasamy - Chennai", "SURIYA KATHIR - ERODE", "Syed Wasim - Chennai", "Tamil Selvan - Guduvanchery", "Thirumalai A - Chennai", "Thirumalai vasan subramani - tirupattur", "Velmurugan Devarajan - Tiruchengode", "venkatakrishnan vijayarahavan - Chennai", "VENKATESH RAMACHANDRAN - THURAIYUR", "Vidhyatharan Rajendran - Chennai", "Vignesh A A - Chennai", "Vignesh Sekar - Pollachi", "VIGNESHWARAN KRISHNAN - BIG KANCHIPURAM", "Vineesh J - Chennai", "Vishnuvarthan Rajagopal - Pollachi", "wewin pandian - coimbatore", "YEDU KRISHNAN K B - Theni", "Zulfikhar Ahmed - Chennai"]
-const videoEntries = ["Abinesh Sekar - Pudukkottai", "Adhiyaman PM - Chennai", "Ananth Prabu - chennai", "Aravind A J - Madurai", "Arjun Venkatesh - Chennai", "Arul Prakash - Trichy", "Arun Prasanth S - coimbatore", "Barath Raj - Arcot", "Beema Das - Chennai", "Bharathi Kanna - Hosur", "Dhanushkodi C - Erode", "Elaventhan Photography - Mannargudi", "Gautam Sekar - Madurai", "Gopalakrishnan M - Trichy", "Gowtheesh Thiyagarajah - Trichy", "Grishwin Karnal E - Dindigul", "Jenith M - Tirunelveli (D.t)", "John Milton - Bangalore", "Karthi Karthick - Chennai", "Karthick Kumar - Salem", "Karthik Swaminathan - Pattukkottai", "LAKSHMI SHREE - CHENNAI", "Manikanta Allaka - Hyderabad", "Moulidharan M - Erode", "Muthu Sankar - Karaikudi", "Papilraj Palani - Chennai", "Pratap J - Bangalore", "Praveen M - salem", "Saran Dashnamoorthy - Tiruvannamalai", "Saravana Meenakshisundari - Madurai", "Sasi Kumar - Vellore", "Sesha Raja Sankaran A - Chennai", "shabeer ahammed - Chennai", "Shafiur Rahman - Gudalur-Ooty", "Sherly Hephzibah J - Tiruvallur", "Siva Subramanian L - KUMBAKONAM", "Srihari Karanth - Bangalore", "Vasanth S - Madurai", "Venkatraman R - KANCHIPURAM", "Vignesh Sekar - Pollachi", "Vigneshwaran B - Cuddalore", "Vineesh J - Chennai", "Yogaraj Chinnadurai - Chennai"]
+const winners = ["JENITH M - TIRUNELVELI", "ABINESH SEKAR - PUDUKOTTAI", "MOULIDHARAN M - ERODE", "MUTHU SANKAR - KARAIKUDI", "BEEMA DAS - CHENNAI", "GRISHWIN KARNAL E - DINDIGUL", "ARUNKUMAR VARADHARAJAN - NAMAKKAL", "CHIDAMBHARAM SIVATHANU - TRICHY", "BABU LOKESH - CHENNAI",  "MANOHARAN GOVINDARAJAN - CHENNAI", "KARTHIK SRIRAMAN - CHENNAI", "VISHNUVARTHAN RAJAGOPAL - POLLACHI", "MANU VM - MALAPPURAM", "AMAR RAMESH - CHENNAI", "SARAVANA KUMAR - THOOTHUKUDI", "SHARAN RAGESH - CHENNAI", "RAVIKANTH KURMA - TATIPAKA", "SIVA CHANDRU - CHENNAI", "ARUL PRAKASH - TRICHY", "SRIJITH J - CHENNAI", "SURESH KUMAR CHINNASAMY - CHENNAI", "PRABU MOHAN - TIRUNELVELI", "VIDYATHARAN RAJENDRAN - CHENNAI", "ABISHEK VAIDYANATHAN - VALPARAI", "SURIYA KATHIR - ERODE", "PRAKASH CHELLAMUTHU - TRICHY", "WEWIN PANDIAN - COIMBATORE", "DINESH P - PERAMBALUR", "SYED WASIM - CHENNAI", "PRASHANTH SWAMINATHAN - CHENNAI", "PREETI TAMILARASAN - CHENNAI", "SUGAN MURALI - CHENNAI", "MADHUSUDANAN PARTHASARATHY - CHENNAI", "SHAFIUR RAHMAN - GUDALUR - OOTY", "CHAKKARAVARTHI SUDHERSAN - KUMBAKKONAM", "RAGHAVPRASANNA L - CHENNAI", "VENKATAKRISHNAN VIJAYARAHAVAN - CHENNAI", "SARAN DASHNAMOORTHY - TIRUVANNAMALAI", "THIRUMALAI VASAN SUBRAMANI - TIRUPATTUR", "SIVA PRASAD B - NAGERCOIL", "MOHAMED SIDDUQUE JAHIR HUSSAIN - ERAVANCHERI", "HAARIHAARAN MADESWARAN - GOBICHETTIPALAYAM", "SATHIYASEELAN S - CHENNAI", "PRAVEEN KUMAR - PATTUKOTTAI", "MURUGARAJ LAKSHMANAN - CHENNAI", "GAUTAM SEKAR - MADURAI", "SARAN SARAVANA - THENI", "S.LENIN SHUNMUGAM - MADURAI"]
 
 const LandingPage = ({dispatch}) => {
   useHttp(dispatch, LANDING, {url: landing_url}, 'landing_page')
@@ -58,16 +54,49 @@ const LandingPage = ({dispatch}) => {
           </div>
         </div>
       </section>
-      <section className='post-section'>
-        <img className='img-fluid' src={AboutEvent} alt='About Event' style={{width: '100%'}}/>
-      </section>
-      <Shortlisted title='Shortlisted Entries for Photography' entries={photoEntries}/>
-      <Shortlisted title='Shortlisted Entries for Video' entries={videoEntries}/>
-      <PrizeSection/>
+      {/*<section className='post-section'>*/}
+      {/*  <img className='img-fluid' src={AboutEvent} alt='About Event' style={{width: '100%'}}/>*/}
+      {/*</section>*/}
+      {/*<Shortlisted title='Shortlisted Entries for Photography' entries={photoEntries}/>*/}
+      {/*<Shortlisted title='Shortlisted Entries for Video' entries={videoEntries}/>*/}
+      <div className="post-section">
+        <div className="container">
+          <div className="text-center mb-4">
+            <h3
+              className="f-700 mb-2"
+              style={{color: `rgba(0, 0, 0, 0.6)`, fontSize: `52px`}}>Winners</h3>
+          </div>
+        </div>
+        <Winners title='GRAND WINNER' entries={winners.slice(0, 1)}/>
+        <Winners title='CREATIVE EYE AWARDS' entries={winners.slice(1, 3)}/>
+        <Winners title='BEST VIDEO WINNERS' entries={winners.slice(3, 6)}/>
+        <Winners title='SPECIAL MENTION HONOUR AWARD' entries={winners.slice(6, 9)}/>
+        <div className="container">
+          <div className="text-center mb-4">
+            <h3
+              className="f-700 mb-2"
+              style={{color: `rgba(0, 0, 0, 0.6)`, fontSize: `36px`}}>PHOTOGRAPHY WINNERS LIST - CATEGORY WISE</h3>
+          </div>
+        </div>
+        <Winners title='ANIMAL KINGDOM' entries={winners.slice(9, 12)}/>
+        <Winners title='ART & CULTURE' entries={winners.slice(12, 15)}/>
+        <Winners title='JOY OF CELEBRATION' entries={winners.slice(15, 18)}/>
+        <Winners title='HERITAGE' entries={winners.slice(18, 21)}/>
+        <Winners title="NATURE'S MIRACLE" entries={winners.slice(21, 24)}/>
+        <Winners title="PH20TOS" entries={winners.slice(24, 27)}/>
+        <Winners title="SMILES OF TAMIL NADU" entries={winners.slice(27, 30)}/>
+        <Winners title="TASTE OF TAMIL NADU" entries={winners.slice(30, 33)}/>
+        <Winners title="UNDISCOVERED TAMIL NADU" entries={winners.slice(33, 36)}/>
+        <Winners title="PLACES OF WORSHIP" entries={winners.slice(36, 39)}/>
+        <Winners title="WANDERLUST" entries={winners.slice(39, 42)}/>
+        <Winners title="FITOGRAPHY" entries={winners.slice(42, 45)}/>
+        <Winners title="JALLIKATTU" entries={winners.slice(45, 48)}/>
+      </div>
+      {/*<PrizeSection/>*/}
       {/*<section className='post-section'>*/}
       {/*  <img className='img-fluid' src={Shortlist} alt='Shortlist' style={{width: '100%'}}/>*/}
       {/*</section>*/}
-      <PhotoCategories/>
+      {/*<PhotoCategories/>*/}
       <WowPics/>
       <SponsorSection/>
     </div>
