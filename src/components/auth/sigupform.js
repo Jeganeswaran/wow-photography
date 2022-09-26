@@ -2,7 +2,7 @@ import React from 'react'
 import RenderForm from '../form/renderform'
 import FormGroup from '../form/formgroup'
 import { register_url } from '../../redux/actions/constants'
-import { addToast, closeModal } from '../../redux/actions/common'
+import { addToast, closeModal, openModal } from '../../redux/actions/common'
 import { updateUser } from '../../redux/actions/user'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -75,7 +75,7 @@ const inputs = [
   },
 ]
 
-const SignUpForm = ({ addToast, closeModal }) => {
+const SignUpForm = ({ addToast, closeModal, openModal }) => {
   return (
     <RenderForm
       RenderItem={FormGroup}
@@ -91,7 +91,9 @@ const SignUpForm = ({ addToast, closeModal }) => {
           true,
           10000
         )
+
         closeModal()
+        openModal('USER_NOTIFY', {title:"Login Notification", content:"Thank you for signing up. Check your email for activation link. If not received, kindly check your spam folder."})
       }}
       errFunc={(data) => {
         addToast(data, false)
@@ -108,6 +110,7 @@ const mapDispatchToProps = {
   addToast,
   closeModal,
   updateUser,
+  openModal,
 }
 
 export default withRouter(connect(null, mapDispatchToProps)(SignUpForm))

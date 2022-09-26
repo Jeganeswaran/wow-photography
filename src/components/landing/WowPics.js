@@ -8,7 +8,7 @@ const WowPics = ({ fetching, wow_pick }) => {
         <div className="post-section bg-light-grey">
             <div className="container">
                 <div className="text-center mb-4">
-                    <h2 className="montserrat theme-red f-700">PAST WINNERS</h2>
+                    <h2 className="montserrat theme-red f-700">GALLERIES</h2>
                 </div>
                 <div className="row">
                     <DynamicList

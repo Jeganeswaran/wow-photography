@@ -74,7 +74,7 @@ a:hover {
 
 .header-list li a:hover,
 .header-list li button:hover {
-    color: #df006f;
+    color: #e94403;
 }
 
 /* text styles ends here */
@@ -106,13 +106,13 @@ a:hover {
 }
 
 .btn-theme {
-    background: #df006f;
+    background: #e94403;
     color: #fff !important;
     font-size: 14px;
 }
 
 .theme-red {
-    color: #df006f !important;
+    color: #e94403 !important;
 }
 
 .text-underline {
@@ -276,7 +276,7 @@ hr[data-title]:before {
 
 .tab-header .active,
 .profile-tabs .active {
-    border-bottom: 2px solid #df006f;
+    border-bottom: 2px solid #e94403;
 }
 
 .post {
@@ -461,18 +461,18 @@ hr[data-title]:before {
 .coll-counter h1 {
     font-weight: 700;
     font-size: 3.5em;
-    color: #df006f;
+    color: #e94403;
 }
 
 .coll-counter h2 {
     font-size: 3em;
     font-weight: 700;
-    color: #df006f;
+    color: #e94403;
 }
 
 .coll-counter h3 {
     font-weight: 700;
-    color: #df006f;
+    color: #e94403;
 }
 
 .coll-border {
@@ -505,9 +505,9 @@ hr[data-title]:before {
 }
 
 .cat-active {
-    background: #df006f;
+    background: #e94403;
     color: #fff;
-    border: 1px solid #df006f;
+    border: 1px solid #e94403;
 }
 
 .static-content-header {
@@ -545,7 +545,7 @@ hr[data-title]:before {
 }
 
 .static-content a {
-    color: #df006f;
+    color: #e94403;
 }
 
 .pay-prev-img {
@@ -571,7 +571,7 @@ hr[data-title]:before {
 }
 
 .upgradeUl .list-active {
-    color: #df006f;
+    color: #e94403;
 }
 
 .color-green {
@@ -590,7 +590,7 @@ hr[data-title]:before {
 }
 
 .pendibg-bg {
-    background: #df006f;
+    background: #e94403;
 }
 
 .modalprev-img {
@@ -646,8 +646,8 @@ hr[data-title]:before {
 }
 
 .select-round-active {
-    background: #df006f;
-    border: 1px solid #df006f;
+    background: #e94403;
+    border: 1px solid #e94403;
 }
 
 .select-round-active span {

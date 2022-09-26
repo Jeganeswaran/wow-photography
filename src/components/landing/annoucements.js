@@ -27,7 +27,7 @@ const Announcements = ({dispatch, fetching, announcements}) => {
                                         <div className="d-flex h100p justify-content-between flex-column pt-2 pb-2">
                                             <div>
                                                 <h5 className="f-600 mb-1">{title}</h5>
-                                                <p>{short_descriptions}</p>
+                                                <p>{fda  }</p>
                                             </div>
                                             <div className="flex-between">
                                                 <span className="f-14">{dateFormat(created_on)}</span>

@@ -10,8 +10,6 @@ const Post = ({ thumbnail, photo, title }) => {
         </div>
       </div>
       <div className="p-1">
-        {title && <span>© {title}</span>}
-        {/* <span>4th Apr 2021</span> */}
       </div>
     </div>
   )

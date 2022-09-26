@@ -11,43 +11,43 @@ const PrizeSection = () => {
       <div className="container">
         <div className="text-center mb-4">
           <h2 className="montserrat f-700 theme-red">
-            WOW TAMILNADU 2021 Rewards & Prizes
+          WOW TAMIL NADU 2022
           </h2>
           <p className="poppins">
-            Win upto 10 lakhs worth of prizes in four different award categories
+          (Rewards & Prizes)
           </p>
         </div>
         <div className="row">
           <Prize
             src={GrandWinnerImg}
-            title="WOW TAMILNADU 2021"
+            title="WoW TN  12 Grand winners"
             desc={[
-              'A brand new CAR for one winner',
-              'A brand new CAR for one winner (One Grand Winner) + Trophy + Certificate',
+              'International Travel experience',
+              '+ Trophy 🏆 + Certificate',
             ]}
           />
           <Prize
             src={CreativeEyeImg}
-            title="CREATIVE EYE AWARD 2021"
+            title="Wow TN Creative Eye"
             desc={[
-              'Two winners shall get an electric bike each under photography category and video category',
-              '+ Trophy + Certificate',
+              '12 winner - Hot Air Balloon experience',
+              '+ Trophy 🏆 + Certificate.',
             ]}
           />
           <Prize
             src={ExplorerImg}
-            title="WOW TAMILNADU EXPLORER AWARD 2021"
+            title="Explorer awards"
             desc={[
-              '12 Winners (one per category for Photography)',
-              'Smartphone + Trophy and certificate',
-              '12 Winners (one each per category for Video)',
-              'Luxury Cruise Trip in Ocean View Cabin + Trophy and certificate',
+              'District awards photo',
+              '38 Winners from each district',
+              'Surprise Gift + Trophy 🏆 + Certificate',
+
             ]}
           />
           <Prize
             src={Best100Img}
-            title="100 WOW 2021"
-            desc={['50 WoW Photos 50 WoW Videos', 'Mementos + Certificates']}
+            title="100 WOW 2022"
+            desc={['Photo display + Trophies 🏆 + certificates']}
           />
         </div>
       </div>

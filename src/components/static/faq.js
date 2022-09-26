@@ -1,7 +1,7 @@
-import React from 'react'
-import Accordion from './accordion'
-import SponsorLayout from '../common/sponsorlayout'
-import HeaderImg from '../../assets/img/WOW-TN-Banner02.jpg'
+import React from "react";
+import Accordion from "./accordion";
+import SponsorLayout from "../common/sponsorlayout";
+import HeaderImg from "../../assets/img/WOW-TN-Banner02.jpg";
 
 const Faq = () => {
   return (
@@ -12,8 +12,10 @@ const Faq = () => {
           <div className="col-md-8">
             <h5 className="mt-3 mb-3">REGISTRATION PROCESS</h5>
             <Accordion
-              question="Who can participate?"
-              answer="Entries are welcome from photographers across the world. Anyone above 18, whether professional or amateur and regardless of nationality, sex can participate and submit photos representing Tamil Nadu Tourism related photos and videos taken in and around Tamil Nadu."
+              question="Who Can Participate?              "
+              answer="Entries are welcome from photographers across the world. Anyone above 18,
+              whether professional or amateur and regardless of nationality, sex can participate
+              and submit photos & videos captured within Tamil Nadu."
             />
             <Accordion
               question="What are the categories for submission?"
@@ -24,52 +26,57 @@ const Faq = () => {
                     page. The categories under photography are as follows:
                   </p>
                   <ol>
-                    <li>Wildlife</li>
                     <li>Places of Worship</li>
-                    <li>Art & Culture</li>
-                    <li>Nature's Miracle</li>
+                    <li>Arts & Culture</li>
+                    <li>Heritage Tourism</li>
                     <li>Joy of Celebrations</li>
                     <li>Tastes of Tamil Nadu</li>
                     <li>Smiles of Tamil Nadu</li>
-                    <li>pH2Otos</li>
-                    <li>FITography</li>
+                    <li>Nature’s Miracle</li>
+                    <li>Wild in focus</li>
                     <li>Wanderlust</li>
-                    <li>Undiscovered TN</li>
-                    <li>Heritage Tourism</li>
+                    <li>TN in Bird’s Eye view</li>
                   </ol>
                   <p className="mb-2">The categories under video are:</p>
                   <ol>
-                    <li>Montage</li>
-                    <li>Travelogues</li>
+                    <li>WOW TN Reels</li>
+                    <li>TN Video Guide</li>
                   </ol>
                 </>
               }
             />
             <Accordion
               question="Is there any registration fee?"
-              answer="Registration fee of Rs. 100 is applicable per participation and this fee is non-refundable."
+              answer="Registration fee of Rs.200 is applicable per participation and this fee is
+              non-refundable. The payment gateway is handled by EEHAAA travel and tourism
+              services."
             />
             <Accordion
-              question="Should the participant make a payment for every photo or video uploaded or every category chosen to upload their submissions?"
-              answer="No. Each participant shall pay only the registration fee only. It is a onetime payment."
+              question="Should the participant make a payment for every photo or video uploaded or every
+              category chosen to upload their submissions?"
+              answer="No. Each participant shall pay only the registration fee.. It is a one time payment."
             />
             <Accordion
               question="Is there a limit to the number of entries I can submit?"
-              answer="A person can submit 12 photos and 4 videos per registration regardless of any categories."
+              answer="A person can submit 10 photos and 10 videos per registration regardless of any categories."
             />
             <Accordion
-              question="Should the 12 photos and 4 videos be submitted in the same category?"
-              answer="All participants are allowed to submit 12 photos and 4 videos overall. It can be under any of the above category or categories."
+              question="Should the 10 photos and 10 videos be submitted in the same category?"
+              answer="All participants are allowed to submit 10 photos and 10 videos overall. It can be
+              under any of the above categories."
             />
             <Accordion
-              question="When submission starts for Wow Tamil Nadu Photo awards 2021?"
-              answer="The submission date starts from 27th September 2021, World Tourism Day same day as the launch of the competition. "
+              question="When submission starts for Wow Tamil Nadu Photo awards 2022?"
+              answer="The submission date starts from 27th September 2022, World Tourism Day, the
+              same day as the launch of the competition."
             />
             <Accordion
               question="How do I know if you have received my entry?"
-              answer="You will receive a confirmation email and will be able to see the status of your entry in your profile page, once it gets approved by the admin. If you haven’t received the confirmation, check your SPAM folder before contacting us."
+              answer="You will receive a confirmation email and will be able to see the status of your entry
+              in your profile page, once it gets approved by the admin. If you haven’t received the
+              confirmation, check your SPAM folder before contacting us."
             />
-            <h5 className="mt-3 mb-3">
+            {/* <h5 className="mt-3 mb-3">
               TECHNICAL SPECIFICATIONS OF IMAGES AND VIDEOS
             </h5>
             <Accordion
@@ -101,8 +108,8 @@ const Faq = () => {
                   <p className="mb-2">
                     We request all the video files in MP4 format uploaded in any
                     of the below mentioned platforms and Submit only the link in
-                    your{' '}
-                    <a href="https://wowtamilnadu.com/">wowtamilnadu.com</a>{' '}
+                    your{" "}
+                    <a href="https://wowtamilnadu.com/">wowtamilnadu.com</a>{" "}
                     video section.
                   </p>
                   <p className="mb-2">Accepted downloadable links from:</p>
@@ -213,8 +220,8 @@ const Faq = () => {
             <Accordion
               question="When is the deadline for submissions for the 2021 Wow Tamil Nadu photo and video awards?"
               answer="The deadline for the Wow Tamil Nadu photo and video awards is January 16, 2022 by midnight."
-            />
-            <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
+            /> */}
+            {/* <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
             <Accordion
               question="When will the announcement be made about the winners?"
               answer={
@@ -261,12 +268,12 @@ const Faq = () => {
                   </p>
                 </>
               }
-            />
+            /> */}
           </div>
         </div>
       </SponsorLayout>
     </div>
-  )
-}
+  );
+};
 
-export default Faq
+export default Faq;

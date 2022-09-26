@@ -56,7 +56,7 @@ const PurchaseBtn = ({history, user, id}) => {
                     "contact": user.userprofile ? (user.userprofile.phone_number || '') : '',
                 },
                 "theme": {
-                    "color": "#df006f"
+                    "color": "#e94403"
                 }
             };
             const paymentObject = new window.Razorpay(options);

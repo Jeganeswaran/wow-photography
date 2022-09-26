@@ -14,6 +14,7 @@ import DeleteVideoModal from './deletevideomodal'
 import Updateprofile from './updateprofile'
 import SideModal from './sidemodal'
 import RejectInfoModal from './rejectinfo'
+import UserNotifyModal from './userenternotify'
 
 const selectModal = (modalName) => {
   switch (modalName) {
@@ -21,6 +22,8 @@ const selectModal = (modalName) => {
       return SignInModal
     case 'SIGNUP_MODAL':
       return SignUpModal
+    case 'USER_NOTIFY':
+        return UserNotifyModal
     case 'LOADING_MODAL':
       return LoadingModal
     case 'CHANGEPWD_MODAL':
