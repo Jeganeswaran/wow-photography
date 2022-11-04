@@ -6,7 +6,7 @@ const RefundPolicy = () => {
     <div>
       <SponsorLayout title="Returns and Refunds Policy">
         <p>
-          Thank you for participating at WOW PHOTO AWARDS 2021 International
+          Thank you for participating at WOW PHOTO AWARDS 2022 International
           Photo Contes focusing World Tourism.<br></br> Please read this policy
           carefully. <br></br>This is the Return and Refund Policy of WOW PHOTO
           AWARDS .
@@ -24,15 +24,12 @@ const RefundPolicy = () => {
           contact us:
           <br></br>
           By email:
-          <a href="mailto:concerns@wowphotoawards.com">
-            {' '}
-            concerns@wowphotoawards.com
+          <a href="mailto:support@wowtamilnadu.com">
+            support@wowtamilnadu.com
           </a>
           <br></br>
           By visiting this page on our website:
-          <a href="http://wowphotoawards.com/contact">
-            {' '}
-            wowphotoawards.com/contact
+          <a href="/contact">wowtamilnadu.com/contact
           </a>
         </p>
       </SponsorLayout>

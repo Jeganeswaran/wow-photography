@@ -20,7 +20,7 @@ const Footer = () => {
         <SocialLinks />
         <Flags />
         <ul className="menu-list">
-          <li>Copyrights 2021</li>
+          <li>Copyrights 2022</li>
           <li>
             Powered by <a href="http://globalmediabox.com/">Global Media Box</a>
           </li>

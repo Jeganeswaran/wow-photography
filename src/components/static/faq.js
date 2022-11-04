@@ -12,18 +12,15 @@ const Faq = () => {
           <div className="col-md-8">
             <h5 className="mt-3 mb-3">REGISTRATION PROCESS</h5>
             <Accordion
-              question="Who Can Participate?              "
-              answer="Entries are welcome from photographers across the world. Anyone above 18,
-              whether professional or amateur and regardless of nationality, sex can participate
-              and submit photos & videos captured within Tamil Nadu."
+              question="Who Can Participate?"
+              answer="Entries are welcome from photographers across the world. Anyone above 18, whether professional or amateur and regardless of nationality, sex can participate and submit photos & videos captured within Tamil Nadu."
             />
             <Accordion
               question="What are the categories for submission?"
               answer={
                 <>
                   <p className="mb-2">
-                    The list of categories is given at the bottom of the first
-                    page. The categories under photography are as follows:
+                  The list of categories is given at the bottom of the first page. The categories under photography are as follows:
                   </p>
                   <ol>
                     <li>Places of Worship</li>
@@ -76,7 +73,7 @@ const Faq = () => {
               in your profile page, once it gets approved by the admin. If you haven’t received the
               confirmation, check your SPAM folder before contacting us."
             />
-            {/* <h5 className="mt-3 mb-3">
+            <h5 className="mt-3 mb-3">
               TECHNICAL SPECIFICATIONS OF IMAGES AND VIDEOS
             </h5>
             <Accordion
@@ -146,7 +143,7 @@ const Faq = () => {
             <h5 className="mt-3 mb-3">SUBMISSION </h5>
             <Accordion
               question="Do my images need to be taken within a certain timeframe?"
-              answer="Entries in wow tamilnadu photography and video awards 2021 competition must have been taken in 2021(January 1 to December 31, 2021) or at least five years older. Photos could have already been submitted to other competitions as well."
+              answer="EEntries in wow tamilnadu photography and video awards 2023 competition must have been taken in 2022 (January 1 to December 25, 2022) or at least five years older. Photos could have already been submitted to other competitions as well."
             />
             <Accordion
               question="Can a work be submitted regardless of when it was taken?"
@@ -220,55 +217,19 @@ const Faq = () => {
             <Accordion
               question="When is the deadline for submissions for the 2021 Wow Tamil Nadu photo and video awards?"
               answer="The deadline for the Wow Tamil Nadu photo and video awards is January 16, 2022 by midnight."
-            /> */}
-            {/* <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
+            /> 
+             <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
             <Accordion
               question="When will the announcement be made about the winners?"
               answer={
                 <>
                   <p className="mb-2">
-                    The winners will be intimated on January 10th 2022 and the
-                    announcement will be made on 15th January 2022 during
-                    Pongal. Details about the award ceremony will be disclosed
-                    later.
+                  The winners will be intimated on January 10th 2023 and the announcement will be made on 15th January 2023 during Pongal. Details about the award ceremony will be disclosed later.
                   </p>
-                  <h6 className="font-weight-bold">
-                    WOW PHOTO AND VIDEO OF THE YEAR 2021
-                  </h6>
-                  <ul>
-                    <li>A brand new CAR for one winner</li>
-                    <li>WOW Photo awards Trophy and certificate</li>
-                  </ul>
-                  <h6 className="font-weight-bold">
-                    WOW TALENT OF THE YEAR 2021
-                  </h6>
-                  <ul>
-                    <li>
-                      Two winners shall get an electric bike each under
-                      photography category and video category
-                    </li>
-                    <li>WOW Photo awards Trophy and certificate</li>
-                  </ul>
-                  <h6 className="font-weight-bold">
-                    3 Experimenters under the Best Category Awards
-                  </h6>
-                  <ul>
-                    <li>12 Winners (one per category) under Photography</li>
-                    <li>2 Winners (one each per category) under Video</li>
-                    <li>Smart Phone</li>
-                    <li>WOW Photo awards Trophy and certificate</li>
-                  </ul>
-                  <h6 className="font-weight-bold">100 Best WOW seekers</h6>
-                  <ul>
-                    <li>Mementos and certificates</li>
-                  </ul>
-                  <p className="mb-2">
-                    *Grand prize and prizes given for WOW TALENT of the year are
-                    exclusive of personal taxes, insurance.
-                  </p>
+                  
                 </>
               }
-            /> */}
+            />
           </div>
         </div>
       </SponsorLayout>

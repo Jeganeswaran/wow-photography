@@ -5,7 +5,7 @@ import DynamicList from '../common/dynamiclist';
 
 const WowPics = ({ fetching, wow_pick }) => {
     return (
-        <div className="post-section bg-light-grey">
+        <div className="post-section">
             <div className="container">
                 <div className="text-center mb-4">
                     <h2 className="montserrat theme-red f-700">GALLERIES</h2>

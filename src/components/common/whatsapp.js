@@ -5,7 +5,7 @@ import icon from "../../assets/img/whatsapp.png";
 export default function WhatsApp() {
     return (
         <Portal>
-            <a href="https://wa.me/17752471028" rel="noopener noreferrer" target="_blank" className="float-whatsapp">
+            <a href="https://wa.me/919500090850" rel="noopener noreferrer" target="_blank" className="float-whatsapp">
                 <img src={icon} alt="" />
             </a>
         </Portal>

@@ -134,7 +134,7 @@ const Contest = ({ fetching, data, dispatch }) => {
             </div>
             <div className="col-md-12 mt-3">
               <div className="form-group">
-                <label className="f-14">Choose a Category</label>
+                <label className="f-14">Choose a Category *</label>
                 <select
                   // disabled={!photo}
                   value={category}
@@ -151,14 +151,15 @@ const Contest = ({ fetching, data, dispatch }) => {
                 </select>
               </div>
               <LabelIp
-                label="Camera Used"
+                label="Camera Used *"
                 value={camera_used}
                 onChange={(val) => setCamera_used(val)}
               />
               <div className="row">
                 <div className="col-md-6">
                   <LabelIp
-                    label="Location"
+                    label="Location of Capture *"
+                    helpText="(Mentioned the place / district name where photos / videos taken)"
                     value={location}
                     onChange={(val) => setLocation(val)}
                   />
@@ -239,13 +240,15 @@ export const LabelIp = ({
   label,
   type = 'text',
   value,
+  palceholder,
+  helpText,
   onChange,
   disabled = false,
 }) => (
   <div className="form-group">
     <label className="f-14">{label}</label>
     <input
-      placeholder={`Enter ${label.replace('(optional)', '').toLowerCase()}`}
+      placeholder={palceholder ? palceholder :`Enter ${label.replace('(optional)', '').toLowerCase()}`}
       className="form-control f-14"
       type={type}
       value={value}
@@ -254,6 +257,8 @@ export const LabelIp = ({
       }}
       disabled={disabled}
     />
+    {helpText && 
+    <span className="small">{helpText}</span>}
   </div>
 )
 

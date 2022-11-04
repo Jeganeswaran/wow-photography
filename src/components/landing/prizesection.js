@@ -1,8 +1,8 @@
 import React from 'react'
-import GrandWinnerImg from '../../assets/img/prize/2021-WOW-Grand-Winner.png'
-import CreativeEyeImg from '../../assets/img/prize/2021-WOW-Creative-Eye.png'
-import ExplorerImg from '../../assets/img/prize/2021-WOW-Explorer.png'
-import Best100Img from '../../assets/img/prize/2021-WOW-100.png'
+import GrandWinnerImg from '../../assets/img/prize/2022-WOW-Grand-Winner.png'
+import CreativeEyeImg from '../../assets/img/prize/2022-WOW-Creative-Eye.png'
+import ExplorerImg from '../../assets/img/prize/2022-WOW-Explorer.png'
+import Best100Img from '../../assets/img/prize/2022-WOW-100.png'
 import EnterBtn from './EnterBtn'
 
 const PrizeSection = () => {
@@ -30,7 +30,7 @@ const PrizeSection = () => {
             src={CreativeEyeImg}
             title="Wow TN Creative Eye"
             desc={[
-              '12 winner - Hot Air Balloon experience',
+              '12 winners - Hot Air Balloon experience',
               '+ Trophy 🏆 + Certificate.',
             ]}
           />
@@ -38,8 +38,9 @@ const PrizeSection = () => {
             src={ExplorerImg}
             title="Explorer awards"
             desc={[
-              'District awards photo',
-              '38 Winners from each district',
+              '76 winners',
+              '38 photos and 38 Travel guide videos',
+              'from each district',
               'Surprise Gift + Trophy 🏆 + Certificate',
 
             ]}
