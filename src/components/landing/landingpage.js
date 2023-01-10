@@ -57,10 +57,10 @@ const LandingPage = ({ dispatch }) => {
                 src={TNTour}
               /></div>
               <div className="flex-center pt-3">
-                <EnterBtn className="btn pl-5 pr-5 btn-info" />
+                <EnterBtn className="btn pl-5 pr-5 btn-info disable" />
               </div>
               <div className="sourcesans f-15 pt-1 theme-red text-center">
-                *Deadline to participate is on 25 Dec 2022
+                *Registration Closed
               </div>
             </div>
           </div>

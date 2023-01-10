@@ -14,9 +14,12 @@ import { Link } from 'react-router-dom'
 const NoData = () => (
   <div className="col-md-12">
     <div className="p-5 flex-center flex-column border">
-      <Link to="/my-profile/enter-to-contest" className="btn btn-theme">
+      {/* <Link to="/my-profile/enter-to-contest" className="btn btn-theme">
         Enter to Contest
-      </Link>
+      </Link> */}
+       <div className="sourcesans f-15 pt-1 theme-red text-center">
+                *Registration Closed
+              </div>
     </div>
   </div>
 )
@@ -45,13 +48,14 @@ const CollectionList = ({
       <>
         <div className="col-md-12">
           <div className="text-right mb-2">
-            <Link
+            {/* <Link
               className="f-15 f-500 theme-red"
               to="/my-profile/enter-to-contest"
             >
               <i className="fa fa-plus f-14 mr-1"></i>
               Enter to contest
-            </Link>
+            </Link> */}
+             
           </div>
         </div>
         <ScrollList

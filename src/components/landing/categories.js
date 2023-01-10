@@ -106,29 +106,34 @@ export const VideoCategories = () => {
         <div className="row">
           <Prize
             src={ReelsImg}
-            audio={ReelsAudio}
+            
             title="WOW TN Reels"
+            rulesTitle="Rules for Reels"
             rules={[
-              "Duration: 30 Seconds to 1 Minutes",
-              "Instagram Reels are viewed in a vertical orientation, videos should be 1080 pixels wide and 1920 pixels height",
-              "Reels should be taken in and around Tamilnadu.",
-              "Music should be royalty free or you can use music from our wowtamilnadu.com website.",
-              "One user can submit 10 videos.",
-              "Strictly avoid using watermarks in Reels.",
+              "Duration 30 seconds to 1 minute.",
+              "Instagram reels are viewed in a vertical orientation, videos should be 1080 pixels wide and 1920 pixels height.",
+              "Reels are open content and it should be reflecting travel and tourism shot in  districts of Tamil Nadu.",
               "Accepted reels format is Mov or MP4.",
+              "Strictly avoid using watermarks in Reels.",
+              "Music should be royalty free or you can use our music tracks  available below.",
             ]}
           />
-          <Prize src={TravelGuideImg} audio={TravelGuideAudio} title=" TN Travel Guide" rules={["Duration: Minimum 1 minute to maximum 3 minutes.", "Videos are viewed in a Landscape orientation, videos should be 1080 pixels Height and 1920 pixels wide.", "Videos should be taken in and around Tamilnadu.", "Music should be royalty free, avoid copyrights music.", "One user can submit 10 videos.", "Strictly avoid using watermarks in videos.", "Accepted video format is Mov or MP4."]} />
+          <Prize src={TravelGuideImg} 
+          rulesTitle="Rules for TN Travel Guide"
+           title=" TN Travel Guide" rules={["Duration: Minimums 1 minute to maximum 3 minutes.", "Videos are viewed in a landscape orientation and the quality should be 1080 pixels height and 1920 pixels wide.", "Videos should be shot in the districts of TN", "Video submission will be shortlisted based on the district covered in the video and not the participants area or district.", "Music should be royalty free, you can use your own composition music, voice over, map graphics, text or you can make use of our music tracks available below.", "Strictly avoid using watermarks in videos.", "Accepted video format is Mov or MP4."]} />
         </div>
         <div className="flex-center pt-3">
           <EnterBtn className="btn pl-5 pr-5 btn-info" />
         </div>
+        <div className="flex-center pt-3"><a target="_blank" rel="noopener noreferrer" href={TravelGuideAudio} className="btn pl-5 pr-5 btn-info">Download Music Track 1</a></div>
+        <div className="flex-center pt-3"><a target="_blank" rel="noopener noreferrer" href={ReelsAudio} className="btn pl-5 pr-5 btn-info">Download Music Track 2</a></div>
+
       </div>
     </section>
   );
 };
 
-const Prize = ({ src = null, title = "",audio=null, desc = [], rules = [] }) => (
+const Prize = ({ src = null, title = "",audio=null, desc = [], rules = [], rulesTitle="" }) => (
   <div className="col-md-6 mb-4">
     <div className="row flex-center">
       <div className="col-md-6">
@@ -154,8 +159,8 @@ const Prize = ({ src = null, title = "",audio=null, desc = [], rules = [] }) => 
     </div>
     {rules.length > 0 && (
       <div>
-        <h6 className="f-600">Rules and Regulation</h6>
-        <ul className="f-14 m-0 p-0 text-center text-md-left poppins">
+        <h6 className="f-600">{rulesTitle}</h6>
+        <ul className="f-14 m-0 p-0 pl-3 poppins">
           {rules.map((x, index) => (
             <li className="mb-1" key={title + index}>
               {x}
@@ -164,9 +169,6 @@ const Prize = ({ src = null, title = "",audio=null, desc = [], rules = [] }) => 
         </ul>
       </div>
     )}
-    <div className="my-4">
-      <a target="_blank" rel="noopener noreferrer" href={audio} className="btn pl-5 pr-5 btn-info">Download Music Track</a>
-    </div>
   </div>
 );
 

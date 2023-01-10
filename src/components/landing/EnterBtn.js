@@ -9,15 +9,16 @@ const EnterBtn = ({
 }) => {
   if (isToken) {
     return (
-      <Link to="/my-profile/enter-to-contest" className={className}>
+      <Link  to="/my-profile/enter-to-contest" className={className}>
         Participate Now
       </Link>
     )
   }
   return (
-    <OpenModalBtn modalName="SIGNUP_MODAL" className={className}>
-      Participate Now
-    </OpenModalBtn>
+    // <OpenModalBtn modalName="SIGNUP_MODAL" className={className}>
+    //   Participate Now
+    // </OpenModalBtn>
+    <button className={className} disabled="disabled">Participate Now</button>
   )
 }
 

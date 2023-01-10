@@ -75,14 +75,14 @@ const CollectionsPage = ({ dispatch }) => {
                 path: '/private-videos',
                 component: PrivateCollectionVideo,
               },
-              {
-                path: '/enter-to-contest/video',
-                component: ContestVideo,
-              },
-              {
-                path: '/enter-to-contest',
-                component: Contest,
-              },
+              // {
+              //   path: '/enter-to-contest/video',
+              //   component: ContestVideo,
+              // },
+              // {
+              //   path: '/enter-to-contest',
+              //   component: Contest,
+              // },
             ]}
           />
         </div>
