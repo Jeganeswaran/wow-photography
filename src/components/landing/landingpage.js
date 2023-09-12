@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import useHttp from "../../hooks/http/useHttp";
 import { LANDING, landing_url } from "../../redux/actions/constants";
 import WowPics from "./WowPics";
+import WowWinners from "./WowWinners";
 import PrizeSection from "./prizesection";
 import SponsorSection from "./sponsorsection";
 import EnterBtn from "./EnterBtn";
@@ -66,10 +67,12 @@ const LandingPage = ({ dispatch }) => {
           </div>
         </div>
       </section>
-      <PrizeSection />
+
+      {/* <PrizeSection /> */}
+      <WowWinners />
       <PhotoCategories />
       <hr />
-      <VideoCategories />
+      {/* <VideoCategories /> */}
       <WowPics />
       <SponsorSection />
     </div>
