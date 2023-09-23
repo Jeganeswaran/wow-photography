@@ -61,7 +61,7 @@ const LandingPage = ({ dispatch }) => {
                 <EnterBtn className="btn pl-5 pr-5 btn-info disable" />
               </div>
               <div className="sourcesans f-15 pt-1 theme-red text-center">
-                *Registration Closed
+                *Registration will open
               </div>
             </div>
           </div>

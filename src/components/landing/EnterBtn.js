@@ -1,29 +1,78 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { OpenModalBtn } from '../modals/modalbtns'
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { OpenModalBtn } from "../modals/modalbtns";
+import  { useCountdown }  from "../../hooks/useCountdown";
+
+
+const ExpiredNotice = (isToken, className) => {
+  if (isToken) {
+    return (
+      <Link to="/my-profile/enter-to-contest" className={className}>
+        Participate Now
+      </Link>
+    );
+  } else{
+    return (
+      <OpenModalBtn modalName="SIGNUP_MODAL" className={className}>
+        Participate Now
+      </OpenModalBtn>
+    );
+    
+  }
+};
+
+const DateTimeDisplay = ({ value, type, isDanger }) => {
+ 
+  return (
+    <div className={isDanger ? 'countdown danger' : 'countdown'}>
+      <div>{value}</div>
+      <span>{type}</span>
+    </div>
+  );
+};
+
+const ShowCounter = ({ days, hours, minutes, seconds }) => {
+  return (
+    <div className="show-counter">
+      <div
+        className="countdown-link"
+      >
+        <DateTimeDisplay value={days} type={'Days'} isDanger={days <= 2} />
+        <p>:</p>
+        <DateTimeDisplay value={hours} type={'Hours'} isDanger={false} />
+        <p>:</p>
+        <DateTimeDisplay value={minutes} type={'Mins'} isDanger={false} />
+        <p>:</p>
+        <DateTimeDisplay value={seconds} type={'Seconds'} isDanger={false} />
+      </div>
+    </div>
+  );
+};
 
 const EnterBtn = ({
   isToken,
-  className = 'btn pl-4 pr-4 btn-outline-light mt-4',
+  className = "btn pl-4 pr-4 btn-outline-light mt-4",
 }) => {
-  if (isToken) {
+
+  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 27, 2023 21:00:00"));
+  
+  if (days + hours + minutes + seconds <= 0) {
+    return <ExpiredNotice className={className}/>;
+  } else {
     return (
-      <Link  to="/my-profile/enter-to-contest" className={className}>
-        Participate Now
-      </Link>
-    )
+      <ShowCounter
+        days={days}
+        hours={hours}
+        minutes={minutes}
+        seconds={seconds}
+      />
+    );
   }
-  return (
-    // <OpenModalBtn modalName="SIGNUP_MODAL" className={className}>
-    //   Participate Now
-    // </OpenModalBtn>
-    <button className={className} disabled="disabled">Participate Now</button>
-  )
-}
+};
 
 const mapStateToProps = ({ user }) => ({
   isToken: user && user.token,
-})
+});
 
-export default connect(mapStateToProps)(EnterBtn)
+export default connect(mapStateToProps)(EnterBtn);
