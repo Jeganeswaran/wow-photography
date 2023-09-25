@@ -63,8 +63,8 @@ const Faq = () => {
               under any of the above categories."
             />
             <Accordion
-              question="When submission starts for Wow Tamil Nadu Photo awards 2022?"
-              answer="The submission date starts from 27th September 2022, World Tourism Day, the
+              question="When submission starts for Wow Tamil Nadu Photo awards 2023?"
+              answer="The submission date starts from 27th September 2023, World Tourism Day, the
               same day as the launch of the competition."
             />
             <Accordion
@@ -143,7 +143,7 @@ const Faq = () => {
             <h5 className="mt-3 mb-3">SUBMISSION </h5>
             <Accordion
               question="Do my images need to be taken within a certain timeframe?"
-              answer="EEntries in wow tamilnadu photography and video awards 2023 competition must have been taken in 2022 (January 1 to December 25, 2022) or at least five years older. Photos could have already been submitted to other competitions as well."
+              answer="EEntries in wow tamilnadu photography and video awards 2023 competition must have been taken in 2023 (January 1 to December 25, 2023) or at least five years older. Photos could have already been submitted to other competitions as well."
             />
             <Accordion
               question="Can a work be submitted regardless of when it was taken?"
@@ -216,7 +216,7 @@ const Faq = () => {
             />
             <Accordion
               question="When is the deadline for submissions for the 2021 Wow Tamil Nadu photo and video awards?"
-              answer="The deadline for the Wow Tamil Nadu photo and video awards is January 16, 2022 by midnight."
+              answer="The deadline for the Wow Tamil Nadu photo and video awards is January 16, 2023 by midnight."
             /> 
              <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
             <Accordion

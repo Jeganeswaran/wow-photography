@@ -11,9 +11,8 @@ const About = () => {
         <div className="row">
           <div className="col-sm-8 mb-3">
             <ul className="f-16 f-600 annoucelist">
-              <li>Entries starts from 27th September 2022</li>
-              <li>Last Date for your entries on 25th December 2022</li>
-              <li>Winners Announcement on 15th Jan 2023</li>
+              <li>Submissions open on World Tourism Day, September 27th, starting at 20:00 hrs IST</li>
+              <li>The deadline for submissions is, 31st December 2023 – Midnight. </li>
               <li>
                 WOW Tamil Nadu Team will contact the winners only via email /
                 Mobile numbers that are used during registration.

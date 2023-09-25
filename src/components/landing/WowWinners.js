@@ -1,5 +1,4 @@
 import React from "react";
-import Post from "./post";
 import { connect } from "react-redux";
 import DynamicList from "../common/dynamiclist";
 import { OpenImg } from "../modals/modalbtns";

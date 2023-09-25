@@ -5,7 +5,7 @@ import { OpenModalBtn } from "../modals/modalbtns";
 import  { useCountdown }  from "../../hooks/useCountdown";
 
 
-const ExpiredNotice = (isToken, className) => {
+const ExpiredNotice = ({isToken, className}) => {
   if (isToken) {
     return (
       <Link to="/my-profile/enter-to-contest" className={className}>
@@ -55,10 +55,10 @@ const EnterBtn = ({
   className = "btn pl-4 pr-4 btn-outline-light mt-4",
 }) => {
 
-  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 27, 2023 21:00:00"));
+  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 25, 2023 21:32:00"));
   
   if (days + hours + minutes + seconds <= 0) {
-    return <ExpiredNotice className={className}/>;
+    return <ExpiredNotice className={className} isToken={isToken} />;
   } else {
     return (
       <ShowCounter

@@ -55,7 +55,7 @@ export const PhotoCategories = () => {
       image: AnimalKingdom,
     },
     {
-      title: "TN in Bird's Eye view",
+      title: "Tamil Nadu in Bird's Eye view",
       image: FITographyImg,
     },
   ];
@@ -65,7 +65,7 @@ export const PhotoCategories = () => {
     <section className="post-section">
       <div className="text-center mb-4">
         <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>
-          Photography Categories for WOW TAMILNADU 2022
+        Categories for Photography & Digi-Art - WOW TAMILNADU 2023
         </h1>
       </div>
       <div className="container d-flex justify-content-md-center justify-content-center flex-wrap mb-2">
@@ -100,7 +100,7 @@ export const VideoCategories = () => {
       <div className="container">
         <div className="text-center mb-4">
           <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>
-            Video Categories for WOW TAMILNADU 2022
+            Video Categories for WOW TAMILNADU 2023
           </h1>
         </div>
         <div className="row">
@@ -119,8 +119,8 @@ export const VideoCategories = () => {
             ]}
           />
           <Prize src={TravelGuideImg} 
-          rulesTitle="Rules for TN Travel Guide"
-           title=" TN Travel Guide" rules={["Duration: Minimums 1 minute to maximum 3 minutes.", "Videos are viewed in a landscape orientation and the quality should be 1080 pixels height and 1920 pixels wide.", "Videos should be shot in the districts of TN", "Video submission will be shortlisted based on the district covered in the video and not the participants area or district.", "Music should be royalty free, you can use your own composition music, voice over, map graphics, text or you can make use of our music tracks available below.", "Strictly avoid using watermarks in videos.", "Accepted video format is Mov or MP4."]} />
+          rulesTitle="Rules for TN Travel Influencer"
+           title="TN Travel Influencer" rules={["Duration: Minimums 1 minute to maximum 3 minutes.", "Videos are viewed in a landscape orientation and the quality should be 1080 pixels height and 1920 pixels wide.", "Videos should be shot in the districts of TN", "Video submission will be shortlisted based on the district covered in the video and not the participants area or district.", "Music should be royalty free, you can use your own composition music, voice over, map graphics, text or you can make use of our music tracks available below.", "Strictly avoid using watermarks in videos.", "Accepted video format is Mov or MP4."]} />
         </div>
         <div className="flex-center pt-3">
           <EnterBtn className="btn pl-5 pr-5 btn-info" />

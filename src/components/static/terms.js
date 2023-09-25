@@ -4,9 +4,9 @@ import SponsorLayout from "../common/sponsorlayout";
 const Terms = () => {
   return (
     <div>
-      <SponsorLayout title="WOW TAMIL NADU 2022 - Terms and Conditions">
+      <SponsorLayout title="WOW TAMIL NADU 2023 - Terms and Conditions">
         <p>
-          “WOW TAMILNADU 2022” Brand name and the event Initiated, owned,
+          “WOW TAMILNADU 2023” Brand name and the event Initiated, owned,
           Operated & Organized by Global Media Box Innovations Pvt Ltd (referred
           as “Organizer”). On participating the online contest through our
           official website site wowtamilnadu.com each entrant/contestant accepts
@@ -122,7 +122,7 @@ const Terms = () => {
           (parent or guardian in the case of a minor) before the photo can be
           entered in the contest.
         </p>
-        <p>All rights reserved WOW TAMILNADU 2022 - wowtamilnadu.com</p>
+        <p>All rights reserved WOW TAMILNADU 2023 - wowtamilnadu.com</p>
       </SponsorLayout>
     </div>
   );

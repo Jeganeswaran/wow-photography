@@ -6,7 +6,7 @@ const RefundPolicy = () => {
     <div>
       <SponsorLayout title="Returns and Refunds Policy">
         <p>
-          Thank you for participating at WOW PHOTO AWARDS 2022 International
+          Thank you for participating at WOW PHOTO AWARDS 2023 International
           Photo Contes focusing World Tourism.<br></br> Please read this policy
           carefully. <br></br>This is the Return and Refund Policy of WOW PHOTO
           AWARDS .

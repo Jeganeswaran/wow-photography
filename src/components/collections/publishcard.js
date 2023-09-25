@@ -3,13 +3,14 @@ import { OpenModalBtn, OpenImg } from "../modals/modalbtns"
 import dateFormat from "../../utils/dateFormat"
 
 const PublishCard = ({ ids, multiDispatch, ...props }) => {
-    const { is_submitted, thumbnail, photo_id, photo, id, submitted_on, is_approved, categories, location, camera_used, caption } = props;
+    const { is_submitted, thumbnail, photo_id, photo, id, submitted_on, is_approved, categories, location,is_digital_art, camera_used, caption } = props;
     const isSelected = ids.includes(id);
     return (
         <div className="bg-light">
             <div className="post">
                 <div className="post-img-holder relative">
                     <div className="post-info">
+                    <span class="f-12 f-500">{is_digital_art ? "Digital Art" : 'Photographs'}</span>
                         {camera_used && <span>{camera_used}</span>}
                         {location && <span>{location}</span>}
                     </div>
@@ -57,6 +58,7 @@ const PublishCard = ({ ids, multiDispatch, ...props }) => {
                             <div className="text-right f-12">
                                 <div className="f-600">{categories}</div>
                                 <div style={{ color: `#737373` }}>{submitted_on ? dateFormat(submitted_on) : ''}</div>
+                                <span class="badge badge-info text-dark f-12 f-600">{is_digital_art ? "Digital Art" : 'Photographs'}</span>
                             </div>
                         </div> :
                         <div className="flex-between p-2 align-items-center">
