@@ -37,7 +37,6 @@ const useDataSubmit = (succFunc = null, errFunc = null) => {
           }
         }
       } catch (err) {
-        console.log('api error', err)
         if (isCancel(err)) {
           dispatch({ type: 'FETCH_FAILURE', error: true })
         } else {

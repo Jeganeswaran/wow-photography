@@ -23,7 +23,7 @@ const Announcement = () => {
               <div className="text-center poppins mb-2">
               The deadline for submissions is 
               </div>
-              <h5 className="text-center theme-red mb-5">31st December 2023 – Midnight.</h5>
+              <h5 className="text-center theme-red mb-5">31st December 2024 – Midnight.</h5>
               <p
                 className="text-center poppins"
                 style={{ color: `rgba(0, 0, 0, 0.7)`, lineHeight: 1.8 }}
@@ -35,7 +35,7 @@ const Announcement = () => {
                 <br />
                 Join us in celebrating the diverse and stunning beauty of Tamil
                 Nadu. We look forward to your participation in WOW Tamil Nadu
-                Awards 2023! 🌟📸🎨.
+                Awards 2024! 🌟📸🎨.
               </p>
 
               <div className="flex-center pt-3">

@@ -6,20 +6,25 @@ import  { useCountdown }  from "../../hooks/useCountdown";
 
 
 const ExpiredNotice = ({isToken, className}) => {
-  if (isToken) {
-    return (
-      <Link to="/my-profile/enter-to-contest" className={className}>
-        Participate Now
-      </Link>
-    );
-  } else{
-    return (
-      <OpenModalBtn modalName="SIGNUP_MODAL" className={className}>
-        Participate Now
-      </OpenModalBtn>
-    );
+  return (
+    <Link to="/" className={className}>
+      Registration Close
+    </Link>
+  )
+  // if (isToken) {
+  //   return (
+  //     <Link to="/my-profile/enter-to-contest" className={className}>
+  //       Participate Now
+  //     </Link>
+  //   );
+  // } else{
+  //   return (
+  //     <OpenModalBtn modalName="SIGNUP_MODAL" className={className}>
+  //       Participate Now
+  //     </OpenModalBtn>
+  //   );
     
-  }
+  // }
 };
 
 const DateTimeDisplay = ({ value, type, isDanger }) => {
@@ -55,7 +60,7 @@ const EnterBtn = ({
   className = "btn pl-4 pr-4 btn-outline-light mt-4",
 }) => {
 
-  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 25, 2023 21:32:00"));
+  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 25, 2023 20:00:00"));
   
   if (days + hours + minutes + seconds <= 0) {
     return <ExpiredNotice className={className} isToken={isToken} />;

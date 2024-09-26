@@ -6,40 +6,39 @@ import { OpenImg } from "../modals/modalbtns";
 const WinnerUser = ({ title, sub_description, image }) => {
   return (
     <div className="post">
-     
-      {image&& <div className="post-img-holder">
-        <div className="post-img">
-          <OpenImg modalProps={{ image: image }} src={image} alt={""} />
+      {image && (
+        <div className="post-img-holder">
+          <div className="post-img">
+            <OpenImg modalProps={{ image: image }} src={image} alt={""} />
+          </div>
         </div>
-      </div>}
+      )}
 
-      
-      
-      <div className="p-1 text-center"><div className="f-600 f-16">{title}</div> {sub_description}</div>
+      <div className="p-1 text-center">
+        <div className="f-600 f-16">{title}</div> {sub_description}
+      </div>
     </div>
   );
 };
 
 const WinnerCategory = ({ title, sub_description, users, fetching }) => {
   return (
-    <div className="post-section bg-light">
-      <div className="container">
-        <div className="text-center mb-4">
-          <h2 className="montserrat f-700 theme-red">{title}</h2>
-          <p className="poppins">({sub_description})</p>
-        </div>
-        <div className="row">
-          <DynamicList
-            RenderItem={(props) => (
-              <div className="col-md-4">
-                <WinnerUser {...props} />
-              </div>
-            )}
-            title="wow-picks"
-            list={users}
-            fetching={fetching}
-          />
-        </div>
+    <div>
+      <div className="text-center mb-3">
+        <h2 className="montserrat f-700 theme-red">{title}</h2>
+        <p className="poppins">({sub_description})</p>
+      </div>
+      <div className="row">
+        <DynamicList
+          RenderItem={(props) => (
+            <div className="col-md-6">
+              <WinnerUser {...props} />
+            </div>
+          )}
+          title="wow-picks"
+          list={users}
+          fetching={fetching}
+        />
       </div>
     </div>
   );
@@ -47,16 +46,22 @@ const WinnerCategory = ({ title, sub_description, users, fetching }) => {
 
 const WowWinners = ({ fetching, wow_winners }) => {
   return (
-    <DynamicList
-      RenderItem={(props) => (
-        <div className="">
-          <WinnerCategory {...props} />
+    <div className="post-section bg-light">
+      <div className="container">
+        <div className="row">
+          <DynamicList
+            RenderItem={(props) => (
+              <div className="col-6">
+                <WinnerCategory {...props} />
+              </div>
+            )}
+            title="wow-picks"
+            list={wow_winners}
+            fetching={fetching}
+          />
         </div>
-      )}
-      title="wow-picks"
-      list={wow_winners}
-      fetching={fetching}
-    />
+      </div>
+    </div>
   );
 };
 

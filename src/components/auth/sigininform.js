@@ -55,7 +55,10 @@ const SignInForm = ({ addToast, closeModal, updateUser, history, openModal }) =>
             errFunc={
                 (data) => {
                     addToast(data, false);
-                    openModal('USER_NOTIFY', {title:"Login Notification", content:"Your account yet not activated. Please Check your email for activation link. If not received, kindly check your spam folder."})
+                    if(data !== "Unable to login with provided credentials."){
+                        openModal('USER_NOTIFY', {title:"Login Notification", content:"Your account yet  not activated. Please Check your email for activation link. If not received, kindly check your spam folder."})
+                    }
+                    
                 }
             }
         />

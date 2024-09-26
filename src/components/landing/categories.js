@@ -65,7 +65,7 @@ export const PhotoCategories = () => {
     <section className="post-section">
       <div className="text-center mb-4">
         <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>
-        Categories for Photography & Digi-Art - WOW TAMILNADU 2023
+        Categories for Photography & Digi-Art - WOW TAMILNADU 2024
         </h1>
       </div>
       <div className="container d-flex justify-content-md-center justify-content-center flex-wrap mb-2">
@@ -100,7 +100,7 @@ export const VideoCategories = () => {
       <div className="container">
         <div className="text-center mb-4">
           <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>
-            Video Categories for WOW TAMILNADU 2023
+            Video Categories for WOW TAMILNADU 2024
           </h1>
         </div>
         <div className="row">

@@ -44,7 +44,7 @@ const Faq = () => {
             />
             <Accordion
               question="Is there any registration fee?"
-              answer="Registration fee of Rs.200 is applicable per participation and this fee is
+              answer="Registration fee of Rs.399 is applicable per participation and this fee is 
               non-refundable. The payment gateway is handled by EEHAAA travel and tourism
               services."
             />
@@ -55,16 +55,16 @@ const Faq = () => {
             />
             <Accordion
               question="Is there a limit to the number of entries I can submit?"
-              answer="A person can submit 10 photos and 10 videos per registration regardless of any categories."
+              answer="A person can submit 10 Photos / DigitalArt and 10 videos per registration regardless of any categories."
             />
             <Accordion
-              question="Should the 10 photos and 10 videos be submitted in the same category?"
-              answer="All participants are allowed to submit 10 photos and 10 videos overall. It can be
+              question="Should the 10 photos/Digi Art  and 10 videos be submitted in the same category?"
+              answer="All participants are allowed to submit 10 photos/Digi Art and 10 videos overall. It can be
               under any of the above categories."
             />
             <Accordion
-              question="When submission starts for Wow Tamil Nadu Photo awards 2023?"
-              answer="The submission date starts from 27th September 2023, World Tourism Day, the
+              question="When submission starts for Wow Tamil Nadu 2024?"
+              answer="The submission date starts from 27th September 2024, World Tourism Day, the
               same day as the launch of the competition."
             />
             <Accordion
@@ -77,8 +77,8 @@ const Faq = () => {
               TECHNICAL SPECIFICATIONS OF IMAGES AND VIDEOS
             </h5>
             <Accordion
-              question="What are the dimensions of photograph and format?"
-              answer="Submitted photographs must have minimum resolution of 1000x1000 pixels and maximum allowed file size is up to 25MB. The recommended file format is JPEG, RAW and TIFF."
+              question="What are the dimensions of Photograph / Digital Art and format?"
+              answer="Submitted Photographs / Digital Art  must have minimum resolution of 1000x1000 pixels and maximum allowed file size is up to 25MB. The recommended file format is JPEG, RAW and TIFF."
             />
             <Accordion
               question="What is the format of the video and video size?"
@@ -143,7 +143,7 @@ const Faq = () => {
             <h5 className="mt-3 mb-3">SUBMISSION </h5>
             <Accordion
               question="Do my images need to be taken within a certain timeframe?"
-              answer="EEntries in wow tamilnadu photography and video awards 2023 competition must have been taken in 2023 (January 1 to December 25, 2023) or at least five years older. Photos could have already been submitted to other competitions as well."
+              answer="Entries in wow tamilnadu photography and video awards 2024 competition must have been taken in 2024 (January 1 to December 25, 2024) or at least five years older. Photos could have already been submitted to other competitions as well."
             />
             <Accordion
               question="Can a work be submitted regardless of when it was taken?"
@@ -215,8 +215,8 @@ const Faq = () => {
               answer="Award winners will be notified through calls, email and social media. Special invite will be sent for the winners to attend the award ceremony."
             />
             <Accordion
-              question="When is the deadline for submissions for the 2021 Wow Tamil Nadu photo and video awards?"
-              answer="The deadline for the Wow Tamil Nadu photo and video awards is January 16, 2023 by midnight."
+              question="When is the deadline for submissions for the Wow Tamil Nadu 2024 ?"
+              answer="The deadline for the Wow Tamil Nadu photo and video awards is 31 December, 2024 by midnight."
             /> 
              <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
             <Accordion
@@ -224,7 +224,7 @@ const Faq = () => {
               answer={
                 <>
                   <p className="mb-2">
-                  The winners will be intimated on January 10th 2023 and the announcement will be made on 15th January 2023 during Pongal. Details about the award ceremony will be disclosed later.
+                  The winners announcement will be made on 31st January 2024.
                   </p>
                   
                 </>

@@ -10,8 +10,12 @@ import { connect } from 'react-redux'
 import { loadData } from '../../redux/actions/http'
 import { changeMultiVideo } from '../../redux/actions/user'
 import { Link } from 'react-router-dom'
+import { useCountdown } from '../../hooks/useCountdown'
 
-const NoData = () => (
+const NoData = () => {
+  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 25, 2023 20:00:00"));
+  if (days + hours + minutes + seconds <= 0) {
+  return(
   <div className="col-md-12">
     <div className="p-5 flex-center flex-column border">
       <Link to="/my-profile/enter-to-contest/video" className="btn btn-theme">
@@ -19,7 +23,10 @@ const NoData = () => (
       </Link>
     </div>
   </div>
-)
+  )
+  }
+  return <div></div>
+}
 
 const CollectionListVideo = ({
   isSubmitted = false,
@@ -42,20 +49,23 @@ const CollectionListVideo = ({
     }
   }, [userId, type])
 
+  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 25, 2023 20:00:00"));
+
   if (listData) {
     return (
       <>
+      { (days + hours + minutes + seconds <= 0) &&(
         <div className="col-md-12">
           <div className="text-right mb-2">
-            <Link
+            {/* <Link
               className="f-15 f-500 theme-red"
               to="/my-profile/enter-to-contest/video"
             >
               <i className="fa fa-plus f-14 mr-1"></i>
               Enter to contest
-            </Link>
+            </Link> */}
           </div>
-        </div>
+        </div>)}
         <ScrollList
           RenderItem={(props) => (
             <div className="col-md-6">

@@ -23,9 +23,9 @@ const LandingPage = ({ dispatch }) => {
           <div className="text-center mb-5">
             <h3
               className="f-700 mb-2"
-              style={{ color: `rgba(0, 0, 0, 0.6)`, fontSize: `52px` }}
+              style={{ color: `rgba(0, 0, 0, 0.6)`, fontSize: `40px` }}
             >
-              Welcome to WOW Tamil Nadu Awards 2023 - The 4th Edition
+              Welcome to WOW Tamil Nadu Awards 2024 - The 5th Edition
             </h3>
             <h6>Theme: Tourist Experiences/Destinations of Tamil Nadu</h6>
           </div>
@@ -45,7 +45,7 @@ const LandingPage = ({ dispatch }) => {
                 platform where they can explore, grow, and share their craft.
                 <br />
                 <br />
-                In 2023, we proudly present the 4th consecutive edition of WOW
+                In 2024, we proudly present the 5th consecutive edition of WOW
                 Tamil Nadu Awards, organized by Global Media Box with the
                 invaluable support and association of the Department of Tourism,
                 Tamil Nadu. This edition promises to be even more remarkable as
@@ -55,7 +55,7 @@ const LandingPage = ({ dispatch }) => {
                 <br />
                 Whether you're an aspiring photographer, a seasoned
                 videographer, or a digital artist pushing the boundaries of
-                creativity, WOW Tamil Nadu Awards 2023 is your stage. It's a
+                creativity, WOW Tamil Nadu Awards 2024 is your stage. It's a
                 stage to share your vision, celebrate the rich heritage and
                 natural beauty of Tamil Nadu, and connect with a community of
                 like-minded individuals who share your passion for art.

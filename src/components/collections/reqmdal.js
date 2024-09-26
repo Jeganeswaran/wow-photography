@@ -192,9 +192,9 @@ const RequestModal = ({
               </div>
             ) : (
               <div className="form-group">
-                <Link to="/upgrade" className="btn btn-theme btn-block">
+                {/* <Link to="/upgrade" className="btn btn-theme btn-block">
                   Pay and Submit
-                </Link>
+                </Link> */}
               </div>
             )}
           </div>

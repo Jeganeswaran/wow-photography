@@ -10,16 +10,25 @@ import { connect } from 'react-redux'
 import { loadData } from '../../redux/actions/http'
 import { changeMulti } from '../../redux/actions/user'
 import { Link } from 'react-router-dom'
+import { useCountdown } from '../../hooks/useCountdown'
 
-const NoData = () => (
-  <div className="col-md-12">
+const NoData = () => {
+  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 25, 2023 20:00:00"));
+  
+  if (days + hours + minutes + seconds <= 0) {
+    return (<div className="col-md-12">
     <div className="p-5 flex-center flex-column border">
-      <Link to="/my-profile/enter-to-contest" className="btn btn-theme">
+      {/* <Link to="/my-profile/enter-to-contest" className="btn btn-theme">
         Enter to Contest
-      </Link>
+      </Link> */}
     </div>
   </div>
-)
+  )}
+
+    return (<div></div>)
+  }
+
+  
 
 const CollectionList = ({
   isSubmitted = false,
@@ -40,9 +49,12 @@ const CollectionList = ({
     }
   }, [userId, type])
 
+  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 25, 2023 20:00:00"));
+
   if (listData) {
     return (
       <>
+      { (days + hours + minutes + seconds <= 0) &&(
         <div className="col-md-12">
           <div className="text-right mb-2">
             <Link
@@ -54,7 +66,7 @@ const CollectionList = ({
             </Link>
              
           </div>
-        </div>
+        </div>)}
         <ScrollList
           RenderItem={(props) => (
             <div className="col-md-6">

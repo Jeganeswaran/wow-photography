@@ -7,6 +7,7 @@ import { updateUser } from '../../redux/actions/user';
 import { addToast } from '../../redux/actions/common';
 import { profile_url } from '../../redux/actions/constants';
 import Loader from '../common/loader';
+import ProfileBanner from '../../assets/img/profile_banner_img.jpeg'
 
 const ProfileCard = ({ user, updateUser, addToast }) => {
     const { first_name, last_name, email, userprofile } = user;
@@ -25,7 +26,12 @@ const ProfileCard = ({ user, updateUser, addToast }) => {
     //handle change
     const handleChange = ({ target }) => {
         const files = target.files;
+        
         if (files) {
+            if (files[0].size > 1971520) {
+                addToast("Image size must be less than 1MB", false);
+                return;
+              }
             const postD = new FormData();
             postD.append("profile_pic", files[0]);
             setReq(x => ({
@@ -45,7 +51,7 @@ const ProfileCard = ({ user, updateUser, addToast }) => {
 
     return (
         <div className="profile-card border mb-3">
-            <img className="profile-bg" src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="bg" />
+            <img className="profile-bg" src={ProfileBanner} alt="bg" />
             <div className="profile-details">
                 <div className="relative flex-center mb-2">
                     <div className="profile-image" >
