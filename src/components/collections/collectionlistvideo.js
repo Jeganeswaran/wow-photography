@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 import { useCountdown } from '../../hooks/useCountdown'
 
 const NoData = () => {
-  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 25, 2023 20:00:00"));
+  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 26, 2024 20:00:00"));
   if (days + hours + minutes + seconds <= 0) {
   return(
   <div className="col-md-12">
@@ -49,7 +49,7 @@ const CollectionListVideo = ({
     }
   }, [userId, type])
 
-  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 25, 2023 20:00:00"));
+  const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 26, 2024 20:00:00"));
 
   if (listData) {
     return (
@@ -57,13 +57,13 @@ const CollectionListVideo = ({
       { (days + hours + minutes + seconds <= 0) &&(
         <div className="col-md-12">
           <div className="text-right mb-2">
-            {/* <Link
+            <Link
               className="f-15 f-500 theme-red"
               to="/my-profile/enter-to-contest/video"
             >
               <i className="fa fa-plus f-14 mr-1"></i>
               Enter to contest
-            </Link> */}
+            </Link>
           </div>
         </div>)}
         <ScrollList

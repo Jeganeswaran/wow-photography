@@ -9,7 +9,7 @@ import PrizeSection from "./prizesection";
 import SponsorSection from "./sponsorsection";
 import EnterBtn from "./EnterBtn";
 import TNTour from "../../assets/img/tn-tour.jpeg";
-import Announcement from "../static/announcement"
+import Announcement from "../static/announcement";
 import { PhotoCategories, VideoCategories } from "./categories";
 
 const LandingPage = ({ dispatch }) => {
@@ -25,7 +25,7 @@ const LandingPage = ({ dispatch }) => {
               className="f-700 mb-2"
               style={{ color: `rgba(0, 0, 0, 0.6)`, fontSize: `40px` }}
             >
-              Welcome to WOW Tamil Nadu Awards 2024 - The 5th Edition
+              Welcome to WOW Tamil Nadu Awards 2024 <br /> The 5th Edition
             </h3>
             <h6>Theme: Tourist Experiences/Destinations of Tamil Nadu</h6>
           </div>
@@ -33,8 +33,8 @@ const LandingPage = ({ dispatch }) => {
             <div className="col-md-1" />
             <div className="col-md-10">
               <p
-                className="sourcesans f-15 text-justify"
-                style={{ color: `rgba(0, 0, 0, 0.4)`, lineHeight: 1.8 }}
+                className="sourcesans f-15 text-center"
+                style={{ color: `rgba(0, 0, 0, 0.6)`, lineHeight: 1.8 }}
               >
                 WOW Tamil Nadu is not just an awards program; it's a celebration
                 of artistry, a platform for appreciation, and a community of
@@ -46,19 +46,20 @@ const LandingPage = ({ dispatch }) => {
                 <br />
                 <br />
                 In 2024, we proudly present the 5th consecutive edition of WOW
-                Tamil Nadu Awards, organized by Global Media Box with the
-                invaluable support and association of the Department of Tourism,
-                Tamil Nadu. This edition promises to be even more remarkable as
-                we introduce a brand-new segment for Digital Art entries,
-                expanding our horizons and making WOW Tamil Nadu a more vibrant
-                and inclusive celebration of artistry.
+                Tamil Nadu Awards, organized by the Department of Tourism, Tamil
+                Nadu as part of World Tourism Day every year . This edition
+                promises to be even more remarkable as we introduce a brand-new
+                segment for Travel Influencers , expanding our horizons and
+                making WOW Tamil Nadu a more vibrant and inclusive celebration
+                of artistry.
                 <br />
-                Whether you're an aspiring photographer, a seasoned
-                videographer, or a digital artist pushing the boundaries of
-                creativity, WOW Tamil Nadu Awards 2024 is your stage. It's a
-                stage to share your vision, celebrate the rich heritage and
-                natural beauty of Tamil Nadu, and connect with a community of
-                like-minded individuals who share your passion for art.
+                <br />
+                Whether you're an aspiring photographer, a seasoned videographer
+                pushing the boundaries of creativity, WOW Tamil Nadu Awards 2024
+                is your stage. It's a stage to share your vision, celebrate the
+                rich heritage and natural beauty of Tamil Nadu, and connect with
+                a community of like-minded individuals who share your passion
+                for art.
               </p>
               <div className="flex-center pt-3">
                 <img
@@ -71,17 +72,17 @@ const LandingPage = ({ dispatch }) => {
               <div className="flex-center pt-3">
                 <EnterBtn className="btn pl-5 pr-5 btn-info" />
               </div>
-              
             </div>
           </div>
         </div>
       </section>
 
       <PrizeSection />
+     
       <PhotoCategories />
       <VideoCategories />
       <Announcement />
-      <WowWinners />
+      {/* <WowWinners /> */}
       <hr />
       <WowPics />
       <SponsorSection />

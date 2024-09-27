@@ -86,6 +86,7 @@ const RequestModal = ({
           </div>
         </div>
         <div className="col-md-6 pl-md-2 pr-md-0">
+          <div className="d-none">
           <label className="f-14">Choose a Option *</label>
           <div className="d-flex mb-2">
             <div className="form-check mr-3">
@@ -118,6 +119,7 @@ const RequestModal = ({
                 Digital Art
               </label>
             </div>
+          </div>
           </div>
           <div className="form-group">
             <label className="f-14">Category </label>

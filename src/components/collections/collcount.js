@@ -65,39 +65,39 @@ const CollCount = ({
               </div>
             </div>
           )}
-          {/* {!is_registered && (
+          {!is_registered && (
             <Link
               to="/upgrade"
               className="btn btn-theme f-14 mb-3 mt-3 pl-md-4 pr-md-4"
             >
               Participate Now
             </Link>
-          )} */}
+          )}
         </div>
       </div>
       <div className="d-flex flex-wrap align-items-center border coll-counter text-center mb-3">
         <div className="coll-counter-item coll-border">
           <h1>{private_photographs}</h1>
           <p className="f-13">
-            Unsubmitted <br></br> Photo/ Digital Art 
+            Unsubmitted <br></br> Photo
           </p>
         </div>
         <div className="coll-counter-item">
           <h1>{submitted_photo}</h1>
           <p className="f-13">
-            Submitted <br></br> Photo/ Digital Art 
+            Submitted <br></br> Photo
           </p>
         </div>
         <div className="coll-counter-item coll-border">
           <h3>{approved_photo}</h3>
           <p className="f-13">
-            Approved <br></br> Photo/ Digital Art 
+            Approved <br></br> Photo
           </p>
         </div>
         <div className="coll-counter-item">
           <h3>{rejected_photo}</h3>
           <p className="f-13">
-            Rejected <br></br> Photo/ Digital Art 
+            Rejected <br></br> Photo
           </p>
         </div>
       </div>

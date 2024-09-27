@@ -19,53 +19,37 @@ import EnterBtn from "./EnterBtn";
 export const PhotoCategories = () => {
   const cats = [
     {
-      title: "Places of Worship",
+      title: "Places of Worship & Heritage",
       image: PlacesWORSHIPImg,
     },
     {
-      title: "Arts & Culture",
+      title: "Joy of Celebrations",
       image: CultureImg,
     },
     {
-      title: "Heritage Tourism",
+      title: "Food, Culture, Arts & Crafts",
       image: HERITAGEImg,
     },
     {
-      title: "Joy of Celebrations",
+      title: "Nature & Wildlife",
       image: JoyofCelebrationsImg,
     },
     {
-      title: "Tastes of Tamil Nadu",
+      title: "Tamil Nadu from a Bird's Eye View",
       image: TastebudsImg,
     },
     {
       title: "Smiles of Tamil Nadu",
       image: NaturesMiracleImg,
-    },
-    {
-      title: "Nature's Miracle",
-      image: NatureMiracle,
-    },
-    {
-      title: "Wild in focus",
-      image: PH2OTOSImg,
-    },
-    {
-      title: "Wanderlust",
-      image: AnimalKingdom,
-    },
-    {
-      title: "Tamil Nadu in Bird's Eye view",
-      image: FITographyImg,
-    },
+    }
   ];
   const [slide, setSlideIndex] = useState(0);
 
   return (
-    <section className="post-section">
+    <section className="post-section  bg-light-grey">
       <div className="text-center mb-4">
         <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>
-        Categories for Photography & Digi-Art - WOW TAMILNADU 2024
+        Categories for Photography - WOW TAMILNADU 2024
         </h1>
       </div>
       <div className="container d-flex justify-content-md-center justify-content-center flex-wrap mb-2">
@@ -103,21 +87,31 @@ export const VideoCategories = () => {
             Video Categories for WOW TAMILNADU 2024
           </h1>
         </div>
-        <div className="row">
-          <Prize
-            src={ReelsImg}
-            
-            title="WOW TN Reels"
-            rulesTitle="Rules for Reels"
-            rules={[
-              "Duration 30 seconds to 1 minute.",
-              "Instagram reels are viewed in a vertical orientation, videos should be 1080 pixels wide and 1920 pixels height.",
-              "Reels are open content and it should be reflecting travel and tourism shot in  districts of Tamil Nadu.",
-              "Accepted reels format is Mov or MP4.",
-              "Strictly avoid using watermarks in Reels.",
-              "Music should be royalty free or you can use our music tracks  available below.",
-            ]}
-          />
+        <div className="row justify-content-center">
+        <section className="post-section">
+        <div className="container">
+          <div className="text-center mb-4">
+            <h2 className="montserrat f-700 theme-red">
+              5th Edition WOW Tamil Nadu Travel Influencer Guidelines:
+            </h2>
+          </div>
+          <ul>
+            <li>All videos must be filmed exclusively in Tamil Nadu</li>
+            <li>
+              Videos should have a duration of at least 30 seconds, with a
+              maximum length of 180 seconds.
+            </li>
+            <li>
+              Submissions can be in either Landscape HD or Vertical Reels
+              format.
+            </li>
+            <li>
+              The content must focus on travel experiences, travel information,
+              or showcasing new locations.
+            </li>
+          </ul>
+        </div>
+      </section>
           <Prize src={TravelGuideImg} 
           rulesTitle="Rules for TN Travel Influencer"
            title="TN Travel Influencer" rules={["Duration: Minimums 1 minute to maximum 3 minutes.", "Videos are viewed in a landscape orientation and the quality should be 1080 pixels height and 1920 pixels wide.", "Videos should be shot in the districts of TN", "Video submission will be shortlisted based on the district covered in the video and not the participants area or district.", "Music should be royalty free, you can use your own composition music, voice over, map graphics, text or you can make use of our music tracks available below.", "Strictly avoid using watermarks in videos.", "Accepted video format is Mov or MP4."]} />

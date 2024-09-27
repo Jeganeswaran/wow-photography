@@ -20,24 +20,20 @@ const Faq = () => {
               answer={
                 <>
                   <p className="mb-2">
-                  The list of categories is given at the bottom of the first page. The categories under photography are as follows:
+                    The list of categories is given at the bottom of the first
+                    page. The categories under photography are as follows:
                   </p>
                   <ol>
-                    <li>Places of Worship</li>
-                    <li>Arts & Culture</li>
-                    <li>Heritage Tourism</li>
-                    <li>Joy of Celebrations</li>
-                    <li>Tastes of Tamil Nadu</li>
+                    <li>Places of Worship & Heritage</li>
+                    <li>Joy of Celebrations </li>
+                    <li>Food, Culture, Arts & Crafts</li>
+                    <li>Nature & Wildlife </li>
+                    <li>Tamil Nadu in Bird's Eye view</li>
                     <li>Smiles of Tamil Nadu</li>
-                    <li>Nature’s Miracle</li>
+                    <li>WOW TN - Travel Influencer</li>
                     <li>Wild in focus</li>
                     <li>Wanderlust</li>
                     <li>TN in Bird’s Eye view</li>
-                  </ol>
-                  <p className="mb-2">The categories under video are:</p>
-                  <ol>
-                    <li>WOW TN Reels</li>
-                    <li>TN Video Guide</li>
                   </ol>
                 </>
               }
@@ -77,8 +73,8 @@ const Faq = () => {
               TECHNICAL SPECIFICATIONS OF IMAGES AND VIDEOS
             </h5>
             <Accordion
-              question="What are the dimensions of Photograph / Digital Art and format?"
-              answer="Submitted Photographs / Digital Art  must have minimum resolution of 1000x1000 pixels and maximum allowed file size is up to 25MB. The recommended file format is JPEG, RAW and TIFF."
+              question="What are the dimensions of Photograph and format?"
+              answer="Submitted Photographs  must have minimum resolution of 1000x1000 pixels and maximum allowed file size is up to 25MB. The recommended file format is JPEG, RAW and TIFF."
             />
             <Accordion
               question="What is the format of the video and video size?"
@@ -217,16 +213,15 @@ const Faq = () => {
             <Accordion
               question="When is the deadline for submissions for the Wow Tamil Nadu 2024 ?"
               answer="The deadline for the Wow Tamil Nadu photo and video awards is 31 December, 2024 by midnight."
-            /> 
-             <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
+            />
+            <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
             <Accordion
               question="When will the announcement be made about the winners?"
               answer={
                 <>
                   <p className="mb-2">
-                  The winners announcement will be made on 31st January 2024.
+                    The winners announcement will be made on 31st January 2024.
                   </p>
-                  
                 </>
               }
             />

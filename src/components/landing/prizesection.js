@@ -1,9 +1,10 @@
 import React from "react";
-import GrandWinnerImg from "../../assets/img/prize/2023-WOW-Grand-Winner.png";
+import GrandWinnerImg from "../../assets/img/prize/2024-WOW-Grand-Winner.png";
 import CreativeEyeImg from "../../assets/img/prize/2023-WOW-Creative-Eye.png";
 import DigiArt from "../../assets/img/prize/2023-WOW-DigitalArt.png";
-import Best100Img from "../../assets/img/prize/2023-WOW-100.png";
+import Best100Img from "../../assets/img/prize/2024-WOW-100.png";
 import EnterBtn from "./EnterBtn";
+import TNTour from "../../assets/img/tn-tour.jpeg";
 
 const PrizeSection = () => {
   return (
@@ -19,28 +20,24 @@ const PrizeSection = () => {
         <div className="row">
           <Prize
             src={GrandWinnerImg}
-            title="Grand Prize"
-            notes="For the most creative minds, we have something truly exceptional. Four Grand Winners (three from Photography & Videography and one from Digital Art) will embark on an unforgettable, all-expenses-paid journey to the world's most photographed monument, the iconic Eiffel Tower in Paris, France."
-            desc={[
-              "8 winners to international trips",
-            ]}
+            title="Grand Winners – A Reward for the Most Creative Minds"
+            notes="For the most outstanding talents, we have something truly extraordinary. Eight Grand Winners (6 from Photography and 2 from Travel Influencer Videography) will be selected for this prestigious honor. These winners will receive an all-expenses-paid international trip to Vietnam, a breathtaking destination, as part of an exclusive tourism photography experience, along with many other exciting prizes. Don’t miss out—submit your entries now!"
+            // desc={["8 winners to international trips"]}
           />
           <Prize
             src={CreativeEyeImg}
-            title="Creative Eye"
-            notes="(The top 12 Creative Eye Award Winners will embark on a special two-day photography workshop hosted by the prestigious Light and Life Academy. Here, you'll have the chance to enhance your skills and gain invaluable insights from one of the most esteemed institutions in the field. But that's not all - at the end of the workshop, participants will compete for the coveted Grand Winner Title. The top three winners will also earn the opportunity to jet off on a thrilling trip to the City of Light, Paris, France.)"
-            desc={[
-              "exclusive photo Exchahge",
-            ]}
+            title="Creative Eye Award Winners – A Journey of Learning and Adventure"
+            notes="The top 16 Creative Eye Award winners will be invited to a special two-day workshop led by one of the most esteemed experts in the field of visual creation. But the excitement doesn’t end there—at the conclusion of the workshop, participants will compete for the prestigious Grand Winner title. The top eight winners will also earn the opportunity to embark on an exciting trip to the stunning destination of Vietnam."
+            // desc={["exclusive photo Exchahge"]}
           />
           <Prize
             src={Best100Img}
-            title="Best of 100"
-            notes="All participants who make their mark will receive well-deserved WOW TN 2024 BEST 100 Photo- Participation Certificates, recognizing your exceptional contribution to the art."
-            desc={["Certificates + Awards"]}
+            title="WOW TAMIL NADU 2024 – BEST 100 Photos:"
+            notes="All participants who make their mark will receive well-deserved WOW TN 2023 BEST 100 Photo- Participation Certificates, recognizing your exceptional contribution to the art."
+            // desc={["Certificates + Awards"]}
           />
 
-          <Prize
+          {/* <Prize
             src={DigiArt}
             title="Digital art"
             notes="Our new Digital Art segment brings its own set of rewards:<br/>
@@ -53,12 +50,21 @@ const PrizeSection = () => {
               "10 Creative Artist - Surprise Gift + Award + Certificate + Digi Art Virtual Gallery",
               "100 Best Digital Art  - Certificates + Virtual Galley",
             ]}
-          />
+          /> */}
         </div>
       </div>
       <div className="flex-center pt-3">
+                <img
+                  style={{ width: "250px" }}
+                  className="category-img"
+                  alt={"cat.title"}
+                  src={TNTour}
+                />
+              </div>
+      <div className="flex-center pt-3">
         <EnterBtn className="btn pl-5 pr-5 btn-info" />
       </div>
+
     </section>
   );
 };

@@ -138,24 +138,26 @@ const Contest = ({ fetching, data, dispatch }) => {
               </div>
             </div>
             <div className="col-md-12 mt-3">
-              <label className="f-14">Choose a Option *</label>
-              <div className="d-flex mb-2">
-                <div className="form-check mr-3">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    checked={!is_digital_art}
-                    name="is_digital_art"
-                    id="intPhotographs"
-                    onChange={() => {
-                      setIs_digital_art((term) => !term);
-                    }}
-                  />
-                  <label className="f-14" htmlFor="intPhotographs">
-                    Photographs
-                  </label>
+              <div className="d-none">
+                <label className="f-14">Choose a Option *</label>
+                <div className="d-flex mb-2">
+                  <div className="form-check mr-3">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      checked={!is_digital_art}
+                      name="is_digital_art"
+                      id="intPhotographs"
+                      onChange={() => {
+                        setIs_digital_art((term) => !term);
+                      }}
+                    />
+                    <label className="f-14" htmlFor="intPhotographs">
+                      Photographs
+                    </label>
+                  </div>
                 </div>
-                <div className="form-check mr-3">
+                {/* <div className="form-check mr-3">
                   <input
                     className="form-check-input"
                     type="radio"
@@ -169,8 +171,7 @@ const Contest = ({ fetching, data, dispatch }) => {
                   <label className="f-14" htmlFor="intDigitalArt">
                     Digital Art
                   </label>
-                </div>
-                
+                </div> */}
               </div>
               <div className="form-group">
                 <label className="f-14">Choose a Category *</label>
@@ -267,7 +268,10 @@ const Contest = ({ fetching, data, dispatch }) => {
         <div className="d-flex justify-content-end align-items-end">
           <LoadingBtn
             disabled={
-              category && photo && terms && (is_digital_art || (camera_used && location)) 
+              category &&
+              photo &&
+              terms &&
+              (is_digital_art || (camera_used && location))
                 ? false
                 : true
             }

@@ -34,12 +34,12 @@ const CollectionsPage = ({ dispatch }) => {
                   {
                     to: '/my-profile',
                     exact: true,
-                    children: 'Submitted Photo/ Digital Art ',
+                    children: 'Submitted Photo ',
                   },
                   {
                     to: '/my-profile/private-photographs',
                     exact: true,
-                    children: 'Unsubmitted Photo/Digital Art',
+                    children: 'Unsubmitted Photo',
                   },
                   {
                     to: '/my-profile/videos',
