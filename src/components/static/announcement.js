@@ -23,7 +23,7 @@ const Announcement = () => {
               <div className="text-center poppins mb-2">
               The deadline for submissions is 
               </div>
-              <h5 className="text-center theme-red mb-5">31st December 2024 – Midnight.</h5>
+              <h5 className="text-center theme-red mb-5">20th Januaary 2025 – Midnight.</h5>
               <p
                 className="text-center poppins"
                 style={{ color: `rgba(0, 0, 0, 0.7)`, lineHeight: 1.8 }}

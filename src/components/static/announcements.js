@@ -12,7 +12,7 @@ const About = () => {
           <div className="col-sm-8 mb-3">
             <ul className="f-16 f-600 annoucelist">
               <li>Submissions open on World Tourism Day, September 27th, starting at 20:00 hrs IST</li>
-              <li>The deadline for submissions is, 31st December 2024 – Midnight. </li>
+              <li>The deadline for submissions is, 20th Januaary 2025 – Midnight. </li>
               <li>
                 WOW Tamil Nadu Team will contact the winners only via email /
                 Mobile numbers that are used during registration.

@@ -6,11 +6,11 @@ import  { useCountdown }  from "../../hooks/useCountdown";
 
 
 const ExpiredNotice = ({isToken, className}) => {
-  // return (
-  //   <Link to="/" className={className}>
-  //     Registration Close
-  //   </Link>
-  // )
+  return (
+    <Link to="/" className={className}>
+      Registration Close
+    </Link>
+  )
   if (isToken) {
     return (
       <Link to="/my-profile/enter-to-contest" className={className}>

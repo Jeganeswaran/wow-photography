@@ -14,7 +14,7 @@ import { useCountdown } from '../../hooks/useCountdown'
 
 const NoData = () => {
   const [days, hours, minutes, seconds] = useCountdown(new Date("Sept 26, 2024 20:00:00"));
-  if (days + hours + minutes + seconds <= 0) {
+  if (days + hours + minutes + seconds >= 0) {
   return(
   <div className="col-md-12">
     <div className="p-5 flex-center flex-column border">
@@ -54,7 +54,7 @@ const CollectionListVideo = ({
   if (listData) {
     return (
       <>
-      { (days + hours + minutes + seconds <= 0) &&(
+      { (days + hours + minutes + seconds >= 0) &&(
         <div className="col-md-12">
           <div className="text-right mb-2">
             <Link

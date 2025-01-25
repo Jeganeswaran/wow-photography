@@ -22,14 +22,14 @@ const Links = ({ isToken }) => {
                             Sign In
                         </OpenModalBtn>
                     </li>
-                    <li>
+                    {/* <li>
                         <OpenModalBtn
                             className="btn-a f-14"
                             modalName="SIGNUP_MODAL"
                         >
                             Sign Up
                         </OpenModalBtn>
-                    </li>
+                    </li> */}
                 </> :
                 <>
                     <li>

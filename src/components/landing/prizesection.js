@@ -1,6 +1,6 @@
 import React from "react";
 import GrandWinnerImg from "../../assets/img/prize/2024-WOW-Grand-Winner.png";
-import CreativeEyeImg from "../../assets/img/prize/2023-WOW-Creative-Eye.png";
+import CreativeEyeImg from "../../assets/img/prize/2024-WOW-Creative-Eye.png";
 import DigiArt from "../../assets/img/prize/2023-WOW-DigitalArt.png";
 import Best100Img from "../../assets/img/prize/2024-WOW-100.png";
 import EnterBtn from "./EnterBtn";
