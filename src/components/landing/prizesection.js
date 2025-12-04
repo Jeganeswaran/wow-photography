@@ -1,8 +1,8 @@
 import React from "react";
-import GrandWinnerImg from "../../assets/img/prize/2024-WOW-Grand-Winner.png";
-import CreativeEyeImg from "../../assets/img/prize/2024-WOW-Creative-Eye.png";
+import GrandWinnerImg from "../../assets/img/prize/2025-WOW-Grand-Winner.png";
+import CreativeEyeImg from "../../assets/img/prize/2025-WOW-Creative-Eye.png";
 import DigiArt from "../../assets/img/prize/2023-WOW-DigitalArt.png";
-import Best100Img from "../../assets/img/prize/2024-WOW-100.png";
+import Best100Img from "../../assets/img/prize/2025-WOW-100.png";
 import EnterBtn from "./EnterBtn";
 import TNTour from "../../assets/img/tn-tour.jpeg";
 
@@ -21,19 +21,19 @@ const PrizeSection = () => {
           <Prize
             src={GrandWinnerImg}
             title="Grand Winners – A Reward for the Most Creative Minds"
-            notes="For the most outstanding talents, we have something truly extraordinary. Eight Grand Winners (6 from Photography and 2 from Travel Influencer Videography) will be selected for this prestigious honor. These winners will receive an all-expenses-paid international trip to Vietnam, a breathtaking destination, as part of an exclusive tourism photography experience, along with many other exciting prizes. Don’t miss out—submit your entries now!"
+            notes="For the most outstanding talents, we have something truly extraordinary. SIX Grand Winners (4 from Photography and 2 from Travel Influencer Videography) will be selected for this prestigious honor. These winners will receive an all-expenses-paid international trip to International Trip, a breathtaking destination, as part of an exclusive tourism photography experience, along with many other exciting prizes. Don’t miss out—submit your entries now!"
             // desc={["8 winners to international trips"]}
           />
           <Prize
             src={CreativeEyeImg}
             title="Creative Eye Award Winners – A Journey of Learning and Adventure"
-            notes="The top 16 Creative Eye Award winners will be invited to a special two-day workshop led by one of the most esteemed experts in the field of visual creation. But the excitement doesn’t end there—at the conclusion of the workshop, participants will compete for the prestigious Grand Winner title. The top eight winners will also earn the opportunity to embark on an exciting trip to the stunning destination of Vietnam."
+            notes="The top 16 Creative Eye Award winners receive Special Award Trophy. Also their Photos will be Presented in official Tourism Pages and Chance to get on the images on the official Calanders .  But don’t miss to win the top SIX winners will also earn the opportunity to embark on an exciting trip to the stunning International destination ."
             // desc={["exclusive photo Exchahge"]}
           />
           <Prize
             src={Best100Img}
-            title="WOW TAMIL NADU 2024 – BEST 100 Photos:"
-            notes="All participants who make their mark will receive well-deserved WOW TN 2023 BEST 100 Photo- Participation Certificates, recognizing your exceptional contribution to the art."
+            title="WOW TAMIL NADU BEST 100 "
+            notes="All participants who make their mark will receive well-deserved  BEST 100 Photo- Participation Certificates, recognizing your exceptional contribution to the art. Also the same will be displayed in Social Media Pages."
             // desc={["Certificates + Awards"]}
           />
 
@@ -41,8 +41,8 @@ const PrizeSection = () => {
             src={DigiArt}
             title="Digital art"
             notes="Our new Digital Art segment brings its own set of rewards:<br/>
-            Best WOW TN DIGI-ARTIST 2024: 1 Grand Winner will earn a remarkable trip to France.<br/>
-            Best 10 Creative Artist 2024: Surprise Prize + Certificate & Art Display in Gallery.<br/>
+            Best WOW TN DIGI-ARTIST 2025: 1 Grand Winner will earn a remarkable trip to France.<br/>
+            Best 10 Creative Artist 2025: Surprise Prize + Certificate & Art Display in Gallery.<br/>
             Best 100 Digital Art: Certificates & Digital Gallery in the official website.<br/>
             "
             desc={[

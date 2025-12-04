@@ -19,9 +19,9 @@ const SignInModal = () => {
                 {/* <SocialLogin title={"Sign in"} /> */}
                 <hr></hr>
                 <div className="flex-center flex-column">
-                    {/* <OpenModalBtn modalName="SIGNUP_MODAL" className="btn btn-link mb-1 btn-a f-12">
+                    <OpenModalBtn modalName="SIGNUP_MODAL" className="btn btn-link mb-1 btn-a f-12">
                         Don't have an account? Sign Up
-                    </OpenModalBtn> */}
+                    </OpenModalBtn>
                     <button onClick={() => tab.setCount(2)} className="btn btn-link btn-a f-12">
                         Forgot Password ?
                     </button>

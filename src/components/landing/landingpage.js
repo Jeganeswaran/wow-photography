@@ -25,7 +25,7 @@ const LandingPage = ({ dispatch }) => {
               className="f-700 mb-2"
               style={{ color: `rgba(0, 0, 0, 0.6)`, fontSize: `40px` }}
             >
-              Welcome to WOW Tamil Nadu Awards 2024 <br /> The 5th Edition
+              Welcome to WOW Tamil Nadu Awards 2025 <br /> The 6th Edition
             </h3>
             <h6>Theme: Tourist Experiences/Destinations of Tamil Nadu</h6>
           </div>
@@ -45,7 +45,7 @@ const LandingPage = ({ dispatch }) => {
                 platform where they can explore, grow, and share their craft.
                 <br />
                 <br />
-                In 2024, we proudly present the 5th consecutive edition of WOW
+                In 2025, we proudly present the 5th consecutive edition of WOW
                 Tamil Nadu Awards, organized by the Department of Tourism, Tamil
                 Nadu as part of World Tourism Day every year . This edition
                 promises to be even more remarkable as we introduce a brand-new
@@ -55,7 +55,7 @@ const LandingPage = ({ dispatch }) => {
                 <br />
                 <br />
                 Whether you're an aspiring photographer, a seasoned videographer
-                pushing the boundaries of creativity, WOW Tamil Nadu Awards 2024
+                pushing the boundaries of creativity, WOW Tamil Nadu Awards 2025
                 is your stage. It's a stage to share your vision, celebrate the
                 rich heritage and natural beauty of Tamil Nadu, and connect with
                 a community of like-minded individuals who share your passion

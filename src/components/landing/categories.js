@@ -19,29 +19,38 @@ import EnterBtn from "./EnterBtn";
 export const PhotoCategories = () => {
   const cats = [
     {
-      title: "Places of Worship & Heritage",
+      title: "Places of Worship",
       image: PlacesWORSHIPImg,
+    },
+    {
+      title: "Food, Arts & Culture",
+      image: HERITAGEImg,
+    },
+    {
+      title: "Heritage Tourism",
+      image: NaturesMiracleImg,
     },
     {
       title: "Joy of Celebrations",
       image: CultureImg,
     },
     {
-      title: "Food, Culture, Arts & Crafts",
-      image: HERITAGEImg,
+      title: "Smiles of TN",
+      image: NaturesMiracleImg,
     },
     {
       title: "Nature & Wildlife",
-      image: JoyofCelebrationsImg,
+      image: NatureMiracle,
     },
+    
     {
-      title: "Tamil Nadu from a Bird's Eye View",
+      title: "Play & Learn",
       image: TastebudsImg,
     },
-    {
-      title: "Smiles of Tamil Nadu",
-      image: NaturesMiracleImg,
-    }
+     {
+      title: "Bird's Eye View",
+      image: TastebudsImg,
+    },
   ];
   const [slide, setSlideIndex] = useState(0);
 
@@ -49,7 +58,7 @@ export const PhotoCategories = () => {
     <section className="post-section  bg-light-grey">
       <div className="text-center mb-4">
         <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>
-        Categories for Photography - WOW TAMILNADU 2024
+        Categories for Photography - WOW TAMILNADU 2025
         </h1>
       </div>
       <div className="container d-flex justify-content-md-center justify-content-center flex-wrap mb-2">
@@ -84,7 +93,7 @@ export const VideoCategories = () => {
       <div className="container">
         <div className="text-center mb-4">
           <h1 className="f-700" style={{ color: `rgba(0, 0, 0, 0.6)` }}>
-            Video Categories for WOW TAMILNADU 2024
+            Video Categories for WOW TAMILNADU 2025
           </h1>
         </div>
         <div className="row justify-content-center">
@@ -92,7 +101,7 @@ export const VideoCategories = () => {
         <div className="container">
           <div className="text-center mb-4">
             <h2 className="montserrat f-700 theme-red">
-              5th Edition WOW Tamil Nadu Travel Influencer Guidelines:
+              6th Edition WOW Tamil Nadu Travel Influencer Guidelines:
             </h2>
           </div>
           <ul>

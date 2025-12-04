@@ -19,23 +19,19 @@ const Announcement = () => {
               <div className="text-center poppins mb-2">
               Submissions open on World Tourism Day,
               </div>
-              <h5 className="text-center theme-red mb-5">September 27th, starting at 20:00 hrs IST</h5>
+              <h5 className="text-center theme-red mb-5">27th September 2025  onwards</h5>
               <div className="text-center poppins mb-2">
               The deadline for submissions is 
               </div>
-              <h5 className="text-center theme-red mb-5">20th Januaary 2025 – Midnight.</h5>
+              <h5 className="text-center theme-red mb-5">31st  December 2025 – Midnight.</h5>
               <p
                 className="text-center poppins"
                 style={{ color: `rgba(0, 0, 0, 0.7)`, lineHeight: 1.8 }}
               >
-                Don't miss this opportunity to showcase your artistic talents
-                and compete for these incredible prizes. Get ready to capture
-                WOW moments and create art that will leave a lasting impression.
+               Don't miss this opportunity to showcase your artistic talents and compete for these incredible prizes. Get ready to capture WOW moments and create art that will leave a lasting impression.
                 <br />
                 <br />
-                Join us in celebrating the diverse and stunning beauty of Tamil
-                Nadu. We look forward to your participation in WOW Tamil Nadu
-                Awards 2024! 🌟📸🎨.
+                Join us in celebrating the diverse and stunning beauty of Tamil Nadu. We look forward to your participation in WOW Tamil Nadu Awards 2025! 🌟📸🎨.
               </p>
 
               <div className="flex-center pt-3">

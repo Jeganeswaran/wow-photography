@@ -20,7 +20,7 @@ const Countries = ({ fetching, countries }) => {
               className="montserrat f-700"
               style={{ color: `rgba(0, 0, 0, 0.6)` }}
             >
-              Videography for WOW TAMILNADU 2024
+              Videography for WOW TAMILNADU 2025
             </h2>
           </div>
           <div className="row">

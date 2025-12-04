@@ -1,6 +1,6 @@
 import React from 'react'
 import BannerVid from '../../assets/video/banner_2023.mp4'
-import BannerImg from '../../assets/img/banner_2024.jpg'
+import BannerImg from '../../assets/img/banner_2025.jpg'
 
 const Banner = () => {
     return (
