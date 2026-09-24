@@ -59,8 +59,8 @@ const Faq = () => {
               under any of the above categories."
             />
             <Accordion
-              question="When submission starts for Wow Tamil Nadu 2025?"
-              answer="The submission date starts from 27th September 2025, World Tourism Day, the
+              question="When submission starts for Wow Tamil Nadu 2026?"
+              answer="The submission date starts from 27th September 2026, World Tourism Day, the
               same day as the launch of the competition."
             />
             <Accordion
@@ -139,7 +139,7 @@ const Faq = () => {
             <h5 className="mt-3 mb-3">SUBMISSION </h5>
             <Accordion
               question="Do my images need to be taken within a certain timeframe?"
-              answer="Entries in wow tamilnadu photography and video awards 2025 competition must have been taken in 2025 (January 1 to December 25, 2025) or at least five years older. Photos could have already been submitted to other competitions as well."
+              answer="Entries in wow tamilnadu photography and video awards 2026 competition must have been taken in 2026 (January 1 to December 25, 2026) or at least five years older. Photos could have already been submitted to other competitions as well."
             />
             <Accordion
               question="Can a work be submitted regardless of when it was taken?"
@@ -211,8 +211,8 @@ const Faq = () => {
               answer="Award winners will be notified through calls, email and social media. Special invite will be sent for the winners to attend the award ceremony."
             />
             <Accordion
-              question="When is the deadline for submissions for the Wow Tamil Nadu 2025 ?"
-              answer="The deadline for the Wow Tamil Nadu photo and video awards is 31 December, 2025 by midnight."
+              question="When is the deadline for submissions for the Wow Tamil Nadu 2026 ?"
+              answer="The deadline for the Wow Tamil Nadu photo and video awards is 31 December, 2026 by midnight."
             />
             <h5 className="mt-3 mb-3">PRIZES & AWARDS</h5>
             <Accordion
@@ -220,7 +220,7 @@ const Faq = () => {
               answer={
                 <>
                   <p className="mb-2">
-                    The winners announcement will be made on 31st January 2025.
+                    The winners announcement will be made on 31st January 2026.
                   </p>
                 </>
               }

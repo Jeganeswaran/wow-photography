@@ -41,8 +41,8 @@ const PrizeSection = () => {
             src={DigiArt}
             title="Digital art"
             notes="Our new Digital Art segment brings its own set of rewards:<br/>
-            Best WOW TN DIGI-ARTIST 2025: 1 Grand Winner will earn a remarkable trip to France.<br/>
-            Best 10 Creative Artist 2025: Surprise Prize + Certificate & Art Display in Gallery.<br/>
+            Best WOW TN DIGI-ARTIST 2026: 1 Grand Winner will earn a remarkable trip to France.<br/>
+            Best 10 Creative Artist 2026: Surprise Prize + Certificate & Art Display in Gallery.<br/>
             Best 100 Digital Art: Certificates & Digital Gallery in the official website.<br/>
             "
             desc={[
