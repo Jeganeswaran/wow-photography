@@ -1,0 +1,84 @@
+import React, { useState } from 'react'
+import Pagelayout from '../common/pagelayout';
+import UpdateAdress from "../modals/addressmodal";
+import PackagesList from './packageslist';
+import { connect } from 'react-redux';
+import CheckOut from './checkout';
+
+const UpgradePage = ({ isAddr }) => {
+
+	const [packageId, setPackage] = useState({});
+	const [tab, setTab] = useState(isAddr ? 2 : 1);
+
+	return (
+		<Pagelayout>
+			<div className="row" style={{minHeight: `400px`}}>
+				<div className="col-md-3">
+					<ul className="list-group upgradeUl mb-4">
+						<li
+							className="list-group-item f-600 f-18"
+						>
+							Steps to Participate
+						</li>
+						<li
+							onClick={() => setTab(1)}
+							className={`list-group-item  ${tab === 1 ? 'list-active' : ''} pointer`}
+						>
+							1. Update Profile
+							{isAddr && <i className="fa fa-check-circle float-right color-green"></i>}
+						</li>
+						<li 
+							onClick={() => {
+								if(isAddr){
+									setTab(2)
+								}
+							}} 
+							className={`list-group-item ${!isAddr ? 'disabled' : ''} ${tab === 2 ? 'list-active' : ''} pointer`}
+						>
+							2. Registration
+							{packageId.id && <i className="fa fa-check-circle float-right color-green"></i>}
+						</li>
+						<li 
+							onClick={() => {
+								if(packageId.id && isAddr){
+									setTab(3)
+								}
+							}} 
+							className={`list-group-item ${packageId.id && isAddr ? '' : 'disabled'} ${tab === 3 ? 'list-active' : ''} pointer`}
+						>
+							3. Checkout
+						</li>
+					</ul>
+				</div>
+				<div className="col-md-9">
+					{
+						tab === 1 &&
+						<div>
+							<h4 className="font-weight-bold mb-3">Update Profile</h4>
+							<UpdateAdress setTab={setTab} />
+						</div>
+					}
+					{
+						tab === 2 &&
+						<div>
+							<h4 className="font-weight-bold mb-3">Registration</h4>
+							<PackagesList setTab={setTab} choosen={packageId} setPackage={setPackage} />
+						</div>
+					}
+					{
+						tab === 3 &&
+						<div>
+							<CheckOut packageId={packageId} />
+						</div>
+					}
+				</div>
+			</div>
+		</Pagelayout>
+	)
+}
+
+const mapStateToProps = ({ user }) => ({
+    isAddr: user && user.user_address && user.email
+})
+
+export default connect(mapStateToProps)(UpgradePage)
